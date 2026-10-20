@@ -1,0 +1,18 @@
+# Exemplo de SPEC-00 §10.4. Pré-requisitos padronizados para IDs da base.
+records:
+  - id: CHEM-STO-001
+    type: concept
+    version: 1
+    status: approved
+    name: Proporção estequiométrica
+    domain: CHEM-STO
+    topics: [proporcoes_estequiometricas]
+    definition: >-
+      Relação quantitativa entre reagentes e produtos determinada pelos
+      coeficientes de uma equação química corretamente balanceada.
+    prerequisites: [CHEM-STO-BALANCING, CHEM-STO-AMOUNT, CHEM-STO-MOLARMASS]
+    common_mistakes:
+      - Usar os índices das fórmulas como se fossem coeficientes estequiométricos.
+      - Comparar diretamente massas sem considerar as proporções molares.
+      - Aplicar a proporção de uma equação que não foi balanceada.
+    sources: []

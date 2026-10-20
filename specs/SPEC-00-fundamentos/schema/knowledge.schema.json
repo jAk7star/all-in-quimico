@@ -1,0 +1,648 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPEC-00 Knowledge record",
+  "$comment": "GERADO por generate_schema.py a partir de models.py. Não editar à mão.",
+  "$defs": {
+    "Concept": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "domain": {
+          "pattern": "^CHEM-[A-Z]{3}$",
+          "title": "Domain",
+          "type": "string"
+        },
+        "topics": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Topics",
+          "type": "array"
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "common_mistakes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Common Mistakes",
+          "type": "array"
+        },
+        "examples": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Examples",
+          "type": "array"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "notes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "type": {
+          "const": "concept",
+          "title": "Type",
+          "type": "string"
+        },
+        "definition": {
+          "minLength": 1,
+          "title": "Definition",
+          "type": "string"
+        },
+        "formula_refs": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Formula Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "version",
+        "status",
+        "domain",
+        "type",
+        "definition"
+      ],
+      "title": "Concept",
+      "type": "object"
+    },
+    "Element": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "pattern": "^CHEM-[A-Z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "topics": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Topics",
+          "type": "array"
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "common_mistakes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Common Mistakes",
+          "type": "array"
+        },
+        "examples": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Examples",
+          "type": "array"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "notes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "type": {
+          "const": "element",
+          "title": "Type",
+          "type": "string"
+        },
+        "symbol": {
+          "pattern": "^[A-Z][a-z]{0,2}$",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "atomic_number": {
+          "maximum": 118,
+          "minimum": 1,
+          "title": "Atomic Number",
+          "type": "integer"
+        },
+        "atomic_mass_reference": {
+          "$ref": "#/$defs/QuantitativeValue"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "version",
+        "status",
+        "type",
+        "symbol",
+        "atomic_number",
+        "atomic_mass_reference"
+      ],
+      "title": "Element",
+      "type": "object"
+    },
+    "Formula": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "pattern": "^CHEM-[A-Z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "topics": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Topics",
+          "type": "array"
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "common_mistakes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Common Mistakes",
+          "type": "array"
+        },
+        "examples": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Examples",
+          "type": "array"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "notes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "type": {
+          "const": "formula",
+          "title": "Type",
+          "type": "string"
+        },
+        "expression": {
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variables": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Variable"
+          },
+          "minProperties": 1,
+          "title": "Variables",
+          "type": "object"
+        },
+        "conditions": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Conditions",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "relation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Relation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "data_dependencies": {
+          "default": [],
+          "items": {
+            "enum": [
+              "atomic_mass",
+              "molar_mass"
+            ],
+            "type": "string"
+          },
+          "title": "Data Dependencies",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "version",
+        "status",
+        "type",
+        "expression",
+        "variables",
+        "conditions",
+        "limitations"
+      ],
+      "title": "Formula",
+      "type": "object"
+    },
+    "OtherRecord": {
+      "additionalProperties": true,
+      "description": "Tipos ainda sem schema próprio na v0.1.0; exigem domínio.",
+      "properties": {
+        "id": {
+          "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "domain": {
+          "pattern": "^CHEM-[A-Z]{3}$",
+          "title": "Domain",
+          "type": "string"
+        },
+        "topics": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Topics",
+          "type": "array"
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "common_mistakes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Common Mistakes",
+          "type": "array"
+        },
+        "examples": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Examples",
+          "type": "array"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "notes": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "compound",
+            "quantity",
+            "unit",
+            "constant",
+            "skill"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "version",
+        "status",
+        "domain",
+        "type"
+      ],
+      "title": "OtherRecord",
+      "type": "object"
+    },
+    "QuantitativeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "quantity": {
+          "title": "Quantity",
+          "type": "string"
+        },
+        "context": {
+          "minLength": 1,
+          "title": "Context",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "quantity",
+        "context"
+      ],
+      "title": "QuantitativeValue",
+      "type": "object"
+    },
+    "Relation": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "title": "Result",
+          "type": "string"
+        },
+        "op": {
+          "enum": [
+            "divide",
+            "multiply"
+          ],
+          "title": "Op",
+          "type": "string"
+        },
+        "left": {
+          "title": "Left",
+          "type": "string"
+        },
+        "right": {
+          "title": "Right",
+          "type": "string"
+        }
+      },
+      "required": [
+        "result",
+        "op",
+        "left",
+        "right"
+      ],
+      "title": "Relation",
+      "type": "object"
+    },
+    "Variable": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quantity"
+        }
+      },
+      "required": [
+        "name",
+        "unit"
+      ],
+      "title": "Variable",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "compound": "#/$defs/OtherRecord",
+      "concept": "#/$defs/Concept",
+      "constant": "#/$defs/OtherRecord",
+      "element": "#/$defs/Element",
+      "formula": "#/$defs/Formula",
+      "quantity": "#/$defs/OtherRecord",
+      "skill": "#/$defs/OtherRecord",
+      "unit": "#/$defs/OtherRecord"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Concept"
+    },
+    {
+      "$ref": "#/$defs/Element"
+    },
+    {
+      "$ref": "#/$defs/Formula"
+    },
+    {
+      "$ref": "#/$defs/OtherRecord"
+    }
+  ]
+}

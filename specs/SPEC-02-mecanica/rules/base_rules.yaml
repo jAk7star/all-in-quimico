@@ -1,0 +1,60 @@
+version: 2
+currency_name: "Tokens"
+initial_budget: 1000
+
+pari_mutuel:
+  enabled: true
+  options: ["A", "B"]
+  betting_protocol: "simultaneous_blind"
+  house_cut: 0.10
+  recommended_house_cut_min: 0.05
+  recommended_house_cut_max: 0.15
+  min_winning_odd: 1.00
+  zero_winners_policy: "rollover_pool"
+  breakage_unit: 50
+  denominations: [50, 100, 500]
+  loser_loss_fraction: 1.0
+  self_sustaining_house: true
+
+bidding:
+  min_bid: 50
+  max_bid_phases_1_2: 500
+  phase_3_all_in_allowed: true
+  bid_increment: 50
+  hit_multiplier: null
+  miss_multiplier: -1.0
+  pass_allowed: false
+
+bonuses:
+  scientific_justification_bonus: 50
+  house_funded_rebuy_only: true
+  steal_points: 0
+
+blocks:
+  - name: "Fase 1 - Aquecimento"
+    difficulty_level: 1
+    question_count: 13
+    max_bid: 500
+    special_rules: "Apostas simultâneas em A ou B (Mín: 50 T$, Máx: 500 T$). Piso O >= 1,00x garantido."
+  - name: "Fase 2 - Desenvolvimento"
+    difficulty_level: 2
+    question_count: 7
+    max_bid: 500
+    special_rules: "Apostas simultâneas (Mín: 50 T$, Máx: 500 T$). Breakage em múltiplos de 50 T$ a favor da Casa."
+  - name: "Fase 3 - Desafio / Morte Súbita"
+    difficulty_level: 3
+    question_count: 5
+    max_bid: null
+    special_rules: "Aposta mínima dobra (100 T$) e All-in liberado (até 100% da banca)."
+
+round_flow:
+  - "1. Pergunta + respostas A e B são apresentadas."
+  - "2. Apostas Simultâneas (Fechadas): equipes escolhem A ou B e o valor em múltiplos de 50 T$, revelando ao sinal do professor."
+  - "3. Odds são calculadas: Retenção Base = min(c × T, T_perdedores), Pool Líquido P = (T − Retenção) + Rollover, O_A = P / T_A e O_B = P / T_B."
+  - "4. Resposta correta é revelada."
+  - "5. Quem acertou recebe floor((Aposta × O) / 50) × 50 Tokens (sempre >= Aposta)."
+  - "6. Quem errou perde 100% dos tokens apostados."
+  - "7. A Casa retém sua comissão base + a sobra de arredondamento (Breakage). Se ninguém acertar, P acumula (Rollover) para a próxima rodada."
+  - "8. Equipe zerada (0 T$) pode ganhar Repescagem Científica (+50 T$) explicando a resolução, paga apenas se o Caixa da Casa tiver lucro >= 50 T$."
+
+tiebreaker: "sudden_death"

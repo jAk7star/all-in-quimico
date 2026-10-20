@@ -1,0 +1,77 @@
+records:
+  - id: CHEM-FRM-001
+    type: formula
+    version: 1
+    status: review
+    name: Concentração comum
+    domain: CHEM-SOL
+    expression: "C = m_soluto / V_solucao"
+    relation: {result: C, op: divide, left: m_soluto, right: V_solucao}
+    variables:
+      C: {name: concentração comum, quantity: common_concentration, unit: g/L}
+      m_soluto: {name: massa do soluto, quantity: mass, unit: g}
+      V_solucao: {name: volume final da solução, quantity: volume, unit: L}
+    conditions:
+      - O volume utilizado é o volume final da solução.
+      - As unidades devem ser compatíveis com g/L.
+    limitations:
+      - A fórmula não representa diretamente concentração molar.
+      - A massa considerada é a do soluto, não a massa total da solução.
+    sources: []
+
+  - id: CHEM-FRM-002
+    type: formula
+    version: 1
+    status: review
+    name: Concentração em quantidade de matéria
+    domain: CHEM-SOL
+    expression: "c = n_soluto / V_solucao"
+    relation: {result: c, op: divide, left: n_soluto, right: V_solucao}
+    variables:
+      c: {name: concentração em quantidade de matéria, quantity: molar_concentration, unit: mol/L}
+      n_soluto: {name: quantidade de matéria do soluto, quantity: amount_of_substance, unit: mol}
+      V_solucao: {name: volume final da solução, quantity: volume, unit: L}
+    conditions:
+      - O volume utilizado é o volume final da solução.
+    limitations:
+      - Notação c ou [X] varia conforme o livro; esta base adota c.
+    sources: []
+
+  - id: CHEM-FRM-003
+    type: formula
+    version: 1
+    status: review
+    name: Quantidade de matéria
+    domain: CHEM-STO
+    expression: "n = m / M"
+    relation: {result: n, op: divide, left: m, right: M}
+    variables:
+      n: {name: quantidade de matéria, quantity: amount_of_substance, unit: mol}
+      m: {name: massa da amostra, quantity: mass, unit: g}
+      M: {name: massa molar, quantity: molar_mass, unit: g/mol}
+    conditions:
+      - A amostra é uma substância pura de fórmula definida.
+    limitations:
+      - Não se aplica diretamente a misturas ou materiais de composição variável.
+    data_dependencies: [molar_mass]
+    sources: []
+
+  - id: CHEM-FRM-004
+    type: formula
+    version: 1
+    status: review
+    name: Diluição de uma mesma espécie de soluto
+    domain: CHEM-SOL
+    expression: "c1 * V1 = c2 * V2"
+    variables:
+      c1: {name: concentração inicial, quantity: molar_concentration, unit: mol/L}
+      V1: {name: volume inicial, quantity: volume, unit: L}
+      c2: {name: concentração final, quantity: molar_concentration, unit: mol/L}
+      V2: {name: volume final, quantity: volume, unit: L}
+    conditions:
+      - A quantidade de soluto é conservada na diluição.
+      - As concentrações se referem à mesma espécie dissolvida.
+      - Volumes e concentrações em unidades dimensionalmente consistentes.
+    limitations:
+      - Não se aplica se houver reação do soluto com o solvente que altere a espécie considerada.
+    sources: []

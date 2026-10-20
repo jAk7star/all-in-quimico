@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Impressão Duplex Intercalada (Frente e Verso)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>Impressão Duplex Intercalada (Frente e Verso Perfeitos — Sistema Pari-Mutuel A vs B)</h2>
+        <p>Este arquivo já intercala cada folha de <strong>Frente</strong> com sua respectiva folha de <strong>Verso espelhado horizontalmente</strong>. Ao imprimir frente e verso na impressora (selecione <em>"Virar na borda longa" / "Flip on long edge"</em>), cada carta terá seu verso perfeitamente encaixado no corte!</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Tudo em Duplex (A4)</button>
+    </div>
+
+    {% for sheet in duplex_sheets %}
+    <!-- ==================== PÁGINA FRENTE ==================== -->
+    <div class="page page-front">
+        <div class="crop-mark crop-mark-v crop-top-0"></div>
+        <div class="crop-mark crop-mark-v crop-top-1"></div>
+        <div class="crop-mark crop-mark-v crop-top-2"></div>
+        <div class="crop-mark crop-mark-v crop-top-3"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-0"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-1"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-2"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-3"></div>
+
+        <div class="crop-mark crop-mark-h crop-left-0"></div>
+        <div class="crop-mark crop-mark-h crop-left-1"></div>
+        <div class="crop-mark crop-mark-h crop-left-2"></div>
+        <div class="crop-mark crop-mark-h crop-left-3"></div>
+        <div class="crop-mark crop-mark-h crop-right-0"></div>
+        <div class="crop-mark crop-mark-h crop-right-1"></div>
+        <div class="crop-mark crop-mark-h crop-right-2"></div>
+        <div class="crop-mark crop-mark-h crop-right-3"></div>
+
+        <div class="cards-sheet">
+            {% for card in sheet.front_cards %}
+            <div class="card {{ card.css_class }} level-{{ card.level }}">
+                <!-- Cabeçalho Tipográfico Suíço -->
+                <div class="card-header">
+                    <div class="header-left">
+                        <span class="level-indicator">Nível {{ card.level }}</span>
+                        <span class="header-sep">/</span>
+                        <span class="domain-tag">{{ card.domain_clean }}</span>
+                    </div>
+                    <div class="lot-label">
+                        {{ card.number }}
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    {% if card.is_question %}
+                        <div class="statement">{{ card.statement_html|safe }}</div>
+
+                        {% if card.options %}
+                        <ul class="options-list">
+                            {% for opt in card.options %}
+                            <li class="option-item">
+                                <span class="option-letter">{{ opt.key }}</span>
+                                <span class="option-text">{{ opt.text_html|safe }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if card.given_data %}
+                        <div class="given-data-box">
+                            <div class="given-data-title">Dados Fornecidos</div>
+                            <ul class="given-data-items">
+                                {% for item in card.given_data %}
+                                <li>{{ item.label|safe }} = <strong>{{ item.value }} {{ item.unit }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                    {% else %}
+                        <div class="answer-banner">
+                            <div class="answer-label">Resposta Correta (Pool Vencedor)</div>
+                            <div class="answer-value">{{ card.correct_answer_html|safe }}</div>
+                        </div>
+
+                        {% if card.worked_solution %}
+                        <div class="solution-box">
+                            <div class="solution-title">Resolução</div>
+                            <div class="solution-math">{{ card.worked_solution_html|safe }}</div>
+                        </div>
+                        {% endif %}
+
+                        {% if card.scientific_justification %}
+                        <div class="justification-box">
+                            <span class="justification-title">Fundamentação:</span> {{ card.scientific_justification_html|safe }}
+                        </div>
+                        {% endif %}
+
+                        {% if card.distractors %}
+                        <div class="distractors-box">
+                            <div class="distractors-title">Por que a outra opção perde?</div>
+                            {% for dist in card.distractors %}
+                            <div class="distractor-item"><strong>{{ dist.key }}:</strong> {{ dist.rationale|safe }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <div class="rules-reminder-box">
+                            <span>P = T × (1 − c)</span>
+                            <span>Odd: O<sub>{{ card.correct_key }}</sub> = P / T<sub>{{ card.correct_key }}</sub></span>
+                            <span>Retorno: O × Aposta</span>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer">
+                    <span>{{ card.id }}</span>
+                    <span>APOSTE SEUS TOKENS: A OU B</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>Leilão de Química (Pari-Mutuel) • FRENTE - Folha {{ loop.index }}</span>
+            <span>Cartas {{ sheet.first_num }} a {{ sheet.last_num }}</span>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA VERSO (ESPELHADA HORIZONTALMENTE) ==================== -->
+    <div class="page page-back">
+        <div class="crop-mark crop-mark-v crop-top-0"></div>
+        <div class="crop-mark crop-mark-v crop-top-1"></div>
+        <div class="crop-mark crop-mark-v crop-top-2"></div>
+        <div class="crop-mark crop-mark-v crop-top-3"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-0"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-1"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-2"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-3"></div>
+
+        <div class="crop-mark crop-mark-h crop-left-0"></div>
+        <div class="crop-mark crop-mark-h crop-left-1"></div>
+        <div class="crop-mark crop-mark-h crop-left-2"></div>
+        <div class="crop-mark crop-mark-h crop-left-3"></div>
+        <div class="crop-mark crop-mark-h crop-right-0"></div>
+        <div class="crop-mark crop-mark-h crop-right-1"></div>
+        <div class="crop-mark crop-mark-h crop-right-2"></div>
+        <div class="crop-mark crop-mark-h crop-right-3"></div>
+
+        <div class="cards-sheet">
+            {% for card in sheet.back_cards_mirrored %}
+            <div class="card card-back level-{{ card.level }}">
+                <div class="card-back-pattern"></div>
+
+                <div class="card-back-center">
+                    <div class="card-back-game-title">LEILÃO DE QUÍMICA</div>
+                    <div class="card-back-lot-badge">{{ card.number }}</div>
+                    <div class="card-back-type-title">
+                        {% if card.is_question %}PERGUNTA (A ou B){% else %}RESPOSTA{% endif %}
+                    </div>
+                </div>
+
+                <div class="card-back-footer">
+                    <span>NÍVEL {{ card.level }} • {{ card.id }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>Leilão de Química (Pari-Mutuel) • VERSO ESPELHADO - Folha {{ loop.index }}</span>
+            <span>Verso das Cartas {{ sheet.first_num }} a {{ sheet.last_num }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

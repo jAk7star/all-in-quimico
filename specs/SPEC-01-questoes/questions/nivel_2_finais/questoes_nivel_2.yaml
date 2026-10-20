@@ -1,0 +1,153 @@
+# Questões de Nível 2 (Fase 2: Rodadas Finais 5 a 8 e Médio Aprofundamento)
+questions:
+  - id: Q-SOL-002
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração comum convertendo o volume de mL para L.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-SOL-001, CHEM-UNT-CONVERSION]
+    formula_refs: [CHEM-FRM-001]
+    statement: >-
+      Dissolveram-se 4,0 g de soluto em água, obtendo-se 500 mL de solução.
+      Calcule a concentração comum, em g/L.
+    given_data:
+      massa_soluto: {value: 4.0, unit: g}
+      volume_solucao: {value: 500, unit: mL, description: volume final da solução}
+    calc:
+      id: concentracao
+      kind: formula
+      formula_ref: CHEM-FRM-001
+      target: C
+      inputs: {m_soluto: massa_soluto, V_solucao: volume_solucao}
+      expected: {value: 8.0, unit: g/L, tolerance: 0.01}
+    worked_solution: "500 mL = 0,500 L; C = 4,0 g / 0,500 L = 8,0 g/L."
+    scientific_justification: A fórmula exige volume em L, então a conversão de mL para L faz parte da resolução.
+
+  - id: Q-SOL-003
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração em quantidade de matéria.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-SOL-002]
+    formula_refs: [CHEM-FRM-002]
+    statement: >-
+      Uma solução contém 0,50 mol de soluto em 250 mL de solução. Calcule a
+      concentração em quantidade de matéria, em mol/L.
+    given_data:
+      quantidade_soluto: {value: 0.50, unit: mol}
+      volume_solucao: {value: 250, unit: mL, description: volume final da solução}
+    calc:
+      id: molaridade
+      kind: formula
+      formula_ref: CHEM-FRM-002
+      target: c
+      inputs: {n_soluto: quantidade_soluto, V_solucao: volume_solucao}
+      expected: {value: 2.0, unit: mol/L, tolerance: 0.01}
+    worked_solution: "250 mL = 0,250 L; c = 0,50 mol / 0,250 L = 2,0 mol/L."
+    scientific_justification: A concentração em quantidade de matéria usa o volume final da solução em litros.
+
+  - id: Q-SOL-004
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração final de uma diluição.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-SOL-003]
+    formula_refs: [CHEM-FRM-004]
+    statement: >-
+      100 mL de uma solução 2,0 mol/L de um soluto foram diluídos com água até
+      o volume final de 400 mL. Qual a concentração final, em mol/L?
+    given_data:
+      c_inicial: {value: 2.0, unit: mol/L}
+      v_inicial: {value: 100, unit: mL}
+      v_final: {value: 400, unit: mL, description: volume final após a diluição}
+    assumptions: [O soluto é a mesma espécie antes e depois da diluição, sem reação com o solvente.]
+    calc:
+      id: c_final
+      kind: formula
+      formula_ref: CHEM-FRM-004
+      target: c2
+      inputs: {c1: c_inicial, V1: v_inicial, V2: v_final}
+      expected: {value: 0.50, unit: mol/L, tolerance: 0.01}
+    worked_solution: "c1·V1 = c2·V2 → c2 = 2,0 × 100 / 400 = 0,50 mol/L."
+    scientific_justification: A quantidade de soluto se conserva na diluição, então c1·V1 = c2·V2.
+
+  - id: Q-SOL-009
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Determinar a concentração resultante ao misturar volumes iguais de soluções do mesmo soluto.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-SOL-MIX]
+    statement: "Ao misturar 100 mL de solução de NaCl 2,0 mol/L com 100 mL de solução de NaCl 4,0 mol/L do mesmo sal, qual a concentração final da mistura?"
+    options:
+      - {key: A, text: "6,0 mol/L", rationale: "Soma direta das concentrações sem considerar a diluição do volume total.", mistake_ref: {concept: CHEM-SOL-MIX, index: 0}}
+      - {key: B, text: "3,0 mol/L", rationale: "Correta; como os volumes são iguais, a concentração final é a média aritmética simples das concentrações (2,0 + 4,0)/2 = 3,0 mol/L."}
+      - {key: C, text: "2,0 mol/L", rationale: "Apenas repete a menor concentração."}
+    correct: B
+    worked_solution: "n1 = 2,0 × 0,1 = 0,2 mol; n2 = 4,0 × 0,1 = 0,4 mol; n_total = 0,6 mol em V_total = 0,2 L → c_final = 0,6 / 0,2 = 3,0 mol/L."
+    scientific_justification: "Conservação da quantidade de soluto na mistura sem reação química."
+
+  - id: Q-STO-006
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Identificar o reagente limitante em uma reação química em proporção 1:1 mol.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-STO-LIMITING]
+    statement: "Na reação HCl + NaOH → NaCl + H<sub>2</sub>O, misturam-se 2,0 mol de HCl com 3,0 mol de NaOH. Qual é o reagente limitante e quantos mols de NaOH sobram em excesso?"
+    options:
+      - {key: A, text: "Limitante: NaOH; excesso: 1,0 mol de HCl.", rationale: "Confunde quem é o limitante com o excesso."}
+      - {key: B, text: "Limitante: HCl; excesso: 1,0 mol de NaOH.", rationale: "Correta; a proporção é 1:1, então 2,0 mol de HCl consomem 2,0 mol de NaOH, restando 1,0 mol de NaOH."}
+      - {key: C, text: "Não há limitante, pois ambos reagem completamente.", rationale: "Ignora as quantidades iniciais diferentes em uma reação 1:1."}
+    correct: B
+    worked_solution: "Proporção estequiométrica de 1:1 mol. Como temos apenas 2,0 mol de HCl, este é totalmente consumido (limitante). Sobram 3,0 - 2,0 = 1,0 mol de NaOH em excesso."
+    scientific_justification: "O reagente com menor quantidade em mols para a proporção 1:1 limita a reação."
+
+  - id: Q-ENV-005
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Explicar o papel dos conversores catalíticos veiculares na diminuição da poluição urbana.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-ENV-CATALYTIC]
+    statement: "Os conversores catalíticos (escapamento) dos automóveis ajudam a diminuir a contaminação do ar urbano. Qual transformação química ocorre no catalisador veicular?"
+    options:
+      - {key: A, text: "Transformação do gás tóxico monóxido de carbono (CO) em dióxido de carbono (CO<sub>2</sub>).", rationale: "Correta; o catalisador oxida o CO tóxico a CO2 (menos tóxico à saúde imediata)."}
+      - {key: B, text: "Destruição total de átomos de carbono e nitrogênio.", rationale: "A matéria não é destruída, apenas rearranjada."}
+      - {key: C, text: "Consumo total do catalisador de platina a cada aceleração.", rationale: "Catalisadores não são consumidos nas reações.", mistake_ref: {concept: CHEM-ENV-CATALYTIC, index: 0}}
+    correct: A
+    worked_solution: "Oxidação catalítica: 2 CO + O<sub>2</sub> → 2 CO<sub>2</sub> e redução de NO<sub>x</sub> a N<sub>2</sub>."
+    scientific_justification: "Aceleração de reações de conversão de poluentes gasosos por catalisadores heterogêneos."
+
+  - id: Q-STO-007
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular a quantidade de produto formada considerando rendimento percentual.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-STO-YIELD]
+    statement: "Em uma reação com rendimento de 80%, a quantidade teórica esperada de produto era 10,0 mol. Qual a quantidade de produto obtida na prática?"
+    options:
+      - {key: A, text: "10,0 mol", rationale: "Seria obtida apenas com rendimento de 100%."}
+      - {key: B, text: "8,0 mol", rationale: "Correta; n_real = 80% de 10,0 mol = 0,80 × 10,0 = 8,0 mol."}
+      - {key: C, text: "12,5 mol", rationale: "Dividiu a quantidade teórica por 0,80."}
+    correct: B
+    worked_solution: "Quantidade prática = 10,0 mol × (80 / 100) = 8,0 mol."
+    scientific_justification: "Rendimento percentual = (Quantidade Real / Quantidade Teórica) × 100%."

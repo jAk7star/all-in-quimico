@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - {{ deck_title }}</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>{{ deck_title }}</h2>
+        <p>Folhas de Verso (Costa) das Cartas. Se for colar em folhas avulsas, imprima e una com a folha de frente correspondente.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Versos (A4)</button>
+    </div>
+
+    {% for page in pages %}
+    <div class="page">
+        <!-- Crop Marks Verticais -->
+        <div class="crop-mark crop-mark-v crop-top-0"></div>
+        <div class="crop-mark crop-mark-v crop-top-1"></div>
+        <div class="crop-mark crop-mark-v crop-top-2"></div>
+        <div class="crop-mark crop-mark-v crop-top-3"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-0"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-1"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-2"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-3"></div>
+
+        <!-- Crop Marks Horizontais -->
+        <div class="crop-mark crop-mark-h crop-left-0"></div>
+        <div class="crop-mark crop-mark-h crop-left-1"></div>
+        <div class="crop-mark crop-mark-h crop-left-2"></div>
+        <div class="crop-mark crop-mark-h crop-left-3"></div>
+        <div class="crop-mark crop-mark-h crop-right-0"></div>
+        <div class="crop-mark crop-mark-h crop-right-1"></div>
+        <div class="crop-mark crop-mark-h crop-right-2"></div>
+        <div class="crop-mark crop-mark-h crop-right-3"></div>
+
+        <div class="cards-sheet">
+            {% for card in page.cards %}
+            <div class="card card-back level-{{ card.level }}">
+                <div class="card-back-pattern"></div>
+                <div class="card-back-center">
+                    <div class="card-back-game-title">LEILÃO DE QUÍMICA</div>
+                    <div class="card-back-lot-badge">{{ card.number }}</div>
+                    <div class="card-back-type-title">
+                        {% if card.is_question %}PERGUNTA{% else %}RESPOSTA{% endif %}
+                    </div>
+                </div>
+
+                <div class="card-back-footer">
+                    <span>NÍVEL {{ card.level }} • {{ card.id }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>Leilão de Química • {{ deck_title }}</span>
+            <span>Folha {{ loop.index }} de {{ pages|length }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

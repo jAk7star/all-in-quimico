@@ -1,0 +1,27 @@
+cognitive_levels: [recognition, understanding, application, analysis]
+
+domains:
+  - id: CHEM-FND
+    name: Fundamentos da Química
+    topics: [materia, propriedades, estados_fisicos, substancias, misturas, separacao]
+  - id: CHEM-ATO
+    name: Estrutura Atômica e Periodicidade
+    topics: [particulas_subatomicas, numero_atomico, numero_de_massa, isotopos, tabela_periodica]
+  - id: CHEM-BND
+    name: Ligações e Interações
+    topics: [ligacoes_quimicas, polaridade, interacoes_intermoleculares]
+  - id: CHEM-SOL
+    name: Soluções
+    topics: [soluto_solvente, concentracao, diluicao, solubilidade, mistura_de_solucoes]
+  - id: CHEM-STO
+    name: Estequiometria
+    topics: [mol, massa_molar, equacoes_quimicas, proporcoes_estequiometricas, reagente_limitante, rendimento]
+  - id: CHEM-REA
+    name: Transformações Químicas
+    topics: [tipos_de_reacao, evidencias, energia, cinetica, catalisadores, equilibrio_introdutorio]
+  - id: CHEM-ENV
+    name: Química Ambiental
+    topics: [agua, ar, solo, poluicao, tratamento, residuos, sustentabilidade, catalisadores]
+  - id: CHEM-LAB
+    name: Laboratório e Segurança
+    topics: [vidrarias, equipamentos, seguranca, tecnicas, descarte]

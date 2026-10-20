@@ -1,0 +1,27 @@
+# Valores didáticos arredondados para exercícios escolares.
+# Status "review": aprovação exige revisão científica humana (SPEC-00 §13.4).
+records:
+  - {id: CHEM-ELE-001, type: element, version: 1, status: review, name: Hidrogênio, symbol: H, atomic_number: 1,
+     atomic_mass_reference: {value: 1.0, unit: g/mol, quantity: molar_mass, context: valor didático arredondado para exercícios escolares}}
+  - {id: CHEM-ELE-006, type: element, version: 1, status: review, name: Carbono, symbol: C, atomic_number: 6,
+     atomic_mass_reference: {value: 12.0, unit: g/mol, quantity: molar_mass, context: valor didático arredondado para exercícios escolares}}
+  - {id: CHEM-ELE-007, type: element, version: 1, status: review, name: Nitrogênio, symbol: N, atomic_number: 7,
+     atomic_mass_reference: {value: 14.0, unit: g/mol, quantity: molar_mass, context: valor didático arredondado para exercícios escolares}}
+  - {id: CHEM-ELE-008, type: element, version: 1, status: review, name: Oxigênio, symbol: O, atomic_number: 8,
+     atomic_mass_reference: {value: 16.0, unit: g/mol, quantity: molar_mass, context: valor didático arredondado para exercícios escolares}}
+  - id: CHEM-ELE-011
+    type: element
+    version: 1
+    status: review
+    name: Sódio
+    symbol: Na
+    atomic_number: 11
+    atomic_mass_reference:
+      value: 23.0
+      unit: g/mol
+      quantity: molar_mass
+      context: valor didático arredondado para exercícios escolares
+    notes:
+      - Valor convencional para exercícios; não representa a massa molar exata de todas as amostras isotópicas possíveis.
+  - {id: CHEM-ELE-017, type: element, version: 1, status: review, name: Cloro, symbol: Cl, atomic_number: 17,
+     atomic_mass_reference: {value: 35.5, unit: g/mol, quantity: molar_mass, context: valor didático arredondado para exercícios escolares}}

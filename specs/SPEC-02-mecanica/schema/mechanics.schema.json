@@ -1,0 +1,336 @@
+{
+  "$defs": {
+    "BiddingRules": {
+      "properties": {
+        "min_bid": {
+          "description": "Aposta mínima em tokens (50 Tokens).",
+          "minimum": 0,
+          "title": "Min Bid",
+          "type": "integer"
+        },
+        "max_bid_phases_1_2": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 500,
+          "description": "Teto máximo de aposta por rodada nas Fases 1 e 2 (evita falência precoce na 1ª rodada).",
+          "title": "Max Bid Phases 1 2"
+        },
+        "phase_3_all_in_allowed": {
+          "default": true,
+          "description": "Permite All-in (apostar até 100% da banca) na Fase 3 - Desafio Final.",
+          "title": "Phase 3 All In Allowed",
+          "type": "boolean"
+        },
+        "bid_increment": {
+          "description": "Incremento mínimo da aposta em tokens (50 Tokens).",
+          "exclusiveMinimum": 0,
+          "title": "Bid Increment",
+          "type": "integer"
+        },
+        "hit_multiplier": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Multiplicador fixo legado (opcional; no pari-mutuel a odd O = P / T_certa é dinâmica).",
+          "title": "Hit Multiplier"
+        },
+        "miss_multiplier": {
+          "default": -1.0,
+          "description": "Multiplicador em caso de erro (-1.0 significa perder 100% dos tokens apostados).",
+          "maximum": 0,
+          "title": "Miss Multiplier",
+          "type": "number"
+        },
+        "pass_allowed": {
+          "default": false,
+          "description": "Define se é permitido passar a vez ou se todos apostam na rodada.",
+          "title": "Pass Allowed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "min_bid",
+        "bid_increment"
+      ],
+      "title": "BiddingRules",
+      "type": "object"
+    },
+    "BlockConfig": {
+      "properties": {
+        "name": {
+          "description": "Nome do bloco/fase.",
+          "title": "Name",
+          "type": "string"
+        },
+        "difficulty_level": {
+          "description": "Nível de dificuldade das questões no bloco.",
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Difficulty Level",
+          "type": "integer"
+        },
+        "question_count": {
+          "description": "Número de questões no bloco.",
+          "exclusiveMinimum": 0,
+          "title": "Question Count",
+          "type": "integer"
+        },
+        "max_bid": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Teto máximo de aposta na fase (None = All-in liberado).",
+          "title": "Max Bid"
+        },
+        "special_rules": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Regras especiais aplicáveis a este bloco.",
+          "title": "Special Rules"
+        }
+      },
+      "required": [
+        "name",
+        "difficulty_level",
+        "question_count"
+      ],
+      "title": "BlockConfig",
+      "type": "object"
+    },
+    "BonusRules": {
+      "properties": {
+        "scientific_justification_bonus": {
+          "default": 50,
+          "description": "Valor da Repescagem Científica (50 T$) para equipe zerada que explicar a resolução, pago apenas se o Caixa da Casa tiver saldo >= 50 T$.",
+          "minimum": 0,
+          "title": "Scientific Justification Bonus",
+          "type": "integer"
+        },
+        "house_funded_rebuy_only": {
+          "default": true,
+          "description": "Garante que a repescagem científica só pode ser paga usando o lucro já acumulado no Caixa da Casa.",
+          "title": "House Funded Rebuy Only",
+          "type": "boolean"
+        },
+        "steal_points": {
+          "default": 0,
+          "description": "Bônus de roubo (0 no modo pari-mutuel simultâneo).",
+          "minimum": 0,
+          "title": "Steal Points",
+          "type": "integer"
+        }
+      },
+      "title": "BonusRules",
+      "type": "object"
+    },
+    "PariMutuelRules": {
+      "description": "Configuração matemática e garantias de blindagem do sistema pari-mutuel (A vs B).",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Define se o cálculo de retorno usa o sistema pari-mutuel.",
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "options": {
+          "default": [
+            "A",
+            "B"
+          ],
+          "description": "Duas respostas possíveis por rodada: A e B.",
+          "items": {
+            "enum": [
+              "A",
+              "B"
+            ],
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Options",
+          "type": "array"
+        },
+        "betting_protocol": {
+          "default": "simultaneous_blind",
+          "description": "Protocolo de apostas: simultâneas/fechadas ao sinal do professor para evitar efeito manada.",
+          "enum": [
+            "simultaneous_blind",
+            "open_sequential",
+            "hybrid"
+          ],
+          "title": "Betting Protocol",
+          "type": "string"
+        },
+        "house_cut": {
+          "default": 0.1,
+          "description": "Percentual alvo da casa c (ex.: 0.10 = 10%, recomendado entre 5% e 15%).",
+          "maximum": 0.5,
+          "minimum": 0.0,
+          "title": "House Cut",
+          "type": "number"
+        },
+        "recommended_house_cut_min": {
+          "default": 0.05,
+          "description": "Limite inferior recomendado para o percentual da casa (5%).",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Recommended House Cut Min",
+          "type": "number"
+        },
+        "recommended_house_cut_max": {
+          "default": 0.15,
+          "description": "Limite superior recomendado para o percentual da casa (15%).",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Recommended House Cut Max",
+          "type": "number"
+        },
+        "min_winning_odd": {
+          "default": 1.0,
+          "description": "Piso de odd vencedora (O >= 1.00x): a casa só retém taxa a partir dos tokens dos perdedores.",
+          "minimum": 1.0,
+          "title": "Min Winning Odd",
+          "type": "number"
+        },
+        "zero_winners_policy": {
+          "default": "rollover_pool",
+          "description": "Se ninguém acertar (T_certa = 0), a casa retém c * T e o Pool Líquido P acumula para a próxima rodada.",
+          "enum": [
+            "rollover_pool",
+            "house_takes_all"
+          ],
+          "title": "Zero Winners Policy",
+          "type": "string"
+        },
+        "breakage_unit": {
+          "default": 50,
+          "description": "Unidade mínima de cédula para truncamento para baixo dos pagamentos (50 Tokens). A sobra fica com a Casa.",
+          "exclusiveMinimum": 0,
+          "title": "Breakage Unit",
+          "type": "integer"
+        },
+        "denominations": {
+          "default": [
+            50,
+            100,
+            500
+          ],
+          "description": "Denominações físicas de cédulas de Tokens disponíveis no jogo.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Denominations",
+          "type": "array"
+        },
+        "loser_loss_fraction": {
+          "default": 1.0,
+          "description": "Quem perde a aposta perde 100% dos tokens apostados (1.0).",
+          "maximum": 1.0,
+          "minimum": 1.0,
+          "title": "Loser Loss Fraction",
+          "type": "number"
+        },
+        "self_sustaining_house": {
+          "default": true,
+          "description": "O sistema é auto-sustentável: a casa nunca tira tokens do próprio bolso.",
+          "title": "Self Sustaining House",
+          "type": "boolean"
+        }
+      },
+      "title": "PariMutuelRules",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "version": {
+      "default": 2,
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "currency_name": {
+      "default": "Tokens",
+      "description": "Nome da moeda tokenizada do jogo.",
+      "title": "Currency Name",
+      "type": "string"
+    },
+    "initial_budget": {
+      "description": "Saldo inicial de tokens de cada aluno/equipe.",
+      "exclusiveMinimum": 0,
+      "title": "Initial Budget",
+      "type": "integer"
+    },
+    "pari_mutuel": {
+      "$ref": "#/$defs/PariMutuelRules",
+      "description": "Parâmetros oficiais do sistema de apostas pari-mutuel."
+    },
+    "bidding": {
+      "$ref": "#/$defs/BiddingRules"
+    },
+    "bonuses": {
+      "$ref": "#/$defs/BonusRules"
+    },
+    "blocks": {
+      "description": "Blocos do jogo, em dificuldade crescente.",
+      "items": {
+        "$ref": "#/$defs/BlockConfig"
+      },
+      "title": "Blocks",
+      "type": "array"
+    },
+    "round_flow": {
+      "description": "Fluxo resumido de uma rodada do sistema de apostas.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Round Flow",
+      "type": "array"
+    },
+    "tiebreaker": {
+      "description": "Método de desempate.",
+      "enum": [
+        "sudden_death",
+        "highest_accuracy",
+        "shared_victory"
+      ],
+      "title": "Tiebreaker",
+      "type": "string"
+    }
+  },
+  "required": [
+    "initial_budget",
+    "bidding",
+    "bonuses",
+    "blocks",
+    "tiebreaker"
+  ],
+  "title": "AuctionRules",
+  "type": "object"
+}

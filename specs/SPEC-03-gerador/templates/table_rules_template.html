@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Cartões de Regras de Mesa (Sistema Pari-Mutuel Blindado)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>Cartões de Regras Rápidas de Mesa (Sistema Pari-Mutuel Tokenizado e Blindado)</h2>
+        <p>Folha contendo <strong>4 cartões de regras</strong> prontos para corte. Inclui protocolo de Apostas Simultâneas, Garantia de Piso (<em>O ≥ 1,00×</em>), Rollover de Jackpot, Breakage em múltiplos de 50 T$ e Teto de Aposta / Repescagem Científica.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Cartões de Mesa (A4)</button>
+    </div>
+
+    <div class="page">
+        <!-- Linha guia de corte central cruzada -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 105mm; width: 0.5pt; background: #94a3b8; pointer-events: none;"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 148.5mm; height: 0.5pt; background: #94a3b8; pointer-events: none;"></div>
+
+        <div class="rules-cards-grid">
+            {% for i in range(4) %}
+            <div class="rule-card">
+                <div class="rule-card-header">
+                    <div style="font-size: 6pt; font-weight: 800; color: #2563eb; letter-spacing: 0.6pt; text-transform: uppercase;">Sistema de Apostas Tokenizado • Pari-Mutuel</div>
+                    <h3 class="rule-card-title">LEILÃO DE QUÍMICA</h3>
+                </div>
+
+                <div class="rule-section">
+                    <h4>1. Apostas Simultâneas (A ou B) & Limites</h4>
+                    <div>• <strong>Protocolo Fechado:</strong> As equipes escolhem secretamente <strong>A</strong> ou <strong>B</strong> e separam seus Tokens (múltiplos de <strong>50 T$</strong>), revelando juntas ao sinal do professor.</div>
+                    <div>• <strong>Fases 1 e 2:</strong> Mín. <strong>50 T$</strong> | Máx. <strong>500 T$</strong> por rodada. &nbsp;• <strong>Fase 3:</strong> Mín. <strong>100 T$</strong> | <strong>All-in liberado!</strong></div>
+                    <div>• <strong>Erro:</strong> Perde 100% dos tokens apostados (entram no Pool).</div>
+                </div>
+
+                <div class="rule-section">
+                    <h4>2. Fórmula de Odds, Piso (O ≥ 1,00×) e Breakage</h4>
+                    <div>• <strong>Pool Bruto:</strong> <em>T = T<sub>A</sub> + T<sub>B</sub></em> &nbsp;|&nbsp; <strong>Retenção Base da Casa ({{ house_cut_pct }}%):</strong> <em>min(c × T, T<sub>errada</sub>)</em></div>
+                    <div>• <strong>Pool Líquido:</strong> <em>P = (T − Retenção) + Pool Acumulado</em> &nbsp;(Garante <strong><em>O ≥ 1,00×</em></strong> para quem acerta!)</div>
+                    <div>• <strong>Odds:</strong> <em>O<sub>A</sub> = P / T<sub>A</sub></em> &nbsp;ou&nbsp; <em>O<sub>B</sub> = P / T<sub>B</sub></em></div>
+                    <div>• <strong>Pagamento (Breakage 50 T$):</strong> <em>⌊(Aposta × O) / 50⌋ × 50 T$</em> (sobra fracionária fica com a Casa).</div>
+                </div>
+
+                <div class="rule-section">
+                    <h4>3. Cenários Especiais & Repescagem Científica</h4>
+                    <div>• <strong>Maioria erra:</strong> Odd correta fica <strong>alta</strong>! &nbsp;|&nbsp; <strong>Maioria acerta:</strong> Odd fica próxima de <strong>1,00×</strong>.</div>
+                    <div>• <strong>Rollover (Se 100% errarem):</strong> A Casa retém {{ house_cut_pct }}% e o Pool Líquido <em>P</em> <strong>acumula para a próxima rodada</strong>!</div>
+                    <div>• <strong>Repescagem (+50 T$):</strong> Equipe zerada (0 T$) pode ganhar 50 T$ explicando a resolução (pago pelo lucro do Caixa da Casa).</div>
+                </div>
+
+                <div style="margin-top: auto; padding-top: 1.5mm; border-top: 0.5pt solid #e2e8f0; font-size: 5.4pt; color: #64748b; text-align: center;">
+                    <em>"Mesa 100% blindada: risco zero para a Casa e retorno proporcional para quem domina a Química!"</em>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

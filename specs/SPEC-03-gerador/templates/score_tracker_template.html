@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Ficha de Controle Pari-Mutuel Blindada</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>Ficha de Controle Pari-Mutuel Blindada — Pool, Odds, Breakage e Rollover</h2>
+        <p>Folha oficial de arbitragem com proteção de piso (<em>O ≥ 1,00×</em>), coluna de Pool Acumulado (<em>Rollover</em>), truncamento em múltiplos de 50 T$ (<em>Breakage</em>) e controle do Caixa da Casa.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Ficha de Controle (A4)</button>
+    </div>
+
+    <div class="page">
+        <div class="sheet-container" style="padding: 8mm 10mm;">
+            <div class="cheat-sheet-header" style="margin-bottom: 2mm; padding-bottom: 2mm;">
+                <div class="cheat-sheet-title">
+                    <h1 style="font-size: 12.8pt;">FICHA DE CONTROLE PARI-MUTUEL • POOL, ODDS & CAIXA DA CASA</h1>
+                    <div class="cheat-sheet-subtitle">Banca Inicial: 1.000 T$ • Fases 1 e 2: Máx 500 T$ • Fase 3: All-in • Pagamento = ⌊(Aposta × O)/50⌋ × 50 T$</div>
+                </div>
+                <div class="rules-quick-summary">
+                    <div class="quick-rule-badge">Casa: <strong>min({{ house_cut_pct }}%·T, T<sub>errada</sub>) + Breakage</strong></div>
+                    <div class="quick-rule-badge">Pool Líq.: <strong>P = (T − Casa) + Rollover</strong></div>
+                    <div class="quick-rule-badge">Odds: <strong>O = P / T<sub>certa</sub> (≥ 1,00×)</strong></div>
+                </div>
+            </div>
+
+            <table class="tracker-table" style="margin-bottom: 3mm;">
+                <thead>
+                    <tr>
+                        <th style="width: 16%;">BANCA DE TOKENS</th>
+                        <th class="th-team">EQUIPE / ALUNO 1</th>
+                        <th class="th-team">EQUIPE / ALUNO 2</th>
+                        <th class="th-team">EQUIPE / ALUNO 3</th>
+                        <th class="th-team">EQUIPE / ALUNO 4</th>
+                        <th class="th-team">EQUIPE / ALUNO 5</th>
+                        <th class="th-team">CAIXA DA CASA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: left; font-weight: 700; background: #f8fafc;">Identificação</td>
+                        <td></td><td></td><td></td><td></td><td></td><td style="background: #fefce8; font-weight: 700;">Taxa + Breakage (50 T$)</td>
+                    </tr>
+                    <tr style="background: #eff6ff; font-weight: 800;">
+                        <td style="text-align: left;">TOKENS INICIAIS</td>
+                        <td>1.000 T$</td><td>1.000 T$</td><td>1.000 T$</td><td>1.000 T$</td><td>1.000 T$</td><td style="background: #fef9c3;">0 T$ (Risco Zero)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tracker-table" style="font-size: 5.8pt;">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">ROD.</th>
+                        <th style="width: 7%;">LOTE</th>
+                        <th style="width: 10%;">TOKENS A<br>(T<sub>A</sub>)</th>
+                        <th style="width: 10%;">TOKENS B<br>(T<sub>B</sub>)</th>
+                        <th style="width: 10%;">POOL BRUTO<br>(T = T<sub>A</sub>+T<sub>B</sub>)</th>
+                        <th style="width: 10%;">ROLLOVER ANT.<br>(+ P<sub>ant</sub>)</th>
+                        <th style="width: 10%;">CASA ({{ house_cut_pct }}%)<br>min(c·T, T<sub>err</sub>)</th>
+                        <th style="width: 10%;">POOL LÍQ.<br>(P)</th>
+                        <th style="width: 9%;">GABARITO<br>(A ou B)</th>
+                        <th style="width: 9%;">ODD VENC.<br>(O = P/T<sub>certa</sub>)</th>
+                        <th style="width: 10%;">PAGAMENTO /<br>BREAKAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FASE 1 -->
+                    <tr class="phase-header">
+                        <td colspan="11">FASE 1: AQUECIMENTO (Nível 1 • Apostas Simultâneas: Mín. 50 T$ | Máx. 500 T$ • Piso O ≥ 1,00×)</td>
+                    </tr>
+                    {% for r in range(1, 6) %}
+                    <tr>
+                        <td><strong>R{{ r }}</strong></td>
+                        <td>Lote 00{{ r }}</td>
+                        <td>T<sub>A</sub> =</td>
+                        <td>T<sub>B</sub> =</td>
+                        <td>T =</td>
+                        <td>+</td>
+                        <td>Casa =</td>
+                        <td>P =</td>
+                        <td>[ ] A &nbsp;[ ] B</td>
+                        <td>O = _____×</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+
+                    <!-- FASE 2 -->
+                    <tr class="phase-header">
+                        <td colspan="11">FASE 2: DESENVOLVIMENTO (Nível 2 • Apostas Simultâneas: Mín. 50 T$ | Máx. 500 T$ • Se T_certa = 0 → P vai p/ Rollover!)</td>
+                    </tr>
+                    {% for r in range(6, 11) %}
+                    <tr>
+                        <td><strong>R{{ r }}</strong></td>
+                        <td>Lote 0{{ "%02d" % r }}</td>
+                        <td>T<sub>A</sub> =</td>
+                        <td>T<sub>B</sub> =</td>
+                        <td>T =</td>
+                        <td>+</td>
+                        <td>Casa =</td>
+                        <td>P =</td>
+                        <td>[ ] A &nbsp;[ ] B</td>
+                        <td>O = _____×</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+
+                    <!-- FASE 3 -->
+                    <tr class="phase-header">
+                        <td colspan="11">FASE 3: DESAFIO FINAL (Nível 3 • Aposta Mínima Dobrada: 100 T$ • ALL-IN LIBERADO!)</td>
+                    </tr>
+                    {% for r in range(11, 16) %}
+                    <tr>
+                        <td><strong>R{{ r }}</strong></td>
+                        <td>Lote 0{{ "%02d" % r }}</td>
+                        <td>T<sub>A</sub> =</td>
+                        <td>T<sub>B</sub> =</td>
+                        <td>T =</td>
+                        <td>+</td>
+                        <td>Casa =</td>
+                        <td>P =</td>
+                        <td>[ ] A &nbsp;[ ] B</td>
+                        <td>O = _____×</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+
+                    <!-- MORTE SÚBITA -->
+                    <tr class="phase-header" style="background: #fce4ec; color: #880e4f;">
+                        <td colspan="11">DESEMPATE / REPESCAGEM CIENTÍFICA (+50 T$ do Caixa da Casa para equipe com 0 T$ que explicar a resolução)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MS</strong></td>
+                        <td>Extra</td>
+                        <td>T<sub>A</sub> =</td>
+                        <td>T<sub>B</sub> =</td>
+                        <td>T =</td>
+                        <td>+</td>
+                        <td>Casa =</td>
+                        <td>P =</td>
+                        <td>[ ] A &nbsp;[ ] B</td>
+                        <td>O = _____×</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1pt solid #cbd5e1; padding-top: 2mm; font-size: 6.2pt;">
+                <div><strong>Vencedores:</strong> 1º: _______________ (______ T$) &nbsp;|&nbsp; 2º: _______________ (______ T$) &nbsp;|&nbsp; <strong>Lucro Líquido da Casa (Taxa + Breakage − Repescagens):</strong> ______ T$ (≥ 0)</div>
+                <div>Mediador(a): ______________________</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Grandezas (SPEC-00 §8.1). Símbolos conforme convenção adotada nesta base.
+# Registros do domínio CHEM-FND (fundamentos); status review até revisão humana.
+records:
+  - {id: CHEM-QTY-MASS, type: quantity, version: 1, status: review, domain: CHEM-FND, name: Massa,
+     symbol: m, quantity_key: mass, units: [g, kg, mg], common_unit: g}
+  - {id: CHEM-QTY-VOLUME, type: quantity, version: 1, status: review, domain: CHEM-FND, name: Volume,
+     symbol: V, quantity_key: volume, units: [L, mL], common_unit: L}
+  - {id: CHEM-QTY-AMOUNT, type: quantity, version: 1, status: review, domain: CHEM-FND, name: Quantidade de matéria,
+     symbol: n, quantity_key: amount_of_substance, units: [mol, mmol], common_unit: mol}
+  - {id: CHEM-QTY-MOLARMASS, type: quantity, version: 1, status: review, domain: CHEM-FND, name: Massa molar,
+     symbol: M, quantity_key: molar_mass, units: [g/mol, kg/mol], common_unit: g/mol,
+     notes: ["Distinta de massa atômica relativa e de massa de um átomo (SPEC-00 §7.1)."]}
+  - {id: CHEM-QTY-CONCENTRATION, type: quantity, version: 1, status: review, domain: CHEM-FND, name: Concentração comum,
+     symbol: C, quantity_key: common_concentration, units: [g/L, g/mL], common_unit: g/L}
+  - {id: CHEM-QTY-MOLARITY, type: quantity, version: 1, status: review, domain: CHEM-FND,
+     name: Concentração em quantidade de matéria, symbol: c, quantity_key: molar_concentration,
+     units: [mol/L, mmol/L], common_unit: mol/L,
+     notes: ["A notação varia (c ou [X]); esta base adota c."]}

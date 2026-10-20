@@ -1,0 +1,198 @@
+# Conceitos de apoio. CHEM-SOL-001 e CHEM-STO-001 estão em examples/ (§10.2 e §10.4).
+records:
+  - id: CHEM-SOL-002
+    type: concept
+    version: 1
+    status: review
+    name: Concentração em quantidade de matéria
+    domain: CHEM-SOL
+    topics: [concentracao]
+    definition: >-
+      Relação entre a quantidade de matéria do soluto e o volume final da solução.
+    formula_refs: [CHEM-FRM-002]
+    prerequisites: [CHEM-QTY-AMOUNT, CHEM-QTY-VOLUME, CHEM-UNT-CONVERSION, CHEM-STO-AMOUNT]
+    common_mistakes:
+      - Usar a massa do soluto em g onde a fórmula exige quantidade de matéria em mol.
+      - Utilizar o volume do solvente em vez do volume final da solução.
+    sources: []
+
+  - id: CHEM-SOL-003
+    type: concept
+    version: 1
+    status: review
+    name: Diluição
+    domain: CHEM-SOL
+    topics: [diluicao]
+    definition: >-
+      Adição de solvente a uma solução, mantendo constante a quantidade de soluto.
+    formula_refs: [CHEM-FRM-004]
+    prerequisites: [CHEM-SOL-002]
+    common_mistakes:
+      - Somar concentrações em vez de usar a conservação da quantidade de soluto.
+      - Usar o volume de solvente adicionado como V2 em vez do volume final.
+    sources: []
+
+  - id: CHEM-STO-AMOUNT
+    type: concept
+    version: 1
+    status: review
+    name: Quantidade de matéria
+    domain: CHEM-STO
+    topics: [mol]
+    definition: >-
+      Grandeza cuja unidade é o mol; para substância pura, n = m / M.
+    formula_refs: [CHEM-FRM-003]
+    prerequisites: [CHEM-QTY-MASS, CHEM-QTY-MOLARMASS]
+    common_mistakes:
+      - Dividir a massa pela massa molar com unidades incompatíveis (kg e g/mol).
+    sources: []
+
+  - id: CHEM-STO-MOLARMASS
+    type: concept
+    version: 1
+    status: review
+    name: Massa molar
+    domain: CHEM-STO
+    topics: [massa_molar]
+    definition: >-
+      Massa de um mol de uma substância, calculada pela soma das massas atômicas
+      adotadas, ponderada pelos índices da fórmula.
+    prerequisites: [CHEM-QTY-MOLARMASS]
+    common_mistakes:
+      - Ignorar os índices da fórmula ao somar as massas atômicas.
+      - Confundir massa atômica relativa com massa molar.
+    sources: []
+
+  - id: CHEM-STO-BALANCING
+    type: concept
+    version: 1
+    status: review
+    name: Balanceamento de equações
+    domain: CHEM-STO
+    topics: [equacoes_quimicas]
+    definition: >-
+      Ajuste dos coeficientes para que o número de átomos de cada elemento seja
+      igual nos dois lados da equação.
+    common_mistakes:
+      - Alterar índices das fórmulas em vez de coeficientes.
+    sources: []
+
+  - id: CHEM-ATO-TABLE
+    type: concept
+    version: 1
+    status: review
+    name: Tabela Periódica
+    domain: CHEM-ATO
+    topics: [tabela_periodica]
+    definition: >-
+      Organização dos elementos químicos em ordem crescente de número atômico, agrupando elementos com propriedades semelhantes em famílias e períodos.
+    common_mistakes:
+      - Confundir número atômico com número de massa.
+      - Confundir famílias (colunas) com períodos (linhas).
+    sources: []
+
+  - id: CHEM-ENV-ACIDRAIN
+    type: concept
+    version: 1
+    status: review
+    name: Chuva Ácida
+    domain: CHEM-ENV
+    topics: [poluicao, ar]
+    definition: >-
+      Precipitação com pH reduzido devido à reação de óxidos de enxofre e nitrogênio com o vapor de água na atmosfera.
+    common_mistakes:
+      - Acreditar que a água da chuva natural sem poluição tem pH estritamente 7,0.
+    sources: []
+
+  - id: CHEM-ENV-GREENHOUSE
+    type: concept
+    version: 1
+    status: review
+    name: Efeito Estufa e Aquecimento Global
+    domain: CHEM-ENV
+    topics: [ar, sustentabilidade]
+    definition: >-
+      Retenção de calor na atmosfera por gases como CO2 e CH4, essencial para a vida, mas intensificado pela ação humana.
+    common_mistakes:
+      - Confundir o efeito estufa com a destruição da camada de ozônio.
+    sources: []
+
+  - id: CHEM-ENV-EQUILIBRIUM
+    type: concept
+    version: 1
+    status: review
+    name: Equilíbrio Ambiental e Ecossistemas
+    domain: CHEM-ENV
+    topics: [sustentabilidade]
+    definition: >-
+      Estado de estabilidade dinâmica em um ecossistema onde organismos e ambiente interagem mantendo a reciclagem de matéria e fluxo de energia.
+    common_mistakes:
+      - Considerar que equilíbrio ambiental significa ausência total de transformações químicas.
+    sources: []
+
+  - id: CHEM-ENV-SOCIOECON
+    type: concept
+    version: 1
+    status: review
+    name: Questões Sociogeoeconômicas da Química
+    domain: CHEM-ENV
+    topics: [residuos, sustentabilidade]
+    definition: >-
+      Impactos sociais, geográficos e econômicos relacionados à exploração de recursos naturais, descarte de resíduos e poluição industrial.
+    common_mistakes:
+      - Desconsiderar os custos sociais e de saneamento no descarte inadequado de efluentes industriais.
+    sources: []
+
+  - id: CHEM-STO-LIMITING
+    type: concept
+    version: 1
+    status: review
+    name: Reagente Limitante e em Excesso
+    domain: CHEM-STO
+    topics: [reagente_limitante]
+    definition: >-
+      O reagente limitante é aquele consumido totalmente primeiro, determinando a quantidade máxima de produto formada.
+    common_mistakes:
+      - Achar que o reagente em menor massa em gramas é sempre o limitante, sem considerar a proporção estequiométrica em mol.
+    sources: []
+
+  - id: CHEM-STO-YIELD
+    type: concept
+    version: 1
+    status: review
+    name: Rendimento de Reação Química
+    domain: CHEM-STO
+    topics: [rendimento]
+    definition: >-
+      Razão percentual entre a quantidade de produto obtida na prática e a quantidade teórica esperada pela estequiometria.
+    common_mistakes:
+      - Calcular o rendimento sobre a massa do reagente em excesso.
+    sources: []
+
+  - id: CHEM-SOL-MIX
+    type: concept
+    version: 1
+    status: review
+    name: Mistura de Soluções com mesmo Soluto
+    domain: CHEM-SOL
+    topics: [mistura_de_solucoes]
+    definition: >-
+      A quantidade total de soluto final é a soma das quantidades de soluto de cada solução inicial misturada.
+    common_mistakes:
+      - Fazer a média aritmética simples das concentrações sem considerar os volumes misturados.
+    sources: []
+
+  - id: CHEM-ENV-CATALYTIC
+    type: concept
+    version: 1
+    status: review
+    name: Conversores Catalíticos e Emissões Industriais
+    domain: CHEM-ENV
+    topics: [poluicao, catalisadores, sustentabilidade]
+    definition: >-
+      Uso de catalisadores em escapamentos e chaminés para transformar gases poluentes (CO, NOx) em substâncias inofensivas (CO2, N2).
+    common_mistakes:
+      - Acreditar que catalisadores são consumidos durante o processo de purificação.
+    sources: []
+
+

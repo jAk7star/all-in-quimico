@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Cédulas Oficiais de Tokens</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>Cédulas de Tokens (T$) — Grid Modular Suíço (Sistema Pari-Mutuel)</h2>
+        <p>Grid A4 rigoroso de <strong>12 cédulas de Tokens por página</strong> (95mm x 45mm) para apostas nas alternativas <strong>A</strong> ou <strong>B</strong> do Pool Pari-Mutuel.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Cédulas de Tokens (A4)</button>
+    </div>
+
+    {% for page in money_pages %}
+    <div class="page">
+        <!-- Guias de Corte Verticais Contínuas -->
+        <div class="money-cut-v money-cut-v-left"></div>
+        <div class="money-cut-v money-cut-v-mid"></div>
+        <div class="money-cut-v money-cut-v-right"></div>
+
+        <!-- Guias de Corte Horizontais Contínuas -->
+        <div class="money-cut-h" style="top: 13.5mm;"></div>
+        <div class="money-cut-h" style="top: 58.5mm;"></div>
+        <div class="money-cut-h" style="top: 103.5mm;"></div>
+        <div class="money-cut-h" style="top: 148.5mm;"></div>
+        <div class="money-cut-h" style="top: 193.5mm;"></div>
+        <div class="money-cut-h" style="top: 238.5mm;"></div>
+        <div class="money-cut-h" style="top: 283.5mm;"></div>
+
+        <div class="money-sheet">
+            {% for note in page.notes %}
+            <div class="money-note note-{{ note.value }}">
+                <!-- COLUNA 1: SEGURANÇA KINEGRAM (18mm) -->
+                <div class="money-col-security">
+                    <div class="col-num-top">{{ note.value }}</div>
+
+                    <div class="kinegram-wave">
+                        <svg viewBox="0 0 16 48" width="11" height="26" fill="none" stroke="currentColor" stroke-width="0.8">
+                            <path d="M8 0 Q14 8 8 16 T8 32 T8 48"/>
+                            <path d="M4 0 Q10 8 4 16 T4 32 T4 48" stroke-opacity="0.35"/>
+                            <path d="M12 0 Q18 8 12 16 T12 32 T12 48" stroke-opacity="0.35"/>
+                        </svg>
+                    </div>
+
+                    <div class="kinegram-microtext">
+                        {% if note.value == 50 %}
+                        C6H6·SP2·NA=6.02E23
+                        {% elif note.value == 100 %}
+                        PSI·WAVE·1S2·2S2·2P6
+                        {% else %}
+                        FCC·CRYSTAL·PV=NRT
+                        {% endif %}
+                    </div>
+
+                    <div class="col-num-bottom">{{ note.value }}</div>
+                </div>
+
+                <!-- COLUNA 2: CENTRO CIENTÍFICO E INSTITUCIONAL (46mm) -->
+                <div class="money-col-center">
+                    <div class="center-top">
+                        <span class="issuer-name">POOL CENTRAL DE QUÍMICA</span>
+                        <span class="issuer-series">TOKEN PARI-MUTUEL</span>
+                    </div>
+
+                    <div class="center-diagram">
+                        {% if note.value == 50 %}
+                        <!-- Diagrama 50: Anel do Benzeno e Orbitais sp2 -->
+                        <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
+                            <polygon points="28,8 44,8 52,22 44,34 28,34 20,22" stroke-width="1.2"/>
+                            <circle cx="36" cy="21" r="7.5" stroke-dasharray="2 1.5" stroke-width="1"/>
+                            <line x1="20" y1="22" x2="10" y2="22" stroke-width="0.7"/>
+                            <line x1="52" y1="22" x2="62" y2="22" stroke-width="0.7"/>
+                            <line x1="28" y1="8" x2="22" y2="1" stroke-width="0.7"/>
+                            <line x1="44" y1="8" x2="50" y2="1" stroke-width="0.7"/>
+                            <circle cx="28" cy="8" r="1.5" fill="currentColor"/>
+                            <circle cx="44" cy="8" r="1.5" fill="currentColor"/>
+                            <circle cx="52" cy="22" r="1.5" fill="currentColor"/>
+                            <circle cx="44" cy="34" r="1.5" fill="currentColor"/>
+                            <circle cx="28" cy="34" r="1.5" fill="currentColor"/>
+                            <circle cx="20" cy="22" r="1.5" fill="currentColor"/>
+                            <text x="58" y="32" font-size="4.2" fill="currentColor" font-family="monospace">120°</text>
+                        </svg>
+                        <div class="diagram-tag">ESTRUTURA MOLECULAR sp² · BENZENO</div>
+
+                        {% elif note.value == 100 %}
+                        <!-- Diagrama 100: Orbitais Atômicos e Ondas -->
+                        <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
+                            <circle cx="40" cy="19" r="2.5" fill="currentColor"/>
+                            <ellipse cx="40" cy="19" rx="22" ry="8" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
+                            <ellipse cx="40" cy="19" rx="8" ry="15" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
+                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(45 40 19)" stroke-width="1"/>
+                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(-45 40 19)" stroke-width="1"/>
+                            <circle cx="26" cy="10" r="1.5" fill="currentColor"/>
+                            <circle cx="54" cy="28" r="1.5" fill="currentColor"/>
+                        </svg>
+                        <div class="diagram-tag">DENSIDADE ELETRÔNICA · ORBITAL</div>
+
+                        {% else %}
+                        <!-- Diagrama 500: Rede Cristalina Cúbica 3D -->
+                        <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
+                            <polygon points="38,6 56,14 56,31 38,23" stroke-width="1"/>
+                            <polygon points="38,6 20,14 20,31 38,23" stroke-width="1"/>
+                            <polygon points="38,6 56,14 38,20 20,14" stroke-width="1"/>
+                            <circle cx="38" cy="6" r="1.8" fill="currentColor"/>
+                            <circle cx="56" cy="14" r="1.8" fill="currentColor"/>
+                            <circle cx="56" cy="31" r="1.8" fill="currentColor"/>
+                            <circle cx="38" cy="23" r="1.8" fill="currentColor"/>
+                            <circle cx="20" cy="14" r="1.8" fill="currentColor"/>
+                            <circle cx="20" cy="31" r="1.8" fill="currentColor"/>
+                            <circle cx="38" cy="17" r="2.2" fill="currentColor"/>
+                            <text x="61" y="32" font-size="4" fill="currentColor" font-family="monospace">a=b=c</text>
+                        </svg>
+                        <div class="diagram-tag">REDE CRISTALINA · CRISTALOGRAFIA</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="center-bottom">
+                        <span class="serial-tag">№ TK-{{ note.value }}-{{ "%03d" % loop.index }}</span>
+                        <span class="auth-tag">Lavoisier</span>
+                    </div>
+                </div>
+
+                <!-- COLUNA 3: VALOR MONUMENTAL (31mm) -->
+                <div class="money-col-value">
+                    <div class="val-num-top">{{ note.value }}</div>
+
+                    <div class="val-main-group">
+                        <div class="val-monumental"><span class="val-sym">T$</span>{{ note.value }}</div>
+                        <div class="val-words">
+                            {% if note.value == 50 %}
+                            CINQUENTA TOKENS
+                            {% elif note.value == 100 %}
+                            CEM TOKENS
+                            {% else %}
+                            QUINHENTOS TOKENS
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="val-num-bottom">
+                        <span class="curr-label">{{ currency|upper }}</span>
+                        <span class="curr-val">{{ note.value }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>Leilão de Química • Cédulas de Tokens Pari-Mutuel (Grid Modular Suíço 95mm x 45mm)</span>
+            <span>Folha {{ loop.index }} de {{ money_pages|length }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

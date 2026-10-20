@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel Blindado)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel — Opções A e B)</h2>
+        <p>Folha única de consulta rápida para o professor/mediador revelar se a resposta vencedora do pool é <strong>A</strong> ou <strong>B</strong> e liquidar as apostas com piso garantido <em>O ≥ 1,00×</em> e truncamento em múltiplos de 50 T$.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Guia do Mestre (A4)</button>
+    </div>
+
+    <div class="page">
+        <div class="sheet-container">
+            <div class="cheat-sheet-header">
+                <div class="cheat-sheet-title">
+                    <h1>GUIA DO MESTRE • GABARITO RÁPIDO (A vs B)</h1>
+                    <div class="cheat-sheet-subtitle">Tabela Consolidada de Lotes • Sistema Pari-Mutuel Blindado (Risco Zero para a Mesa)</div>
+                </div>
+                <div class="rules-quick-summary">
+                    <div class="quick-rule-badge">Casa: <strong>min(10%·T, T<sub>errada</sub>)</strong></div>
+                    <div class="quick-rule-badge">Pool Líq.: <strong>P = (T − Casa) + Rollover</strong></div>
+                    <div class="quick-rule-badge">Odd: <strong>O = P / T<sub>certa</sub> (≥ 1,00×)</strong></div>
+                    <div class="quick-rule-badge">Payout: <strong>⌊(Aposta × O)/50⌋ × 50 T$</strong></div>
+                </div>
+            </div>
+
+            <table class="cheat-sheet-table">
+                <thead>
+                    <tr>
+                        <th style="width: 11%;">LOTE</th>
+                        <th style="width: 10%;">NÍVEL</th>
+                        <th style="width: 14%;">DOMÍNIO</th>
+                        <th style="width: 26%;">OPÇÃO VENCEDORA (A ou B)</th>
+                        <th style="width: 39%;">RESOLUÇÃO / CONCEITO-CHAVE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 001</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estrutura Atômica</td>
+                        <td class="table-ans">B) Em ordem crescente de número atômico (Z).</td>
+                        <td style="font-size: 6.2pt; color: #334155;">A Tabela Periódica moderna é disposta em ordem crescente de número atômico (Z).</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 002</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estrutura Atômica</td>
+                        <td class="table-ans">B) Grupos ou Famílias com propriedades químicas semelhantes.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">As colunas verticais correspondem às Famílias ou Grupos.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 003</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">B) Dióxido de Enxofre (SO<sub>2</sub>).</td>
+                        <td style="font-size: 6.2pt; color: #334155;">O SO<sub>2</sub> emitido por indústrias e queima de combustíveis reage com vapor d'água formando ácidos.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 004</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">B) É vital para manter a temperatura da Terra adequada à vida.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">O efeito estufa natural mantém o planeta aquecido; o problema é o seu agravamento antrópico por emissão exc...</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 005</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">A) A ciclagem de nutrientes e a manutenção das cadeias alimentares.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">O equilíbrio dinâmico depende da reciclagem de matéria e fluxo de energia.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 006</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">A) Economia significativa de energia elétrica e redução no descarte de resíduos.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">A reciclagem de alumínio consome muito menos energia que a eletrolise da bauxita e gera renda.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 007</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">A) 5,0 g/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">C = m / V = 10 g / 2 L = 5 g/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 008</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">B) O volume final da solução.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">A concentração comum é a massa do soluto dividida pelo volume final da solução.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 009</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) 2,0 mol</td>
+                        <td style="font-size: 6.2pt; color: #334155;">n = m / M = 117 g / 58,5 g/mol = 2,0 mol.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 010</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">A) 0,40 mol</td>
+                        <td style="font-size: 6.2pt; color: #334155;">n = 9,2 g / 23,0 g/mol = 0,40 mol.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 011</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) Os coeficientes estequiométricos da equação balanceada.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">Os coeficientes de uma equação balanceada dão a proporção em quantidade de matéria (2 mol H<sub>2</sub> : 1...</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 012</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">A) 18,0 g/mol</td>
+                        <td style="font-size: 6.2pt; color: #334155;">M(H<sub>2</sub>O) = 2 × 1,0 + 16,0 = 18,0 g/mol.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-1">
+                        <td class="table-lot">LOTE 013</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 1</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) 54,0 g</td>
+                        <td style="font-size: 6.2pt; color: #334155;">m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 014</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">A) Transformação do gás tóxico monóxido de carbono (CO) em dióxido de carbono (CO<sub>2</sub>).</td>
+                        <td style="font-size: 6.2pt; color: #334155;">Oxidação catalítica: 2 CO + O<sub>2</sub> → 2 CO<sub>2</sub> e redução de NO<sub>x</sub> a N<sub>2</sub>.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 015</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">B) 8,0 g/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">500 mL = 0,500 L; C = 4,0 g / 0,500 L = 8,0 g/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 016</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">A) 2,0 mol/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">250 mL = 0,250 L; c = 0,50 mol / 0,250 L = 2,0 mol/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 017</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">A) 0,50 mol/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">c1·V1 = c2·V2 → c2 = 2,0 × 100 / 400 = 0,50 mol/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 018</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">B) 3,0 mol/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">n1 = 2,0 × 0,1 = 0,2 mol; n2 = 4,0 × 0,1 = 0,4 mol; n_total = 0,6 mol em V_total = 0,2 L → c_final = 0,6 / ...</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 019</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) Limitante: HCl; excesso: 1,0 mol de NaOH.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">Proporção estequiométrica de 1:1 mol. Como temos apenas 2,0 mol de HCl, este é totalmente consumido (limita...</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-2">
+                        <td class="table-lot">LOTE 020</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 2</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) 8,0 mol</td>
+                        <td style="font-size: 6.2pt; color: #334155;">Quantidade prática = 10,0 mol × (80 / 100) = 8,0 mol.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-3">
+                        <td class="table-lot">LOTE 021</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 3</span>
+                        </td>
+                        <td>Química Ambiental</td>
+                        <td class="table-ans">B) Porque a acidificação do solo e da água solubiliza íons metálicos tóxicos (como o Al<sup>3+</sup>), lixiviando nutrientes essenciais.</td>
+                        <td style="font-size: 6.2pt; color: #334155;">A diminuição do pH do solo solubiliza metais pesados como o alumínio (Al3+), que é tóxico para peixes (dani...</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-3">
+                        <td class="table-lot">LOTE 022</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 3</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">A) 200 mL</td>
+                        <td style="font-size: 6.2pt; color: #334155;">V2 = c1·V1 / c2 = 1,0 × 50 / 0,25 = 200 mL.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-3">
+                        <td class="table-lot">LOTE 023</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 3</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">A) M = 58,5 g/mol • n = 0,20 mol • c = 0,40 mol/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">M = 23,0 + 35,5 = 58,5 g/mol; n = 11,7 / 58,5 = 0,20 mol; c = 0,20 mol / 0,500 L = 0,40 mol/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-3">
+                        <td class="table-lot">LOTE 024</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 3</span>
+                        </td>
+                        <td>Soluções</td>
+                        <td class="table-ans">B) M = 40,0 g/mol • n = 0,20 mol • c = 0,80 mol/L</td>
+                        <td style="font-size: 6.2pt; color: #334155;">M = 23,0 + 16,0 + 1,0 = 40,0 g/mol; n = 8,0 / 40,0 = 0,20 mol; c = 0,20 / 0,250 = 0,80 mol/L.</td>
+                    </tr>
+                    
+                    <tr class="row-lvl-3">
+                        <td class="table-lot">LOTE 025</td>
+                        <td>
+                            <span class="level-pill" style="display: inline-block;">Nível 3</span>
+                        </td>
+                        <td>Estequiometria</td>
+                        <td class="table-ans">B) 2,0 mol</td>
+                        <td style="font-size: 6.2pt; color: #334155;">1) Proporção 2 H<sub>2</sub> : 1 O<sub>2</sub>. Para 4,0 mol de H<sub>2</sub> seriam necessários 2,0 mol de O<sub>2</sub>. Como temos 3,0 mol de O<sub>2</sub>, o ...</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <div style="margin-top: auto; padding-top: 3mm; border-top: 1pt solid #cbd5e1; display: flex; justify-content: space-between; font-size: 6pt; color: #64748b;">
+                <span>Apostas Simultâneas (F1/F2: 50 a 500 T$ | F3: Mín. 100 T$, All-in) • Se T<sub>certa</sub> = 0 → Rollover • Repescagem: +50 T$ do Caixa da Casa</span>
+                <span>Leilão de Química v1.00 • Uso Exclusivo do Professor/Mediador</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

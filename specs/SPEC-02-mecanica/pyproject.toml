@@ -1,0 +1,15 @@
+[project]
+name = "spec-02-mecanica"
+version = "0.1.0"
+description = "Mecânica do Leilão de Química"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]

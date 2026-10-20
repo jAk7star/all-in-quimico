@@ -1,0 +1,274 @@
+# Questões de Nível 1 (Fase 1: Aquecimento)
+questions:
+  - id: Q-SOL-001
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração comum a partir da massa do soluto e do volume final da solução.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-SOL-001]
+    formula_refs: [CHEM-FRM-001]
+    statement: >-
+      Uma solução foi preparada dissolvendo 10 g de soluto em água até completar
+      2 L de solução. Calcule a concentração comum, em g/L.
+    given_data:
+      massa_soluto: {value: 10, unit: g}
+      volume_solucao: {value: 2, unit: L, description: volume final da solução}
+    calc:
+      id: concentracao
+      kind: formula
+      formula_ref: CHEM-FRM-001
+      target: C
+      inputs: {m_soluto: massa_soluto, V_solucao: volume_solucao}
+      expected: {value: 5, unit: g/L, tolerance: 0.01}
+    worked_solution: "C = m / V = 10 g / 2 L = 5 g/L."
+    scientific_justification: A concentração comum relaciona a massa do soluto ao volume final da solução.
+
+  - id: Q-SOL-006
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Identificar o volume correto na concentração comum.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-SOL-001]
+    statement: Ao calcular a concentração comum de uma solução, qual volume deve ser usado?
+    options:
+      - {key: A, text: O volume do solvente adicionado., rationale: Ignora o volume ocupado pelo soluto.,
+         mistake_ref: {concept: CHEM-SOL-001, index: 1}}
+      - {key: B, text: O volume final da solução., rationale: Correta; é o volume que aparece na definição.}
+      - {key: C, text: A massa da solução dividida pela massa do soluto., rationale: Confunde massa da solução com volume.,
+         mistake_ref: {concept: CHEM-SOL-001, index: 0}}
+    correct: B
+    worked_solution: A concentração comum é a massa do soluto dividida pelo volume final da solução.
+    scientific_justification: Definição de concentração comum, C = m_soluto / V_solucao.
+
+  - id: Q-STO-001
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular quantidade de matéria a partir da massa e da massa molar fornecida.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-STO-AMOUNT]
+    formula_refs: [CHEM-FRM-003]
+    statement: >-
+      Uma amostra pura de NaCl tem massa de 117 g. Sabendo que a massa molar do
+      NaCl é 58,5 g/mol, calcule a quantidade de matéria, em mol.
+    given_data:
+      massa_amostra: {value: 117, unit: g}
+      massa_molar: {value: 58.5, unit: g/mol, description: massa molar do NaCl}
+    calc:
+      id: quantidade
+      kind: formula
+      formula_ref: CHEM-FRM-003
+      target: n
+      inputs: {m: massa_amostra, M: massa_molar}
+      expected: {value: 2.0, unit: mol, tolerance: 0.01}
+    worked_solution: "n = m / M = 117 g / 58,5 g/mol = 2,0 mol."
+    scientific_justification: Para substância pura, n = m / M.
+
+  - id: Q-STO-002
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular quantidade de matéria usando a massa atômica fornecida.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-STO-AMOUNT]
+    formula_refs: [CHEM-FRM-003]
+    statement: >-
+      Qual a quantidade de matéria, em mol, em 9,2 g de sódio metálico?
+      Dado: massa molar do Na = 23,0 g/mol.
+    given_data:
+      massa_amostra: {value: 9.2, unit: g}
+      massa_na: {value: 23.0, unit: g/mol, element_ref: CHEM-ELE-011}
+    calc:
+      id: quantidade
+      kind: formula
+      formula_ref: CHEM-FRM-003
+      target: n
+      inputs: {m: massa_amostra, M: massa_na}
+      expected: {value: 0.40, unit: mol, tolerance: 0.01}
+    worked_solution: "n = 9,2 g / 23,0 g/mol = 0,40 mol."
+    scientific_justification: Amostra de elemento puro; n = m / M com a massa molar adotada.
+
+  - id: Q-STO-003
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Distinguir coeficientes estequiométricos de índices.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-STO-001]
+    statement: >-
+      Na equação balanceada 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, o que expressa a proporção entre
+      as quantidades de matéria das espécies?
+    options:
+      - {key: A, text: "Os índices das fórmulas (2, 2 e 1 nas fórmulas).", rationale: "Índices indicam átomos na fórmula, não proporção da reação.",
+         mistake_ref: {concept: CHEM-STO-001, index: 0}}
+      - {key: B, text: "As massas dos reagentes comparadas diretamente.", rationale: "Massas não são proporcionais aos coeficientes.",
+         mistake_ref: {concept: CHEM-STO-001, index: 1}}
+      - {key: C, text: Os coeficientes estequiométricos da equação balanceada., rationale: "Correta; 2 mol H2 : 1 mol O2 : 2 mol H2O."}
+    correct: C
+    worked_solution: "Os coeficientes de uma equação balanceada dão a proporção em quantidade de matéria (2 mol H<sub>2</sub> : 1 mol O<sub>2</sub> : 2 mol H<sub>2</sub>O)."
+    scientific_justification: Definição de proporção estequiométrica.
+
+  - id: Q-ATO-001
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ATO
+    skill: Identificar o critério de organização da Tabela Periódica moderna.
+    cognitive_level: recognition
+    difficulty: 1
+    concept_refs: [CHEM-ATO-TABLE]
+    statement: "Como os elementos químicos estão dispostos na Tabela Periódica moderna?"
+    options:
+      - {key: A, text: "Em ordem crescente de massa atômica.", rationale: "Critério antigo de Mendeleev.", mistake_ref: {concept: CHEM-ATO-TABLE, index: 0}}
+      - {key: B, text: "Em ordem crescente de número atômico (Z).", rationale: "Correta; ordenados pelo número de prótons."}
+      - {key: C, text: "Em ordem decrescente de número de nêutrons.", rationale: "Nêutrons não definem a ordem periódica."}
+    correct: B
+    worked_solution: "A Tabela Periódica moderna é disposta em ordem crescente de número atômico (Z)."
+    scientific_justification: "Lei da periodicidade de Moseley."
+
+  - id: Q-ATO-002
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ATO
+    skill: Diferenciar períodos e famílias na Tabela Periódica.
+    cognitive_level: recognition
+    difficulty: 1
+    concept_refs: [CHEM-ATO-TABLE]
+    statement: "Na Tabela Periódica, o que representam as colunas verticais?"
+    options:
+      - {key: A, text: "Períodos com o mesmo número de camadas eletrônicas.", rationale: "Linhas horizontais são os períodos.", mistake_ref: {concept: CHEM-ATO-TABLE, index: 1}}
+      - {key: B, text: "Grupos ou Famílias com propriedades químicas semelhantes.", rationale: "Correta; colunas agrupam famílias."}
+      - {key: C, text: "Isótopos do mesmo elemento químico.", rationale: "Isótopos não ocupam posições diferentes na tabela."}
+    correct: B
+    worked_solution: "As colunas verticais correspondem às Famílias ou Grupos."
+    scientific_justification: "Elementos da mesma família possuem configuração semelhante na camada de valência."
+
+  - id: Q-STO-004
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular a massa molar da água (H2O).
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-STO-MOLARMASS]
+    given_data:
+      massa_h: {value: 1.0, unit: g/mol, element_ref: CHEM-ELE-001}
+      massa_o: {value: 16.0, unit: g/mol, element_ref: CHEM-ELE-008}
+    statement: "Calcule a massa molar da água (H<sub>2</sub>O), em g/mol. Dados: M<sub>H</sub> = 1,0 g/mol, M<sub>O</sub> = 16,0 g/mol."
+    calc:
+      id: massa_molar_h2o
+      kind: molar_mass
+      composition: {CHEM-ELE-001: 2, CHEM-ELE-008: 1}
+      expected: {value: 18.0, unit: g/mol, tolerance: 0.01}
+    worked_solution: "M(H<sub>2</sub>O) = 2 × 1,0 + 16,0 = 18,0 g/mol."
+    scientific_justification: "Soma ponderada das massas atômicas dos átomos de H e O."
+
+  - id: Q-STO-005
+    type: numeric
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular a massa de uma amostra a partir do número de mols.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-STO-AMOUNT]
+    formula_refs: [CHEM-FRM-003]
+    given_data:
+      n_mols: {value: 3.0, unit: mol}
+      massa_molar_h2o: {value: 18.0, unit: g/mol}
+    statement: "Qual a massa em gramas de uma amostra de 3,0 mol de água (H<sub>2</sub>O)? Dado: M<sub>H<sub>2</sub>O</sub> = 18,0 g/mol."
+    calc:
+      id: massa_amostra
+      kind: formula
+      formula_ref: CHEM-FRM-003
+      target: m
+      inputs: {n: n_mols, M: massa_molar_h2o}
+      expected: {value: 54.0, unit: g, tolerance: 0.01}
+    worked_solution: "m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g."
+    scientific_justification: "Fórmula da quantidade de matéria m = n × M."
+
+  - id: Q-ENV-001
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Identificar as causas da chuva ácida.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ENV-ACIDRAIN]
+    statement: "Qual das alternativas indica um gás diretamente responsável pela formação da chuva ácida?"
+    options:
+      - {key: A, text: "Gás Hélio (He).", rationale: "Gás nobre inerte."}
+      - {key: B, text: "Dióxido de Enxofre (SO<sub>2</sub>).", rationale: "Correta; reage com água produzindo ácido sulfuroso/sulfúrico."}
+      - {key: C, text: "Gás Oxigênio (O<sub>2</sub>).", rationale: "Gás natural da atmosfera que não gera acidez direta."}
+    correct: B
+    worked_solution: "O SO<sub>2</sub> emitido por indústrias e queima de combustíveis reage com vapor d'água formando ácidos."
+    scientific_justification: "SO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>3</sub> (precursor de chuva ácida)."
+
+  - id: Q-ENV-002
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Compreender o papel do Efeito Estufa.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ENV-GREENHOUSE]
+    statement: "Sobre o efeito estufa natural, é correto afirmar que:"
+    options:
+      - {key: A, text: "É um fenômeno totalmente prejudicial que deve ser eliminado.", rationale: "Sem efeito estufa a Terra seria congelada.", mistake_ref: {concept: CHEM-ENV-GREENHOUSE, index: 0}}
+      - {key: B, text: "É vital para manter a temperatura da Terra adequada à vida.", rationale: "Correta; retém calor necessário para o planeta."}
+      - {key: C, text: "É causado exclusivamente por vazamentos de gás ozônio (O<sub>3</sub>).", rationale: "Incorreto; CO2 e CH4 são os principais."}
+    correct: B
+    worked_solution: "O efeito estufa natural mantém o planeta aquecido; o problema é o seu agravamento antrópico por emissão excessiva de CO<sub>2</sub> e CH<sub>4</sub>."
+    scientific_justification: "Gases de estufa retêm radiação infravermelha."
+
+  - id: Q-ENV-003
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Reconhecer os pilares do equilíbrio ambiental e ecossistemas.
+    cognitive_level: recognition
+    difficulty: 1
+    concept_refs: [CHEM-ENV-EQUILIBRIUM]
+    statement: "O que caracteriza o equilíbrio em um ecossistema natural?"
+    options:
+      - {key: A, text: "A ciclagem de nutrientes e a manutenção das cadeias alimentares.", rationale: "Correta; mantém a dinâmica do ecossistema."}
+      - {key: B, text: "A eliminação completa de decompositores e bactérias.", rationale: "Decompositores são essenciais para a ciclagem."}
+      - {key: C, text: "A interrupção de todas as reações químicas da natureza.", rationale: "Ecossistemas são sistemas dinâmicos em constante transformação.", mistake_ref: {concept: CHEM-ENV-EQUILIBRIUM, index: 0}}
+    correct: A
+    worked_solution: "O equilíbrio dinâmico depende da reciclagem de matéria e fluxo de energia."
+    scientific_justification: "Leis de conservação aplicadas à ecologia química."
+
+  - id: Q-ENV-004
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Avaliar o impacto socioeconômico da reciclagem.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ENV-SOCIOECON]
+    statement: "Qual a vantagem socioeconômica da reciclagem de alumínio em relação ao extrativismo da bauxita?"
+    options:
+      - {key: A, text: "Economia significativa de energia elétrica e redução no descarte de resíduos.", rationale: "Correta; reciclar consome ~95% menos energia."}
+      - {key: B, text: "Aumento nos custos de produção industrial e desemprego de catadores.", rationale: "Reciclagem gera empregos e reduz custos.", mistake_ref: {concept: CHEM-ENV-SOCIOECON, index: 0}}
+      - {key: C, text: "Poluição mais acentuada dos rios e solos urbanos.", rationale: "Reciclagem reduz a contaminação ambiental."}
+    correct: A
+    worked_solution: "A reciclagem de alumínio consome muito menos energia que a eletrolise da bauxita e gera renda."
+    scientific_justification: "Aspecto socioeconômico e sustentabilidade do ciclo dos materiais."

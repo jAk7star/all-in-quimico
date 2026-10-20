@@ -1,0 +1,20 @@
+# Exemplo de SPEC-00 §10.2. Os IDs de pré-requisitos foram padronizados para CHEM-XXX-...
+records:
+  - id: CHEM-SOL-001
+    type: concept
+    version: 1
+    status: approved
+    name: Concentração comum
+    domain: CHEM-SOL
+    topics: [concentracao]
+    definition: >-
+      Relação entre a massa de soluto dissolvido e o volume final da solução.
+    formula_refs: [CHEM-FRM-001]
+    prerequisites: [CHEM-QTY-MASS, CHEM-QTY-VOLUME, CHEM-UNT-CONVERSION]
+    common_mistakes:
+      - Confundir a massa do soluto com a massa da solução.
+      - Utilizar o volume do solvente em vez do volume final da solução.
+      - Utilizar mL diretamente em uma expressão que exige L sem converter a unidade.
+    examples:
+      - "Uma solução contém 10 g de soluto em volume final de 2 L. Sua concentração comum é 5 g/L."
+    sources: []

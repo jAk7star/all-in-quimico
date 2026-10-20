@@ -1,0 +1,22 @@
+﻿# Unidades e conversÃµes elementares (SPEC-00 Â§8.2).
+# `factor`: valor na unidade-base da grandeza = valor Ã— factor.
+records:
+  - {id: CHEM-UNT-G, type: unit, version: 1, status: review, domain: CHEM-FND, name: grama, symbol: g, quantity_ref: CHEM-QTY-MASS, factor: 1}
+  - {id: CHEM-UNT-MG, type: unit, version: 1, status: review, domain: CHEM-FND, name: miligrama, symbol: mg, quantity_ref: CHEM-QTY-MASS, factor: 0.001}
+  - {id: CHEM-UNT-KG, type: unit, version: 1, status: review, domain: CHEM-FND, name: quilograma, symbol: kg, quantity_ref: CHEM-QTY-MASS, factor: 1000}
+  - {id: CHEM-UNT-L, type: unit, version: 1, status: review, domain: CHEM-FND, name: litro, symbol: L, quantity_ref: CHEM-QTY-VOLUME, factor: 1}
+  - {id: CHEM-UNT-ML, type: unit, version: 1, status: review, domain: CHEM-FND, name: mililitro, symbol: mL, quantity_ref: CHEM-QTY-VOLUME, factor: 0.001}
+  - {id: CHEM-UNT-MOL, type: unit, version: 1, status: review, domain: CHEM-FND, name: mol, symbol: mol, quantity_ref: CHEM-QTY-AMOUNT, factor: 1}
+  - {id: CHEM-UNT-MMOL, type: unit, version: 1, status: review, domain: CHEM-FND, name: milimol, symbol: mmol, quantity_ref: CHEM-QTY-AMOUNT, factor: 0.001}
+
+  - id: CHEM-UNT-CONVERSION
+    type: skill
+    version: 1
+    status: review
+    domain: CHEM-FND
+    name: Converter unidades
+    definition: >-
+      Converter o valor numÃ©rico e o rÃ³tulo da unidade juntos (1 L = 1000 mL;
+      1 kg = 1000 g; 1 mol = 1000 mmol).
+    common_mistakes:
+      - Trocar apenas o rÃ³tulo da unidade sem converter o valor numÃ©rico.

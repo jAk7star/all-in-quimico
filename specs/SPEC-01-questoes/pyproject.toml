@@ -1,0 +1,17 @@
+[project]
+name = "leilao-quimico-questoes"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0", "pydantic>=2.5", "sympy>=1.12"]
+
+[project.optional-dependencies]
+dev = ["jsonschema>=4.20", "pytest>=8", "ruff>=0.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"validate_questions.py" = ["E402"]
