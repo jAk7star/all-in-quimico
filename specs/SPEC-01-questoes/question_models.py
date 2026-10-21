@@ -91,7 +91,7 @@ class MistakeRef(_Base):
 
 
 class Option(_Base):
-    key: Annotated[str, Field(pattern=r"^[A-E]$")]
+    key: Annotated[str, Field(pattern=r"^[AB]$")]
     text: Text
     rationale: Text
     mistake_ref: MistakeRef | None = None
@@ -99,12 +99,14 @@ class Option(_Base):
 
 class MultipleChoiceQuestion(_Question):
     type: Literal["multiple_choice"]
-    options: Annotated[list[Option], Field(min_length=3, max_length=5)]
-    correct: Annotated[str, Field(pattern=r"^[A-E]$")]
+    options: Annotated[list[Option], Field(min_length=2, max_length=2)]
+    correct: Annotated[str, Field(pattern=r"^[AB]$")]
+    calc: Step | None = None
+    steps: Annotated[list[Step], Field(min_length=2)] | None = None
 
 
 Question = Annotated[
-    NumericQuestion | MultiStepQuestion | MultipleChoiceQuestion,
+    MultipleChoiceQuestion,
     Field(discriminator="type"),
 ]
 _adapter = TypeAdapter(Question)

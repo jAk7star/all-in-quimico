@@ -1,0 +1,435 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPEC-01 Question",
+  "$comment": "GERADO por generate_schema.py a partir de question_models.py. Não editar à mão.",
+  "$defs": {
+    "Expected": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "tolerance": {
+          "exclusiveMinimum": 0,
+          "maximum": 0.5,
+          "title": "Tolerance",
+          "type": "number"
+        },
+        "rounding": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rounding"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "tolerance"
+      ],
+      "title": "Expected",
+      "type": "object"
+    },
+    "GivenItem": {
+      "additionalProperties": false,
+      "description": "Dado fornecido ao estudante. `element_ref` marca uma massa atômica da base.",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "element_ref": {
+          "anyOf": [
+            {
+              "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Element Ref"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "GivenItem",
+      "type": "object"
+    },
+    "MistakeRef": {
+      "additionalProperties": false,
+      "properties": {
+        "concept": {
+          "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+          "title": "Concept",
+          "type": "string"
+        },
+        "index": {
+          "minimum": 0,
+          "title": "Index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "concept",
+        "index"
+      ],
+      "title": "MistakeRef",
+      "type": "object"
+    },
+    "MultipleChoiceQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^Q-[A-Z]{3}-[0-9]{3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "domain": {
+          "pattern": "^CHEM-[A-Z]{3}$",
+          "title": "Domain",
+          "type": "string"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "skill": {
+          "minLength": 1,
+          "title": "Skill",
+          "type": "string"
+        },
+        "cognitive_level": {
+          "enum": [
+            "recognition",
+            "understanding",
+            "application",
+            "analysis"
+          ],
+          "title": "Cognitive Level",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "title": "Difficulty",
+          "type": "integer"
+        },
+        "concept_refs": {
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Concept Refs",
+          "type": "array"
+        },
+        "formula_refs": {
+          "default": [],
+          "items": {
+            "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+            "type": "string"
+          },
+          "title": "Formula Refs",
+          "type": "array"
+        },
+        "given_data": {
+          "default": {},
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "$ref": "#/$defs/GivenItem"
+            }
+          },
+          "title": "Given Data",
+          "type": "object"
+        },
+        "assumptions": {
+          "default": [],
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "worked_solution": {
+          "minLength": 1,
+          "title": "Worked Solution",
+          "type": "string"
+        },
+        "scientific_justification": {
+          "minLength": 1,
+          "title": "Scientific Justification",
+          "type": "string"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "type": {
+          "const": "multiple_choice",
+          "title": "Type",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Options",
+          "type": "array"
+        },
+        "correct": {
+          "pattern": "^[AB]$",
+          "title": "Correct",
+          "type": "string"
+        },
+        "calc": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Step"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "steps": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Step"
+              },
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Steps"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "status",
+        "domain",
+        "statement",
+        "skill",
+        "cognitive_level",
+        "difficulty",
+        "concept_refs",
+        "worked_solution",
+        "scientific_justification",
+        "type",
+        "options",
+        "correct"
+      ],
+      "title": "MultipleChoiceQuestion",
+      "type": "object"
+    },
+    "Option": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "pattern": "^[AB]$",
+          "title": "Key",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "mistake_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MistakeRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "key",
+        "text",
+        "rationale"
+      ],
+      "title": "Option",
+      "type": "object"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "description": "Cálculo recalculável pelo validador: aplicação de fórmula ou massa molar.",
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "formula",
+            "molar_mass"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "prompt": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt"
+        },
+        "formula_ref": {
+          "anyOf": [
+            {
+              "pattern": "^CHEM-[A-Z]{3}-[A-Z0-9_]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Formula Ref"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {},
+          "title": "Inputs",
+          "type": "object"
+        },
+        "composition": {
+          "anyOf": [
+            {
+              "patternProperties": {
+                "^CHEM-[A-Z]{3}-[A-Z0-9_]+$": {
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Composition"
+        },
+        "expected": {
+          "$ref": "#/$defs/Expected"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "expected"
+      ],
+      "title": "Step",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "multiple_choice": "#/$defs/MultipleChoiceQuestion"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/MultipleChoiceQuestion"
+    }
+  ]
+}

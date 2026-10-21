@@ -1,7 +1,7 @@
 # Questões de Nível 1 (Fase 1: Aquecimento)
 questions:
   - id: Q-SOL-001
-    type: numeric
+    type: multiple_choice
     version: 1
     status: review
     domain: CHEM-SOL
@@ -23,6 +23,10 @@ questions:
       target: C
       inputs: {m_soluto: massa_soluto, V_solucao: volume_solucao}
       expected: {value: 5, unit: g/L, tolerance: 0.01}
+    options:
+      - {key: A, text: "5,0 g/L", rationale: "Correta; C = m / V = 10 g / 2 L = 5,0 g/L."}
+      - {key: B, text: "20,0 g/L", rationale: "Multiplicou a massa pelo volume (10 × 2) em vez de dividir."}
+    correct: A
     worked_solution: "C = m / V = 10 g / 2 L = 5 g/L."
     scientific_justification: A concentração comum relaciona a massa do soluto ao volume final da solução.
 
@@ -37,17 +41,15 @@ questions:
     concept_refs: [CHEM-SOL-001]
     statement: Ao calcular a concentração comum de uma solução, qual volume deve ser usado?
     options:
-      - {key: A, text: O volume do solvente adicionado., rationale: Ignora o volume ocupado pelo soluto.,
+      - {key: A, text: "O volume do solvente adicionado.", rationale: Ignora o volume ocupado pelo soluto.,
          mistake_ref: {concept: CHEM-SOL-001, index: 1}}
-      - {key: B, text: O volume final da solução., rationale: Correta; é o volume que aparece na definição.}
-      - {key: C, text: A massa da solução dividida pela massa do soluto., rationale: Confunde massa da solução com volume.,
-         mistake_ref: {concept: CHEM-SOL-001, index: 0}}
+      - {key: B, text: "O volume final da solução.", rationale: Correta; é o volume que aparece na definição.}
     correct: B
     worked_solution: A concentração comum é a massa do soluto dividida pelo volume final da solução.
     scientific_justification: Definição de concentração comum, C = m_soluto / V_solucao.
 
   - id: Q-STO-001
-    type: numeric
+    type: multiple_choice
     version: 1
     status: review
     domain: CHEM-STO
@@ -69,11 +71,15 @@ questions:
       target: n
       inputs: {m: massa_amostra, M: massa_molar}
       expected: {value: 2.0, unit: mol, tolerance: 0.01}
+    options:
+      - {key: A, text: "0,50 mol", rationale: "Inverteu a razão dividindo a massa molar pela massa (58,5 / 117)."}
+      - {key: B, text: "2,0 mol", rationale: "Correta; n = m / M = 117 g / 58,5 g/mol = 2,0 mol."}
+    correct: B
     worked_solution: "n = m / M = 117 g / 58,5 g/mol = 2,0 mol."
     scientific_justification: Para substância pura, n = m / M.
 
   - id: Q-STO-002
-    type: numeric
+    type: multiple_choice
     version: 1
     status: review
     domain: CHEM-STO
@@ -95,6 +101,10 @@ questions:
       target: n
       inputs: {m: massa_amostra, M: massa_na}
       expected: {value: 0.40, unit: mol, tolerance: 0.01}
+    options:
+      - {key: A, text: "0,40 mol", rationale: "Correta; n = 9,2 g / 23,0 g/mol = 0,40 mol."}
+      - {key: B, text: "2,50 mol", rationale: "Dividiu a massa molar pela massa da amostra (23,0 / 9,2)."}
+    correct: A
     worked_solution: "n = 9,2 g / 23,0 g/mol = 0,40 mol."
     scientific_justification: Amostra de elemento puro; n = m / M com a massa molar adotada.
 
@@ -111,12 +121,10 @@ questions:
       Na equação balanceada 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, o que expressa a proporção entre
       as quantidades de matéria das espécies?
     options:
-      - {key: A, text: "Os índices das fórmulas (2, 2 e 1 nas fórmulas).", rationale: "Índices indicam átomos na fórmula, não proporção da reação.",
+      - {key: A, text: "Os coeficientes estequiométricos da equação balanceada.", rationale: "Correta; 2 mol H2 : 1 mol O2 : 2 mol H2O."}
+      - {key: B, text: "Os índices das fórmulas (2, 2 e 1 nas fórmulas).", rationale: "Índices indicam átomos na fórmula, não proporção da reação.",
          mistake_ref: {concept: CHEM-STO-001, index: 0}}
-      - {key: B, text: "As massas dos reagentes comparadas diretamente.", rationale: "Massas não são proporcionais aos coeficientes.",
-         mistake_ref: {concept: CHEM-STO-001, index: 1}}
-      - {key: C, text: Os coeficientes estequiométricos da equação balanceada., rationale: "Correta; 2 mol H2 : 1 mol O2 : 2 mol H2O."}
-    correct: C
+    correct: A
     worked_solution: "Os coeficientes de uma equação balanceada dão a proporção em quantidade de matéria (2 mol H<sub>2</sub> : 1 mol O<sub>2</sub> : 2 mol H<sub>2</sub>O)."
     scientific_justification: Definição de proporção estequiométrica.
 
@@ -133,7 +141,6 @@ questions:
     options:
       - {key: A, text: "Em ordem crescente de massa atômica.", rationale: "Critério antigo de Mendeleev.", mistake_ref: {concept: CHEM-ATO-TABLE, index: 0}}
       - {key: B, text: "Em ordem crescente de número atômico (Z).", rationale: "Correta; ordenados pelo número de prótons."}
-      - {key: C, text: "Em ordem decrescente de número de nêutrons.", rationale: "Nêutrons não definem a ordem periódica."}
     correct: B
     worked_solution: "A Tabela Periódica moderna é disposta em ordem crescente de número atômico (Z)."
     scientific_justification: "Lei da periodicidade de Moseley."
@@ -151,13 +158,12 @@ questions:
     options:
       - {key: A, text: "Períodos com o mesmo número de camadas eletrônicas.", rationale: "Linhas horizontais são os períodos.", mistake_ref: {concept: CHEM-ATO-TABLE, index: 1}}
       - {key: B, text: "Grupos ou Famílias com propriedades químicas semelhantes.", rationale: "Correta; colunas agrupam famílias."}
-      - {key: C, text: "Isótopos do mesmo elemento químico.", rationale: "Isótopos não ocupam posições diferentes na tabela."}
     correct: B
     worked_solution: "As colunas verticais correspondem às Famílias ou Grupos."
     scientific_justification: "Elementos da mesma família possuem configuração semelhante na camada de valência."
 
   - id: Q-STO-004
-    type: numeric
+    type: multiple_choice
     version: 1
     status: review
     domain: CHEM-STO
@@ -174,11 +180,15 @@ questions:
       kind: molar_mass
       composition: {CHEM-ELE-001: 2, CHEM-ELE-008: 1}
       expected: {value: 18.0, unit: g/mol, tolerance: 0.01}
+    options:
+      - {key: A, text: "18,0 g/mol", rationale: "Correta; M(H2O) = 2 × 1,0 + 16,0 = 18,0 g/mol."}
+      - {key: B, text: "17,0 g/mol", rationale: "Somou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H2O."}
+    correct: A
     worked_solution: "M(H<sub>2</sub>O) = 2 × 1,0 + 16,0 = 18,0 g/mol."
     scientific_justification: "Soma ponderada das massas atômicas dos átomos de H e O."
 
   - id: Q-STO-005
-    type: numeric
+    type: multiple_choice
     version: 1
     status: review
     domain: CHEM-STO
@@ -198,6 +208,10 @@ questions:
       target: m
       inputs: {n: n_mols, M: massa_molar_h2o}
       expected: {value: 54.0, unit: g, tolerance: 0.01}
+    options:
+      - {key: A, text: "6,0 g", rationale: "Dividiu a massa molar pelo número de mols (18,0 / 3,0) em vez de multiplicar."}
+      - {key: B, text: "54,0 g", rationale: "Correta; m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g."}
+    correct: B
     worked_solution: "m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g."
     scientific_justification: "Fórmula da quantidade de matéria m = n × M."
 
@@ -212,9 +226,8 @@ questions:
     concept_refs: [CHEM-ENV-ACIDRAIN]
     statement: "Qual das alternativas indica um gás diretamente responsável pela formação da chuva ácida?"
     options:
-      - {key: A, text: "Gás Hélio (He).", rationale: "Gás nobre inerte."}
+      - {key: A, text: "Gás Oxigênio (O<sub>2</sub>).", rationale: "Gás natural da atmosfera que não gera acidez direta."}
       - {key: B, text: "Dióxido de Enxofre (SO<sub>2</sub>).", rationale: "Correta; reage com água produzindo ácido sulfuroso/sulfúrico."}
-      - {key: C, text: "Gás Oxigênio (O<sub>2</sub>).", rationale: "Gás natural da atmosfera que não gera acidez direta."}
     correct: B
     worked_solution: "O SO<sub>2</sub> emitido por indústrias e queima de combustíveis reage com vapor d'água formando ácidos."
     scientific_justification: "SO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>3</sub> (precursor de chuva ácida)."
@@ -232,7 +245,6 @@ questions:
     options:
       - {key: A, text: "É um fenômeno totalmente prejudicial que deve ser eliminado.", rationale: "Sem efeito estufa a Terra seria congelada.", mistake_ref: {concept: CHEM-ENV-GREENHOUSE, index: 0}}
       - {key: B, text: "É vital para manter a temperatura da Terra adequada à vida.", rationale: "Correta; retém calor necessário para o planeta."}
-      - {key: C, text: "É causado exclusivamente por vazamentos de gás ozônio (O<sub>3</sub>).", rationale: "Incorreto; CO2 e CH4 são os principais."}
     correct: B
     worked_solution: "O efeito estufa natural mantém o planeta aquecido; o problema é o seu agravamento antrópico por emissão excessiva de CO<sub>2</sub> e CH<sub>4</sub>."
     scientific_justification: "Gases de estufa retêm radiação infravermelha."
@@ -249,8 +261,7 @@ questions:
     statement: "O que caracteriza o equilíbrio em um ecossistema natural?"
     options:
       - {key: A, text: "A ciclagem de nutrientes e a manutenção das cadeias alimentares.", rationale: "Correta; mantém a dinâmica do ecossistema."}
-      - {key: B, text: "A eliminação completa de decompositores e bactérias.", rationale: "Decompositores são essenciais para a ciclagem."}
-      - {key: C, text: "A interrupção de todas as reações químicas da natureza.", rationale: "Ecossistemas são sistemas dinâmicos em constante transformação.", mistake_ref: {concept: CHEM-ENV-EQUILIBRIUM, index: 0}}
+      - {key: B, text: "A interrupção de todas as reações químicas da natureza.", rationale: "Ecossistemas são sistemas dinâmicos em constante transformação.", mistake_ref: {concept: CHEM-ENV-EQUILIBRIUM, index: 0}}
     correct: A
     worked_solution: "O equilíbrio dinâmico depende da reciclagem de matéria e fluxo de energia."
     scientific_justification: "Leis de conservação aplicadas à ecologia química."
@@ -268,7 +279,6 @@ questions:
     options:
       - {key: A, text: "Economia significativa de energia elétrica e redução no descarte de resíduos.", rationale: "Correta; reciclar consome ~95% menos energia."}
       - {key: B, text: "Aumento nos custos de produção industrial e desemprego de catadores.", rationale: "Reciclagem gera empregos e reduz custos.", mistake_ref: {concept: CHEM-ENV-SOCIOECON, index: 0}}
-      - {key: C, text: "Poluição mais acentuada dos rios e solos urbanos.", rationale: "Reciclagem reduz a contaminação ambiental."}
     correct: A
     worked_solution: "A reciclagem de alumínio consome muito menos energia que a eletrolise da bauxita e gera renda."
     scientific_justification: "Aspecto socioeconômico e sustentabilidade do ciclo dos materiais."

@@ -201,16 +201,15 @@ def validate_questions(questions: list[dict], kb: dict[str, dict], taxonomy: dic
                 rep.error("ATOMIC_MASS_MISMATCH", qid, f"given_data.{name} difere da massa adotada na base ({adopted['value']})")
 
         ctx = {n: (g["value"], g["unit"]) for n, g in q.get("given_data", {}).items()}
-        if q["type"] == "numeric":
+        if q.get("calc"):
             _check_step(q, q["calc"], ctx, kb, units, rep)
-        elif q["type"] == "multi_step":
+        if q.get("steps"):
             ids = [s["id"] for s in q["steps"]]
             if len(set(ids)) != len(ids):
                 rep.error("DUPLICATE_STEP", qid, "ids de etapa repetidos")
             for step in q["steps"]:
                 _check_step(q, step, ctx, kb, units, rep)
-        else:
-            _check_multiple_choice(q, kb, rep)
+        _check_multiple_choice(q, kb, rep)
 
         if q["status"] != CONSUMABLE:
             rep.pend("NOT_APPROVED", qid, f"status '{q['status']}': aguarda revisão humana")
