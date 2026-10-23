@@ -1,7 +1,7 @@
 [project]
 name = "spec-02-mecanica"
 version = "0.1.0"
-description = "Mecânica do Leilão de Química"
+description = "Mecânica do All-In Químico"
 requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.0.0",

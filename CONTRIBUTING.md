@@ -1,6 +1,6 @@
-# Guia de Contribuição — Leilão de Química 🧪🎲
+# Guia de Contribuição — All-In Químico 🧪🎲
 
-Obrigado pelo interesse em aprimorar o **Leilão de Química**! Este projeto segue uma arquitetura rigorosa orientada por especificações (**Spec-Driven Architecture**), onde nenhum dado científico é duplicado e toda questão de cálculo é provada matematicamente via `SymPy`.
+Obrigado pelo interesse em aprimorar o **All-In Químico**! Este projeto segue uma arquitetura rigorosa orientada por especificações (**Spec-Driven Architecture**), onde nenhum dado científico é duplicado e toda questão de cálculo é provada matematicamente via `SymPy`.
 
 ---
 

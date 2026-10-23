@@ -1,7 +1,7 @@
 [project]
-name = "leilao-quimica"
+name = "all-in-quimico"
 version = "1.0.0"
-description = "Jogo didático de Química para o Ensino Médio baseado em apostas Pari-Mutuel de Risco Zero, concepções alternativas e validação científica simbólica (SymPy + Pydantic)."
+description = "All-In Químico: Jogo didático de Química para o Ensino Médio baseado em duelo de apostas A ou B (Pari-Mutuel de Risco Zero), concepções alternativas e validação científica simbólica (SymPy + Pydantic)."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

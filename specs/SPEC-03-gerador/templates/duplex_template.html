@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Leilão de Química - Impressão Duplex Intercalada (Frente e Verso)</title>
+    <title>All-In Químico - Impressão Duplex Intercalada (Frente e Verso)</title>
     <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
 </head>
 <body>
     <div class="no-print">
-        <h2>Impressão Duplex Intercalada (Frente e Verso Perfeitos — Sistema Pari-Mutuel A vs B)</h2>
+        <h2>All-In Químico — Impressão Duplex Intercalada (Duelo de Apostas A ou B)</h2>
         <p>Este arquivo já intercala cada folha de <strong>Frente</strong> com sua respectiva folha de <strong>Verso espelhado horizontalmente</strong>. Ao imprimir frente e verso na impressora (selecione <em>"Virar na borda longa" / "Flip on long edge"</em>), cada carta terá seu verso perfeitamente encaixado no corte!</p>
         <button class="print-btn" onclick="window.print()">Imprimir Tudo em Duplex (A4)</button>
     </div>
@@ -119,7 +119,7 @@
         </div>
 
         <div class="page-sheet-label">
-            <span>Leilão de Química (Pari-Mutuel) • FRENTE - Folha {{ loop.index }}</span>
+            <span>All-In Químico (Duelo de Apostas A ou B) • FRENTE - Folha {{ loop.index }}</span>
             <span>Cartas {{ sheet.first_num }} a {{ sheet.last_num }}</span>
         </div>
     </div>
@@ -150,10 +150,10 @@
                 <div class="card-back-pattern"></div>
 
                 <div class="card-back-center">
-                    <div class="card-back-game-title">LEILÃO DE QUÍMICA</div>
+                    <div class="card-back-game-title">ALL-IN QUÍMICO</div>
                     <div class="card-back-lot-badge">{{ card.number }}</div>
                     <div class="card-back-type-title">
-                        {% if card.is_question %}PERGUNTA (A ou B){% else %}RESPOSTA{% endif %}
+                        {% if card.is_question %}DUELO A OU B{% else %}RESPOSTA{% endif %}
                     </div>
                 </div>
 
@@ -165,7 +165,7 @@
         </div>
 
         <div class="page-sheet-label">
-            <span>Leilão de Química (Pari-Mutuel) • VERSO ESPELHADO - Folha {{ loop.index }}</span>
+            <span>All-In Químico (Duelo de Apostas A ou B) • VERSO ESPELHADO - Folha {{ loop.index }}</span>
             <span>Verso das Cartas {{ sheet.first_num }} a {{ sheet.last_num }}</span>
         </div>
     </div>

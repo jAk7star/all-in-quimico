@@ -1,6 +1,6 @@
 # SPEC-02 — Sistema de Apostas do Jogo (Pari-Mutuel de Risco Zero & Fase 3 Texas Hold'em)
 
-Este documento define o regulamento oficial e a modelagem matemática do sistema de apostas do jogo **Leilão de Química**, separando as regras econômicas e de rodadas (SPEC-02) do conhecimento químico subjacente (SPEC-00) e do banco de questões (SPEC-01).
+Este documento define o regulamento oficial e a modelagem matemática do sistema de apostas do jogo **All-In Químico** (Duelo de Apostas A ou B), separando as regras econômicas e de rodadas (SPEC-02) do conhecimento químico subjacente (SPEC-00) e do banco de questões (SPEC-01).
 
 ---
 

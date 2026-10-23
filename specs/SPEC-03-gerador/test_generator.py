@@ -18,7 +18,7 @@ def test_all_expected_output_files_exist():
         "cards.css",
         "001_manual_do_professor_v001.html",
         "002_guia_do_mestre_cheat_sheet_v001.html",
-        "003_ficha_controle_leilao_v001.html",
+        "003_ficha_controle_all_in_v001.html",
         "004_regras_do_aluno_v001.html",
         "005_cartoes_regras_mesa_v001.html",
         "006_dinheiro_para_imprimir_v001.html",
@@ -70,7 +70,7 @@ def test_pari_mutuel_binary_options_and_rules_content():
     assert "Texas Hold'em" in rules_html
     assert "Sem Comissão" in rules_html
 
-    tracker_html = (OUT_DIR / "003_ficha_controle_leilao_v001.html").read_text(encoding="utf-8")
+    tracker_html = (OUT_DIR / "003_ficha_controle_all_in_v001.html").read_text(encoding="utf-8")
     assert "POTE TOTAL" in tracker_html
     assert "MULTIPLICADOR" in tracker_html
 

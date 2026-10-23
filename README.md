@@ -1,11 +1,11 @@
-# 🧪🎲 Leilão de Química — O Jogo de Apostas Científicas de Risco Zero
+# 🧪🎲 All-In Químico — Duelo de Apostas A ou B (Risco Zero)
 
 [![CI — Validação Científica, Mecânica & Impressão](https://img.shields.io/badge/Valida%C3%A7%C3%A3o_Simb%C3%B3lica-SymPy_%2B_Pydantic-0284c7?style=for-the-badge)](specs/SPEC-01-questoes/validate_questions.py)
 [![Mecânica](https://img.shields.io/badge/Mec%C3%A2nica-Pari--Mutuel_Risco_Zero-16a34a?style=for-the-badge)](specs/SPEC-02-mecanica/SPEC.md)
 [![Público](https://img.shields.io/badge/Ensino_M%C3%A9dio-2%C2%BA_e_3%C2%BA_Ano-f59e0b?style=for-the-badge)](specs/SPEC-04-impressao/001_manual_do_professor_v001.html)
 [![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-64748b?style=for-the-badge)](LICENSE)
 
-> *"Em uma aula tradicional, o aluno tem medo de errar e espera o colega responder. Em um leilão mal desenhado, a banca quebra ou um único grupo domina a sala. No **Leilão de Química**, cada dúvida vira tensão estratégica, toda a turma joga junta e quem domina o conceito químico divide as fichas de quem caiu na armadilha."*
+> *"Em uma aula tradicional, o aluno tem medo de errar e espera o colega responder. Em dinâmicas convencionais de perguntas, ou a banca quebra ou um único grupo domina a sala. No **All-In Químico**, cada dúvida vira tensão estratégica, toda a turma joga junta e quem domina o conceito químico divide as fichas de quem caiu na armadilha."*
 
 ---
 
@@ -13,10 +13,10 @@
 
 Todo professor de Química do Ensino Médio já viveu a mesma cena: ao projetar uma questão de **Estequiometria**, **Soluções** ou **Química Ambiental**, dois ou três alunos das primeiras carteiras respondem rápido, enquanto o restante da sala apenas concorda em silêncio — ou chuta uma letra qualquer sem pensar.
 
-Quando tentamos transformar a revisão em um **"Leilão de Perguntas"** ou jogo de apostas em sala de aula, esbarramos em **quatro armadilhas clássicas de design de jogos pedagógicos**:
+Quando tentamos transformar a revisão em um jogo de apostas ou leilão de perguntas em sala de aula, esbarramos em **quatro armadilhas clássicas de design de jogos pedagógicos**:
 
 ### 1. O Problema da "Plateia Passiva" e do Efeito Manada
-Nos leilões tradicionais de sala de aula (onde quem dá o maior lance compra o direito de responder), **apenas uma equipe joga por vez**. As outras cinco equipes ficam assistindo passivamente. Pior: quando as respostas são abertas sequencialmente, os grupos inseguros simplesmente copiam a escolha da equipe "nerd" da turma.
+Nos formatos tradicionais de leilão de perguntas (onde quem dá o maior lance compra o direito exclusivo de responder), **apenas uma equipe joga por vez**. As outras equipes ficam assistindo passivamente. Pior: quando as respostas são reveladas sequencialmente, os grupos inseguros simplesmente copiam a escolha da equipe de maior destaque da turma.
 
 ### 2. O Problema da "Quebra da Banca" (Inflação de Fichas)
 Em jogos onde o professor promete prêmios fixos (*"Quem acertar ganha o dobro do que apostou!"*), se uma questão for fácil e toda a sala der *All-in* e acertar, o professor precisa pagar milhares de fichas que não tem. A economia do jogo colapsa na terceira rodada.
@@ -29,9 +29,9 @@ Basta uma equipe empolgada apostar todas as suas fichas na 1ª rodada e errar pa
 
 ---
 
-## 💡 A Solução: Como o **Leilão de Química** Reinventa a Dinâmica de Sala
+## 💡 A Solução: Como o **All-In Químico** Reinventa a Dinâmica de Sala
 
-Para resolver esses quatro problemas de uma só vez, combinamos **Engenharia Pedagógica (Concepções Alternativas do ENEM)** com a matemática dos **Sistemas Pari-Mutuel (Bolão Mútuo de Risco Zero)** e o suspense do **Texas Hold'em**:
+Para resolver esses quatro problemas de uma só vez, o **All-In Químico** combina **Engenharia Pedagógica (Concepções Alternativas do ENEM)** com a matemática dos **Sistemas Pari-Mutuel (Bolão Mútuo de Risco Zero)** e o suspense do **Texas Hold'em**:
 
 ```mermaid
 flowchart LR

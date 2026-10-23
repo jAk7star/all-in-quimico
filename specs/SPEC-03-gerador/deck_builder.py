@@ -515,7 +515,7 @@ def main():
         rules=rules,
         house_cut_pct=house_cut_pct,
     )
-    (OUT_DIR / f"003_ficha_controle_leilao_{ver_tag}.html").write_text(st_html, encoding="utf-8")
+    (OUT_DIR / f"003_ficha_controle_all_in_{ver_tag}.html").write_text(st_html, encoding="utf-8")
 
     # 4. Folha de Regras do Aluno (004)
     sr_html = student_rules_template.render(

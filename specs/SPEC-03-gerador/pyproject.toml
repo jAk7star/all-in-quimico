@@ -1,7 +1,7 @@
 [project]
 name = "spec-03-gerador"
 version = "0.1.0"
-description = "Gerador de Baralhos para o Leilão de Química"
+description = "Gerador de Baralhos para o All-In Químico"
 requires-python = ">=3.10"
 dependencies = [
     "pyyaml>=6.0",
