@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-In Químico — Central de Impressão & Materiais Didáticos (v001)</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #d97706;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1rem 4rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+            color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
+        }
+
+        .badge-header {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            color: #e0e7ff;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.25rem;
+        }
+
+        .header-stat-item strong {
+            color: #fbbf24;
+        }
+
+        .quick-print-bar {
+            background: #fff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            flex-wrap: wrap;
+        }
+
+        .quick-print-bar p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .quick-print-bar p strong {
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title .section-tag {
+            font-size: 0.75rem;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            border-color: #cbd5e1;
+        }
+
+        .card-num {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 0.15rem 0.45rem;
+            border-radius: 0.35rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #1e293b;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+            line-height: 1.45;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .card-link {
+            flex: 1;
+            text-align: center;
+            padding: 0.55rem 0.75rem;
+            border-radius: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .card-link-open {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .card-link-open:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .card-link-print {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .card-link-print:hover {
+            background: #1d4ed8;
+        }
+
+        .guide-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2.5rem 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .guide-box h4 {
+            color: #92400e;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guide-box ol {
+            margin-left: 1.25rem;
+            color: #78350f;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.75rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge-header">Central Unificada de Impressão • v001</div>
+        <h1>🧪🎲 ALL-IN QUÍMICO</h1>
+        <p>Hub central de navegação e impressão dos 23 materiais pedagógicos do jogo: manuais didáticos, fichas de controle pari-mutuel, cédulas de tokens e baralhos calibrados em 3 níveis.</p>
+        
+        <div class="header-stats">
+            <div class="header-stat-item">📄 <strong>23 Arquivos</strong> Prontos para A4</div>
+            <div class="header-stat-item">⚖️ <strong>25 Questões</strong> Validadas SymPy</div>
+            <div class="header-stat-item">🎲 <strong>Pari-Mutuel</strong> Risco Zero</div>
+            <div class="header-stat-item">🎯 <strong>3 Níveis</strong> + Rodada-Treino</div>
+        </div>
+    </header>
+
+    <div class="quick-print-bar">
+        <div>
+            <p><strong>Dica Rápida para o Professor:</strong> Para preparar o jogo em menos de 10 minutos, imprima primeiro o <em>Combo Básico</em>.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.2rem;">Arquivos <strong>001</strong> (Manual), <strong>002</strong> (Cheat Sheet), <strong>003</strong> (Ficha de Controle), <strong>005</strong> (Regras de Mesa), <strong>006</strong> (Dinheiro) e <strong>007</strong> (Duplex de Cartas).</p>
+        </div>
+        <a href="specs/SPEC-04-impressao/007_duplex_intercalado_para_imprimir_v001.html" target="_blank" class="btn-primary">
+            🖨️ Abrir Baralho Duplex Completo
+        </a>
+    </div>
+
+    <!-- SEÇÃO 1: GOVERNANÇA E CONTROLE -->
+    <h2 class="section-title">
+        <span>1. Governança, Mediação & Regras</span>
+        <span class="section-tag">Professor & Mesa</span>
+    </h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <span class="card-num">001</span>
+                <h3>Manual Didático do Professor</h3>
+                <p>Guia passo a passo de aplicação para o 2º e 3º ano do Ensino Médio: checklist de materiais, roteiro falado da Rodada-Treino ao vivo (valendo 0 T$), dinâmica da Fase 3 e mediação pedagógica.</p>
+            </div>
+            <div>
+                <div class="card-meta">📋 2 Páginas A4 • Para o Professor</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/001_manual_do_professor_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/001_manual_do_professor_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">002</span>
+                <h3>Guia Rápido do Mestre (Cheat Sheet)</h3>
+                <p>Gabarito resumido de bolso com as 25 questões binárias (A ou B), temas, pegadinhas/armadilhas conceituais e justificativas científicas sintetizadas para mediação imediata.</p>
+            </div>
+            <div>
+                <div class="card-meta">📋 2 Páginas A4 • Uso Exclusivo do Professor</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/002_guia_do_mestre_cheat_sheet_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/002_guia_do_mestre_cheat_sheet_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">003</span>
+                <h3>Ficha de Controle Pari-Mutuel</h3>
+                <p>Planilha física para o mediador registrar as apostas por rodada, calcular o Pote Total, determinar o Multiplicador (Odd) e computar a pontuação de cada equipe sem comissão.</p>
+            </div>
+            <div>
+                <div class="card-meta">📋 1 Página A4 • Painel do Mediador</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/003_ficha_controle_all_in_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/003_ficha_controle_all_in_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">004</span>
+                <h3>Folha de Regras das Equipes</h3>
+                <p>Manual oficial entregue aos alunos contendo os 6 passos da rodada, a matemática do pote sem comissão, a dinâmica Texas Hold'em da Fase 3 e os critérios de vitória.</p>
+            </div>
+            <div>
+                <div class="card-meta">📋 2 Páginas A4 • 1 por Equipe</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/004_regras_do_aluno_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/004_regras_do_aluno_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">005</span>
+                <h3>Cartões de Regras Rápidas de Mesa</h3>
+                <p>Folha contendo 4 cartões de regras compactos prontos para corte, perfeitos para deixar no centro da mesa de cada equipe durante as rodadas rápidas.</p>
+            </div>
+            <div>
+                <div class="card-meta">✂️ 1 Página A4 (4 cartões por folha)</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/005_cartoes_regras_mesa_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/005_cartoes_regras_mesa_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">006</span>
+                <h3>Cédulas de Dinheiro (Tokens - T$)</h3>
+                <p>Banco de cédulas nos valores de 50 T$, 100 T$ e 500 T$, diagramadas em grade 3×4 (12 cédulas por página) prontas para recorte e distribuição de fichas.</p>
+            </div>
+            <div>
+                <div class="card-meta">💵 10 Páginas A4 • Cédulas Recortáveis</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/006_dinheiro_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/006_dinheiro_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 2: BARALHO COMPLETO (25 CARTAS) -->
+    <h2 class="section-title">
+        <span>2. Baralho Geral Completo (25 Cartas)</span>
+        <span class="section-tag">Coleção Unificada</span>
+    </h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <span class="card-num">007</span>
+                <h3>Baralho Duplex Completo (Frente e Verso Intercalados)</h3>
+                <p>Arquivo ideal para impressoras com frente e verso automático (duplex) ou manual: Frente P1, Verso P1 espelhado, Frente R1, Verso R1 espelhado. Alinhamento milimétrico!</p>
+            </div>
+            <div>
+                <div class="card-meta">⭐ Recomendado para Impressão Rápida</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/007_duplex_intercalado_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/007_duplex_intercalado_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">008</span>
+                <h3>Perguntas — Baralho Geral Completo</h3>
+                <p>Todas as 25 perguntas reunidas (Níveis 1, 2 e 3) diagramadas em grade 3×3 de cartas padrão A4 (63×88 mm).</p>
+            </div>
+            <div>
+                <div class="card-meta">🃏 3 Páginas A4 (25 cartas)</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/008_perguntas_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/008_perguntas_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">009</span>
+                <h3>Verso das Perguntas — Baralho Geral</h3>
+                <p>Verso padrão espelhado horizontalmente para coincidir perfeitamente com a folha 008 na impressão frente e verso manual.</p>
+            </div>
+            <div>
+                <div class="card-meta">🔄 3 Páginas A4 • Espelhado Horizontal</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/009_verso_perguntas_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/009_verso_perguntas_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">010</span>
+                <h3>Respostas — Baralho Geral Completo</h3>
+                <p>Todas as 25 cartas de respostas e resoluções conceituais correspondentes às cartas de perguntas.</p>
+            </div>
+            <div>
+                <div class="card-meta">💡 3 Páginas A4 (25 cartas)</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/010_respostas_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/010_respostas_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">011</span>
+                <h3>Verso das Respostas — Baralho Geral</h3>
+                <p>Verso padrão espelhado horizontalmente para coincidir perfeitamente com a folha 010 na impressão manual.</p>
+            </div>
+            <div>
+                <div class="card-meta">🔄 3 Páginas A4 • Espelhado Horizontal</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/011_verso_respostas_para_imprimir_v001.html" target="_blank" class="card-link card-link-open">Visualizar</a>
+                    <a href="specs/SPEC-04-impressao/011_verso_respostas_para_imprimir_v001.html" target="_blank" class="card-link card-link-print">Imprimir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 3: BARALHOS SEPARADOS POR NÍVEL -->
+    <h2 class="section-title">
+        <span>3. Baralhos Modulares por Nível de Jogo</span>
+        <span class="section-tag">Fases 1, 2 e 3</span>
+    </h2>
+    <div class="grid">
+        <!-- Nível 1 -->
+        <div class="card">
+            <div>
+                <span class="card-num">012 & 013</span>
+                <h3>Nível 1 — Aquecimento (Perguntas & Verso)</h3>
+                <p>10 cartas iniciais focadas em conceitos qualitativos imediatos: Química Geral, Estados Físicos, Separação de Misturas e Tabela Periódica.</p>
+            </div>
+            <div>
+                <div class="card-meta">🟢 Fase 1 • Apostas de 50 T$ a 500 T$</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/012_perguntas_nivel_1_v001.html" target="_blank" class="card-link card-link-open">Frente (012)</a>
+                    <a href="specs/SPEC-04-impressao/013_verso_perguntas_nivel_1_v001.html" target="_blank" class="card-link card-link-open">Verso (013)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">014 & 015</span>
+                <h3>Nível 1 — Aquecimento (Respostas & Verso)</h3>
+                <p>Cartas de resolução com a justificativa pedagógica e desconstrução das armadilhas para as 10 perguntas do Nível 1.</p>
+            </div>
+            <div>
+                <div class="card-meta">🟢 Fase 1 • Cartas de Revelação</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/014_respostas_nivel_1_v001.html" target="_blank" class="card-link card-link-open">Frente (014)</a>
+                    <a href="specs/SPEC-04-impressao/015_verso_respostas_nivel_1_v001.html" target="_blank" class="card-link card-link-open">Verso (015)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nível 2 -->
+        <div class="card">
+            <div>
+                <span class="card-num">016 & 017</span>
+                <h3>Nível 2 — Desenvolvimento (Perguntas & Verso)</h3>
+                <p>10 cartas intermediárias com cálculo mental calibrado, diluições de laboratório, estequiometria com proporção 1:2 e termoquímica.</p>
+            </div>
+            <div>
+                <div class="card-meta">🟡 Fase 2 • Apostas de 50 T$ a 500 T$</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/016_perguntas_nivel_2_v001.html" target="_blank" class="card-link card-link-open">Frente (016)</a>
+                    <a href="specs/SPEC-04-impressao/017_verso_perguntas_nivel_2_v001.html" target="_blank" class="card-link card-link-open">Verso (017)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">018 & 019</span>
+                <h3>Nível 2 — Desenvolvimento (Respostas & Verso)</h3>
+                <p>Cartas de resolução das 10 questões do Nível 2, demonstrando a matemática passo a passo e o erro comum de cálculo.</p>
+            </div>
+            <div>
+                <div class="card-meta">🟡 Fase 2 • Cartas de Revelação</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/018_respostas_nivel_2_v001.html" target="_blank" class="card-link card-link-open">Frente (018)</a>
+                    <a href="specs/SPEC-04-impressao/019_verso_respostas_nivel_2_v001.html" target="_blank" class="card-link card-link-open">Verso (019)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nível 3 -->
+        <div class="card">
+            <div>
+                <span class="card-num">020 & 021</span>
+                <h3>Nível 3 — Morte Súbita (Perguntas & Verso)</h3>
+                <p>5 cartas de alto impacto para a rodada final Texas Hold'em: Reagente Limitante + Rendimento < 100%, Efeito Estufa vs Ozônio e Pilhas.</p>
+            </div>
+            <div>
+                <div class="card-meta">🔴 Fase 3 • Texas Hold'em (Check / Raise / All-in)</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/020_perguntas_nivel_3_v001.html" target="_blank" class="card-link card-link-open">Frente (020)</a>
+                    <a href="specs/SPEC-04-impressao/021_verso_perguntas_nivel_3_v001.html" target="_blank" class="card-link card-link-open">Verso (021)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="card-num">022 & 023</span>
+                <h3>Nível 3 — Morte Súbita (Respostas & Verso)</h3>
+                <p>Cartas de resolução detalhada das 5 questões do Nível 3, incluindo o cálculo exato do desempate e da morte súbita.</p>
+            </div>
+            <div>
+                <div class="card-meta">🔴 Fase 3 • Cartas de Revelação</div>
+                <div class="card-actions">
+                    <a href="specs/SPEC-04-impressao/022_respostas_nivel_3_v001.html" target="_blank" class="card-link card-link-open">Frente (022)</a>
+                    <a href="specs/SPEC-04-impressao/023_verso_respostas_nivel_3_v001.html" target="_blank" class="card-link card-link-open">Verso (023)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GUIA DE IMPRESSÃO RECOMENDADO -->
+    <div class="guide-box">
+        <h4>🖨️ Instruções Práticas de Impressão (Papel A4)</h4>
+        <ol>
+            <li><strong>Gramatura recomendada:</strong> Para as cartas (007 ou 008 a 023), use papel <em>Opaline</em> ou <em>Offset</em> de <strong>180g a 240g/m²</strong> para que não fiquem translúcidas. Para o dinheiro e fichas, use sulfite comum <strong>75g ou 90g/m²</strong>.</li>
+            <li><strong>Escala de Impressão:</strong> Na caixa de diálogo do navegador/impressora, selecione <strong>Escala: 100% (Tamanho Real)</strong> e <strong>Margens: Nenhuma</strong> para garantir o encaixe milimétrico das cartas (63 × 88 mm).</li>
+            <li><strong>Impressão Duplex Manual:</strong> Se sua impressora não tiver duplex automático, imprima a folha de <strong>Frente (008)</strong>, recoloque o papel na bandeja invertendo o lado e imprima o <strong>Verso (009)</strong> — o arquivo já é espelhado horizontalmente.</li>
+        </ol>
+    </div>
+
+    <footer>
+        <p><strong>ALL-IN QUÍMICO</strong> • Jogo Didático de Apostas Científicas de Risco Zero • Versão 1.0.0 (v001)</p>
+        <p style="margin-top: 0.35rem; color: #94a3b8;">Construído com validação científica simbólica (SymPy + Pydantic) e arquitetura orientada a especificações.</p>
+    </footer>
+</div>
+
+</body>
+</html>
