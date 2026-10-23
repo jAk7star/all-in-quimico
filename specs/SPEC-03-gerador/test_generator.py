@@ -13,23 +13,32 @@ def test_generator_execution():
 
 
 def test_all_expected_output_files_exist():
-    """Garante que todos os arquivos do ecossistema de impressão foram gerados."""
+    """Garante que todos os arquivos do ecossistema de impressão foram gerados com organização de 3 dígitos."""
     expected_files = [
         "cards.css",
-        "duplex_intercalado_para_imprimir.html",
-        "perguntas_para_imprimir.html",
-        "respostas_para_imprimir.html",
-        "verso_perguntas_para_imprimir.html",
-        "verso_respostas_para_imprimir.html",
-        "dinheiro_para_imprimir.html",
-        "guia_do_mestre_cheat_sheet.html",
-        "ficha_controle_leilao.html",
-        "cartoes_regras_mesa.html",
-        "regras_do_aluno.html",
-        "manual_do_professor.html",
-        "perguntas_nivel_1.html",
-        "perguntas_nivel_2.html",
-        "perguntas_nivel_3.html",
+        "001_manual_do_professor_v001.html",
+        "002_guia_do_mestre_cheat_sheet_v001.html",
+        "003_ficha_controle_leilao_v001.html",
+        "004_regras_do_aluno_v001.html",
+        "005_cartoes_regras_mesa_v001.html",
+        "006_dinheiro_para_imprimir_v001.html",
+        "007_duplex_intercalado_para_imprimir_v001.html",
+        "008_perguntas_para_imprimir_v001.html",
+        "009_verso_perguntas_para_imprimir_v001.html",
+        "010_respostas_para_imprimir_v001.html",
+        "011_verso_respostas_para_imprimir_v001.html",
+        "012_perguntas_nivel_1_v001.html",
+        "013_verso_perguntas_nivel_1_v001.html",
+        "014_respostas_nivel_1_v001.html",
+        "015_verso_respostas_nivel_1_v001.html",
+        "016_perguntas_nivel_2_v001.html",
+        "017_verso_perguntas_nivel_2_v001.html",
+        "018_respostas_nivel_2_v001.html",
+        "019_verso_respostas_nivel_2_v001.html",
+        "020_perguntas_nivel_3_v001.html",
+        "021_verso_perguntas_nivel_3_v001.html",
+        "022_respostas_nivel_3_v001.html",
+        "023_verso_respostas_nivel_3_v001.html",
     ]
     for filename in expected_files:
         file_path = OUT_DIR / filename
@@ -56,20 +65,20 @@ def test_pari_mutuel_binary_options_and_rules_content():
     assert training["total_paid"] == 400
     assert training["breakage"] == 50
 
-    rules_html = (OUT_DIR / "cartoes_regras_mesa.html").read_text(encoding="utf-8")
+    rules_html = (OUT_DIR / "005_cartoes_regras_mesa_v001.html").read_text(encoding="utf-8")
     assert "Pari-Mutuel" in rules_html
     assert "Texas Hold'em" in rules_html
     assert "Sem Comissão" in rules_html
 
-    tracker_html = (OUT_DIR / "ficha_controle_leilao.html").read_text(encoding="utf-8")
+    tracker_html = (OUT_DIR / "003_ficha_controle_leilao_v001.html").read_text(encoding="utf-8")
     assert "POTE TOTAL" in tracker_html
     assert "MULTIPLICADOR" in tracker_html
 
-    student_html = (OUT_DIR / "regras_do_aluno.html").read_text(encoding="utf-8")
+    student_html = (OUT_DIR / "004_regras_do_aluno_v001.html").read_text(encoding="utf-8")
     assert "Alfa" in student_html and "Beta" in student_html and "Gama" in student_html
     assert "Texas Hold'em" in student_html
 
-    teacher_html = (OUT_DIR / "manual_do_professor.html").read_text(encoding="utf-8")
+    teacher_html = (OUT_DIR / "001_manual_do_professor_v001.html").read_text(encoding="utf-8")
     assert "Roteiro Falado da Rodada-Treino" in teacher_html
     assert "Duelo Oral Relâmpago" in teacher_html
 

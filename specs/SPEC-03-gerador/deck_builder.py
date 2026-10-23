@@ -488,12 +488,67 @@ def main():
 
     total_lots = len(q_cards)
 
-    # 1. Arquivo Duplex Intercalado Unificado (Frente + Verso Espelhado)
+    # Versão de 3 dígitos para organização dos arquivos HTML de impressão
+    ver_tag = "v001"
+    # Remove arquivos .html antigos sem o padrão de 3 dígitos para manter a pasta limpa
+    for old_html in OUT_DIR.glob("*.html"):
+        old_html.unlink()
+
+    # 1. Manual Didático do Professor (001)
+    tm_html = teacher_manual_template.render(
+        rules=rules,
+        initial_budget=initial_budget_str,
+        training=training_ctx,
+    )
+    (OUT_DIR / f"001_manual_do_professor_{ver_tag}.html").write_text(tm_html, encoding="utf-8")
+
+    # 2. Guia Rápido do Mestre / Cheat Sheet (002)
+    cs_html = cheat_sheet_template.render(
+        items=cheat_sheet_items,
+        rules=rules,
+        house_cut_pct=house_cut_pct,
+    )
+    (OUT_DIR / f"002_guia_do_mestre_cheat_sheet_{ver_tag}.html").write_text(cs_html, encoding="utf-8")
+
+    # 3. Ficha de Registro de Apostas Pari-Mutuel, Pool e Odds (003)
+    st_html = score_tracker_template.render(
+        rules=rules,
+        house_cut_pct=house_cut_pct,
+    )
+    (OUT_DIR / f"003_ficha_controle_leilao_{ver_tag}.html").write_text(st_html, encoding="utf-8")
+
+    # 4. Folha de Regras do Aluno (004)
+    sr_html = student_rules_template.render(
+        rules=rules,
+        initial_budget=initial_budget_str,
+        training=training_ctx,
+    )
+    (OUT_DIR / f"004_regras_do_aluno_{ver_tag}.html").write_text(sr_html, encoding="utf-8")
+
+    # 5. Cartões de Regras Rápidas de Mesa para os Alunos (005)
+    tr_html = table_rules_template.render(
+        rules=rules,
+        house_cut_pct=house_cut_pct,
+    )
+    (OUT_DIR / f"005_cartoes_regras_mesa_{ver_tag}.html").write_text(tr_html, encoding="utf-8")
+
+    # 6. Cédulas de Tokens (006)
+    currency = rules.get("currency_name", "Tokens")
+    all_notes = [{"value": 50}] * 48 + [{"value": 100}] * 48 + [{"value": 500}] * 24
+    money_pages = []
+    for i in range(0, len(all_notes), 12):
+        chunk = all_notes[i : i + 12]
+        money_pages.append({"page_num": (i // 12) + 1, "notes": chunk})
+
+    m_html = money_template.render(currency=currency, money_pages=money_pages)
+    (OUT_DIR / f"006_dinheiro_para_imprimir_{ver_tag}.html").write_text(m_html, encoding="utf-8")
+
+    # 7. Arquivo Duplex Intercalado Unificado (007)
     q_duplex_sheets = build_duplex_sheets(q_pages, q_cards)
     duplex_html = duplex_template.render(duplex_sheets=q_duplex_sheets, house_cut_pct=house_cut_pct)
-    (OUT_DIR / "duplex_intercalado_para_imprimir.html").write_text(duplex_html, encoding="utf-8")
+    (OUT_DIR / f"007_duplex_intercalado_para_imprimir_{ver_tag}.html").write_text(duplex_html, encoding="utf-8")
 
-    # 2. Arquivos de Frentes e Versos Separados
+    # 8. Arquivos de Frentes e Versos Separados Completos (008 a 011)
     q_html = deck_template.render(
         deck_title=f"Perguntas Pari-Mutuel (A ou B) - Lotes 001 a {total_lots:03d}",
         pages=q_pages,
@@ -507,12 +562,17 @@ def main():
     q_back_html = back_template.render(deck_title="Verso das Cartas de Pergunta", pages=q_pages)
     a_back_html = back_template.render(deck_title="Verso das Cartas de Resposta", pages=a_pages)
 
-    (OUT_DIR / "perguntas_para_imprimir.html").write_text(q_html, encoding="utf-8")
-    (OUT_DIR / "respostas_para_imprimir.html").write_text(a_html, encoding="utf-8")
-    (OUT_DIR / "verso_perguntas_para_imprimir.html").write_text(q_back_html, encoding="utf-8")
-    (OUT_DIR / "verso_respostas_para_imprimir.html").write_text(a_back_html, encoding="utf-8")
+    (OUT_DIR / f"008_perguntas_para_imprimir_{ver_tag}.html").write_text(q_html, encoding="utf-8")
+    (OUT_DIR / f"009_verso_perguntas_para_imprimir_{ver_tag}.html").write_text(q_back_html, encoding="utf-8")
+    (OUT_DIR / f"010_respostas_para_imprimir_{ver_tag}.html").write_text(a_html, encoding="utf-8")
+    (OUT_DIR / f"011_verso_respostas_para_imprimir_{ver_tag}.html").write_text(a_back_html, encoding="utf-8")
 
-    # 3. Arquivos Separados por Nível de Dificuldade
+    # 9. Arquivos Separados por Nível de Dificuldade (012 a 023)
+    level_prefixes = {
+        1: ("012", "013", "014", "015"),
+        2: ("016", "017", "018", "019"),
+        3: ("020", "021", "022", "023"),
+    }
     for lvl, title in [
         (1, "Nível 1 - Aquecimento"),
         (2, "Nível 2 - Desenvolvimento"),
@@ -523,86 +583,31 @@ def main():
         if q_lvl:
             q_lvl_pages = paginate_cards(q_lvl, page_size=9)
             a_lvl_pages = paginate_cards(a_lvl, page_size=9)
+            p_q, p_vq, p_r, p_vr = level_prefixes[lvl]
 
-            (OUT_DIR / f"perguntas_nivel_{lvl}.html").write_text(
+            (OUT_DIR / f"{p_q}_perguntas_nivel_{lvl}_{ver_tag}.html").write_text(
                 deck_template.render(
                     deck_title=f"Perguntas - {title}", pages=q_lvl_pages, house_cut_pct=house_cut_pct
                 ),
                 encoding="utf-8",
             )
-            (OUT_DIR / f"respostas_nivel_{lvl}.html").write_text(
+            (OUT_DIR / f"{p_vq}_verso_perguntas_nivel_{lvl}_{ver_tag}.html").write_text(
+                back_template.render(deck_title=f"Verso Perguntas - {title}", pages=q_lvl_pages),
+                encoding="utf-8",
+            )
+            (OUT_DIR / f"{p_r}_respostas_nivel_{lvl}_{ver_tag}.html").write_text(
                 deck_template.render(
                     deck_title=f"Respostas - {title}", pages=a_lvl_pages, house_cut_pct=house_cut_pct
                 ),
                 encoding="utf-8",
             )
-            (OUT_DIR / f"verso_perguntas_nivel_{lvl}.html").write_text(
-                back_template.render(deck_title=f"Verso Perguntas - {title}", pages=q_lvl_pages),
-                encoding="utf-8",
-            )
-            (OUT_DIR / f"verso_respostas_nivel_{lvl}.html").write_text(
+            (OUT_DIR / f"{p_vr}_verso_respostas_nivel_{lvl}_{ver_tag}.html").write_text(
                 back_template.render(deck_title=f"Verso Respostas - {title}", pages=a_lvl_pages),
                 encoding="utf-8",
             )
 
-    # 4. Cédulas de Tokens (12 notas por folha A4 em grid 2x6)
-    currency = rules.get("currency_name", "Tokens")
-    all_notes = [{"value": 50}] * 48 + [{"value": 100}] * 48 + [{"value": 500}] * 24
-    money_pages = []
-    for i in range(0, len(all_notes), 12):
-        chunk = all_notes[i : i + 12]
-        money_pages.append({"page_num": (i // 12) + 1, "notes": chunk})
-
-    m_html = money_template.render(currency=currency, money_pages=money_pages)
-    (OUT_DIR / "dinheiro_para_imprimir.html").write_text(m_html, encoding="utf-8")
-
-    # 5. Guia Rápido do Mestre (Cheat Sheet em folha única A4)
-    cs_html = cheat_sheet_template.render(
-        items=cheat_sheet_items,
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / "guia_do_mestre_cheat_sheet.html").write_text(cs_html, encoding="utf-8")
-
-    # 6. Ficha de Registro de Apostas Pari-Mutuel, Pool e Odds (Score Tracker)
-    st_html = score_tracker_template.render(
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / "ficha_controle_leilao.html").write_text(st_html, encoding="utf-8")
-
-    # 7. Cartões de Regras Rápidas de Mesa para os Alunos (Pari-Mutuel Tokenizado)
-    tr_html = table_rules_template.render(
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / "cartoes_regras_mesa.html").write_text(tr_html, encoding="utf-8")
-
-    # 8. Folha de Regras do Aluno (A4 visual com Rodada-Treino e Fase 3 Texas Hold'em)
-    sr_html = student_rules_template.render(
-        rules=rules,
-        initial_budget=initial_budget_str,
-        training=training_ctx,
-    )
-    (OUT_DIR / "regras_do_aluno.html").write_text(sr_html, encoding="utf-8")
-
-    # 9. Manual Didático do Professor (A4 com Roteiro Falado da Rodada-Treino, Fase 3 Texas Hold'em e Armadilhas)
-    tm_html = teacher_manual_template.render(
-        rules=rules,
-        initial_budget=initial_budget_str,
-        training=training_ctx,
-    )
-    (OUT_DIR / "manual_do_professor.html").write_text(tm_html, encoding="utf-8")
-
-    print(f"Sucesso! Gerados todos os materiais pari-mutuel em {OUT_DIR.resolve()}:")
-    print(f" - {len(q_cards)} pares de cartas (A vs B) em páginas A4 com marcas de corte")
-    print(" - Arquivo duplex intercalado com espelhamento milimétrico de colunas")
-    print(f" - {len(all_notes)} cédulas de {currency} com 4 numerais nos cantos")
-    print(" - Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel)")
-    print(" - Ficha de Controle de Pool (T_A, T_B, P) e Odds (O_A, O_B)")
-    print(" - Cartões de Regras Rápidas de Mesa (Sistema Pari-Mutuel Tokenizado)")
-    print(" - Folha de Regras do Aluno (regras_do_aluno.html)")
-    print(" - Manual Didático do Professor (manual_do_professor.html)")
+    print(f"Sucesso! Gerados todos os materiais versionados ({ver_tag}) em {OUT_DIR.resolve()}:")
+    print(" - 001 a 023 com prefixo e sufixo de 3 dígitos (001_..._v001.html)")
 
 
 if __name__ == "__main__":
