@@ -189,16 +189,16 @@
           "type": "string"
         },
         "house_cut": {
-          "default": 0.1,
-          "description": "Percentual alvo da casa c (ex.: 0.10 = 10%, recomendado entre 5% e 15%).",
+          "default": 0.0,
+          "description": "Percentual alvo da casa c (padrão 0.0 = 0%, sem comissão; a Casa retém apenas o Breakage < 50 T$).",
           "maximum": 0.5,
           "minimum": 0.0,
           "title": "House Cut",
           "type": "number"
         },
         "recommended_house_cut_min": {
-          "default": 0.05,
-          "description": "Limite inferior recomendado para o percentual da casa (5%).",
+          "default": 0.0,
+          "description": "Limite inferior recomendado para o percentual da casa (0%).",
           "maximum": 1.0,
           "minimum": 0.0,
           "title": "Recommended House Cut Min",

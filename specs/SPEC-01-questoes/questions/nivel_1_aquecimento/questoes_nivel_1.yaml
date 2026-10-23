@@ -41,9 +41,9 @@ questions:
     concept_refs: [CHEM-SOL-001]
     statement: Ao calcular a concentração comum de uma solução, qual volume deve ser usado?
     options:
-      - {key: A, text: "O volume do solvente adicionado.", rationale: Ignora o volume ocupado pelo soluto.,
+      - {key: A, text: "O volume do solvente adicionado.", rationale: "Ignora o volume ocupado pelo soluto.",
          mistake_ref: {concept: CHEM-SOL-001, index: 1}}
-      - {key: B, text: "O volume final da solução.", rationale: Correta; é o volume que aparece na definição.}
+      - {key: B, text: "O volume final da solução.", rationale: "Correta; é o volume que aparece na definição."}
     correct: B
     worked_solution: A concentração comum é a massa do soluto dividida pelo volume final da solução.
     scientific_justification: Definição de concentração comum, C = m_soluto / V_solucao.
@@ -182,7 +182,7 @@ questions:
       expected: {value: 18.0, unit: g/mol, tolerance: 0.01}
     options:
       - {key: A, text: "18,0 g/mol", rationale: "Correta; M(H2O) = 2 × 1,0 + 16,0 = 18,0 g/mol."}
-      - {key: B, text: "17,0 g/mol", rationale: "Somou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H2O."}
+      - {key: B, text: "17,0 g/mol", rationale: "Somou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H2O.", mistake_ref: {concept: CHEM-STO-MOLARMASS, index: 0}}
     correct: A
     worked_solution: "M(H<sub>2</sub>O) = 2 × 1,0 + 16,0 = 18,0 g/mol."
     scientific_justification: "Soma ponderada das massas atômicas dos átomos de H e O."
@@ -220,65 +220,65 @@ questions:
     version: 1
     status: review
     domain: CHEM-ENV
-    skill: Identificar as causas da chuva ácida.
+    skill: Identificar os gases poluentes responsáveis pela acidificação acentuada da chuva.
     cognitive_level: understanding
     difficulty: 1
     concept_refs: [CHEM-ENV-ACIDRAIN]
-    statement: "Qual das alternativas indica um gás diretamente responsável pela formação da chuva ácida?"
+    statement: "A água da chuva em uma região limpa já é levemente ácida (pH ≈ 5,6) devido ao CO<sub>2</sub> natural do ar. Qual gás poluente industrial faz esse pH cair abaixo de 4,5, gerando a chuva ácida?"
     options:
-      - {key: A, text: "Gás Oxigênio (O<sub>2</sub>).", rationale: "Gás natural da atmosfera que não gera acidez direta."}
-      - {key: B, text: "Dióxido de Enxofre (SO<sub>2</sub>).", rationale: "Correta; reage com água produzindo ácido sulfuroso/sulfúrico."}
+      - {key: A, text: "Metano (CH<sub>4</sub>), que se dissolve nas nuvens formando ácido carbônico concentrado.", rationale: "Confunde um gás do efeito estufa (CH4, apolar e pouco solúvel) com os óxidos ácidos formadores de chuva ácida.", mistake_ref: {concept: CHEM-ENV-ACIDRAIN, index: 0}}
+      - {key: B, text: "Dióxido de enxofre (SO<sub>2</sub>), que se oxida na atmosfera formando ácido sulfúrico (H<sub>2</sub>SO<sub>4</sub>).", rationale: "Correta; óxidos de enxofre e nitrogênio reagem com a água gerando ácidos fortes."}
     correct: B
-    worked_solution: "O SO<sub>2</sub> emitido por indústrias e queima de combustíveis reage com vapor d'água formando ácidos."
-    scientific_justification: "SO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>3</sub> (precursor de chuva ácida)."
+    worked_solution: "Enquanto o CO<sub>2</sub> forma um ácido fraco (H<sub>2</sub>CO<sub>3</sub>, pH ≈ 5,6), o SO<sub>2</sub> gera H<sub>2</sub>SO<sub>3</sub> e H<sub>2</sub>SO<sub>4</sub>, ácidos muito mais fortes."
+    scientific_justification: "SO<sub>2</sub> + ½ O<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>4</sub> (chuva ácida antrópica)."
 
   - id: Q-ENV-002
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-ENV
-    skill: Compreender o papel do Efeito Estufa.
+    skill: Distinguir o mecanismo físico-químico do efeito estufa da destruição da camada de ozônio.
     cognitive_level: understanding
     difficulty: 1
     concept_refs: [CHEM-ENV-GREENHOUSE]
-    statement: "Sobre o efeito estufa natural, é correto afirmar que:"
+    statement: "Muitas pessoas confundem o efeito estufa com o buraco na camada de ozônio. Qual é o verdadeiro mecanismo físico-químico do efeito estufa na atmosfera?"
     options:
-      - {key: A, text: "É um fenômeno totalmente prejudicial que deve ser eliminado.", rationale: "Sem efeito estufa a Terra seria congelada.", mistake_ref: {concept: CHEM-ENV-GREENHOUSE, index: 0}}
-      - {key: B, text: "É vital para manter a temperatura da Terra adequada à vida.", rationale: "Correta; retém calor necessário para o planeta."}
+      - {key: A, text: "Gases CFCs abrem falhas na camada de ozônio, deixando entrar mais calor solar direto na superfície.", rationale: "Confunde a filtragem de radiação UV pela camada de ozônio com a retenção de infravermelho do efeito estufa.", mistake_ref: {concept: CHEM-ENV-GREENHOUSE, index: 0}}
+      - {key: B, text: "Gases como CO<sub>2</sub>, CH<sub>4</sub> e vapor d'água deixam passar a luz visível, mas absorvem o calor (infravermelho) reemitido pela Terra.", rationale: "Correta; as moléculas de gases estufa vibram ao absorver radiação infravermelha, mantendo o planeta aquecido."}
     correct: B
-    worked_solution: "O efeito estufa natural mantém o planeta aquecido; o problema é o seu agravamento antrópico por emissão excessiva de CO<sub>2</sub> e CH<sub>4</sub>."
-    scientific_justification: "Gases de estufa retêm radiação infravermelha."
+    worked_solution: "A luz solar atravessa a atmosfera e aquece a superfície, que emite radiação infravermelha (calor) retida por CO<sub>2</sub>, CH<sub>4</sub> e H<sub>2</sub>O."
+    scientific_justification: "Absorção seletiva de radiação térmica infravermelha por modos vibracionais moleculares."
 
   - id: Q-ENV-003
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-ENV
-    skill: Reconhecer os pilares do equilíbrio ambiental e ecossistemas.
-    cognitive_level: recognition
+    skill: Reconhecer a natureza dinâmica do equilíbrio biogeoquímico em ecossistemas maduros.
+    cognitive_level: understanding
     difficulty: 1
     concept_refs: [CHEM-ENV-EQUILIBRIUM]
-    statement: "O que caracteriza o equilíbrio em um ecossistema natural?"
+    statement: "Em uma floresta madura em equilíbrio ecológico (clímax), o que ocorre com o balanço entre o O<sub>2</sub> produzido na fotossíntese e o O<sub>2</sub> consumido na respiração ao longo do ano?"
     options:
-      - {key: A, text: "A ciclagem de nutrientes e a manutenção das cadeias alimentares.", rationale: "Correta; mantém a dinâmica do ecossistema."}
-      - {key: B, text: "A interrupção de todas as reações químicas da natureza.", rationale: "Ecossistemas são sistemas dinâmicos em constante transformação.", mistake_ref: {concept: CHEM-ENV-EQUILIBRIUM, index: 0}}
+      - {key: A, text: "As velocidades de produção (fotossíntese) e consumo (respiração e decomposição) praticamente se igualam em equilíbrio dinâmico.", rationale: "Correta; as reações continuam ocorrendo intensamente, mas com taxas equivalentes no ciclo biogeoquímico."}
+      - {key: B, text: "As reações de decomposição cessam na mata adulta, acumulando apenas O<sub>2</sub> puro sem emissão de CO<sub>2</sub>.", rationale: "Considera equivocadamente que equilíbrio ambiental significa interrupção de processos de respiração e decomposição.", mistake_ref: {concept: CHEM-ENV-EQUILIBRIUM, index: 0}}
     correct: A
-    worked_solution: "O equilíbrio dinâmico depende da reciclagem de matéria e fluxo de energia."
-    scientific_justification: "Leis de conservação aplicadas à ecologia química."
+    worked_solution: "Em um ecossistema em clímax, quase todo o O<sub>2</sub> gerado na fotossíntese é consumido pela respiração da própria biota e dos decompositores."
+    scientific_justification: "Equilíbrio dinâmico nos ciclos biogeoquímicos do carbono e do oxigênio."
 
   - id: Q-ENV-004
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-ENV
-    skill: Avaliar o impacto socioeconômico da reciclagem.
+    skill: Explicar por que a reciclagem do alumínio economiza 95% de energia elétrica frente à bauxita.
     cognitive_level: understanding
     difficulty: 1
     concept_refs: [CHEM-ENV-SOCIOECON]
-    statement: "Qual a vantagem socioeconômica da reciclagem de alumínio em relação ao extrativismo da bauxita?"
+    statement: "Reciclar latinhas de alumínio economiza cerca de 95% da energia elétrica necessária para produzir o metal a partir do minério bauxita (Al<sub>2</sub>O<sub>3</sub>). Qual é a razão química dessa enorme diferença?"
     options:
-      - {key: A, text: "Economia significativa de energia elétrica e redução no descarte de resíduos.", rationale: "Correta; reciclar consome ~95% menos energia."}
-      - {key: B, text: "Aumento nos custos de produção industrial e desemprego de catadores.", rationale: "Reciclagem gera empregos e reduz custos.", mistake_ref: {concept: CHEM-ENV-SOCIOECON, index: 0}}
+      - {key: A, text: "Na bauxita é preciso romper ligações químicas por eletrólise ígnea (Al<sup>3+</sup> → Al<sup>0</sup>), enquanto na reciclagem basta fundir o metal já reduzido.", rationale: "Correta; a redução eletroquímica do cátion Al3+ consome imensa quantidade de energia elétrica."}
+      - {key: B, text: "A reciclagem dispensa o aquecimento térmico em forno, pois o alumínio das latas é dissolvido a frio em água pura.", rationale: "Ignora que a reciclagem funde o alumínio a ~660 °C e subestima o custo eletroquímico real da metalurgia primária.", mistake_ref: {concept: CHEM-ENV-SOCIOECON, index: 0}}
     correct: A
-    worked_solution: "A reciclagem de alumínio consome muito menos energia que a eletrolise da bauxita e gera renda."
-    scientific_justification: "Aspecto socioeconômico e sustentabilidade do ciclo dos materiais."
+    worked_solution: "Fundir o alumínio metálico (660 °C) gasta apenas ~5% da energia exigida pela eletrólise ígnea do óxido de alumínio (processo Hall-Héroult)."
+    scientific_justification: "Custo energético da redução eletrolítica vs. entalpia de fusão física do metal."

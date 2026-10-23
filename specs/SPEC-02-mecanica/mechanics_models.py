@@ -19,13 +19,13 @@ class PariMutuelRules(BaseModel):
         description="Protocolo de apostas: simultâneas/fechadas ao sinal do professor para evitar efeito manada.",
     )
     house_cut: float = Field(
-        0.10,
+        0.0,
         ge=0.0,
         le=0.50,
-        description="Percentual alvo da casa c (ex.: 0.10 = 10%, recomendado entre 5% e 15%).",
+        description="Percentual alvo da casa c (padrão 0.0 = 0%, sem comissão; a Casa retém apenas o Breakage < 50 T$).",
     )
     recommended_house_cut_min: float = Field(
-        0.05, ge=0.0, le=1.0, description="Limite inferior recomendado para o percentual da casa (5%)."
+        0.0, ge=0.0, le=1.0, description="Limite inferior recomendado para o percentual da casa (0%)."
     )
     recommended_house_cut_max: float = Field(
         0.15, ge=0.0, le=1.0, description="Limite superior recomendado para o percentual da casa (15%)."
@@ -131,7 +131,7 @@ class PariMutuelRoundResult(BaseModel):
 def calculate_pari_mutuel_round(
     tokens_a: float,
     tokens_b: float,
-    house_cut: float = 0.10,
+    house_cut: float = 0.0,
     correct_option: Optional[Literal["A", "B"]] = None,
     carryover_in: float = 0.0,
     enforce_min_odd_floor: bool = True,
@@ -235,7 +235,7 @@ def calculate_player_payout(
 def settle_round_payouts(
     bets_on_winner: List[int],
     tokens_loser: int,
-    house_cut: float = 0.10,
+    house_cut: float = 0.0,
     carryover_in: int = 0,
     breakage_unit: int = 50,
 ) -> dict:

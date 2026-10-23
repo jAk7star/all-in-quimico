@@ -6,8 +6,8 @@ pari_mutuel:
   enabled: true
   options: ["A", "B"]
   betting_protocol: "simultaneous_blind"
-  house_cut: 0.10
-  recommended_house_cut_min: 0.05
+  house_cut: 0.0
+  recommended_house_cut_min: 0.0
   recommended_house_cut_max: 0.15
   min_winning_odd: 1.00
   zero_winners_policy: "rollover_pool"
@@ -35,26 +35,26 @@ blocks:
     difficulty_level: 1
     question_count: 13
     max_bid: 500
-    special_rules: "Apostas simultâneas em A ou B (Mín: 50 T$, Máx: 500 T$). Piso O >= 1,00x garantido."
-  - name: "Fase 2 - Desenvolvimento"
+    special_rules: "Professor anuncia o Tema e lê a questão (A ou B). Apostas simultâneas fechadas (Mín: 50 T$, Máx: 500 T$). Sem comissão: 100% do pote vai para os vencedores (troco < 50 T$ fica na Casa)."
+  - name: "Fase 2 - Rodadas Finais"
     difficulty_level: 2
     question_count: 7
     max_bid: 500
-    special_rules: "Apostas simultâneas (Mín: 50 T$, Máx: 500 T$). Breakage em múltiplos de 50 T$ a favor da Casa."
-  - name: "Fase 3 - Desafio / Morte Súbita"
+    special_rules: "Questões com armadilhas conceituais e comparação de casos. Apostas simultâneas (Mín: 50 T$, Máx: 500 T$). Sem comissão; troco em múltiplos de 50 T$ a favor da Casa."
+  - name: "Fase 3 - Morte Súbita (Texas Hold'em Químico)"
     difficulty_level: 3
     question_count: 5
     max_bid: null
-    special_rules: "Aposta mínima dobra (100 T$) e All-in liberado (até 100% da banca)."
+    special_rules: "1º Passo (No Escuro): Professor anuncia só o TEMA e equipes apostam mín. 100 T$. 2º Passo (Showdown): Após ler a questão, equipes escolhem A ou B e decidem Check (manter) ou Raise / All-in (aumentar)."
 
 round_flow:
-  - "1. Pergunta + respostas A e B são apresentadas."
-  - "2. Apostas Simultâneas (Fechadas): equipes escolhem A ou B e o valor em múltiplos de 50 T$, revelando ao sinal do professor."
-  - "3. Odds são calculadas: Retenção Base = min(c × T, T_perdedores), Pool Líquido P = (T − Retenção) + Rollover, O_A = P / T_A e O_B = P / T_B."
-  - "4. Resposta correta é revelada."
-  - "5. Quem acertou recebe floor((Aposta × O) / 50) × 50 Tokens (sempre >= Aposta)."
-  - "6. Quem errou perde 100% dos tokens apostados."
-  - "7. A Casa retém sua comissão base + a sobra de arredondamento (Breakage). Se ninguém acertar, P acumula (Rollover) para a próxima rodada."
-  - "8. Equipe zerada (0 T$) pode ganhar Repescagem Científica (+50 T$) explicando a resolução, paga apenas se o Caixa da Casa tiver lucro >= 50 T$."
+  - "0. Rodada-Treino (0 T$): Antes do jogo valendo, joga-se 1 rodada simulada para todos dominarem a conta do pote."
+  - "1. Anúncio do Tema + Pergunta (A ou B): Na Fase 3, anuncia-se só o Tema primeiro para a Aposta no Escuro (mín. 100 T$) e depois lê-se a questão para Check ou Raise."
+  - "2. Apostas Simultâneas (Fechadas): Equipes escolhem secretamente a placa A ou B e separam seus Tokens (múltiplos de 50 T$), revelando juntas ao sinal do professor."
+  - "3. Cálculo do Multiplicador (Sem Comissão): Soma-se o Pote Total P = T_A + T_B + P_acumulado. O multiplicador da alternativa certa é O = P / T_certa."
+  - "4. Revelação e Explicação Científica: O professor revela o gabarito (A ou B) e explica o conceito químico e a armadilha do distrator."
+  - "5. Pagamento aos Vencedores: Quem acertou recebe floor((Aposta × O) / 50) × 50 Tokens (sempre >= Aposta)."
+  - "6. Perda dos Perdedores e Troco da Casa: Quem errou perde 100% do que apostou. A sobra indivisível (< 50 T$) fica no Caixa da Casa. Se ninguém acertar, P acumula (Jackpot) para a próxima rodada."
+  - "7. Repescagem e Vitória: Equipe zerada (0 T$) ganha +50 T$ do Caixa da Casa se explicar uma questão. Vence quem tiver mais Tokens ao final; empate no 1º lugar é decidido em Morte Súbita com All-in Automático e Duelo Oral Relâmpago."
 
 tiebreaker: "sudden_death"

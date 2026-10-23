@@ -340,6 +340,58 @@ def build_duplex_sheets(front_pages: list, back_cards_all: list) -> list:
     return duplex_sheets
 
 
+def build_training_round_context(breakage_unit: int = 50) -> dict:
+    """
+    Calcula matematicamente a Rodada-Treino de demonstração com 3 equipes fictícias
+    (Alfa, Beta e Gama) sem comissão da Casa (c = 0%), arredondando pagamentos em múltiplos de 50 T$.
+    """
+    raw_teams = [
+        {"name": "Alfa", "choice": "A", "bet": 200},
+        {"name": "Beta", "choice": "B", "bet": 100},
+        {"name": "Gama", "choice": "B", "bet": 150},
+    ]
+    correct_option = "B"
+    total_pool = sum(t["bet"] for t in raw_teams)
+    winner_pool = sum(t["bet"] for t in raw_teams if t["choice"] == correct_option)
+    odd = total_pool / winner_pool
+    odd_str = f"{odd:.1f}".replace(".", ",")
+
+    teams_out = []
+    total_paid = 0
+    for t in raw_teams:
+        won = t["choice"] == correct_option
+        if won:
+            raw_val = t["bet"] * odd
+            payout = int(raw_val // breakage_unit) * breakage_unit
+            total_paid += payout
+            profit = payout - t["bet"]
+            raw_str = f"{int(round(raw_val))} T$"
+            net_str = f"+{profit} T$ (lucro)"
+        else:
+            payout = 0
+            raw_str = "0 T$ (errou)"
+            net_str = f"−{t['bet']} T$ (perdeu)"
+        teams_out.append({
+            **t,
+            "won": won,
+            "raw_str": raw_str,
+            "payout": payout,
+            "net_str": net_str,
+        })
+
+    breakage = total_pool - total_paid
+    return {
+        "correct_option": correct_option,
+        "total_pool": total_pool,
+        "winner_pool": winner_pool,
+        "odd": odd,
+        "odd_str": odd_str,
+        "total_paid": total_paid,
+        "breakage": breakage,
+        "teams": teams_out,
+    }
+
+
 def main():
     OUT_DIR.mkdir(exist_ok=True)
     questions = load_all_questions()
@@ -424,6 +476,11 @@ def main():
     cheat_sheet_template = env.get_template("cheat_sheet_template.html")
     score_tracker_template = env.get_template("score_tracker_template.html")
     table_rules_template = env.get_template("table_rules_template.html")
+    student_rules_template = env.get_template("student_rules_template.html")
+    teacher_manual_template = env.get_template("teacher_manual_template.html")
+
+    training_ctx = build_training_round_context(breakage_unit=int(pari_mutuel.get("breakage_unit", 50)))
+    initial_budget_str = f"{int(rules.get('initial_budget', 1000)):,}".replace(",", ".")
 
     # Paginação 3x3 (9 cartas por página)
     q_pages = paginate_cards(q_cards, page_size=9)
@@ -521,6 +578,22 @@ def main():
     )
     (OUT_DIR / "cartoes_regras_mesa.html").write_text(tr_html, encoding="utf-8")
 
+    # 8. Folha de Regras do Aluno (A4 visual com Rodada-Treino e Fase 3 Texas Hold'em)
+    sr_html = student_rules_template.render(
+        rules=rules,
+        initial_budget=initial_budget_str,
+        training=training_ctx,
+    )
+    (OUT_DIR / "regras_do_aluno.html").write_text(sr_html, encoding="utf-8")
+
+    # 9. Manual Didático do Professor (A4 com Roteiro Falado da Rodada-Treino, Fase 3 Texas Hold'em e Armadilhas)
+    tm_html = teacher_manual_template.render(
+        rules=rules,
+        initial_budget=initial_budget_str,
+        training=training_ctx,
+    )
+    (OUT_DIR / "manual_do_professor.html").write_text(tm_html, encoding="utf-8")
+
     print(f"Sucesso! Gerados todos os materiais pari-mutuel em {OUT_DIR.resolve()}:")
     print(f" - {len(q_cards)} pares de cartas (A vs B) em páginas A4 com marcas de corte")
     print(" - Arquivo duplex intercalado com espelhamento milimétrico de colunas")
@@ -528,6 +601,8 @@ def main():
     print(" - Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel)")
     print(" - Ficha de Controle de Pool (T_A, T_B, P) e Odds (O_A, O_B)")
     print(" - Cartões de Regras Rápidas de Mesa (Sistema Pari-Mutuel Tokenizado)")
+    print(" - Folha de Regras do Aluno (regras_do_aluno.html)")
+    print(" - Manual Didático do Professor (manual_do_professor.html)")
 
 
 if __name__ == "__main__":

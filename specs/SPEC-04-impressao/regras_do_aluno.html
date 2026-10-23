@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Folha de Regras do Aluno (A4)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+    <style>
+        .student-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+            margin-top: 2mm;
+        }
+        .info-card {
+            border: 1pt solid #cbd5e1;
+            border-radius: 2.5mm;
+            padding: 3mm 3.5mm;
+            background: #ffffff;
+        }
+        .info-card.highlight-blue {
+            background: #f0f9ff;
+            border-color: #38bdf8;
+        }
+        .info-card.highlight-amber {
+            background: #fffbeb;
+            border-color: #f59e0b;
+        }
+        .info-card.highlight-rose {
+            background: #fff1f2;
+            border-color: #f43f5e;
+        }
+        .info-card h3 {
+            margin: 0 0 1.8mm 0;
+            font-size: 9pt;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.4pt;
+            color: #0f172a;
+            border-bottom: 0.8pt solid #e2e8f0;
+            padding-bottom: 1mm;
+        }
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+        }
+        .step-badge {
+            background: #f8fafc;
+            border: 0.8pt solid #cbd5e1;
+            border-radius: 2mm;
+            padding: 2mm 2.5mm;
+            font-size: 7.4pt;
+            line-height: 1.3;
+        }
+        .step-num {
+            display: inline-block;
+            background: #1e293b;
+            color: #fff;
+            font-weight: 900;
+            font-size: 6.8pt;
+            padding: 0.3mm 1.6mm;
+            border-radius: 1mm;
+            margin-right: 1mm;
+        }
+        .formula-banner {
+            background: #0f172a;
+            color: #f8fafc;
+            border-radius: 2mm;
+            padding: 2.5mm 3.5mm;
+            text-align: center;
+            margin: 2mm 0;
+            font-size: 8.5pt;
+        }
+        .formula-banner strong {
+            color: #38bdf8;
+            font-size: 9.5pt;
+        }
+        .demo-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7.2pt;
+            margin-top: 1.5mm;
+        }
+        .demo-table th, .demo-table td {
+            border: 0.6pt solid #cbd5e1;
+            padding: 1.4mm 2mm;
+            text-align: center;
+        }
+        .demo-table th {
+            background: #1e293b;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 6.6pt;
+            text-transform: uppercase;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5mm;
+            margin-top: 2mm;
+        }
+        .faq-item {
+            background: #f8fafc;
+            border: 0.8pt solid #cbd5e1;
+            border-radius: 2mm;
+            padding: 2mm 2.5mm;
+            font-size: 7pt;
+            line-height: 1.3;
+        }
+        .faq-item strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 0.8mm;
+            font-size: 7.4pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <h2>Folha de Regras do Aluno — Guia Visual Rápido (1 Página A4)</h2>
+        <p>Folha pensada para 2º e 3º ano do Ensino Médio: explica o jogo em 1 frase, mostra os 6 passos da rodada, a conta simples do pote, a <strong>Rodada-Treino ilustrada com 3 equipes</strong> e o diferencial da <strong>Fase 3 (Texas Hold'em Químico)</strong>.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Folha do Aluno (A4)</button>
+    </div>
+
+    <div class="page">
+        <div class="sheet-container" style="padding: 9mm 11mm;">
+            <div class="cheat-sheet-header" style="margin-bottom: 2.5mm; padding-bottom: 2.5mm;">
+                <div class="cheat-sheet-title">
+                    <h1 style="font-size: 15pt; letter-spacing: -0.3pt;">LEILÃO DE QUÍMICA • GUIA RÁPIDO DAS EQUIPES</h1>
+                    <div class="cheat-sheet-subtitle" style="font-size: 8.2pt; color: #1e293b; margin-top: 0.8mm;">
+                        <strong>O Jogo em 1 Frase:</strong> <em>"Aposte seus Tokens na alternativa (A ou B) que você acha certa; quem acerta divide todas as fichas de quem errou!"</em>
+                    </div>
+                </div>
+                <div class="rules-quick-summary">
+                    <div class="quick-rule-badge">Banca Inicial: <strong>1.000 T$</strong></div>
+                    <div class="quick-rule-badge">Cédulas: <strong>50, 100 e 500 T$</strong></div>
+                    <div class="quick-rule-badge">Vitória: <strong>Mais Tokens no Final!</strong></div>
+                </div>
+            </div>
+
+            <!-- 6 PASSOS DA RODADA -->
+            <div class="info-card" style="margin-bottom: 3mm;">
+                <h3>⚡ Como Funciona Cada Rodada (6 Passos) — Começamos com 1 Rodada-Treino Valendo 0 T$!</h3>
+                <ul class="step-list">
+                    <li class="step-badge"><span class="step-num">1</span><strong>Tema + Pergunta:</strong> O professor anuncia o Tema de Química e lê a questão com duas opções (<strong>A</strong> ou <strong>B</strong>). Cuidado: ambas parecem certas para quem vai no "chute"!</li>
+                    <li class="step-badge"><span class="step-num">2</span><strong>Decisão em Segredo:</strong> Em 45 a 60 segundos, sua equipe debate o cálculo, escolhe a placa <strong>A</strong> ou <strong>B</strong> virada para baixo e separa as fichas da aposta (múltiplos de <strong>50 T$</strong>).</li>
+                    <li class="step-badge"><span class="step-num">3</span><strong>Revelação Simultânea:</strong> No comando <em>"1, 2, 3... Revelar!"</em>, todas as equipes levantam juntas a placa escolhida e mostram o valor apostado. Ninguém copia ninguém!</li>
+                    <li class="step-badge"><span class="step-num">4</span><strong>Resolução Científica:</strong> O professor revela a alternativa correta e explica o conceito químico e a pegadinha da opção errada.</li>
+                    <li class="step-badge"><span class="step-num">5</span><strong>Perdedores Entregam Tudo:</strong> Quem escolheu a opção errada perde <strong>100% das fichas apostadas</strong> na rodada, que vão para o centro da mesa formar o <strong>Pote</strong>.</li>
+                    <li class="step-badge"><span class="step-num">6</span><strong>Vencedores Dividem o Pote:</strong> Quem acertou recupera sua aposta + a fatia proporcional das fichas dos perdedores!</li>
+                </ul>
+            </div>
+
+            <!-- CONTA DO POTE + RODADA TREINO -->
+            <div class="student-grid">
+                <div class="info-card highlight-blue">
+                    <h3>🧮 A Conta do Pote (Sem Comissão!)</h3>
+                    <div style="font-size: 7.4pt; line-height: 1.35; color: #1e293b;">
+                        Todo o dinheiro apostado na mesa forma o <strong>Pote Total (P)</strong>. Não há taxa de 10%: o pote inteiro vai para o cálculo dos vencedores!
+                    </div>
+                    <div class="formula-banner">
+                        <div><strong>Multiplicador (O)</strong> = Pote Total de Todos ÷ Total Apostado na Certa</div>
+                        <div style="margin-top: 1mm; font-size: 7.8pt; color: #e2e8f0;">
+                            <strong>Você Recebe</strong> = Sua Aposta × Multiplicador <span style="color: #fbbf24;">(arredondado p/ baixo de 50 em 50 T$)</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 7pt; color: #334155; line-height: 1.3;">
+                        • <strong>Por que arredondar em 50 T$?</strong> Porque a menor nota do jogo é de <strong>50 T$</strong>. Qualquer quebrado menor que 50 T$ (chamado de <em>Troco da Casa</em>) fica no Caixa da Mesa para financiar a Repescagem!<br>
+                        • <strong>Dica de Ouro:</strong> Quando pouca gente acerta uma questão difícil, o Multiplicador dispara!
+                    </div>
+                </div>
+
+                <div class="info-card highlight-amber">
+                    <h3>🎯 Exemplo Prático: A Rodada-Treino (3 Equipes)</h3>
+                    <div style="font-size: 7.1pt; color: #334155;">
+                        Suponha que a resposta correta da questão seja a alternativa <strong>B</strong>:
+                    </div>
+                    <table class="demo-table">
+                        <thead>
+                            <tr>
+                                <th>Equipe</th>
+                                <th>Escolheu</th>
+                                <th>Apostou</th>
+                                <th>Conta Bruta (× 1,8)</th>
+                                <th>Recebe (em 50 T$)</th>
+                                <th>Lucro Líquido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr style="background: #fef2f2; color: #991b1b;">
+                                <td><strong>Alfa</strong></td>
+                                <td>Opção A ❌</td>
+                                <td>200 T$</td>
+                                <td>0 T$ (errou)</td>
+                                <td><strong>0 T$</strong></td>
+                                <td>−200 T$ (perdeu)</td>
+                            </tr>
+                            
+                            <tr style="background: #ecfdf5; font-weight: 700;">
+                                <td><strong>Beta</strong></td>
+                                <td>Opção B ✅</td>
+                                <td>100 T$</td>
+                                <td>180 T$</td>
+                                <td><strong>150 T$</strong></td>
+                                <td>+50 T$ (lucro)</td>
+                            </tr>
+                            
+                            <tr style="background: #ecfdf5; font-weight: 700;">
+                                <td><strong>Gama</strong></td>
+                                <td>Opção B ✅</td>
+                                <td>150 T$</td>
+                                <td>270 T$</td>
+                                <td><strong>250 T$</strong></td>
+                                <td>+100 T$ (lucro)</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 1.5mm; font-size: 6.9pt; color: #1e293b; line-height: 1.3;">
+                        • <strong>Pote Total (P):</strong> 450 T$ &nbsp;|&nbsp; <strong>Apostado na Certa (B):</strong> 250 T$ → <strong>Multiplicador = 450 ÷ 250 = 1,8×</strong>.<br>
+                        • <strong>Soma Paga:</strong> 150 + 250 = <strong>400 T$</strong>. Os <strong>50 T$</strong> de troco ficam no Caixa da Casa!
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASES E TEXAS HOLD'EM -->
+            <div class="student-grid" style="margin-top: 3mm;">
+                <div class="info-card">
+                    <h3>📈 Limites de Aposta nas Fases 1 e 2</h3>
+                    <div style="font-size: 7.3pt; line-height: 1.4; color: #1e293b;">
+                        • <strong>Fase 1 (Aquecimento — Nível 1):</strong> Aposta mínima de <strong>50 T$</strong> e máxima de <strong>500 T$</strong>. Ideal para construir banca com segurança.<br>
+                        • <strong>Fase 2 (Rodadas Finais — Nível 2):</strong> Aposta mínima de <strong>50 T$</strong> e máxima de <strong>500 T$</strong>. As questões trazem comparações e armadilhas clássicas!<br>
+                        • <em>O teto de 500 T$ impede que sua equipe perca tudo por acidente nas primeiras rodadas.</em>
+                    </div>
+                </div>
+
+                <div class="info-card highlight-rose">
+                    <h3>🔥 Fase 3: Morte Súbita (Estilo Texas Hold'em!)</h3>
+                    <div style="font-size: 7.2pt; line-height: 1.35; color: #881337;">
+                        Na Fase 3 a emoção muda! Cada rodada acontece em <strong>2 etapas de aposta</strong>:<br>
+                        <strong>1. Aposta no Tema (NO ESCURO):</strong> O professor anuncia <strong>só o TEMA</strong> da carta (ex.: <em>"Diluição"</em>). Sem ver a pergunta, cada equipe é obrigada a apostar no mínimo <strong>100 T$</strong> confiando no quanto sabe daquele assunto!<br>
+                        <strong>2. Leitura + Check ou Raise (All-in!):</strong> O professor lê a pergunta e as opções A e B. Sua equipe escolhe A ou B em segredo e decide: <strong>CHECK</strong> (manter o que já pôs) ou <strong>RAISE / ALL-IN</strong> (colocar mais fichas na mesa antes de revelar)!
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTAS FREQUENTES & CRITÉRIO DE VITÓRIA -->
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <strong>🤝 "E se TODO MUNDO acertar?"</strong>
+                    O Multiplicador dá exatamente <strong>1,00×</strong>. Ninguém ganha e ninguém perde: cada equipe simplesmente pega de volta as fichas que apostou.
+                </div>
+                <div class="faq-item">
+                    <strong>💥 "E se TODO MUNDO errar?"</strong>
+                    Ninguém leva na hora, mas o dinheiro não some! Todo o Pote <strong>acumula (Jackpot / Rollover)</strong> e entra inteiro para engordar o prêmio da próxima pergunta!
+                </div>
+                <div class="faq-item">
+                    <strong>🛟 "Zeramos as fichas (0 T$). Fim de jogo?"</strong>
+                    Não! Peça a <strong>Repescagem Científica</strong>: se sua equipe explicar oralmente no quadro ou para a turma o porquê científico de uma questão, ganha <strong>+50 T$</strong> do Caixa da Casa!
+                </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2mm; border-top: 1pt solid #cbd5e1; display: flex; justify-content: space-between; font-size: 6.8pt; color: #334155;">
+                <span><strong>🏆 Quem Vence o Jogo?</strong> A equipe com <strong>mais Tokens (T$)</strong> ao final da última questão!</span>
+                <span><strong>⚔️ Empate no 1º Lugar?</strong> Carta extra com <strong>All-in Automático + Duelo Oral Relâmpago</strong> (vence quem justificar primeiro)!</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

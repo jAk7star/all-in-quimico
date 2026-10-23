@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Leilão de Química - Manual do Professor & Guia de Aplicação Didática (A4)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+    <style>
+        .manual-sec {
+            border: 0.9pt solid #cbd5e1;
+            border-radius: 2mm;
+            padding: 3mm 3.5mm;
+            margin-bottom: 3mm;
+            background: #ffffff;
+        }
+        .manual-sec.script-box {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        .manual-sec.texas-box {
+            background: #fff1f2;
+            border-color: #f43f5e;
+        }
+        .manual-sec h2 {
+            margin: 0 0 1.8mm 0;
+            font-size: 9.8pt;
+            font-weight: 900;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.4pt;
+            border-bottom: 0.8pt solid #e2e8f0;
+            padding-bottom: 1mm;
+        }
+        .manual-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5mm;
+        }
+        .manual-text {
+            font-size: 7.5pt;
+            line-height: 1.38;
+            color: #1e293b;
+        }
+        .speech-quote {
+            background: #ffffff;
+            border-left: 2.5pt solid #16a34a;
+            padding: 1.8mm 2.5mm;
+            margin: 1.2mm 0;
+            font-size: 7.3pt;
+            font-style: italic;
+            color: #14532d;
+        }
+        .manual-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7pt;
+            margin-top: 1.5mm;
+        }
+        .manual-table th, .manual-table td {
+            border: 0.6pt solid #cbd5e1;
+            padding: 1.3mm 2mm;
+            text-align: left;
+        }
+        .manual-table th {
+            background: #1e293b;
+            color: #fff;
+            font-weight: 800;
+            font-size: 6.5pt;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <h2>Manual Completo do Professor — Aplicação Didática, Rodada-Treino e Fase 3 Texas Hold'em (2 Páginas A4)</h2>
+        <p>Guia passo a passo para o professor conduzir o <strong>Leilão de Química</strong> no 2º e 3º ano do Ensino Médio: checklist de materiais, roteiro falado da Rodada-Treino ao vivo (valendo 0 T$), matemática sem comissão, dinâmica da Fase 3 (Aposta no Tema no Escuro) e mediação das armadilhas conceituais.</p>
+        <button class="print-btn" onclick="window.print()">Imprimir Manual do Professor (A4)</button>
+    </div>
+
+    <!-- ==================== PÁGINA 1: PREPARAÇÃO, RODADA-TREINO AO VIVO E CONTA DO POTE ==================== -->
+    <div class="page">
+        <div class="sheet-container" style="padding: 9mm 11mm;">
+            <div class="cheat-sheet-header" style="margin-bottom: 2.5mm; padding-bottom: 2mm;">
+                <div class="cheat-sheet-title">
+                    <h1 style="font-size: 14.5pt;">MANUAL DO PROFESSOR • LEILÃO DE QUÍMICA (PARI-MUTUEL)</h1>
+                    <div class="cheat-sheet-subtitle" style="font-size: 7.8pt;">Guia Pedagógico e Operacional • Ensino Médio (2º e 3º Ano) • Página 1 de 2</div>
+                </div>
+                <div class="rules-quick-summary">
+                    <div class="quick-rule-badge">Comissão: <strong>0% (Cálculo Mental Direto)</strong></div>
+                    <div class="quick-rule-badge">Casa: <strong>Fica só com o Troco (&lt; 50 T$)</strong></div>
+                    <div class="quick-rule-badge">Risco da Banca: <strong>ZERO ABSOLUTO</strong></div>
+                </div>
+            </div>
+
+            <div class="manual-cols">
+                <div class="manual-sec">
+                    <h2>1. Objetivo Pedagógico & Por Que Funciona</h2>
+                    <div class="manual-text">
+                        • <strong>Combate ao Chute e à Decoreba:</strong> Todas as questões possuem <strong>duas alternativas (A ou B)</strong> construídas sobre <em>concepções alternativas reais</em> (ex.: esquecer de converter mL para L, fazer média simples em volumes diferentes, achar que menor massa é sempre o reagente limitante, confundir efeito estufa com camada de ozônio).<br>
+                        • <strong>Metacognição Calibrada pelo Risco:</strong> Como a equipe precisa decidir quanto apostar (de 50 T$ a 500 T$), os alunos são forçados a avaliar o próprio grau de certeza científica antes de comprometer suas fichas.<br>
+                        • <strong>Zero Efeito Manada:</strong> As escolhas (A ou B) e as fichas são reveladas <strong>simultaneamente</strong> ao sinal do professor.
+                    </div>
+                </div>
+
+                <div class="manual-sec">
+                    <h2>2. Checklist de Impressão & Preparação (5 min)</h2>
+                    <div class="manual-text">
+                        <strong>Arquivos para imprimir na pasta <code>SPEC-04-impressao/</code>:</strong><br>
+                        1. <code>regras_do_aluno.html</code> (1 folha A4 por equipe).<br>
+                        2. <code>cartoes_regras_mesa.html</code> (4 cartões compactos por folha A4).<br>
+                        3. <code>dinheiro_para_imprimir.html</code> (entregar <strong>1.000 T$</strong> iniciais por equipe: ex. 1×500, 4×100 e 2×50 T$).<br>
+                        4. <code>duplex_intercalado_para_imprimir.html</code> (baralho A/B frente e verso).<br>
+                        5. <strong>Para o Professor:</strong> Este <code>manual_do_professor.html</code>, o <code>guia_do_mestre_cheat_sheet.html</code> (gabarito) e a <code>ficha_controle_leilao.html</code>.<br>
+                        • <em>Divida a turma em 3 a 6 equipes de 3 a 5 estudantes. Cada equipe recebe 1.000 T$ e duas placas/folhas com as letras <strong>A</strong> e <strong>B</strong>.</em>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROTEIRO FALADO DA RODADA TREINO -->
+            <div class="manual-sec script-box">
+                <h2>3. Roteiro Falado da Rodada-Treino ao Vivo (Valendo 0 T$ — Antes de Começar Oficialmente!)</h2>
+                <div class="manual-text">
+                    <strong>Regra de Ouro Didática:</strong> Nunca comece o jogo direto valendo fichas! Faça <strong>1 Rodada-Treino simulada (valendo 0 T$)</strong> em 3 minutos seguindo estas falas:
+                </div>
+                <div class="speech-quote">
+                    <strong>Passo 1 (Explicar a Regra em 20s):</strong> "Turma, cada equipe começou com 1.000 T$. Em cada rodada eu anuncio o Tema de Química e leio uma pergunta com duas respostas possíveis: A ou B. Vocês debatem em segredo, escolhem a placa A ou B virada para baixo na mesa e separam quanto querem apostar (entre 50 e 500 T$). Quem errar perde o que apostou para o Pote da mesa; quem acertar recupera sua aposta e divide todo o dinheiro de quem errou!"
+                </div>
+                <div class="speech-quote">
+                    <strong>Passo 2 (Simular uma Aposta sem Valer):</strong> "Vamos fazer 1 Rodada-Treino agora SEM VALER FICHAS (ninguém perde nada de verdade). Tema: Concentração Comum! Se dissolvermos 10 g de sal até completar 2 L de solução, a concentração é: (A) 5,0 g/L ou (B) 20,0 g/L? Vocês têm 30 segundos: separem as fichas e virem a letra A ou B para baixo!"
+                </div>
+                <div class="speech-quote">
+                    <strong>Passo 3 (Showdown e Demonstração da Conta no Quadro):</strong> "No 3 todo mundo levanta a placa junto: 1, 2, 3... REVELAR! A resposta certa é a <strong>A (5,0 g/L)</strong>, porque dividimos massa por volume (10 ÷ 2). Agora olhem no quadro (ou na Folha do Aluno) como é fácil calcular quanto cada vencedor recebe!"
+                </div>
+
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th>Equipe (Exemplo na Folha do Aluno)</th>
+                            <th>Escolha</th>
+                            <th>Aposta</th>
+                            <th>Cálculo do Multiplicador (O = 450 ÷ 250 = 1,8×)</th>
+                            <th>Pagamento Arredondado em 50 T$</th>
+                            <th>Resultado Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>Equipe Alfa</strong></td>
+                            <td>Alternativa A (Errada ❌)</td>
+                            <td>200 T$</td>
+                            <td>Perde 100% da aposta para o Pote</td>
+                            <td><strong>0 T$</strong></td>
+                            <td>−200 T$ (perdeu)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Equipe Beta</strong></td>
+                            <td>Alternativa B (Certa ✅)</td>
+                            <td>100 T$</td>
+                            <td>100 × 1,8 = 180 T$</td>
+                            <td><strong>150 T$</strong></td>
+                            <td>+50 T$ (lucro)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Equipe Gama</strong></td>
+                            <td>Alternativa B (Certa ✅)</td>
+                            <td>150 T$</td>
+                            <td>150 × 1,8 = 270 T$</td>
+                            <td><strong>250 T$</strong></td>
+                            <td>+100 T$ (lucro)</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div class="manual-text" style="margin-top: 1.5mm;">
+                    • <strong>Explicação do Troco da Casa (50 T$):</strong> Como a menor cédula do jogo é de <strong>50 T$</strong>, arredondamos cada pagamento para baixo no múltiplo de 50 T$ (180 vira 150 T$; 270 vira 250 T$). Os <strong>50 T$</strong> que sobraram ficam no <strong>Caixa da Casa</strong>. Depois dessa simulação, devolva as fichas e anuncie: <em>"Agora começa a Fase 1 valendo!"</em>
+                </div>
+            </div>
+
+            <!-- POR QUE A CASA NUNCA QUEBRA E CASOS ESPECIAIS -->
+            <div class="manual-cols">
+                <div class="manual-sec">
+                    <h2>4. Por Que a Casa (Professor) Nunca Perde Dinheiro?</h2>
+                    <div class="manual-text">
+                        • O sistema é <strong>100% fechado (Pari-Mutuel sem comissão)</strong>: o professor jamais promete pagar "o dobro" do próprio bolso. Os vencedores dividem exclusivamente as fichas deixadas pelos perdedores.<br>
+                        • <strong>Piso Garantido (O ≥ 1,00×):</strong> Como o Pote Total <em>P</em> é sempre maior ou igual ao total apostado na alternativa certa (<em>P ≥ T<sub>certa</sub></em>), quem acerta <strong>nunca recebe menos do que apostou</strong>.<br>
+                        • <strong>Sem Troco Picado:</strong> O truncamento para baixo em múltiplos de 50 T$ garante que o professor nunca precise de moedas de 10 ou 25 T$, e a soma paga jamais ultrapassa o Pote disponível na mesa.
+                    </div>
+                </div>
+
+                <div class="manual-sec">
+                    <h2>5. Como Agir nos 3 Casos Especiais de Sala</h2>
+                    <div class="manual-text">
+                        1. <strong>100% da turma acerta:</strong> O Multiplicador é <em>O = P / P = 1,00×</em>. Parabenize a turma pelo domínio do conceito! Ninguém perde e cada equipe recolhe de volta exatamente o que apostou.<br>
+                        2. <strong>100% da turma erra (Jackpot / Rollover!):</strong> Ninguém acertou (<em>T<sub>certa</sub> = 0</em>). Recolha todas as fichas apostadas e deixe-as visíveis no centro da mesa: <strong>todo esse valor se soma ao Pote da próxima questão</strong>, criando uma rodada milionária!<br>
+                        3. <strong>Equipe Zerou (0 T$) — Repescagem Científica:</strong> Para que nenhum grupo desista da aula, a equipe com 0 T$ pode pedir a palavra na próxima questão. Se explicar corretamente no quadro o raciocínio químico, recebe <strong>+50 T$</strong> pagos com as sobras do Caixa da Casa.
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2mm; border-top: 1pt solid #cbd5e1; display: flex; justify-content: space-between; font-size: 6.5pt; color: #64748b;">
+                <span>Leilão de Química v1.00 • Manual Didático do Professor</span>
+                <span>Página 1 de 2 — Continue na Página 2 para a Dinâmica das Fases e o Modo Texas Hold'em</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 2: AS 3 FASES, TEXAS HOLD'EM, DESEMPATE E MEDIAÇÃO DAS QUESTÕES ==================== -->
+    <div class="page">
+        <div class="sheet-container" style="padding: 9mm 11mm;">
+            <div class="cheat-sheet-header" style="margin-bottom: 2.5mm; padding-bottom: 2mm;">
+                <div class="cheat-sheet-title">
+                    <h1 style="font-size: 14.5pt;">MANUAL DO PROFESSOR • FASES, TEXAS HOLD'EM & MEDIAÇÃO</h1>
+                    <div class="cheat-sheet-subtitle" style="font-size: 7.8pt;">Como Conduzir a Progressão de Dificuldade, a Fase 3 (Morte Súbita) e o Desempate • Página 2 de 2</div>
+                </div>
+                <div class="rules-quick-summary">
+                    <div class="quick-rule-badge">Fases 1 e 2: <strong>50 a 500 T$</strong></div>
+                    <div class="quick-rule-badge">Fase 3: <strong>Aposta no Tema no Escuro + Check/Raise</strong></div>
+                    <div class="quick-rule-badge">Desempate: <strong>Duelo Oral Relâmpago</strong></div>
+                </div>
+            </div>
+
+            <!-- FASE 3 TEXAS HOLD'EM -->
+            <div class="manual-sec texas-box">
+                <h2>6. O Grande Clímax: Como Conduzir a Fase 3 (Morte Súbita — Estilo Texas Hold'em Químico)</h2>
+                <div class="manual-text">
+                    Para que a Fase 3 (Nível 3) e o desempate sejam muito mais emocionantes do que as fases normais — usando apenas as mesmas cartas e fichas —, as últimas questões seguem a mecânica de <strong>Aposta em 2 Etapas (estilo Poker Texas Hold'em)</strong>:
+                </div>
+                <div class="manual-cols" style="margin-top: 2mm;">
+                    <div style="background: #ffffff; border: 0.8pt solid #fda4af; border-radius: 1.8mm; padding: 2.2mm 2.8mm;" class="manual-text">
+                        <strong>ETAPA 1 — APOSTA NO TEMA (NO ESCURO):</strong><br>
+                        • Antes de ler o enunciado da carta de Nível 3, leia em voz alta <strong>APENAS O TEMA</strong> estampado no início da questão (ex.: <em>"Aposta no Tema: Diluição Laboratorial!"</em> ou <em>"Aposta no Tema: Limitante + Rendimento!"</em>).<br>
+                        • Sem saber qual é a pergunta exata, cada equipe tem 20 segundos para colocar no centro da sua mesa uma <strong>Aposta de Entrada Obrigatória (mínimo de 100 T$)</strong> baseada no quanto confia que domina aquele tema.<br>
+                        • <em>Essas fichas já estão comprometidas na rodada (não podem ser retiradas!).</em>
+                    </div>
+                    <div style="background: #ffffff; border: 0.8pt solid #fda4af; border-radius: 1.8mm; padding: 2.2mm 2.8mm;" class="manual-text">
+                        <strong>ETAPA 2 — LEITURA + CHECK OU RAISE (ALL-IN!):</strong><br>
+                        • Agora leia o enunciado completo e as alternativas <strong>A</strong> e <strong>B</strong>. Dê 60 segundos para os cálculos.<br>
+                        • Cada equipe escolhe secretamente sua placa (<strong>A</strong> ou <strong>B</strong>) e toma sua decisão final de fichas:<br>
+                        &nbsp;&nbsp;👉 <strong>CHECK (Manter):</strong> Não adiciona nenhuma ficha nova (concorre apenas com o que já pôs na Etapa 1).<br>
+                        &nbsp;&nbsp;👉 <strong>RAISE / ALL-IN (Aumentar):</strong> Se a equipe descobriu a pegadinha e está confiante (ou quer tentar a virada), pode adicionar quantos múltiplos de 50 T$ quiser — <strong>inclusive dar All-in (100% da banca)!</strong><br>
+                        • Ao sinal <em>"1, 2, 3... Revelar!"</em>, todos mostram a letra escolhida e o total apostado!
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRITÉRIO DE VITÓRIA E DUELO DE DESEMPATE -->
+            <div class="manual-cols">
+                <div class="manual-sec">
+                    <h2>7. Ritmo de Aula & Quantidade de Rodadas</h2>
+                    <div class="manual-text">
+                        O baralho completo possui <strong>25 cartas</strong> (13 de Nível 1, 7 de Nível 2 e 5 de Nível 3), mas você pode adaptar ao tempo da sua aula (50 ou 100 minutos):<br>
+                        • <strong>Partida Rápida (1 aula de 50 min — 10 rodadas):</strong><br>
+                        &nbsp;&nbsp;– 1 Rodada-Treino (0 T$) + 4 cartas de Nível 1 + 3 cartas de Nível 2 + 2 cartas de Nível 3 (Texas Hold'em).<br>
+                        • <strong>Partida Completa (2 aulas / 100 min — 15 a 20 rodadas):</strong><br>
+                        &nbsp;&nbsp;– 1 Rodada-Treino + 6 a 8 cartas de Nível 1 + 5 a 7 cartas de Nível 2 + 3 a 5 cartas de Nível 3.<br>
+                        • <strong>Tempo por questão:</strong> Use um cronômetro projetado ou no celular: <strong>45 segundos</strong> para questões conceituais e <strong>60 a 75 segundos</strong> para questões de cálculo.
+                    </div>
+                </div>
+
+                <div class="manual-sec">
+                    <h2>8. Critério de Vitória & Duelo Oral Relâmpago</h2>
+                    <div class="manual-text">
+                        • <strong>Campeão do Leilão:</strong> Encerrada a última rodada da Fase 3, todas as equipes contam suas cédulas. Vence a equipe com o <strong>maior saldo total de Tokens (T$)</strong>.<br>
+                        • <strong>E se houver Empate no 1º Lugar? (Morte Súbita Instantânea):</strong><br>
+                        &nbsp;&nbsp;1. Sorteie 1 carta extra de Nível 3 apenas entre as equipes empatadas.<br>
+                        &nbsp;&nbsp;2. Ambas entram em <strong>All-in Automático</strong> e revelam A ou B ao mesmo tempo.<br>
+                        &nbsp;&nbsp;3. Se uma acertar e a outra errar, quem acertou leva o título.<br>
+                        &nbsp;&nbsp;4. Se ambas escolherem a mesma letra, vence o <strong>Duelo Oral Relâmpago</strong>: a primeira equipe a levantar a mão e explicar corretamente ao professor o <em>porquê científico</em> da resposta correta (e o erro da outra opção) é declarada campeã!
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAPA DE ARMADILHAS CONCEITUAIS -->
+            <div class="manual-sec">
+                <h2>9. Mapa de Mediação Pedagógica: As Principais Armadilhas do Baralho (Níveis 1, 2 e 3)</h2>
+                <div class="manual-text" style="margin-bottom: 1.5mm;">
+                    O momento mais rico de aprendizagem ocorre nos <strong>30 segundos após a revelação</strong>, quando você mostra por que a alternativa incorreta parecia sedutora. Destaque estas armadilhas em sala:
+                </div>
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 12%;">Questões</th>
+                            <th style="width: 22%;">Tema Químico</th>
+                            <th style="width: 33%;">Armadilha Conceitual (Por que os alunos erram?)</th>
+                            <th style="width: 33%;">Conceito Científico Correto para Fechamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Q-SOL-002<br>Q-SOL-003</strong></td>
+                            <td>Concentração Comum e Molaridade (Alíquota)</td>
+                            <td>Olhar só para a maior massa bruta sem converter mL para L; ou achar que retirar 50 mL de um frasco de 250 mL diminui a molaridade por 5.</td>
+                            <td>Sempre converter mL → L (dividir por 1000). A concentração é uma <strong>propriedade intensiva</strong>: qualquer gota ou alíquota tem a mesma concentração do frasco original.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q-SOL-004<br>Q-SOL-005</strong></td>
+                            <td>Diluição: Água Adicionada vs. Volume Final</td>
+                            <td>Usar o volume de água adicionado como se fosse o <em>V<sub>2</sub></em> da fórmula, ou esquecer de subtrair os 50 mL iniciais ao calcular quanta água pôr.</td>
+                            <td>Em <em>c<sub>1</sub>·V<sub>1</sub> = c<sub>2</sub>·V<sub>2</sub></em>, <strong>V<sub>2</sub> é sempre o volume final total</strong> (<em>V<sub>inicial</sub> + V<sub>água</sub></em>). Para achar a água adicionada: <em>V<sub>água</sub> = V<sub>2</sub> − V<sub>1</sub></em>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q-SOL-009</strong></td>
+                            <td>Mistura de Soluções de Mesmo Soluto</td>
+                            <td>Fazer a média aritmética simples (1,0 e 3,0 → 2,0 mol/L) quando os volumes misturados são diferentes (100 mL e 300 mL).</td>
+                            <td>Somar as quantidades de matéria (<em>n<sub>total</sub> = n<sub>1</sub> + n<sub>2</sub></em>) e dividir pelo volume total (0,400 L), resultando na média ponderada (2,5 mol/L).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q-STO-006<br>Q-STO-008</strong></td>
+                            <td>Reagente Limitante e Rendimento Real</td>
+                            <td>Assumir que o reagente com menor número de mols (ou menor massa em gramas) é sempre o limitante, ignorando a proporção 1:2 da equação.</td>
+                            <td>Dividir os mols disponíveis pelo coeficiente estequiométrico de cada reagente; a menor razão define o limitante. O rendimento incide apenas sobre o limitante.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q-ENV-001 a<br>Q-ENV-006</strong></td>
+                            <td>Chuva Ácida, Efeito Estufa e Catalisador</td>
+                            <td>Achar que CFC/ozônio causa o efeito estufa; achar que catalisador é um filtro que retém carbono; ignorar a solubilização do <strong>Al<sup>3+</sup></strong> no solo ácido.</td>
+                            <td>Gases estufa (CO<sub>2</sub>, CH<sub>4</sub>) absorvem infravermelho; catalisador oxida CO a CO<sub>2</sub> sem ser consumido; o pH baixo libera Al<sup>3+</sup> tóxico nas argilas, corrigido com calcário (CaCO<sub>3</sub>).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2mm; border-top: 1pt solid #cbd5e1; display: flex; justify-content: space-between; font-size: 6.5pt; color: #64748b;">
+                <span>Leilão de Química v1.00 • Manual Didático do Professor</span>
+                <span>Página 2 de 2 — Bom jogo e excelente aula!</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

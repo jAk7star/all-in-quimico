@@ -25,6 +25,8 @@ def test_all_expected_output_files_exist():
         "guia_do_mestre_cheat_sheet.html",
         "ficha_controle_leilao.html",
         "cartoes_regras_mesa.html",
+        "regras_do_aluno.html",
+        "manual_do_professor.html",
         "perguntas_nivel_1.html",
         "perguntas_nivel_2.html",
         "perguntas_nivel_3.html",
@@ -47,14 +49,29 @@ def test_pari_mutuel_binary_options_and_rules_content():
         assert [o["key"] for o in opts] == ["A", "B"]
         assert len(distractors) == 1
 
+    training = deck_builder.build_training_round_context()
+    assert training["total_pool"] == 450
+    assert training["winner_pool"] == 250
+    assert training["odd_str"] == "1,8"
+    assert training["total_paid"] == 400
+    assert training["breakage"] == 50
+
     rules_html = (OUT_DIR / "cartoes_regras_mesa.html").read_text(encoding="utf-8")
     assert "Pari-Mutuel" in rules_html
-    assert "Breakage" in rules_html
-    assert "Rollover" in rules_html
+    assert "Texas Hold'em" in rules_html
+    assert "Sem Comissão" in rules_html
 
     tracker_html = (OUT_DIR / "ficha_controle_leilao.html").read_text(encoding="utf-8")
-    assert "POOL BRUTO" in tracker_html
-    assert "POOL LÍQ." in tracker_html
+    assert "POTE TOTAL" in tracker_html
+    assert "MULTIPLICADOR" in tracker_html
+
+    student_html = (OUT_DIR / "regras_do_aluno.html").read_text(encoding="utf-8")
+    assert "Alfa" in student_html and "Beta" in student_html and "Gama" in student_html
+    assert "Texas Hold'em" in student_html
+
+    teacher_html = (OUT_DIR / "manual_do_professor.html").read_text(encoding="utf-8")
+    assert "Roteiro Falado da Rodada-Treino" in teacher_html
+    assert "Duelo Oral Relâmpago" in teacher_html
 
 
 def test_duplex_mirroring_integrity():

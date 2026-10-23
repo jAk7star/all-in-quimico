@@ -132,6 +132,23 @@ def test_invalid_house_cut():
         validate_rules(data)
 
 
+def test_training_round_alfa_beta_gama_no_commission():
+    """Valida a Rodada-Treino oficial (Alfa=200 em A, Beta=100 em B, Gama=150 em B; B correta; c=0%)."""
+    settlement = settle_round_payouts(
+        bets_on_winner=[100, 150],
+        tokens_loser=200,
+        house_cut=0.0,
+        carryover_in=0,
+        breakage_unit=50,
+    )
+    assert settlement["total_available"] == 450
+    assert settlement["payouts"] == [150, 250]
+    assert settlement["total_paid"] == 400
+    assert settlement["house_base_take"] == 0
+    assert settlement["breakage"] == 50
+    assert settlement["total_house_revenue"] == 50
+
+
 def test_invalid_difficulty_level():
     data = load_rules(ROOT / "rules" / "base_rules.yaml")
     data["blocks"][0]["difficulty_level"] = 6

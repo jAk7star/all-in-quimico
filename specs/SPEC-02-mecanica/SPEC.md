@@ -1,21 +1,26 @@
-# SPEC-02 — Sistema de Apostas do Jogo (Pari-Mutuel Tokenizado e Blindado)
+# SPEC-02 — Sistema de Apostas do Jogo (Pari-Mutuel de Risco Zero & Fase 3 Texas Hold'em)
 
-Este documento define o regulamento oficial e a modelagem matemática otimizada do sistema de apostas do jogo **Leilão de Química**, separando as regras econômicas e de rodadas (SPEC-02) do conhecimento químico subjacente (SPEC-00) e do banco de questões (SPEC-01).
+Este documento define o regulamento oficial e a modelagem matemática do sistema de apostas do jogo **Leilão de Química**, separando as regras econômicas e de rodadas (SPEC-02) do conhecimento químico subjacente (SPEC-00) e do banco de questões (SPEC-01).
 
 ---
 
 ## 1. Estrutura Básica da Rodada e Protocolo Simultâneo
-- Uma pergunta é apresentada aos alunos/equipes com **duas respostas possíveis: A e B**.
-- Os alunos não sabem qual é a alternativa correta no momento da aposta.
-- **Apostas Simultâneas (Fechadas):** Todas as equipes escolhem secretamente sua alternativa (**A** ou **B**) e separam suas cédulas de **Tokens** (em múltiplos de `50 T$`), revelando simultaneamente ao sinal do professor. Isso elimina o "efeito manada" (copiar a aposta de outra equipe).
-- **Quem perde a aposta perde tudo:** 100% dos tokens apostados na opção incorreta vão para o pool da rodada.
+- Cada equipe inicia o jogo com **`1.000 T$` (Tokens)** em cédulas de `50`, `100` e `500 T$`, além de duas placas de decisão (**A** e **B**).
+- Antes do início oficial, o professor conduz **1 Rodada-Treino (valendo `0 T$`)** para que todas as equipes pratiquem a mecânica sem risco de perder fichas.
+- **Calibração de Risco pelo Tema:** Em todas as rodadas, o professor anuncia primeiro o **Tema e Subtema** da carta (ex.: *"Soluções — Diluição"*).
+- **Fases 1 e 2 (Aposta Direta):** O professor lê a pergunta e as duas alternativas (**A** e **B**). Todas as equipes escolhem secretamente sua alternativa e separam suas cédulas (entre `50 T$` e `500 T$`), revelando simultaneamente ao sinal do professor.
+- **Fase 3 — Morte Súbita (Estilo Texas Hold'em — Aposta no Tema no Escuro):**
+  1. **Aposta no Escuro (Pré-Leitura):** O professor anuncia **apenas o Tema** da carta. Sem ver a pergunta, cada equipe coloca na mesa uma aposta obrigatória (mínimo `100 T$`) confiando no quanto domina aquele assunto.
+  2. **Leitura + Check ou Raise (Showdown):** O professor lê a pergunta completa e as alternativas A e B. Cada equipe escolhe secretamente sua placa (**A** ou **B**) e decide se apenas **mantém** a aposta inicial (**Check**) ou se **aumenta / dá All-in** (**Raise**) colocando mais fichas antes da revelação simultânea.
+- **Quem perde a aposta perde tudo:** 100% dos tokens apostados na opção incorreta vão para o pote da rodada.
 
 ---
 
-## 2. Mecânica de Odds (Retorno Pari-Mutuel)
-- O retorno é calculado pelo sistema **pari-mutuel** (bolão proporcional mútuo).
-- **Quanto menos tokens** forem apostados em uma resposta, **maior será a odd** dela.
-- **Quanto mais tokens** forem apostados em uma resposta, **menor será a odd** dela.
+## 2. Mecânica de Multiplicador (Pari-Mutuel Direto Sem Comissão)
+- O retorno é calculado pelo sistema **pari-mutuel puro** (bolão proporcional mútuo sem taxa percentual da casa, $c = 0\%$).
+- **100% do pote dos perdedores** vai para o cálculo do multiplicador dos vencedores, tornando a conta mental rápida em sala de aula.
+- **Quanto menos tokens** forem apostados na alternativa certa, **maior será o multiplicador** dela.
+- **Quanto mais tokens** forem apostados na alternativa certa, **menor será o multiplicador** dela.
 
 ---
 
@@ -24,68 +29,45 @@ Este documento define o regulamento oficial e a modelagem matemática otimizada 
 ### Variáveis
 - $T_A$ = total de tokens apostados na resposta **A**
 - $T_B$ = total de tokens apostados na resposta **B**
-- $T = T_A + T_B$ = total do pool bruto arrecadado na rodada
-- $P_{\text{ant}}$ = pool acumulado de rodada anterior sem vencedores (*Rollover / Jackpot*, padrão $0$)
-- $c$ = percentual alvo da casa ($c = 0,10 = 10\%$, recomendado entre $5\%$ e $15\%$)
+- $T = T_A + T_B$ = total do pote arrecadado na rodada
+- $P_{\text{ant}}$ = pote acumulado de rodada anterior sem vencedores (*Rollover / Jackpot*, padrão $0$)
+- $P = T + P_{\text{ant}}$ = Pote Total disponível na rodada
 
-### 3.1. Garantia de Piso ($O \ge 1,00\times$) e Retenção Base da Casa
-Para evitar que equipes que acertaram a questão tenham prejuízo quando mais de $90\%$ da sala acerta ($O < 1,00\times$), a retenção base da casa incide até o limite dos tokens perdedores ($T_{\text{errada}}$):
-
-$$\text{Retenção Base da Casa} = \min\left(c \times T,\; T_{\text{errada}}\right)$$
-
-$$\text{Pool Líquido } (P) = \left(T - \text{Retenção Base da Casa}\right) + P_{\text{ant}}$$
-
-- Isso garante matematicamente que $P \ge T_{\text{certa}}$, logo **$O_{\text{certa}} \ge 1,00\times$ sempre**, e a mesa **jamais tira 1 token do próprio bolso**.
-
-### 3.2. Cálculo das Odds (Multiplicador de Retorno Total)
+### 3.1. Cálculo do Multiplicador (Odd de Retorno Total)
 - **Se A for a resposta correta ($T_A > 0$):**
   $$O_A = \frac{P}{T_A}$$
 - **Se B for a resposta correta ($T_B > 0$):**
   $$O_B = \frac{P}{T_B}$$
+- Como $P \ge T_{\text{certa}}$, garante-se matematicamente que **$O_{\text{certa}} \ge 1,00\times$ sempre**, e a mesa **jamais tira 1 token do próprio bolso**.
 
-### 3.3. Regra de Breakage (Arredondamento Físico em Múltiplos de 50 T$)
-Como o jogo físico utiliza apenas cédulas de **50, 100 e 500 Tokens**, cada pagamento individual $\text{Pagamento}_i$ para uma aposta vencedora $b_i$ (já múltiplo de $50\text{ T\$}$) é **truncado para baixo no múltiplo de 50 Tokens**:
+### 3.2. Regra do Troco da Casa (*Breakage* em Múltiplos de 50 T$)
+Como o jogo físico utiliza apenas cédulas de **50, 100 e 500 Tokens**, cada pagamento individual $\text{Pagamento}_i$ para uma aposta vencedora $b_i$ (já múltiplo de $50\text{ T\$}$) é **arredondado para baixo no múltiplo de 50 Tokens**:
 
 $$\text{Pagamento}_i = \left\lfloor \frac{b_i \times O}{50} \right\rfloor \times 50$$
 
-- **Sobra de Arredondamento (*Breakage*):** A diferença fracionária não distribuída ($\text{Breakage} = P - \sum \text{Pagamento}_i$) permanece integralmente no **Caixa da Casa**.
-- **Prova de Risco Zero da Mesa:** Como $O \ge 1,00\times$ e $b_i$ é múltiplo de $50$, todo vencedor recebe no mínimo sua aposta de volta ($\text{Pagamento}_i \ge b_i$), e a soma paga nunca excede o Pool Líquido ($\sum \text{Pagamento}_i \le P$). A mesa nunca precisa de cédulas menores que $50\text{ T\$}$ e nunca fica no negativo.
+- **Troco da Casa (*Breakage*):** A sobra indivisível menor que `50 T$` por equipe ($\text{Breakage} = P - \sum \text{Pagamento}_i$) permanece no **Caixa da Casa**.
+- **Rodada-Treino de Referência (3 Equipes):**
+  - Equipe Alfa aposta `200 T$` em **A**; Equipe Beta aposta `100 T$` em **B**; Equipe Gama aposta `150 T$` em **B**.
+  - Gabarito correto: **B**. Pote Total $P = 200 + 100 + 150 = 450\text{ T\$}$. Total apostado na certa ($T_B$) = $250\text{ T\$}$.
+  - Multiplicador: $O_B = \frac{450}{250} = 1,80\times$.
+  - **Beta:** $100 \times 1,80 = 180 \rightarrow$ recebe **`150 T$`** (lucro líquido de $+50\text{ T\$}$).
+  - **Gama:** $150 \times 1,80 = 270 \rightarrow$ recebe **`250 T$`** (lucro líquido de $+100\text{ T\$}$).
+  - **Alfa:** perde seus `200 T$`.
+  - **Caixa da Casa:** retém os **`50 T$`** de troco ($450 - 400 = 50\text{ T\$}$).
 
 ---
 
-## 4. Cenários Principais
+## 4. Casos Especiais e Critério de Vitória
 
-### Cenário 1 – Maioria erra
-- A maioria dos tokens vai para a resposta errada.
-- A Casa retém integralmente $c \times T$ ($10\%$) + *Breakage*.
-- A odd da resposta correta fica **alta** ($O \gg 1,0\times$).
-- Os vencedores dividem o pool líquido ($P$) proporcionalmente (truncado em múltiplos de $50\text{ T\$}$).
+### 4.1. Todos acertam ($100\%$ na alternativa correta)
+- O multiplicador é $O = 1,00\times$. Ninguém ganha e ninguém perde: cada equipe recebe de volta exatamente o que apostou.
 
-### Cenário 2 – Maioria acerta
-- A maioria dos tokens vai para a resposta correta.
-- A odd da resposta correta fica **baixa** (próxima de $1,0\times$ ou pouco acima, nunca inferior a $1,00\times$).
-- A odd da resposta errada fica muito alta, mas quem apostou nela perde tudo.
+### 4.2. Todos erram (*Rollover / Pote Acumulado*)
+- Se nenhuma equipe apostar na alternativa correta ($T_{\text{certa}} = 0$), o Pote Total ($P$) **acumula integralmente ($P_{\text{ant}}$) para turbinar o Pote da próxima rodada** (*Jackpot*).
 
-### Cenário 3 – 100% da turma erra (Rollover / Pool Acumulado)
-- Se nenhuma equipe apostar na alternativa correta ($T_{\text{certa}} = 0$):
-  - A Casa retém sua comissão $\lfloor \frac{c \times T}{50} \rfloor \times 50$.
-  - O Pool Líquido restante ($P$) **acumula integralmente ($P_{\text{ant}}$) para turbinar o Pool da próxima rodada** (*Jackpot*), gerando grande engajamento na questão seguinte sem custo para a mesa.
+### 4.3. Repescagem Científica Auto-Sustentável (Quando uma equipe zera)
+- Caso uma equipe perca tudo (`0 T$`), ela pode conquistar um auxílio de **`50 T$`** apresentando oralmente a justificativa científica correta de uma questão, **pago exclusivamente se o Caixa da Casa já tiver saldo acumulado de troco $\ge 50\text{ T\$}$**.
 
----
-
-## 5. Gestão de Risco Pedagógico e Regras da Casa
-- **Teto de Aposta nas Fases 1 e 2:** Aposta mínima de `50 T$` e **aposta máxima de `500 T$` por rodada** (50% da banca inicial), impedindo que uma equipe dê *All-in* e seja eliminada na 1ª rodada.
-- **Fase 3 (Desafio Final):** Aposta mínima dobra (`100 T$`) e o **All-in é liberado** (até 100% da banca).
-- **Repescagem Científica Auto-Sustentável:** Caso uma equipe zere seus tokens (`0 T$`), ela pode conquistar um auxílio de **`50 T$`** apresentando oralmente a justificativa científica correta de uma questão, **pago exclusivamente se o Caixa da Casa já tiver lucro acumulado $\ge 50\text{ T\$}$**. Assim, a Casa jamais fica negativa e nenhuma equipe abandona a aula.
-
----
-
-## 6. Fluxo Resumido de uma Rodada (8 Passos)
-1. **Pergunta + respostas A e B** são apresentadas.
-2. **Apostas Simultâneas:** Equipes escolhem secretamente A ou B e separam seus Tokens (múltiplos de 50 T$), revelando juntas ao sinal do professor.
-3. **Cálculo das Odds:** Soma-se $T_A$ e $T_B$ e calcula-se o Pool Líquido $P$ e as Odds $O_A$ e $O_B$.
-4. **Revelação:** A resposta correta (A ou B) é revelada e explicada.
-5. **Pagamento aos Vencedores:** Quem acertou recebe $\lfloor (b_i \times O) / 50 \rfloor \times 50$ Tokens (ou o Pool acumula em *Rollover* se $T_{\text{certa}} = 0$).
-6. **Perda Total dos Perdedores:** Quem errou perde 100% dos tokens apostados.
-7. **Caixa da Casa:** A casa retém sua comissão + a sobra de arredondamento (*Breakage*).
-8. **Novo Ciclo:** O ciclo se repete para o próximo lote.
+### 4.4. Critério de Vitória e Desempate Final (Duelo Oral Relâmpago)
+- Ao final da última questão da Fase 3, vence a equipe que acumular **mais Tokens (`T$`)**.
+- **Desempate de 1º Lugar:** Se duas ou mais equipes terminarem empatadas na liderança, sorteia-se uma carta extra de **Morte Súbita com All-in Automático**. Se o empate persistir (ambas acertarem ou ambas errarem), vence a equipe que **explicar oralmente primeiro o porquê científico da resposta correta**!

@@ -1,23 +1,24 @@
-# Questões de Nível 3 (Fase 3 / Desafio Morte Súbita - Desempate)
+# Questões de Nível 3 (Fase 3 / Desafio Morte Súbita - Texas Hold'em Químico)
 questions:
   - id: Q-SOL-005
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-SOL
-    skill: Determinar o volume final necessário em uma diluição.
+    skill: Determinar o volume final e o volume de solvente a adicionar em uma diluição laboratorial.
     cognitive_level: application
     difficulty: 3
     concept_refs: [CHEM-SOL-003]
     formula_refs: [CHEM-FRM-004]
     statement: >-
-      Deseja-se obter uma solução 0,25 mol/L a partir de 50 mL de uma solução
-      1,0 mol/L do mesmo soluto. Qual deve ser o volume final, em mL?
+      🔥 [APOSTA NO TEMA: DILUIÇÃO] Você dispõe de 50 mL de uma solução estoque
+      1,0 mol/L e precisa diluí-la para obter uma solução 0,25 mol/L. Qual deve
+      ser o volume final (V<sub>2</sub>) da solução e quanto de água destilada deve ser adicionado?
     given_data:
       c_inicial: {value: 1.0, unit: mol/L}
       v_inicial: {value: 50, unit: mL}
       c_final: {value: 0.25, unit: mol/L}
-    assumptions: [O soluto é a mesma espécie antes e depois da diluição.]
+    assumptions: [O soluto é a mesma espécie antes e depois da diluição, com volumes aditivos.]
     calc:
       id: v_final
       kind: formula
@@ -26,27 +27,27 @@ questions:
       inputs: {c1: c_inicial, V1: v_inicial, c2: c_final}
       expected: {value: 200, unit: mL, tolerance: 0.01}
     options:
-      - {key: A, text: "200 mL", rationale: "Correta; V2 = (c1 · V1) / c2 = (1,0 × 50) / 0,25 = 200 mL."}
-      - {key: B, text: "12,5 mL", rationale: "Multiplicou o volume inicial por 0,25 em vez de dividir pela concentração final."}
+      - {key: A, text: "Volume final V2 = 200 mL (adicionando-se 150 mL de água aos 50 mL iniciais).", rationale: "Correta; V2 = (1,0 × 50) / 0,25 = 200 mL. Como já havia 50 mL, adicionam-se 150 mL de água."}
+      - {key: B, text: "Volume final V2 = 250 mL (adicionando-se 200 mL de água aos 50 mL iniciais).", rationale: "Confundiu o volume final V2 (200 mL) com o volume de água a ser adicionado, somando 200 + 50 = 250 mL.", mistake_ref: {concept: CHEM-SOL-003, index: 1}}
     correct: A
-    worked_solution: "V2 = c1·V1 / c2 = 1,0 × 50 / 0,25 = 200 mL."
-    scientific_justification: A conservação da quantidade de soluto permite determinar V2 quando as demais grandezas são dadas.
+    worked_solution: "V2 = c1·V1 / c2 = 1,0 × 50 / 0,25 = 200 mL (volume final). Volume de água adicionado = 200 mL - 50 mL = 150 mL."
+    scientific_justification: Na fórmula c1·V1 = c2·V2, V2 é o volume total final da solução, logo V_água = V2 - V1.
 
   - id: Q-SOL-007
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-SOL
-    skill: Calcular a concentração em quantidade de matéria a partir da massa de um sal.
+    skill: Calcular em múltiplas etapas a concentração molar a partir da massa de um sal.
     cognitive_level: analysis
     difficulty: 3
     concept_refs: [CHEM-STO-MOLARMASS, CHEM-STO-AMOUNT, CHEM-SOL-002]
     formula_refs: [CHEM-FRM-003, CHEM-FRM-002]
     statement: >-
-      11,7 g de NaCl foram dissolvidos em água até completar 500 mL de solução.
-      Dados: massas atômicas M<sub>Na</sub> = 23,0 g/mol e M<sub>Cl</sub> = 35,5 g/mol.
-      (a) Calcule a massa molar do NaCl. (b) Calcule a quantidade de matéria de
-      NaCl. (c) Calcule a concentração em quantidade de matéria, em mol/L.
+      🔥 [APOSTA NO TEMA: MOLARIDADE A PARTIR DA MASSA] 11,7 g de NaCl foram
+      dissolvidos em água até completar 500 mL de solução. Dados: M<sub>Na</sub> = 23,0 g/mol
+      e M<sub>Cl</sub> = 35,5 g/mol. Quais são a massa molar (M), a quantidade de matéria (n)
+      e a concentração molar (c) final?
     given_data:
       massa_nacl: {value: 11.7, unit: g}
       volume_solucao: {value: 500, unit: mL, description: volume final da solução}
@@ -73,29 +74,29 @@ questions:
         inputs: {n_soluto: quantidade, V_solucao: volume_solucao}
         expected: {value: 0.40, unit: mol/L, tolerance: 0.01}
     options:
-      - {key: A, text: "M = 58,5 g/mol • n = 0,20 mol • c = 0,40 mol/L", rationale: "Correta; converteu 500 mL para 0,500 L para achar c = 0,20 / 0,500 = 0,40 mol/L."}
-      - {key: B, text: "M = 58,5 g/mol • n = 0,20 mol • c = 0,20 mol/L", rationale: "Esqueceu de dividir a quantidade de matéria pelo volume de 0,500 L na última etapa."}
+      - {key: A, text: "M = 58,5 g/mol • n = 0,20 mol • c = 0,40 mol/L (dividindo 0,20 mol por 0,500 L).", rationale: "Correta; converteu 500 mL para 0,500 L e dividiu c = 0,20 / 0,500 = 0,40 mol/L."}
+      - {key: B, text: "M = 58,5 g/mol • n = 0,20 mol • c = 0,10 mol/L (multiplicando 0,20 mol por 0,500 L).", rationale: "Na última etapa, multiplicou os mols pelo volume (0,20 × 0,500 = 0,10) em vez de dividir.", mistake_ref: {concept: CHEM-SOL-002, index: 1}}
     correct: A
     worked_solution: >-
       M = 23,0 + 35,5 = 58,5 g/mol; n = 11,7 / 58,5 = 0,20 mol;
       c = 0,20 mol / 0,500 L = 0,40 mol/L.
-    scientific_justification: Encadeia massa molar, n = m/M e c = n/V, com volume final em litros.
+    scientific_justification: Encadeia massa molar, n = m/M e c = n/V, dividindo pelo volume final em litros (0,500 L).
 
   - id: Q-SOL-008
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-SOL
-    skill: Calcular a concentração em quantidade de matéria do NaOH a partir de sua massa.
+    skill: Distinguir concentração comum (g/L) de concentração molar (mol/L) no preparo de soluções de NaOH.
     cognitive_level: analysis
     difficulty: 3
     concept_refs: [CHEM-STO-MOLARMASS, CHEM-STO-AMOUNT, CHEM-SOL-002]
     formula_refs: [CHEM-FRM-003, CHEM-FRM-002]
     statement: >-
-      8,0 g de NaOH foram dissolvidos em água até completar 250 mL de solução.
-      Dados: M<sub>Na</sub> = 23,0 g/mol, M<sub>O</sub> = 16,0 g/mol e M<sub>H</sub> = 1,0 g/mol.
-      (a) Calcule a massa molar do NaOH. (b) Calcule a quantidade de matéria.
-      (c) Calcule a concentração em mol/L.
+      🔥 [APOSTA NO TEMA: SODA CÁUSTICA EM SOLUÇÃO] 8,0 g de NaOH foram dissolvidos
+      em água até completar 250 mL de solução. Dados: M<sub>Na</sub> = 23,0 g/mol,
+      M<sub>O</sub> = 16,0 g/mol e M<sub>H</sub> = 1,0 g/mol. Quais são a massa molar (M),
+      a quantidade de matéria (n) e a concentração em mol/L (c)?
     given_data:
       massa_naoh: {value: 8.0, unit: g}
       volume_solucao: {value: 250, unit: mL, description: volume final da solução}
@@ -120,44 +121,44 @@ questions:
         inputs: {n_soluto: quantidade, V_solucao: volume_solucao}
         expected: {value: 0.80, unit: mol/L, tolerance: 0.01}
     options:
-      - {key: A, text: "M = 40,0 g/mol • n = 0,20 mol • c = 0,05 mol/L", rationale: "Multiplicou 0,20 mol por 0,250 L em vez de dividir pelo volume em litros."}
-      - {key: B, text: "M = 40,0 g/mol • n = 0,20 mol • c = 0,80 mol/L", rationale: "Correta; M = 40,0 g/mol, n = 8,0 / 40,0 = 0,20 mol e c = 0,20 / 0,250 L = 0,80 mol/L."}
+      - {key: A, text: "M = 40,0 g/mol • n = 0,20 mol • c = 32,0 mol/L (dividindo 8,0 g por 0,250 L).", rationale: "Usou a massa em gramas (8,0 g) diretamente na fórmula da molaridade, calculando g/L em vez de mol/L.", mistake_ref: {concept: CHEM-SOL-002, index: 0}}
+      - {key: B, text: "M = 40,0 g/mol • n = 0,20 mol • c = 0,80 mol/L (dividindo 0,20 mol por 0,250 L).", rationale: "Correta; M = 40,0 g/mol, n = 8,0 / 40,0 = 0,20 mol e c = 0,20 mol / 0,250 L = 0,80 mol/L."}
     correct: B
     worked_solution: >-
       M = 23,0 + 16,0 + 1,0 = 40,0 g/mol; n = 8,0 / 40,0 = 0,20 mol;
       c = 0,20 / 0,250 = 0,80 mol/L.
-    scientific_justification: Os índices da fórmula NaOH são todos 1; o volume final é convertido para litros.
+    scientific_justification: A molaridade exige a conversão prévia de gramas para mol (n = 0,20 mol) antes de dividir pelo volume em litros.
 
   - id: Q-STO-008
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-STO
-    skill: Resolver desafio de estequiometria com reagente limitante e rendimento.
+    skill: Resolver problema integrando massa, reagente limitante e rendimento percentual.
     cognitive_level: analysis
     difficulty: 3
     concept_refs: [CHEM-STO-LIMITING, CHEM-STO-YIELD]
-    statement: "🔥 [DESAFIO MORTE SÚBITA] Na síntese da água 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, são misturados 4,0 mol de H<sub>2</sub> e 3,0 mol de O<sub>2</sub>. Sabendo que o rendimento do processo é de 50%, quantos mols de H<sub>2</sub>O são formados?"
+    statement: "🔥 [APOSTA NO TEMA: LIMITANTE + RENDIMENTO] Na síntese da água 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, reagem 8,0 g de H<sub>2</sub> (M = 2,0 g/mol, isto é, 4,0 mol) com 96,0 g de O<sub>2</sub> (M = 32,0 g/mol, isto é, 3,0 mol). Com rendimento de 50%, quantos mols de H<sub>2</sub>O são formados?"
     options:
-      - {key: A, text: "4,0 mol", rationale: "Calculou a quantidade teórica baseada no H2, sem aplicar o rendimento de 50%."}
-      - {key: B, text: "2,0 mol", rationale: "Correta; H2 é o limitante (4,0 mol de H2 produzem teoricamente 4,0 mol de H2O). Com rendimento de 50%, formam-se 2,0 mol de H2O."}
+      - {key: A, text: "3,0 mol de H<sub>2</sub>O (ou 4,0 mol teóricos sem aplicar o rendimento de 50% sobre o limitante).", rationale: "Tomou o O2 (3,0 mol) como limitante por ter menos mols absolutos ou esqueceu de reduzir pela eficiência de 50%.", mistake_ref: {concept: CHEM-STO-LIMITING, index: 0}}
+      - {key: B, text: "2,0 mol de H<sub>2</sub>O, pois o H<sub>2</sub> é o limitante (4,0 mol formariam 4,0 mol teóricos, e 50% rendem 2,0 mol).", rationale: "Correta; 4,0 mol de H2 consomem apenas 2,0 mol de O2 (sobra 1,0 mol de O2). Com 50% de rendimento sobre 4,0 mol, obtêm-se 2,0 mol."}
     correct: B
-    worked_solution: "1) Proporção 2 H2 : 1 O2. Para 4,0 mol de H2 seriam necessários 2,0 mol de O2. Como temos 3,0 mol de O2, o H2 é o limitante! 2) Teoricamente: 4,0 mol H2 → 4,0 mol H2O. 3) Com rendimento de 50%: 4,0 × 0,50 = 2,0 mol de H2O."
-    scientific_justification: "Identificação estequiométrica rigorosa do reagente limitante seguida da aplicação da eficiência real de reação."
+    worked_solution: "1) Proporção 2 H2 : 1 O2. Os 4,0 mol de H2 precisam de apenas 2,0 mol de O2 (há 3,0 mol disponíveis, logo H2 é o limitante). 2) Teórico: 4,0 mol de H2O. 3) Real (50%): 2,0 mol de H2O."
+    scientific_justification: "Embora a massa de H2 seja muito menor (8,0 g vs 96,0 g), a análise em mols com proporção 2:1 define o limitante e o rendimento real."
 
   - id: Q-ENV-006
     type: multiple_choice
     version: 1
     status: review
     domain: CHEM-ENV
-    skill: Justificar o impacto socioambiental e geoquímico da chuva ácida no solo e corpos d'água.
+    skill: Analisar a mobilização geoquímica de íons Al3+ pela chuva ácida e a neutralização por calagem.
     cognitive_level: analysis
     difficulty: 3
     concept_refs: [CHEM-ENV-ACIDRAIN, CHEM-ENV-SOCIOECON]
-    statement: "🔥 [DESAFIO MORTE SÚBITA] Além de corroer monumentos de mármore (CaCO<sub>3</sub>), por que a chuva ácida causa a mortandade de peixes e vegetação em regiões afetadas?"
+    statement: "🔥 [APOSTA NO TEMA: GEOQUÍMICA DA CHUVA ÁCIDA] Por que a chuva ácida provoca mortandade de peixes e árvores mesmo sem ser concentrada o bastante para queimar tecidos diretamente, e qual insumo corrige esse solo?"
     options:
-      - {key: A, text: "Porque aumenta a temperatura da água dos rios de forma instantânea.", rationale: "A acidez não altera significativamente a capacidade calorífica da água."}
-      - {key: B, text: "Porque a acidificação do solo e da água solubiliza íons metálicos tóxicos (como o Al<sup>3+</sup>), lixiviando nutrientes essenciais.", rationale: "Correta; o pH baixo libera Al3+ solúvel que é altamente tóxico para as guelras dos peixes e raízes."}
+      - {key: A, text: "Porque a acidez consome todo o gás oxigênio (O<sub>2</sub>) da água; corrige-se aplicando sal neutro (NaCl) no solo.", rationale: "A acidez não consome O2 dissolvido diretamente e o NaCl saliniza o solo sem neutralizar o pH ácido.", mistake_ref: {concept: CHEM-ENV-ACIDRAIN, index: 0}}
+      - {key: B, text: "Porque o baixo pH solubiliza íons alumínio tóxicos (Al<sup>3+</sup>) das argilas do solo; corrige-se aplicando calcário (CaCO<sub>3</sub>).", rationale: "Correta; o Al3+ livre intoxica raízes e brânquias de peixes, e o carbonato de cálcio (básico) eleva o pH na calagem."}
     correct: B
-    worked_solution: "A diminuição do pH do solo solubiliza metais pesados como o alumínio (Al3+), que é tóxico para peixes (danifica brânquias) e impede a absorção de nutrientes pelas plantas."
-    scientific_justification: "Mobilidade geotóxica de cátions metálicos induzida pelo rebaixamento de pH aquoso."
+    worked_solution: "O H<sup>+</sup> da chuva ácida desloca cátions Al<sup>3+</sup> dos aluminossilicatos do solo para a água. A calagem com CaCO<sub>3</sub> neutraliza a acidez e insolubiliza o alumínio."
+    scientific_justification: "Equilíbrio de solubilidade de cátions metálicos geotóxicos em função do pH e neutralização ácido-base por carbonatos."

@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Leilão de Química - Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel Blindado)</title>
+    <title>Leilão de Química - Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel)</title>
     <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
 </head>
 <body>
     <div class="no-print">
         <h2>Guia Rápido do Mestre (Cheat Sheet Pari-Mutuel — Opções A e B)</h2>
-        <p>Folha única de consulta rápida para o professor/mediador revelar se a resposta vencedora do pool é <strong>A</strong> ou <strong>B</strong> e liquidar as apostas com piso garantido <em>O ≥ 1,00×</em> e truncamento em múltiplos de 50 T$.</p>
+        <p>Folha única de consulta rápida para o professor/mediador revelar se a resposta vencedora do pote é <strong>A</strong> ou <strong>B</strong>, anunciar o Tema na Fase 3 (Texas Hold'em) e liquidar as apostas sem comissão (cálculo mental direto com troco em múltiplos de 50 T$).</p>
         <button class="print-btn" onclick="window.print()">Imprimir Guia do Mestre (A4)</button>
     </div>
 
@@ -17,13 +17,13 @@
             <div class="cheat-sheet-header">
                 <div class="cheat-sheet-title">
                     <h1>GUIA DO MESTRE • GABARITO RÁPIDO (A vs B)</h1>
-                    <div class="cheat-sheet-subtitle">Tabela Consolidada de Lotes • Sistema Pari-Mutuel Blindado (Risco Zero para a Mesa)</div>
+                    <div class="cheat-sheet-subtitle">Tabela Consolidada de Lotes • Pote 100% dos Vencedores (Sem Comissão) & Fase 3 Texas Hold'em</div>
                 </div>
                 <div class="rules-quick-summary">
-                    <div class="quick-rule-badge">Casa: <strong>min({{ house_cut_pct }}%·T, T<sub>errada</sub>)</strong></div>
-                    <div class="quick-rule-badge">Pool Líq.: <strong>P = (T − Casa) + Rollover</strong></div>
-                    <div class="quick-rule-badge">Odd: <strong>O = P / T<sub>certa</sub> (≥ 1,00×)</strong></div>
-                    <div class="quick-rule-badge">Payout: <strong>⌊(Aposta × O)/50⌋ × 50 T$</strong></div>
+                    <div class="quick-rule-badge">Pote Total: <strong>P = T<sub>A</sub> + T<sub>B</sub> + Acumulado</strong></div>
+                    <div class="quick-rule-badge">Multiplicador: <strong>O = P / T<sub>certa</sub> (≥ 1,00×)</strong></div>
+                    <div class="quick-rule-badge">Pagamento: <strong>⌊(Aposta × O)/50⌋ × 50 T$</strong></div>
+                    <div class="quick-rule-badge">Casa: <strong>Fica só com o Troco (&lt; 50 T$)</strong></div>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
             </table>
 
             <div style="margin-top: auto; padding-top: 3mm; border-top: 1pt solid #cbd5e1; display: flex; justify-content: space-between; font-size: 6pt; color: #64748b;">
-                <span>Apostas Simultâneas (F1/F2: 50 a 500 T$ | F3: Mín. 100 T$, All-in) • Se T<sub>certa</sub> = 0 → Rollover • Repescagem: +50 T$ do Caixa da Casa</span>
+                <span>F1/F2: 50 a 500 T$ • F3 (Texas Hold'em): 1º Aposta no Tema no Escuro (mín. 100 T$) → 2º Lê questão (Check ou Raise/All-in) • Empate Final: Duelo Oral Relâmpago</span>
                 <span>Leilão de Química v1.00 • Uso Exclusivo do Professor/Mediador</span>
             </div>
         </div>
