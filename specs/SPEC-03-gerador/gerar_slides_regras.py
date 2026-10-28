@@ -141,9 +141,9 @@ def build_rules_batch() -> list[dict]:
     })
     ops.append({
         "op": "add-textbox", "slide": "p",
-        "text": "5 Perguntas Regulares  •  Economia R$ 10.000  •  Apostas em Papel (Sem Placas)  •  Desafio Final Tudo ou Nada",
-        "x": 50, "y": 336, "width": 620, "height": 36,
-        "font_size": 11, "bold": True, "color": TEXT_MUTED,
+        "text": "5 Perguntas Regulares  •  Economia R$ 10.000  •  Apostas em Papel (Sem Placas)  •  Repescagem (+R$ 200 na 5ª Rodada)  •  Desafio da Mesa",
+        "x": 48, "y": 336, "width": 624, "height": 36,
+        "font_size": 10.5, "bold": True, "color": TEXT_MUTED,
         "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
     })
 
@@ -154,7 +154,8 @@ def build_rules_batch() -> list[dict]:
             "Apresente aos estudantes a dinâmica competitiva de Química.\n"
             "5 equipes competem com saldo inicial de R$ 1.000 cada, com economia total de R$ 10.000.\n"
             "Apostas registradas exclusivamente em papel/folhas de aposta (sem placas).\n"
-            "Teto máximo de aposta por pergunta: R$ 200."
+            "Teto máximo de aposta por pergunta: R$ 200.\n"
+            "Inclui mecânica de Repescagem na 5ª rodada (+R$ 200 do Banco para equipe zerada ou com saldo <= R$ 200)."
         ),
     })
 
@@ -223,8 +224,8 @@ def build_rules_batch() -> list[dict]:
     })
     ops.append({
         "op": "add-textbox", "slide": "SLIDE_1",
-        "text": "REGRAS DE OURO DO CAIXA & GOVERNANÇA",
-        "x": 48, "y": 260, "width": 624, "height": 22,
+        "text": "REGRAS DE OURO DO CAIXA, GOVERNANÇA & REPESCAGEM",
+        "x": 48, "y": 258, "width": 624, "height": 20,
         "font_size": 10.5, "bold": True, "color": COLOR_BRAND,
         "font_family": FONT_FAMILY, "alignment": "left", "content_alignment": "MIDDLE",
     })
@@ -232,13 +233,14 @@ def build_rules_batch() -> list[dict]:
         "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n"
         "• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n"
         "• Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada; mantém a competitividade nas 5 rodadas).\n"
+        "• Repescagem na Última Rodada (+R$ 200): Na 5ª rodada, equipe zerada ou no limite (saldo ≤ R$ 200) recebe +R$ 200 do Banco (a fundo perdido) para jogar!\n"
         "• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500)."
     )
     ops.append({
         "op": "add-textbox", "slide": "SLIDE_1", "text": rules_text,
-        "x": 48, "y": 284, "width": 624, "height": 88,
-        "font_size": 10.5, "color": TEXT_PRIMARY,
-        "font_family": FONT_FAMILY, "line_spacing": 135, "alignment": "left", "content_alignment": "TOP",
+        "x": 48, "y": 278, "width": 624, "height": 98,
+        "font_size": 9.5, "color": TEXT_PRIMARY,
+        "font_family": FONT_FAMILY, "line_spacing": 122, "alignment": "left", "content_alignment": "TOP",
     })
     ops.append({
         "op": "set-notes", "slide": "SLIDE_1",
@@ -247,7 +249,8 @@ def build_rules_batch() -> list[dict]:
             "Explique a composição exata das cédulas entregues a cada grupo:\n"
             "6 notas de R$ 100 (R$ 600) + 6 notas de R$ 50 (R$ 300) + 10 notas de R$ 10 (R$ 100) = R$ 1.000.\n"
             "A economia total do jogo é de R$ 10.000, dividida meio a meio entre estudantes e professor.\n"
-            "As equipes devem utilizar a folha de aposta em papel (sem placas)."
+            "As equipes devem utilizar a folha de aposta em papel (sem placas).\n"
+            "Destaque a Repescagem na 5ª rodada: equipe zerada ou com saldo <= R$ 200 recebe +R$ 200 do Banco da Casa."
         ),
     })
 
@@ -416,7 +419,7 @@ def build_rules_batch() -> list[dict]:
                 "background_color": bg_row, "font_family": FONT_FAMILY,
             })
 
-    # Callout Educacional
+    # Callout Educacional & Repescagem
     ops.append({
         "op": "add-shape", "slide": "SLIDE_3", "shape_type": "ROUND_RECTANGLE",
         "x": 35, "y": 320, "width": 650, "height": 60,
@@ -424,9 +427,9 @@ def build_rules_batch() -> list[dict]:
     })
     ops.append({
         "op": "add-textbox", "slide": "SLIDE_3",
-        "text": "💡 EFEITO ESTRATÉGICO: Se uma pergunta for acessível e todos os 5 grupos acertarem, quem apostou R$ 200 recebe apenas +R$ 100 (metade do dobro), enquanto quem apostou R$ 50 também recebe +R$ 100!",
-        "x": 48, "y": 326, "width": 624, "height": 48,
-        "font_size": 10.5, "bold": True, "color": "#78350F",
+        "text": "💡 EFEITO ESTRATÉGICO & REPESCAGEM (5ª RODADA): Se todos os 5 acertarem, qualquer aposta rende +R$ 100 fixos. Na última rodada (5ª), equipe zerada ou no limite (saldo ≤ R$ 200) recebe +R$ 200 do Banco (fundo perdido) para apostar até R$ 200 e dobrar normalmente (×2 ➔ R$ 400)!",
+        "x": 48, "y": 324, "width": 624, "height": 52,
+        "font_size": 10, "bold": True, "color": "#78350F",
         "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
     })
 
@@ -560,7 +563,7 @@ def build_rules_batch() -> list[dict]:
         ("PASSO 1 — Revelação do Tema, Aposta em Papel & Cédulas (30s)", "O professor anuncia o tema da questão (ex.: Estequiometria). Cada equipe anota na folha de aposta o valor (mín. R$ 10, máx. R$ 200) e separa as cédulas físicas na mesa.", COLOR_BRAND_BG, COLOR_BRAND),
         ("PASSO 2 — Resolução & Entrega / Revelação do Papel (60s a 90s)", "A questão é projetada. Cada grupo registra por escrito na folha de aposta a alternativa escolhida (A ou B) junto ao valor apostado, sem o uso de placas.", COLOR_AMBER_BG, COLOR_AMBER),
         ("PASSO 3 — Pagamento do Banco da Casa", "• 1 a 4 grupos acertaram? Dobram a aposta (+100% de lucro líquido).\n• Todos os 5 acertaram? Bônus unânime fixo de +R$ 100 para cada grupo  |  Erros: A aposta vai para o Caixa.", COLOR_GREEN_BG, COLOR_GREEN_TEXT),
-        ("PASSO 4 — Contagem Após a 5ª Pergunta & Desafio da Mesa", "Contam-se os saldos. Equipes a ≤ R$ 100 do 1º colocado colocam 100% do saldo no centro da mesa para a Pergunta Final: quem acertar leva todo o pote e os demais saem zerados!", COLOR_PURPLE_BG, COLOR_PURPLE_TEXT),
+        ("PASSO 4 — Repescagem na 5ª Rodada (+R$ 200) & Desafio da Mesa", "Antes da 5ª pergunta, equipes zeradas ou no limite (≤ R$ 200) recebem +R$ 200 do Banco (fundo perdido; se acertar, dobra ×2). Após a 5ª pergunta, equipes a ≤ R$ 100 do 1º colocado disputam o Desafio da Mesa (Winner Takes All)!", COLOR_PURPLE_BG, COLOR_PURPLE_TEXT),
     ]
     for i, (s_title, s_desc, _s_bg, s_col) in enumerate(steps):
         sy = 74 + i * 76

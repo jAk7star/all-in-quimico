@@ -568,6 +568,30 @@ def verify_rules_deck(presentation: PresentationInfo) -> list[CheckResult]:
         )
     )
 
+    # 12. Mecânica de Repescagem na 5ª e Última Rodada (+R$ 200 para equipe zerada ou saldo <= R$ 200)
+    has_repescagem = bool(re.search(r"repescagem", full_text_lower))
+    has_repescagem_200 = bool(
+        re.search(r"repescagem.*200|\+R\$\s*200.*(?:banco|repescagem|5ª|última)", full_text, re.IGNORECASE)
+    )
+    passed = has_repescagem and has_repescagem_200
+    results.append(
+        CheckResult(
+            check_id="R1_REPESCAGEM_MECHANIC",
+            category="Regras Didáticas (R1)",
+            title="Repescagem na 5ª/última rodada (+R$ 200 do Banco para equipe zerada ou saldo ≤ R$ 200)",
+            passed=passed,
+            details=f"Menção a 'Repescagem'={has_repescagem}, auxílio de +R$ 200 na última rodada={has_repescagem_200}.",
+            evidence=next(
+                (
+                    line.strip()
+                    for line in full_text.splitlines()
+                    if "repescagem" in line.lower()
+                ),
+                None,
+            ),
+        )
+    )
+
     return results
 
 

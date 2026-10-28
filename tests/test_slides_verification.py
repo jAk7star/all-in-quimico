@@ -82,7 +82,8 @@ def create_mock_rules_deck() -> PresentationInfo:
                 "R$ 50: 6 notas por grupo (Total = R$ 300)\n"
                 "R$ 10: 10 notas por grupo (Total = R$ 100)\n"
                 "Sem Placas: Equipes utilizam papel/folha de aposta para registrar por escrito o valor e a alternativa.\n"
-                "Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada)."
+                "Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada).\n"
+                "Repescagem na Última Rodada (+R$ 200): Na 5ª rodada, equipe zerada ou no limite (saldo ≤ R$ 200) recebe +R$ 200 do Banco."
             ),
             speaker_notes="Explique o kit inicial entregue a cada grupo (R$ 1.000 = 6x100 + 6x50 + 10x10).",
             element_count=6,
@@ -213,7 +214,7 @@ class TestRulesVerification:
         results = verify_rules_deck(deck)
         failed = [r for r in results if not r.passed]
         assert len(failed) == 0, f"Checks que falharam: {[r.check_id for r in failed]}"
-        assert len(results) == 11
+        assert len(results) == 12
 
     def test_missing_total_economy_fails(self):
         """Ausência do valor de R$ 10.000 deve falhar no check R1_TOTAL_ECONOMY."""
@@ -321,6 +322,15 @@ class TestRulesVerification:
         r = next(res for res in results if res.check_id == "R1_DESAFIO_MESA_WTA")
         assert not r.passed
 
+    def test_missing_repescagem_fails(self):
+        """Ausência da mecânica de Repescagem (+R$ 200 na última rodada) deve falhar no check R1_REPESCAGEM_MECHANIC."""
+        deck = create_mock_rules_deck()
+        for s in deck.slides:
+            s.text_content = s.text_content.replace("Repescagem", "Rodada").replace("repescagem", "rodada")
+        results = verify_rules_deck(deck)
+        r = next(res for res in results if res.check_id == "R1_REPESCAGEM_MECHANIC")
+        assert not r.passed
+
 
 # ==============================================================================
 # TESTES DE SEQUÊNCIA INTERCALADA Q&A (R2)
@@ -426,7 +436,7 @@ class TestRealGoogleSlidesIntegration:
             f"Falhas no deck real de regras: {[(r.check_id, r.details) for r in failed]}"
         )
         assert report.success is True
-        assert report.total_checks == 11
+        assert report.total_checks == 12
 
     def test_cli_rules_only_execution(self):
         """Executa o script de verificação via linha de comando com a flag --rules-only."""
@@ -486,4 +496,4 @@ class TestRealGoogleSlidesIntegration:
         data = json.loads(proc.stdout)
         assert data["success"] is True
         assert data["failed_checks"] == 0
-        assert data["passed_checks"] == 18
+        assert data["passed_checks"] == 19

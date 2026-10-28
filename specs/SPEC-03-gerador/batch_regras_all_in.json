@@ -260,12 +260,12 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "5 Perguntas Regulares  •  Economia R$ 10.000  •  Apostas em Papel (Sem Placas)  •  Desafio Final Tudo ou Nada",
-    "x": 50,
+    "text": "5 Perguntas Regulares  •  Economia R$ 10.000  •  Apostas em Papel (Sem Placas)  •  Repescagem (+R$ 200 na 5ª Rodada)  •  Desafio da Mesa",
+    "x": 48,
     "y": 336,
-    "width": 620,
+    "width": 624,
     "height": 36,
-    "font_size": 11,
+    "font_size": 10.5,
     "bold": true,
     "color": "#64748B",
     "font_family": "Open Sans",
@@ -275,7 +275,7 @@
   {
     "op": "set-notes",
     "slide": "p",
-    "text": "SLIDE DE ABERTURA — APRESENTAÇÃO DIDÁTICA DO ALL-IN QUÍMICO\n\nApresente aos estudantes a dinâmica competitiva de Química.\n5 equipes competem com saldo inicial de R$ 1.000 cada, com economia total de R$ 10.000.\nApostas registradas exclusivamente em papel/folhas de aposta (sem placas).\nTeto máximo de aposta por pergunta: R$ 200."
+    "text": "SLIDE DE ABERTURA — APRESENTAÇÃO DIDÁTICA DO ALL-IN QUÍMICO\n\nApresente aos estudantes a dinâmica competitiva de Química.\n5 equipes competem com saldo inicial de R$ 1.000 cada, com economia total de R$ 10.000.\nApostas registradas exclusivamente em papel/folhas de aposta (sem placas).\nTeto máximo de aposta por pergunta: R$ 200.\nInclui mecânica de Repescagem na 5ª rodada (+R$ 200 do Banco para equipe zerada ou com saldo <= R$ 200)."
   },
   {
     "op": "add-slide",
@@ -515,11 +515,11 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_1",
-    "text": "REGRAS DE OURO DO CAIXA & GOVERNANÇA",
+    "text": "REGRAS DE OURO DO CAIXA, GOVERNANÇA & REPESCAGEM",
     "x": 48,
-    "y": 260,
+    "y": 258,
     "width": 624,
-    "height": 22,
+    "height": 20,
     "font_size": 10.5,
     "bold": true,
     "color": "#0284C7",
@@ -530,22 +530,22 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_1",
-    "text": "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n• Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada; mantém a competitividade nas 5 rodadas).\n• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500).",
+    "text": "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n• Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada; mantém a competitividade nas 5 rodadas).\n• Repescagem na Última Rodada (+R$ 200): Na 5ª rodada, equipe zerada ou no limite (saldo ≤ R$ 200) recebe +R$ 200 do Banco (a fundo perdido) para jogar!\n• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500).",
     "x": 48,
-    "y": 284,
+    "y": 278,
     "width": 624,
-    "height": 88,
-    "font_size": 10.5,
+    "height": 98,
+    "font_size": 9.5,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 122,
     "alignment": "left",
     "content_alignment": "TOP"
   },
   {
     "op": "set-notes",
     "slide": "SLIDE_1",
-    "text": "SLIDE 2 — KIT INICIAL E BANCA DA CASA\n\nExplique a composição exata das cédulas entregues a cada grupo:\n6 notas de R$ 100 (R$ 600) + 6 notas de R$ 50 (R$ 300) + 10 notas de R$ 10 (R$ 100) = R$ 1.000.\nA economia total do jogo é de R$ 10.000, dividida meio a meio entre estudantes e professor.\nAs equipes devem utilizar a folha de aposta em papel (sem placas)."
+    "text": "SLIDE 2 — KIT INICIAL E BANCA DA CASA\n\nExplique a composição exata das cédulas entregues a cada grupo:\n6 notas de R$ 100 (R$ 600) + 6 notas de R$ 50 (R$ 300) + 10 notas de R$ 10 (R$ 100) = R$ 1.000.\nA economia total do jogo é de R$ 10.000, dividida meio a meio entre estudantes e professor.\nAs equipes devem utilizar a folha de aposta em papel (sem placas).\nDestaque a Repescagem na 5ª rodada: equipe zerada ou com saldo <= R$ 200 recebe +R$ 200 do Banco da Casa."
   },
   {
     "op": "add-slide",
@@ -1077,12 +1077,12 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_3",
-    "text": "💡 EFEITO ESTRATÉGICO: Se uma pergunta for acessível e todos os 5 grupos acertarem, quem apostou R$ 200 recebe apenas +R$ 100 (metade do dobro), enquanto quem apostou R$ 50 também recebe +R$ 100!",
+    "text": "💡 EFEITO ESTRATÉGICO & REPESCAGEM (5ª RODADA): Se todos os 5 acertarem, qualquer aposta rende +R$ 100 fixos. Na última rodada (5ª), equipe zerada ou no limite (saldo ≤ R$ 200) recebe +R$ 200 do Banco (fundo perdido) para apostar até R$ 200 e dobrar normalmente (×2 ➔ R$ 400)!",
     "x": 48,
-    "y": 326,
+    "y": 324,
     "width": 624,
-    "height": 48,
-    "font_size": 10.5,
+    "height": 52,
+    "font_size": 10,
     "bold": true,
     "color": "#78350F",
     "font_family": "Open Sans",
@@ -1554,7 +1554,7 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_5",
-    "text": "PASSO 4 — Contagem Após a 5ª Pergunta & Desafio da Mesa",
+    "text": "PASSO 4 — Repescagem na 5ª Rodada (+R$ 200) & Desafio da Mesa",
     "x": 48,
     "y": 308,
     "width": 624,
@@ -1569,7 +1569,7 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_5",
-    "text": "Contam-se os saldos. Equipes a ≤ R$ 100 do 1º colocado colocam 100% do saldo no centro da mesa para a Pergunta Final: quem acertar leva todo o pote e os demais saem zerados!",
+    "text": "Antes da 5ª pergunta, equipes zeradas ou no limite (≤ R$ 200) recebem +R$ 200 do Banco (fundo perdido; se acertar, dobra ×2). Após a 5ª pergunta, equipes a ≤ R$ 100 do 1º colocado disputam o Desafio da Mesa (Winner Takes All)!",
     "x": 48,
     "y": 330,
     "width": 624,

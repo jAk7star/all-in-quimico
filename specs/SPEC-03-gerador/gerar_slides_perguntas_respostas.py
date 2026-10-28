@@ -278,11 +278,11 @@ def build_cover_operations() -> list[dict[str, Any]]:
         ])
 
     footer_text = (
-        "REGRAS OFICIAIS DE APOSTA: Aposta mínima de R$ 10 e máxima de R$ 200 por rodada nas 5 equipes  |  "
-        "Sem placas: decisões registradas em papel  |  "
-        "1 a 4 acertos: Lucro de 100% (recebe o dobro ×2)  |  "
-        "5 acertos: Bônus Unânime de +R$ 100 fixo  |  "
-        "Erros: Valor vai para a Banca da Casa."
+        "REGRAS OFICIAIS DE APOSTA: Aposta mín. R$ 10 e máx. R$ 200 por rodada (sem placas, no papel)  |  "
+        "1 a 4 acertos: Dobro (×2 / +100% lucro)  |  "
+        "5 acertos: Bônus Unânime (+R$ 100 fixo)  |  "
+        "Repescagem (5ª Rodada): Equipe zerada/≤ R$ 200 recebe +R$ 200 do Banco  |  "
+        "Erros: Valor vai para a Banca."
     )
     ops.extend([
         {
@@ -437,9 +437,9 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
         },
         {
             "op": "add-textbox", "slide": slide_id,
-            "text": "💰 FAÇAM SUAS APOSTAS!  •  TETO MÁXIMO POR RODADA: R$ 200 (MÍNIMO R$ 10)",
+            "text": "💰 FAÇAM SUAS APOSTAS!  •  TETO MÁXIMO: R$ 200 (MÍN. R$ 10)  •  REPESCAGEM 5ª RODADA: +R$ 200 (SALDO ≤ R$ 200)",
             "x": 48, "y": 326, "width": 624, "height": 20,
-            "font_size": 10, "bold": True, "color": COLOR_N2, "font_family": FONT_FAMILY,
+            "font_size": 9.8, "bold": True, "color": COLOR_N2, "font_family": FONT_FAMILY,
             "alignment": "center", "content_alignment": "MIDDLE",
         },
         {

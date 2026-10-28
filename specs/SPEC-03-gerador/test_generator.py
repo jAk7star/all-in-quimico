@@ -51,13 +51,15 @@ def test_10_kits_money_totals_10000_reais():
 
 
 def test_group_bet_cards_format_and_rules():
-    """Valida que as Fichas de Controle das Apostas dos Grupos usam o tamanho 63x88mm (grade 3x3) e as regras oficiais."""
+    """Valida que as Fichas de Controle das Apostas dos Grupos usam o tamanho 63x88mm (grade 3x3) e as regras oficiais (incluindo Repescagem)."""
     bet_cards_html = (OUT_DIR / "001_fichas_controle_apostas_grupos_v001.html").read_text(encoding="utf-8")
     assert 'class="cards-sheet"' in bet_cards_html
     assert "R$ 1.000" in bet_cards_html
     assert "6×100 | 6×50 | 10×10" in bet_cards_html
     assert "MÍN R$ 10" in bet_cards_html
     assert "MÁX R$ 200" in bet_cards_html
+    assert "REPESCAGEM" in bet_cards_html
+    assert "+R$ 200 BANCO" in bet_cards_html
     assert "DESAFIO DA MESA" in bet_cards_html
     assert "SEM PLACAS" in bet_cards_html
 

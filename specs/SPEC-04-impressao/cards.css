@@ -351,11 +351,11 @@ body {
 
 .bet-rounds-table td {
   border: 0.4pt solid #cbd5e1;
-  padding: 1.55mm 0.8mm;
+  padding: 1.25mm 0.8mm;
   text-align: center;
   color: var(--ink-primary);
   font-family: var(--font-mono);
-  font-size: 5.1pt;
+  font-size: 5pt;
 }
 
 .bet-rounds-table tr:nth-child(even) td {
@@ -373,6 +373,21 @@ body {
   color: var(--ink-secondary);
   letter-spacing: -0.02em;
   width: 10mm;
+}
+
+/* Faixa Repescagem na 5ª Rodada (+R$ 200) no Card 63x88mm */
+.bet-repescagem-row {
+  background: var(--bg-50);
+  border: 0.5pt solid var(--border-50);
+  border-radius: 1.5pt;
+  padding: 0.85mm 1.4mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 4.6pt;
+  font-weight: 800;
+  color: #92400e;
 }
 
 /* Bloco Desafio da Mesa no Card 63x88mm */

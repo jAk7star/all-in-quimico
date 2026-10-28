@@ -10,8 +10,8 @@
         <h2>All-In Químico — Fichas de Controle das Apostas dos Grupos (Formato Card 63×88 mm)</h2>
         <p>
             Exemplares dimensionados exatamente no <strong>formato de card das perguntas (63 mm × 88 mm • Grade 3×3 = 9 cards por folha A4)</strong>.<br>
-            • <strong>Folha 1:</strong> 9 Fichas Consolidadas de Controle de Apostas da Equipe (5 Rodadas Regulares + Desafio da Mesa).<br>
-            • <strong>Folha 2:</strong> 9 Bilhetes Individuais de Aposta Secreta por Rodada (Alternativa A ou B + Valor R$ 10 a R$ 200, sem placas).
+            • <strong>Folha 1:</strong> 9 Fichas Consolidadas de Controle de Apostas da Equipe (5 Rodadas Regulares + Repescagem +R$ 200 na R5 + Desafio da Mesa).<br>
+            • <strong>Folha 2:</strong> 9 Bilhetes Individuais de Aposta Secreta por Rodada (Alternativa A ou B + Valor R$ 10 a R$ 200 + Repescagem R5, sem placas).
         </p>
         <button class="print-btn" onclick="window.print()">🖨️ Imprimir Fichas de Controle dos Grupos (A4)</button>
     </div>
@@ -91,6 +91,12 @@
                             {% endfor %}
                         </tbody>
                     </table>
+
+                    <!-- Repescagem na 5ª Rodada (+R$ 200 para Equipe Zerada / Saldo <= R$ 200) -->
+                    <div class="bet-repescagem-row">
+                        <span>🔄 REPESCAGEM R5 (SALDO ≤ R$ 200):</span>
+                        <span>[ ] +R$ 200 BANCO</span>
+                    </div>
 
                     <!-- Bloco Desafio da Mesa (Empate Técnico <= R$ 100 pós-R5) -->
                     <div class="bet-mesa-box">
@@ -201,6 +207,10 @@
                             <span>[__]×R$100</span>
                             <span>[__]×R$50</span>
                             <span>[__]×R$10</span>
+                        </div>
+                        <div style="border-top: 0.3pt dashed #fde68a; padding-top: 0.5mm; font-family: var(--font-mono); font-size: 4.5pt; font-weight: 800; color: #92400e; display: flex; justify-content: space-between;">
+                            <span>🔄 REPESCAGEM 5ª RODADA (≤ R$ 200):</span>
+                            <span>[ ] +R$ 200 BANCO</span>
                         </div>
                     </div>
 
