@@ -35,7 +35,8 @@ from pathlib import Path
 from typing import Any
 
 # Constantes e Defaults
-DEFAULT_RULES_DECK_ID = "1KpfettWa9KkvbmBmhNAkyWRlTPPzahCeTVCuNlA3VU0"
+DEFAULT_RULES_DECK_ID = "1-iuM4hRqyPBK4Xs_Kwvkf02xU8i_QsYwlkip_Q06m4k"
+DEFAULT_QA_DECK_ID = "1sxQyIjsI11wq5IYZ4JuKmEhenvo52kwywcx1wcv5dQQ"
 
 EXPECTED_NIVEL_1_IDS = [
     "Q-ATO-001",
@@ -252,6 +253,10 @@ def fetch_presentation_from_cli(presentation_id: str) -> PresentationInfo:
 
 def auto_discover_qa_deck_id() -> str | None:
     """Busca automaticamente o ID do Deck Q&A em variáveis de ambiente, arquivos de configuração ou metadados de workers."""
+    # 0. Default configurado
+    if DEFAULT_QA_DECK_ID:
+        return DEFAULT_QA_DECK_ID
+
     # 1. Variável de ambiente
     for env_var in ["QA_DECK_ID", "ALL_IN_QA_DECK_ID", "GOOGLE_SLIDES_QA_DECK_ID"]:
         val = os.getenv(env_var)
