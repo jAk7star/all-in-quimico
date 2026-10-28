@@ -26,4 +26,5 @@ testpaths = [
     "specs/SPEC-01-questoes/tests",
     "specs/SPEC-02-mecanica/tests",
     "specs/SPEC-03-gerador",
+    "tests",
 ]
