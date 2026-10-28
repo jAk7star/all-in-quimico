@@ -14,9 +14,10 @@ Design System: Itaú Private / Fintech Clean / CrewDeck Anti-Vibe
 - Tipografia sem serifa Open Sans (abertura ampla de olho)
 - Respiro matemático de 8px e contenção da carga cognitiva (max-w-prose)
 - Psicologia das cores: Azul Cobalto (N1), Laranja Queimado (N2), Verde Esmeralda (Gabarito)
+- Duplo Destaque Semântico nos Domínios Químicos e Hierarquia Idêntica para Alternativas [A] e [B]
 
 Uso:
-  python gerar_slides_perguntas_respostas.py [--create] [--presentation-id <ID>] [--output <FILE>]
+  python gerar_slides_perguntas_respostas.py [--apply] [--presentation-id <ID>] [--output <FILE>]
 """
 
 import argparse
@@ -61,12 +62,19 @@ COLOR_GREEN_TEXT = "#14532D"
 COLOR_RED = "#DC2626"      # Vermelho Terracota (Distrator / Caixa)
 COLOR_RED_BG = "#FEE2E2"    # Fundo vermelho suave
 
-# Mapeamento de domínios químicos para nomes pedagógicos
+# Mapeamento de domínios químicos para nomes pedagógicos e cores semânticas (Duplo Destaque)
 DOMAIN_NAMES = {
     "CHEM-ATO": "Estrutura Atômica & Tabela Periódica",
     "CHEM-ENV": "Química Ambiental & Sustentabilidade",
     "CHEM-SOL": "Soluções & Concentrações Químicas",
     "CHEM-STO": "Estequiometria & Quantidade de Matéria",
+}
+
+DOMAIN_STYLES = {
+    "CHEM-SOL": ("#0284C7", "#E0F2FE"),  # Azul Soluções
+    "CHEM-STO": ("#4F46E5", "#E0E7FF"),  # Índigo/Roxo Estequiometria
+    "CHEM-ENV": ("#059669", "#D1FAE5"),  # Verde Botânico Química Ambiental
+    "CHEM-ATO": ("#0D9488", "#CCFBF1"),  # Petróleo/Teal Estrutura Atômica
 }
 
 # Mapeamento de níveis cognitivos
@@ -315,6 +323,7 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
     level_color = COLOR_N1 if difficulty == 1 else COLOR_N2
     level_bg = COLOR_N1_BG if difficulty == 1 else COLOR_N2_BG
     level_name = "NÍVEL 1 (AQUECIMENTO)" if difficulty == 1 else "NÍVEL 2 (FINAIS)"
+    dom_color, dom_bg = DOMAIN_STYLES.get(domain, (TEXT_PRIMARY, BG_CARD_SUBTLE))
 
     statement = clean_chemical_typography(q.get("statement", ""))
 
@@ -333,7 +342,7 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
             "op": "add-shape", "slide": slide_id, "shape_type": "RECTANGLE",
             "x": 0, "y": 0, "width": 720, "height": 6, "background_color": level_color,
         },
-        # --- HEADER / METADATA ---
+        # --- HEADER / METADATA (Duplo Destaque Semântico: Nível + Domínio Químico) ---
         {
             "op": "add-textbox", "slide": slide_id,
             "text": f"LOTE {lote_str}  •  {level_name}",
@@ -345,8 +354,8 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
             "op": "add-textbox", "slide": slide_id,
             "text": domain_name,
             "x": 280, "y": 16, "width": 280, "height": 28,
-            "font_size": 10.5, "bold": True, "color": TEXT_PRIMARY, "background_color": BG_CARD,
-            "font_family": FONT_FAMILY, "alignment": "left", "content_alignment": "MIDDLE",
+            "font_size": 10.5, "bold": True, "color": dom_color, "background_color": dom_bg,
+            "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
         },
         {
             "op": "add-textbox", "slide": slide_id,
@@ -377,7 +386,7 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
             "line_spacing": 135, "alignment": "left", "content_alignment": "TOP",
         },
 
-        # --- COLUNA DA DIREITA: CARDS DE ALTERNATIVAS A e B ---
+        # --- COLUNA DA DIREITA: CARDS DE ALTERNATIVAS A e B (Hierarquia Visual Idêntica) ---
         # Card Alternativa A
         {
             "op": "add-shape", "slide": slide_id, "shape_type": "ROUND_RECTANGLE",
@@ -386,9 +395,9 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
         },
         {
             "op": "add-textbox", "slide": slide_id,
-            "text": "ALTERNATIVA A",
-            "x": 384, "y": 68, "width": 120, "height": 22,
-            "font_size": 10, "bold": True, "color": COLOR_N1, "background_color": COLOR_N1_BG,
+            "text": "ALTERNATIVA [A]",
+            "x": 384, "y": 68, "width": 130, "height": 22,
+            "font_size": 10, "bold": True, "color": level_color, "background_color": level_bg,
             "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
         },
         {
@@ -399,7 +408,7 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
             "line_spacing": 130, "alignment": "left", "content_alignment": "TOP",
         },
 
-        # Card Alternativa B
+        # Card Alternativa B (mesma hierarquia tipográfica e cromática para não enviesar a aposta)
         {
             "op": "add-shape", "slide": slide_id, "shape_type": "ROUND_RECTANGLE",
             "x": 368, "y": 186, "width": 320, "height": 118,
@@ -407,16 +416,16 @@ def build_question_operations(q: dict[str, Any], lote_num: int) -> list[dict[str
         },
         {
             "op": "add-textbox", "slide": slide_id,
-            "text": "ALTERNATIVA B",
-            "x": 384, "y": 198, "width": 120, "height": 22,
-            "font_size": 10, "bold": True, "color": TEXT_MUTED, "background_color": BG_CARD_SUBTLE,
+            "text": "ALTERNATIVA [B]",
+            "x": 384, "y": 198, "width": 130, "height": 22,
+            "font_size": 10, "bold": True, "color": level_color, "background_color": level_bg,
             "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
         },
         {
             "op": "add-textbox", "slide": slide_id,
             "text": text_b,
             "x": 384, "y": 226, "width": 288, "height": 68,
-            "font_size": 11.5, "color": TEXT_SECONDARY, "font_family": FONT_FAMILY,
+            "font_size": 11.5, "bold": True, "color": TEXT_PRIMARY, "font_family": FONT_FAMILY,
             "line_spacing": 130, "alignment": "left", "content_alignment": "TOP",
         },
 
@@ -627,11 +636,50 @@ def run_gslides(args: list[str]) -> subprocess.CompletedProcess:
 
 
 def apply_batch_to_deck(presentation_id: str, batch_file: Path) -> None:
-    """Aplica o arquivo de batch JSON na apresentação do Google Slides."""
-    res = run_gslides(["mutate", "batch", presentation_id, "-f", str(batch_file)])
-    if res.returncode != 0:
-        raise RuntimeError(f"Falha ao executar batchUpdate no Google Slides:\n{res.stderr}")
-    print(f"Sucesso: batch aplicado à apresentação {presentation_id}.")
+    """Aplica o arquivo de batch JSON in-place na apresentação do Google Slides (limpando slides anteriores se existirem)."""
+    info_res = run_gslides(["readonly", "info", presentation_id, "--json"])
+    if info_res.returncode != 0:
+        raise RuntimeError(f"Falha ao inspecionar apresentação {presentation_id}:\n{info_res.stderr}")
+
+    pres_data = json.loads(info_res.stdout)
+    slides = pres_data.get("slides", [])
+    cleanup_ops: list[dict[str, Any]] = []
+
+    if slides:
+        first_slide_elements = [
+            el["objectId"]
+            for el in slides[0].get("pageElements", [])
+            if "objectId" in el
+        ]
+        for el_id in first_slide_elements:
+            cleanup_ops.append({"op": "delete-element", "element": el_id})
+
+        for sl in slides[1:]:
+            sl_id = sl.get("objectId")
+            if sl_id:
+                cleanup_ops.append({"op": "delete-element", "element": sl_id})
+
+    with batch_file.open("r", encoding="utf-8") as f:
+        raw_ops = json.load(f)
+
+    # Remove deleções hardcoded de placeholders iniciais (i0/i1) que já estão cobertas pelo cleanup dinâmico
+    filtered_ops = [
+        op for op in raw_ops
+        if not (op.get("op") == "delete-element" and op.get("element") in ("i0", "i1"))
+    ]
+    effective_ops = cleanup_ops + filtered_ops
+
+    temp_batch = batch_file.parent / f"_tmp_apply_{batch_file.name}"
+    try:
+        with temp_batch.open("w", encoding="utf-8") as f:
+            json.dump(effective_ops, f, ensure_ascii=False, indent=2)
+        res = run_gslides(["mutate", "batch", presentation_id, "-f", str(temp_batch)])
+        if res.returncode != 0:
+            raise RuntimeError(f"Falha ao executar batchUpdate no Google Slides:\n{res.stderr}")
+        print(f"Sucesso: batch aplicado in-place à apresentação {presentation_id}.")
+    finally:
+        if temp_batch.exists():
+            temp_batch.unlink()
 
 
 def main() -> None:

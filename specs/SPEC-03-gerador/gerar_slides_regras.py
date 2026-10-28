@@ -21,7 +21,6 @@ import argparse
 import json
 import shutil
 import subprocess
-import sys
 from pathlib import Path
 
 # =============================================================================
@@ -114,7 +113,7 @@ def build_rules_batch() -> list[dict]:
         ("Dobro (×2)", "1 a 4 Grupos Acertando", COLOR_GREEN, COLOR_GREEN_BG),
         ("+R$ 100 Fixo", "Todos os 5 Acertando", COLOR_PURPLE, COLOR_PURPLE_BG),
     ]
-    for i, (val, label, col, col_bg) in enumerate(cards_s1):
+    for i, (val, label, col, _col_bg) in enumerate(cards_s1):
         cx = 40 + i * 162
         ops.append({
             "op": "add-shape", "slide": "p", "shape_type": "ROUND_RECTANGLE",
@@ -232,7 +231,7 @@ def build_rules_batch() -> list[dict]:
     rules_text = (
         "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n"
         "• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n"
-        "• Teto Estrito por Pergunta: R$ 200 (mantém a sustentabilidade e competitividade nas 5 rodadas).\n"
+        "• Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada; mantém a competitividade nas 5 rodadas).\n"
         "• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500)."
     )
     ops.append({
@@ -563,7 +562,7 @@ def build_rules_batch() -> list[dict]:
         ("PASSO 3 — Pagamento do Banco da Casa", "• 1 a 4 grupos acertaram? Dobram a aposta (+100% de lucro líquido).\n• Todos os 5 acertaram? Bônus unânime fixo de +R$ 100 para cada grupo  |  Erros: A aposta vai para o Caixa.", COLOR_GREEN_BG, COLOR_GREEN_TEXT),
         ("PASSO 4 — Contagem Após a 5ª Pergunta & Desafio da Mesa", "Contam-se os saldos. Equipes a ≤ R$ 100 do 1º colocado colocam 100% do saldo no centro da mesa para a Pergunta Final: quem acertar leva todo o pote e os demais saem zerados!", COLOR_PURPLE_BG, COLOR_PURPLE_TEXT),
     ]
-    for i, (s_title, s_desc, s_bg, s_col) in enumerate(steps):
+    for i, (s_title, s_desc, _s_bg, s_col) in enumerate(steps):
         sy = 74 + i * 76
         ops.append({
             "op": "add-shape", "slide": "SLIDE_5", "shape_type": "ROUND_RECTANGLE",
@@ -610,11 +609,49 @@ def run_gslides(args: list[str]) -> subprocess.CompletedProcess:
 
 
 def apply_batch_to_deck(presentation_id: str, batch_file: Path) -> None:
-    """Aplica operações batch a uma apresentação Google Slides."""
-    res = run_gslides(["mutate", "batch", presentation_id, "-f", str(batch_file)])
-    if res.returncode != 0:
-        raise RuntimeError(f"Falha ao executar batchUpdate no Google Slides:\n{res.stderr}")
-    print(f"Sucesso: batch de regras aplicado à apresentação {presentation_id}.")
+    """Aplica operações batch in-place a uma apresentação Google Slides (limpando slides anteriores se existirem)."""
+    info_res = run_gslides(["readonly", "info", presentation_id, "--json"])
+    if info_res.returncode != 0:
+        raise RuntimeError(f"Falha ao inspecionar apresentação {presentation_id}:\n{info_res.stderr}")
+
+    pres_data = json.loads(info_res.stdout)
+    slides = pres_data.get("slides", [])
+    cleanup_ops = []
+
+    if slides:
+        first_slide_elements = [
+            el["objectId"]
+            for el in slides[0].get("pageElements", [])
+            if "objectId" in el
+        ]
+        for el_id in first_slide_elements:
+            cleanup_ops.append({"op": "delete-element", "element": el_id})
+
+        for sl in slides[1:]:
+            sl_id = sl.get("objectId")
+            if sl_id:
+                cleanup_ops.append({"op": "delete-element", "element": sl_id})
+
+    with batch_file.open("r", encoding="utf-8") as f:
+        raw_ops = json.load(f)
+
+    filtered_ops = [
+        op for op in raw_ops
+        if not (op.get("op") == "delete-element" and op.get("element") in ("i0", "i1"))
+    ]
+    effective_ops = cleanup_ops + filtered_ops
+
+    temp_batch = batch_file.parent / f"_tmp_apply_{batch_file.name}"
+    try:
+        with temp_batch.open("w", encoding="utf-8") as f:
+            json.dump(effective_ops, f, ensure_ascii=False, indent=2)
+        res = run_gslides(["mutate", "batch", presentation_id, "-f", str(temp_batch)])
+        if res.returncode != 0:
+            raise RuntimeError(f"Falha ao executar batchUpdate no Google Slides:\n{res.stderr}")
+        print(f"Sucesso: batch de regras aplicado in-place à apresentação {presentation_id}.")
+    finally:
+        if temp_batch.exists():
+            temp_batch.unlink()
 
 
 def main() -> None:

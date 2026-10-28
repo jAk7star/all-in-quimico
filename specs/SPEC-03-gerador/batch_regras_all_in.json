@@ -530,7 +530,7 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_1",
-    "text": "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n• Teto Estrito por Pergunta: R$ 200 (mantém a sustentabilidade e competitividade nas 5 rodadas).\n• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500).",
+    "text": "• Economia de R$ 10.000: 5 grupos com R$ 1.000 (R$ 5.000) e Caixa do Professor com R$ 5.000 de reserva.\n• Sem Placas: Equipes utilizam papel/folha de aposta para anotar a alternativa e o valor apostado.\n• Teto Estrito por Pergunta: R$ 200 (mínimo de R$ 10 por rodada; mantém a competitividade nas 5 rodadas).\n• Reserva do Banco da Casa: 30 notas de R$ 100 (R$ 3.000), 30 notas de R$ 50 (R$ 1.500) e 50 notas de R$ 10 (R$ 500).",
     "x": 48,
     "y": 284,
     "width": 624,

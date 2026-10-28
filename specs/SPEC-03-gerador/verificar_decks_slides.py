@@ -34,9 +34,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-# Constantes e Defaults
-DEFAULT_RULES_DECK_ID = "1-iuM4hRqyPBK4Xs_Kwvkf02xU8i_QsYwlkip_Q06m4k"
-DEFAULT_QA_DECK_ID = "1sxQyIjsI11wq5IYZ4JuKmEhenvo52kwywcx1wcv5dQQ"
+# Constantes e Defaults (IDs canônicos originais atualizados in-place)
+DEFAULT_RULES_DECK_ID = "1KpfettWa9KkvbmBmhNAkyWRlTPPzahCeTVCuNlA3VU0"
+DEFAULT_QA_DECK_ID = "10HrhJkrYDnxwhCP6HEo75DWvU9NS2RHXmp2wcx8XZUk"
 
 EXPECTED_NIVEL_1_IDS = [
     "Q-ATO-001",
@@ -288,14 +288,12 @@ def auto_discover_qa_deck_id() -> str | None:
             if p.is_file():
                 try:
                     content = p.read_text(encoding="utf-8", errors="replace")
-                    # Procura por URLs do Google Slides: docs.google.com/presentation/d/([a-zA-Z0-9_-]+)
                     matches = re.findall(
                         r"presentation/d/([a-zA-Z0-9_-]{25,})", content
                     )
                     for m in matches:
                         if m != DEFAULT_RULES_DECK_ID:
                             return m
-                    # Procura por chaves JSON ou referências como "presentation_id": "..."
                     json_matches = re.findall(
                         r'["\'](?:qa_deck_id|presentation_id|deck_id)["\']\s*:\s*["\']([a-zA-Z0-9_-]{25,})["\']',
                         content,
@@ -647,6 +645,7 @@ def verify_qa_deck(presentation: PresentationInfo) -> list[CheckResult]:
                 or "[b]" in q_text.lower()
                 or "opção a" in q_text.lower()
                 or "opcao a" in q_text.lower()
+                or "alternativa a" in q_text.lower()
             )
         )
 

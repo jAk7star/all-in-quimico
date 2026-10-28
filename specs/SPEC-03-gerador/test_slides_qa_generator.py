@@ -126,4 +126,4 @@ def test_batch_json_file_validity():
         data = json.load(f)
 
     assert isinstance(data, list)
-    assert len(data) == 539
+    assert len(data) == 723
