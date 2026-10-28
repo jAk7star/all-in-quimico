@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>All-In Químico — Exemplares de Ficha de Controle das Apostas dos Grupos (Cards 63x88mm)</title>
+    <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
+</head>
+<body>
+    <div class="no-print">
+        <h2>All-In Químico — Fichas de Controle das Apostas dos Grupos (Formato Card 63×88 mm)</h2>
+        <p>
+            Exemplares dimensionados exatamente no <strong>formato de card das perguntas (63 mm × 88 mm • Grade 3×3 = 9 cards por folha A4)</strong>.<br>
+            • <strong>Folha 1:</strong> 9 Fichas Consolidadas de Controle de Apostas da Equipe (5 Rodadas Regulares + Desafio da Mesa).<br>
+            • <strong>Folha 2:</strong> 9 Bilhetes Individuais de Aposta Secreta por Rodada (Alternativa A ou B + Valor R$ 10 a R$ 200, sem placas).
+        </p>
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir Fichas de Controle dos Grupos (A4)</button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- FOLHA 1: 9 FICHAS CONSOLIDADAS DO GRUPO (5 RODADAS + DESAFIO DA MESA)     -->
+    <!-- ========================================================================= -->
+    <div class="page">
+        <!-- Crop Marks Verticais (Superior e Inferior) -->
+        <div class="crop-mark crop-mark-v crop-top-0"></div>
+        <div class="crop-mark crop-mark-v crop-top-1"></div>
+        <div class="crop-mark crop-mark-v crop-top-2"></div>
+        <div class="crop-mark crop-mark-v crop-top-3"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-0"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-1"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-2"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-3"></div>
+
+        <!-- Crop Marks Horizontais (Esquerda e Direita) -->
+        <div class="crop-mark crop-mark-h crop-left-0"></div>
+        <div class="crop-mark crop-mark-h crop-left-1"></div>
+        <div class="crop-mark crop-mark-h crop-left-2"></div>
+        <div class="crop-mark crop-mark-h crop-left-3"></div>
+        <div class="crop-mark crop-mark-h crop-right-0"></div>
+        <div class="crop-mark crop-mark-h crop-right-1"></div>
+        <div class="crop-mark crop-mark-h crop-right-2"></div>
+        <div class="crop-mark crop-mark-h crop-right-3"></div>
+
+        <div class="cards-sheet">
+            {% for card in team_tracker_cards %}
+            <div class="card">
+                <!-- Cabeçalho Tipográfico (Mesma Interface do Card de Pergunta) -->
+                <div class="card-header">
+                    <div class="header-left">
+                        <span class="level-indicator">ALL-IN QUÍMICO</span>
+                        <span class="header-sep">/</span>
+                        <span class="domain-tag">FICHA DE APOSTAS</span>
+                    </div>
+                    <div class="lot-label">{{ card.badge }}</div>
+                </div>
+
+                <!-- Corpo do Card (63mm x 88mm) -->
+                <div class="card-body">
+                    <!-- Identificação e Kit Inicial R$ 1.000 -->
+                    <div class="bet-team-box">
+                        <div class="bet-team-row">
+                            <span class="bet-team-name">GRUPO: ________________________</span>
+                        </div>
+                        <div class="bet-kit-badge">
+                            <span>SALDO INICIAL: <strong>R$ 1.000</strong></span>
+                            <span>6×100 | 6×50 | 10×10</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabela das 5 Rodadas Regulares (Mín R$ 10 | Máx R$ 200) -->
+                    <table class="bet-rounds-table">
+                        <thead>
+                            <tr>
+                                <th>ROD</th>
+                                <th>LOTE</th>
+                                <th>APOSTA<br>(MÁX 200)</th>
+                                <th>OPÇÃO<br>(A / B)</th>
+                                <th>GANHO /<br>PERDA</th>
+                                <th>SALDO<br>(R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for r in range(1, 6) %}
+                            <tr>
+                                <td class="col-rod">R{{ r }}</td>
+                                <td>___</td>
+                                <td>R$ ____</td>
+                                <td class="col-ab">[A] [B]</td>
+                                <td>_______</td>
+                                <td>R$ ____</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <!-- Bloco Desafio da Mesa (Empate Técnico <= R$ 100 pós-R5) -->
+                    <div class="bet-mesa-box">
+                        <div class="bet-mesa-title">
+                            <span>⚡ DESAFIO DA MESA (≤ R$ 100 DO 1º)</span>
+                            <span>TUDO OU NADA</span>
+                        </div>
+                        <div class="bet-mesa-row">
+                            <span>Pote Mesa: R$ _______</span>
+                            <span>Escolha: <strong>[A] [B]</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Saldo Final Consolidado -->
+                    <div class="bet-final-row">
+                        <span>🏆 SALDO FINAL DA EQUIPE:</span>
+                        <span>R$ ______________</span>
+                    </div>
+                </div>
+
+                <!-- Rodapé do Card -->
+                <div class="card-footer">
+                    <span>MÍN R$ 10 • MÁX R$ 200</span>
+                    <span>1-4 ACERTOS: ×2 | 5: +R$ 100</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>All-In Químico • Fichas de Controle das Apostas dos Grupos (Card 63mm × 88mm • Sem Placas)</span>
+            <span>Folha 1 de 2 (Controle Consolidado 5 Rodadas)</span>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- FOLHA 2: 9 BILHETES INDIVIDUAIS DE APOSTA POR RODADA (CARD 63x88mm)       -->
+    <!-- ========================================================================= -->
+    <div class="page">
+        <!-- Crop Marks Verticais (Superior e Inferior) -->
+        <div class="crop-mark crop-mark-v crop-top-0"></div>
+        <div class="crop-mark crop-mark-v crop-top-1"></div>
+        <div class="crop-mark crop-mark-v crop-top-2"></div>
+        <div class="crop-mark crop-mark-v crop-top-3"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-0"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-1"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-2"></div>
+        <div class="crop-mark crop-mark-v crop-bottom-3"></div>
+
+        <!-- Crop Marks Horizontais (Esquerda e Direita) -->
+        <div class="crop-mark crop-mark-h crop-left-0"></div>
+        <div class="crop-mark crop-mark-h crop-left-1"></div>
+        <div class="crop-mark crop-mark-h crop-left-2"></div>
+        <div class="crop-mark crop-mark-h crop-left-3"></div>
+        <div class="crop-mark crop-mark-h crop-right-0"></div>
+        <div class="crop-mark crop-mark-h crop-right-1"></div>
+        <div class="crop-mark crop-mark-h crop-right-2"></div>
+        <div class="crop-mark crop-mark-h crop-right-3"></div>
+
+        <div class="cards-sheet">
+            {% for slip in round_slip_cards %}
+            <div class="card">
+                <!-- Cabeçalho Tipográfico -->
+                <div class="card-header">
+                    <div class="header-left">
+                        <span class="level-indicator">BILHETE SECRETO</span>
+                        <span class="header-sep">/</span>
+                        <span class="domain-tag">PAPEL DE APOSTA</span>
+                    </div>
+                    <div class="lot-label">RODADA ___</div>
+                </div>
+
+                <!-- Corpo do Bilhete (63mm x 88mm) -->
+                <div class="card-body">
+                    <div class="bet-team-box">
+                        <div class="bet-team-row">
+                            <span class="bet-team-name">EQUIPE: _______________________</span>
+                        </div>
+                        <div class="bet-kit-badge">
+                            <span>QUESTÃO / LOTE Nº: <strong>______</strong></span>
+                            <span>SALDO ATUAL: R$ ______</span>
+                        </div>
+                    </div>
+
+                    <!-- Escolha da Alternativa (A ou B sem Placas) -->
+                    <div style="font-size: 5pt; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: -0.6mm;">
+                        1. Marque com [X] a Alternativa Apostada:
+                    </div>
+                    <div class="slip-choices-grid">
+                        <div class="slip-choice-card">
+                            <div class="slip-checkbox"></div>
+                            <div class="slip-choice-label">OPÇÃO A</div>
+                        </div>
+                        <div class="slip-choice-card">
+                            <div class="slip-checkbox"></div>
+                            <div class="slip-choice-label">OPÇÃO B</div>
+                        </div>
+                    </div>
+
+                    <!-- Valor Apostado em Dinheiro (R$ 10 a R$ 200) -->
+                    <div class="slip-wager-box">
+                        <div class="slip-wager-title">
+                            <span>2. Valor da Aposta</span>
+                            <span>MÍN R$ 10 | MÁX R$ 200</span>
+                        </div>
+                        <div class="slip-wager-input">R$ __________________</div>
+                        <div class="slip-bills-row">
+                            <span>[__]×R$100</span>
+                            <span>[__]×R$50</span>
+                            <span>[__]×R$10</span>
+                        </div>
+                    </div>
+
+                    <!-- Liquidação da Banca -->
+                    <div class="slip-settle-box">
+                        <div class="slip-settle-title">3. Resultado da Rodada (Banca da Casa):</div>
+                        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 4.8pt;">
+                            <span>[ ] Dobro ×2 (+100%)</span>
+                            <span>[ ] Todos 5 (+R$ 100)</span>
+                            <span>[ ] Errou (-Aposta)</span>
+                        </div>
+                        <div style="border-top: 0.3pt dashed #cbd5e1; padding-top: 0.7mm; font-weight: 800; display: flex; justify-content: space-between;">
+                            <span>NOVO SALDO:</span>
+                            <span>R$ ________________</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé do Card -->
+                <div class="card-footer">
+                    <span>SEM PLACAS • PAPEL</span>
+                    <span>LIMITE MÁXIMO: R$ 200</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-sheet-label">
+            <span>All-In Químico • Bilhetes Individuais de Aposta por Rodada (Card 63mm × 88mm • Sem Placas)</span>
+            <span>Folha 2 de 2 (Bilhete Individual de Rodada)</span>
+        </div>
+    </div>
+</body>
+</html>

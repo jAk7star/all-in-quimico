@@ -2,14 +2,18 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>All-In Químico - Cédulas Oficiais de Tokens</title>
+    <title>All-In Químico — Cédulas de Dinheiro (10 Kits de R$ 1.000 = R$ 10.000)</title>
     <link rel="stylesheet" href="../SPEC-04-impressao/cards.css">
 </head>
 <body>
     <div class="no-print">
-        <h2>All-In Químico — Cédulas de Tokens (T$)</h2>
-        <p>Grid A4 rigoroso de <strong>12 cédulas de Tokens por página</strong> (95mm x 45mm) para apostas nas alternativas <strong>A</strong> ou <strong>B</strong> do jogo <strong>All-In Químico — Duelo de Apostas A ou B</strong>.</p>
-        <button class="print-btn" onclick="window.print()">Imprimir Cédulas de Tokens (A4)</button>
+        <h2>All-In Químico — Arquivo Oficial de Cédulas (10 Kits = R$ 10.000 em Jogo)</h2>
+        <p>
+            Economia completa de <strong>R$ 10.000</strong> dividida em <strong>10 Kits de R$ 1.000</strong> (5 Kits para as 5 Equipes [R$ 5.000] + 5 Kits para o Banco da Casa [R$ 5.000]).<br>
+            Cada Kit de R$ 1.000 contém: <strong>6 notas de R$ 100 (R$ 600)</strong> + <strong>6 notas de R$ 50 (R$ 300)</strong> + <strong>10 notas de R$ 10 (R$ 100)</strong>.<br>
+            Total das 19 folhas A4: <strong>60× R$ 100 (R$ 6.000)</strong> + <strong>60× R$ 50 (R$ 3.000)</strong> + <strong>100× R$ 10 (R$ 1.000)</strong> = <strong>220 cédulas (R$ 10.000,00)</strong>.
+        </p>
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir 10 Kits de Cédulas — R$ 10.000 (A4)</button>
     </div>
 
     {% for page in money_pages %}
@@ -44,10 +48,10 @@
                     </div>
 
                     <div class="kinegram-microtext">
-                        {% if note.value == 50 %}
-                        C6H6·SP2·NA=6.02E23
-                        {% elif note.value == 100 %}
+                        {% if note.value == 100 %}
                         PSI·WAVE·1S2·2S2·2P6
+                        {% elif note.value == 50 %}
+                        C6H6·SP2·NA=6.02E23
                         {% else %}
                         FCC·CRYSTAL·PV=NRT
                         {% endif %}
@@ -59,13 +63,26 @@
                 <!-- COLUNA 2: CENTRO CIENTÍFICO E INSTITUCIONAL (46mm) -->
                 <div class="money-col-center">
                     <div class="center-top">
-                        <span class="issuer-name">ALL-IN QUÍMICO • BANCA CENTRAL</span>
-                        <span class="issuer-series">DUELO DE APOSTAS A OU B</span>
+                        <span class="issuer-name">ALL-IN QUÍMICO • BANCO DA CASA</span>
+                        <span class="issuer-series">{{ note.kit_label }}</span>
                     </div>
 
                     <div class="center-diagram">
-                        {% if note.value == 50 %}
-                        <!-- Diagrama 50: Anel do Benzeno e Orbitais sp2 -->
+                        {% if note.value == 100 %}
+                        <!-- Diagrama R$ 100 (Azul Cobalto): Orbitais Atômicos e Ondas -->
+                        <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
+                            <circle cx="40" cy="19" r="2.5" fill="currentColor"/>
+                            <ellipse cx="40" cy="19" rx="22" ry="8" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
+                            <ellipse cx="40" cy="19" rx="8" ry="15" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
+                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(45 40 19)" stroke-width="1"/>
+                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(-45 40 19)" stroke-width="1"/>
+                            <circle cx="26" cy="10" r="1.5" fill="currentColor"/>
+                            <circle cx="54" cy="28" r="1.5" fill="currentColor"/>
+                        </svg>
+                        <div class="diagram-tag">DENSIDADE ELETRÔNICA · ORBITAL (R$ 100)</div>
+
+                        {% elif note.value == 50 %}
+                        <!-- Diagrama R$ 50 (Laranja/Âmbar): Anel do Benzeno e Orbitais sp2 -->
                         <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
                             <polygon points="28,8 44,8 52,22 44,34 28,34 20,22" stroke-width="1.2"/>
                             <circle cx="36" cy="21" r="7.5" stroke-dasharray="2 1.5" stroke-width="1"/>
@@ -81,23 +98,10 @@
                             <circle cx="20" cy="22" r="1.5" fill="currentColor"/>
                             <text x="58" y="32" font-size="4.2" fill="currentColor" font-family="monospace">120°</text>
                         </svg>
-                        <div class="diagram-tag">ESTRUTURA MOLECULAR sp² · BENZENO</div>
-
-                        {% elif note.value == 100 %}
-                        <!-- Diagrama 100: Orbitais Atômicos e Ondas -->
-                        <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
-                            <circle cx="40" cy="19" r="2.5" fill="currentColor"/>
-                            <ellipse cx="40" cy="19" rx="22" ry="8" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
-                            <ellipse cx="40" cy="19" rx="8" ry="15" stroke-dasharray="2.5 1.5" stroke-width="0.7"/>
-                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(45 40 19)" stroke-width="1"/>
-                            <ellipse cx="40" cy="19" rx="19" ry="12" transform="rotate(-45 40 19)" stroke-width="1"/>
-                            <circle cx="26" cy="10" r="1.5" fill="currentColor"/>
-                            <circle cx="54" cy="28" r="1.5" fill="currentColor"/>
-                        </svg>
-                        <div class="diagram-tag">DENSIDADE ELETRÔNICA · ORBITAL</div>
+                        <div class="diagram-tag">ESTRUTURA MOLECULAR sp² · BENZENO (R$ 50)</div>
 
                         {% else %}
-                        <!-- Diagrama 500: Rede Cristalina Cúbica 3D -->
+                        <!-- Diagrama R$ 10 (Verde Esmeralda): Rede Cristalina Cúbica 3D -->
                         <svg viewBox="0 0 80 38" width="60" height="26" fill="none" stroke="currentColor" stroke-width="1.1">
                             <polygon points="38,6 56,14 56,31 38,23" stroke-width="1"/>
                             <polygon points="38,6 20,14 20,31 38,23" stroke-width="1"/>
@@ -111,35 +115,35 @@
                             <circle cx="38" cy="17" r="2.2" fill="currentColor"/>
                             <text x="61" y="32" font-size="4" fill="currentColor" font-family="monospace">a=b=c</text>
                         </svg>
-                        <div class="diagram-tag">REDE CRISTALINA · CRISTALOGRAFIA</div>
+                        <div class="diagram-tag">REDE CRISTALINA · ESTEQUIOMETRIA (R$ 10)</div>
                         {% endif %}
                     </div>
 
                     <div class="center-bottom">
-                        <span class="serial-tag">№ TK-{{ note.value }}-{{ "%03d" % loop.index }}</span>
+                        <span class="serial-tag">№ BR-{{ note.value }}-{{ "%03d" % note.serial }}</span>
                         <span class="auth-tag">Lavoisier</span>
                     </div>
                 </div>
 
                 <!-- COLUNA 3: VALOR MONUMENTAL (31mm) -->
                 <div class="money-col-value">
-                    <div class="val-num-top">{{ note.value }}</div>
+                    <div class="val-num-top">R$ {{ note.value }}</div>
 
                     <div class="val-main-group">
-                        <div class="val-monumental"><span class="val-sym">T$</span>{{ note.value }}</div>
+                        <div class="val-monumental"><span class="val-sym">R$</span>{{ note.value }}</div>
                         <div class="val-words">
-                            {% if note.value == 50 %}
-                            CINQUENTA TOKENS
-                            {% elif note.value == 100 %}
-                            CEM TOKENS
+                            {% if note.value == 100 %}
+                            CEM REAIS
+                            {% elif note.value == 50 %}
+                            CINQUENTA REAIS
                             {% else %}
-                            QUINHENTOS TOKENS
+                            DEZ REAIS
                             {% endif %}
                         </div>
                     </div>
 
                     <div class="val-num-bottom">
-                        <span class="curr-label">{{ currency|upper }}</span>
+                        <span class="curr-label">REAIS</span>
                         <span class="curr-val">{{ note.value }}</span>
                     </div>
                 </div>
@@ -148,8 +152,8 @@
         </div>
 
         <div class="page-sheet-label">
-            <span>All-In Químico (Duelo de Apostas A ou B) • Cédulas de Tokens (Grid Modular Suíço 95mm x 45mm)</span>
-            <span>Folha {{ loop.index }} de {{ money_pages|length }}</span>
+            <span>All-In Químico • 10 Kits de Cédulas (Economia Total = R$ 10.000 • {{ page.denomination_summary }})</span>
+            <span>Folha {{ page.page_num }} de {{ money_pages|length }}</span>
         </div>
     </div>
     {% endfor %}

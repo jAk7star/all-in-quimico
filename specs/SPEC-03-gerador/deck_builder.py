@@ -20,7 +20,6 @@ DOMAIN_NAMES = {
     "CHEM-CIN": "Cinética Química",
 }
 
-# Alternativas binárias (A vs B) para questões numéricas e multi-step no Sistema Pari-Mutuel
 BINARY_NUMERIC_OPTIONS = {
     "Q-SOL-001": {
         "correct": "A",
@@ -118,7 +117,6 @@ def load_all_questions():
             if data and "questions" in data:
                 questions.extend(data["questions"])
 
-    # Ordena por dificuldade/nível e depois por ID
     questions.sort(key=lambda q: (q.get("difficulty", 1), q.get("id", "")))
     return questions
 
@@ -129,11 +127,8 @@ def format_chemical_text(text: str) -> str:
         return ""
 
     s = str(text)
-
-    # Substitui setas simples de reação química por setas elegantes
     s = s.replace("->", "→").replace("<->", "⇄")
 
-    # Formata fórmulas químicas comuns se ainda não contiverem tags <sub>
     if "<sub>" not in s:
         replacements = [
             (r"\bH2O\b", "H<sub>2</sub>O"),
@@ -166,17 +161,12 @@ def format_chemical_text(text: str) -> str:
 
 
 def build_binary_ab_options(q: dict) -> tuple[str, list[dict], list[dict]]:
-    """
-    Garante que toda questão apresente exatamente duas respostas possíveis (A e B)
-    para o Sistema de Apostas Pari-Mutuel.
-    Retorna (correct_key, formatted_options, distractors).
-    """
+    """Garante que toda questão apresente exatamente duas respostas possíveis (A e B)."""
     qid = q.get("id", "")
     if q["type"] == "multiple_choice":
         raw_options = q.get("options", [])
         correct_opt = next((o for o in raw_options if o["key"] == q["correct"]), raw_options[0])
         wrong_options = [o for o in raw_options if o["key"] != q["correct"]]
-        # Prioriza o distrator com mistake_ref documentado na base científica
         primary_wrong = next((o for o in wrong_options if o.get("mistake_ref")), wrong_options[0])
 
         if q["correct"] == "A":
@@ -196,7 +186,6 @@ def build_binary_ab_options(q: dict) -> tuple[str, list[dict], list[dict]]:
         correct_key = spec["correct"]
         pair = spec["options"]
     else:
-        # Fallback automático para qualquer questão numérica futura
         exp = q.get("calc", {}).get("expected", {})
         val_num = float(exp.get("value", 1.0))
         unit = exp.get("unit", "")
@@ -225,70 +214,8 @@ def build_binary_ab_options(q: dict) -> tuple[str, list[dict], list[dict]]:
     return correct_key, formatted_options, distractors
 
 
-def format_given_data(given_dict: dict) -> list:
-    """Formata os dados fornecidos com notação físico-química padrão."""
-    result = []
-    for k, v in given_dict.items():
-        label = v.get("description")
-        if not label:
-            key_clean = (
-                k.replace("massa_", "m(")
-                .replace("volume_", "V(")
-                .replace("quantidade_", "n(")
-                .replace("massa_molar_", "M(")
-                .replace("c_", "c(")
-                .replace("v_", "V(")
-            )
-            if "(" in key_clean:
-                parts = key_clean.split("(")
-                symbol = parts[0]
-                sub = parts[1].upper() if symbol in ["m", "n", "M", "V", "c"] else parts[1]
-                sub_map = {
-                    "SOLUTO": "soluto",
-                    "SOLUCAO": "solução",
-                    "INICIAL": "inicial",
-                    "FINAL": "final",
-                    "AMOSTRA": "amostra",
-                    "NACL": "NaCl",
-                    "NAOH": "NaOH",
-                    "NA": "Na",
-                    "CL": "Cl",
-                    "H2O": "H<sub>2</sub>O",
-                }
-                sub = sub_map.get(sub, sub)
-                label = f"<em>{symbol}</em>({sub})"
-            else:
-                label = k.replace("_", " ")
-
-        val_str = str(v["value"]).replace(".", ",")
-        unit_str = v.get("unit", "")
-        unit_formatted = unit_str.replace("mol/L", "mol/L").replace("g/L", "g/L")
-        result.append({"label": label, "value": val_str, "unit": unit_formatted})
-    return result
-
-
-def paginate_cards(cards: list, page_size: int = 9) -> list:
-    """Divide a lista de cartas em páginas A4 com exatamente page_size cartas."""
-    pages = []
-    for i in range(0, len(cards), page_size):
-        chunk = cards[i : i + page_size]
-        pages.append({
-            "page_num": (i // page_size) + 1,
-            "cards": chunk,
-            "first_num": chunk[0]["number"],
-            "last_num": chunk[-1]["number"],
-        })
-    return pages
-
-
 def mirror_grid_for_back(cards_chunk: list, grid_cols: int = 3, grid_rows: int = 3) -> list:
-    """
-    Espelha horizontalmente as colunas de um grid 3x3 para impressão duplex.
-    Quando a folha é virada pela borda longa:
-    A coluna 0 da frente vira a coluna 2 do verso;
-    A coluna 1 da frente permanece na coluna 1 do verso;
-    A coluna 2 da frente vira a coluna 0 do verso.
-    """
+    """Espelha horizontalmente as colunas de um grid 3x3 para impressão duplex."""
     mirrored = []
     for r in range(grid_rows):
         row_items = []
@@ -299,7 +226,6 @@ def mirror_grid_for_back(cards_chunk: list, grid_cols: int = 3, grid_rows: int =
             else:
                 row_items.append(None)
 
-        # Inverte as colunas desta linha
         row_reversed = list(reversed(row_items))
         mirrored.extend(row_reversed)
 
@@ -319,32 +245,8 @@ def mirror_grid_for_back(cards_chunk: list, grid_cols: int = 3, grid_rows: int =
     return clean_mirrored
 
 
-def build_duplex_sheets(front_pages: list, back_cards_all: list) -> list:
-    """Gera a estrutura de folhas duplex intercaladas (Frente Pág N, Verso Pág N espelhado)."""
-    duplex_sheets = []
-    for p_idx, f_page in enumerate(front_pages):
-        f_cards = f_page["cards"]
-        start_idx = p_idx * 9
-        end_idx = start_idx + len(f_cards)
-        b_chunk = back_cards_all[start_idx:end_idx]
-
-        b_mirrored = mirror_grid_for_back(b_chunk, grid_cols=3, grid_rows=3)
-
-        duplex_sheets.append({
-            "sheet_num": p_idx + 1,
-            "front_cards": f_cards,
-            "back_cards_mirrored": b_mirrored,
-            "first_num": f_cards[0]["number"],
-            "last_num": f_cards[-1]["number"],
-        })
-    return duplex_sheets
-
-
 def build_training_round_context(breakage_unit: int = 50) -> dict:
-    """
-    Calcula matematicamente a Rodada-Treino de demonstração com 3 equipes fictícias
-    (Alfa, Beta e Gama) sem comissão da Casa (c = 0%), arredondando pagamentos em múltiplos de 50 T$.
-    """
+    """Mantido para retrocompatibilidade de testes unitários."""
     raw_teams = [
         {"name": "Alfa", "choice": "A", "bet": 200},
         {"name": "Beta", "choice": "B", "bet": 100},
@@ -392,222 +294,121 @@ def build_training_round_context(breakage_unit: int = 50) -> dict:
     }
 
 
-def main():
-    OUT_DIR.mkdir(exist_ok=True)
-    questions = load_all_questions()
-    rules = load_yaml(SPEC02_DIR / "rules" / "base_rules.yaml") or {}
-    pari_mutuel = rules.get("pari_mutuel", {})
-    house_cut_pct = int(round(float(pari_mutuel.get("house_cut", 0.10)) * 100))
+def build_10_kits_money_pages() -> tuple[list[dict], dict]:
+    """
+    Gera exatamente os 10 Kits de R$ 1.000 (Economia Total = R$ 10.000):
+      - 5 Kits para as 5 Equipes (R$ 5.000)
+      - 5 Kits para o Banco da Casa / Reserva do Professor (R$ 5.000)
+    Composição de cada Kit de R$ 1.000:
+      - 6 notas de R$ 100 (R$ 600)
+      - 6 notas de R$ 50  (R$ 300)
+      - 10 notas de R$ 10 (R$ 100)
+    Total geral de 10 Kits:
+      - 60 notas de R$ 100 = R$ 6.000
+      - 60 notas de R$ 50  = R$ 3.000
+      - 100 notas de R$ 10 = R$ 1.000
+      - Total: 220 cédulas = R$ 10.000,00
+    """
+    notes_100 = []
+    for i in range(1, 61):
+        kit_num = ((i - 1) // 6) + 1
+        kit_role = f"KIT {kit_num:02d} • EQUIPE {kit_num:02d}" if kit_num <= 5 else f"KIT {kit_num:02d} • BANCO DA CASA"
+        notes_100.append({"value": 100, "serial": i, "kit_num": kit_num, "kit_label": kit_role})
 
-    q_cards = []
-    a_cards = []
-    cheat_sheet_items = []
+    notes_50 = []
+    for i in range(1, 61):
+        kit_num = ((i - 1) // 6) + 1
+        kit_role = f"KIT {kit_num:02d} • EQUIPE {kit_num:02d}" if kit_num <= 5 else f"KIT {kit_num:02d} • BANCO DA CASA"
+        notes_50.append({"value": 50, "serial": i, "kit_num": kit_num, "kit_label": kit_role})
 
-    for i, q in enumerate(questions, start=1):
-        num_str = f"{i:03d}"
-        lvl = q.get("difficulty", 1)
-        domain_code = q.get("domain", "CHEM-FND")
-        domain_clean = DOMAIN_NAMES.get(domain_code, domain_code)
+    notes_10 = []
+    for i in range(1, 101):
+        kit_num = ((i - 1) // 10) + 1
+        kit_role = f"KIT {kit_num:02d} • EQUIPE {kit_num:02d}" if kit_num <= 5 else f"KIT {kit_num:02d} • BANCO DA CASA"
+        notes_10.append({"value": 10, "serial": i, "kit_num": kit_num, "kit_label": kit_role})
 
-        # Opções binárias A e B para o Sistema Pari-Mutuel
-        correct_key, formatted_options, distractors = build_binary_ab_options(q)
-        winning_opt = next((o for o in formatted_options if o["key"] == correct_key), formatted_options[0])
-        correct_display = f"{correct_key}) {winning_opt['text_html']}"
-
-        common_data = {
-            "id": q["id"],
-            "number": num_str,
-            "level": lvl,
-            "domain": domain_code,
-            "domain_clean": domain_clean,
-            "is_empty": False,
-            "house_cut_pct": house_cut_pct,
-        }
-
-        given_formatted = format_given_data(q.get("given_data", {}))
-
-        # Resumo para a folha do mestre (Cheat Sheet)
-        quick_sol = q.get("worked_solution", "")
-        if len(quick_sol) > 110:
-            quick_sol = quick_sol[:107] + "..."
-        cheat_sheet_items.append({
-            "number": num_str,
-            "level": lvl,
-            "domain_clean": domain_clean,
-            "correct_key": correct_key,
-            "correct_answer_html": correct_display,
-            "quick_summary": format_chemical_text(quick_sol or q.get("scientific_justification", "")),
-        })
-
-        # Carta de Pergunta
-        q_cards.append({
-            **common_data,
-            "type_label": "Pergunta",
-            "css_class": "question",
-            "is_question": True,
-            "statement": q["statement"],
-            "statement_html": format_chemical_text(q["statement"]),
-            "skill": q.get("skill", ""),
-            "options": formatted_options,
-            "given_data": given_formatted,
-        })
-
-        # Carta de Resposta
-        a_cards.append({
-            **common_data,
-            "type_label": "Resposta",
-            "css_class": "answer",
-            "is_question": False,
-            "correct_key": correct_key,
-            "correct_answer_html": correct_display,
-            "worked_solution": q.get("worked_solution", ""),
-            "worked_solution_html": format_chemical_text(q.get("worked_solution", "")),
-            "scientific_justification": q.get("scientific_justification", ""),
-            "scientific_justification_html": format_chemical_text(q.get("scientific_justification", "")),
-            "distractors": distractors,
-        })
-
-    # Jinja2 Environment
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader(ROOT / "templates"))
-    deck_template = env.get_template("deck_template.html")
-    back_template = env.get_template("card_back_template.html")
-    duplex_template = env.get_template("duplex_template.html")
-    money_template = env.get_template("money_template.html")
-    cheat_sheet_template = env.get_template("cheat_sheet_template.html")
-    score_tracker_template = env.get_template("score_tracker_template.html")
-    table_rules_template = env.get_template("table_rules_template.html")
-    student_rules_template = env.get_template("student_rules_template.html")
-    teacher_manual_template = env.get_template("teacher_manual_template.html")
-
-    training_ctx = build_training_round_context(breakage_unit=int(pari_mutuel.get("breakage_unit", 50)))
-    initial_budget_str = f"{int(rules.get('initial_budget', 1000)):,}".replace(",", ".")
-
-    # Paginação 3x3 (9 cartas por página)
-    q_pages = paginate_cards(q_cards, page_size=9)
-    a_pages = paginate_cards(a_cards, page_size=9)
-
-    total_lots = len(q_cards)
-
-    # Versão de 3 dígitos para organização dos arquivos HTML de impressão
-    ver_tag = "v001"
-    # Remove arquivos .html antigos sem o padrão de 3 dígitos para manter a pasta limpa
-    for old_html in OUT_DIR.glob("*.html"):
-        old_html.unlink()
-
-    # 1. Manual Didático do Professor (001)
-    tm_html = teacher_manual_template.render(
-        rules=rules,
-        initial_budget=initial_budget_str,
-        training=training_ctx,
-    )
-    (OUT_DIR / f"001_manual_do_professor_{ver_tag}.html").write_text(tm_html, encoding="utf-8")
-
-    # 2. Guia Rápido do Mestre / Cheat Sheet (002)
-    cs_html = cheat_sheet_template.render(
-        items=cheat_sheet_items,
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / f"002_guia_do_mestre_cheat_sheet_{ver_tag}.html").write_text(cs_html, encoding="utf-8")
-
-    # 3. Ficha de Registro de Apostas Pari-Mutuel, Pool e Odds (003)
-    st_html = score_tracker_template.render(
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / f"003_ficha_controle_all_in_{ver_tag}.html").write_text(st_html, encoding="utf-8")
-
-    # 4. Folha de Regras do Aluno (004)
-    sr_html = student_rules_template.render(
-        rules=rules,
-        initial_budget=initial_budget_str,
-        training=training_ctx,
-    )
-    (OUT_DIR / f"004_regras_do_aluno_{ver_tag}.html").write_text(sr_html, encoding="utf-8")
-
-    # 5. Cartões de Regras Rápidas de Mesa para os Alunos (005)
-    tr_html = table_rules_template.render(
-        rules=rules,
-        house_cut_pct=house_cut_pct,
-    )
-    (OUT_DIR / f"005_cartoes_regras_mesa_{ver_tag}.html").write_text(tr_html, encoding="utf-8")
-
-    # 6. Cédulas de Tokens (006)
-    currency = rules.get("currency_name", "Tokens")
-    all_notes = [{"value": 50}] * 48 + [{"value": 100}] * 48 + [{"value": 500}] * 24
+    all_notes = notes_100 + notes_50 + notes_10
     money_pages = []
     for i in range(0, len(all_notes), 12):
         chunk = all_notes[i : i + 12]
-        money_pages.append({"page_num": (i // 12) + 1, "notes": chunk})
+        vals = sorted({n["value"] for n in chunk}, reverse=True)
+        val_str = ", ".join(f"R$ {v}" for v in vals)
+        page_sum = sum(n["value"] for n in chunk)
+        money_pages.append({
+            "page_num": (i // 12) + 1,
+            "notes": chunk,
+            "denomination_summary": f"{len(chunk)} Cédulas de {val_str} • Subtotal da Folha: R$ {page_sum:,}".replace(",", "."),
+        })
 
-    m_html = money_template.render(currency=currency, money_pages=money_pages)
-    (OUT_DIR / f"006_dinheiro_para_imprimir_{ver_tag}.html").write_text(m_html, encoding="utf-8")
-
-    # 7. Arquivo Duplex Intercalado Unificado (007)
-    q_duplex_sheets = build_duplex_sheets(q_pages, q_cards)
-    duplex_html = duplex_template.render(duplex_sheets=q_duplex_sheets, house_cut_pct=house_cut_pct)
-    (OUT_DIR / f"007_duplex_intercalado_para_imprimir_{ver_tag}.html").write_text(duplex_html, encoding="utf-8")
-
-    # 8. Arquivos de Frentes e Versos Separados Completos (008 a 011)
-    q_html = deck_template.render(
-        deck_title=f"Perguntas Pari-Mutuel (A ou B) - Lotes 001 a {total_lots:03d}",
-        pages=q_pages,
-        house_cut_pct=house_cut_pct,
-    )
-    a_html = deck_template.render(
-        deck_title=f"Respostas / Gabarito (A ou B) - Lotes 001 a {total_lots:03d}",
-        pages=a_pages,
-        house_cut_pct=house_cut_pct,
-    )
-    q_back_html = back_template.render(deck_title="Verso das Cartas de Pergunta", pages=q_pages)
-    a_back_html = back_template.render(deck_title="Verso das Cartas de Resposta", pages=a_pages)
-
-    (OUT_DIR / f"008_perguntas_para_imprimir_{ver_tag}.html").write_text(q_html, encoding="utf-8")
-    (OUT_DIR / f"009_verso_perguntas_para_imprimir_{ver_tag}.html").write_text(q_back_html, encoding="utf-8")
-    (OUT_DIR / f"010_respostas_para_imprimir_{ver_tag}.html").write_text(a_html, encoding="utf-8")
-    (OUT_DIR / f"011_verso_respostas_para_imprimir_{ver_tag}.html").write_text(a_back_html, encoding="utf-8")
-
-    # 9. Arquivos Separados por Nível de Dificuldade (012 a 023)
-    level_prefixes = {
-        1: ("012", "013", "014", "015"),
-        2: ("016", "017", "018", "019"),
-        3: ("020", "021", "022", "023"),
+    stats = {
+        "kits_count": 10,
+        "count_100": len(notes_100),
+        "count_50": len(notes_50),
+        "count_10": len(notes_10),
+        "total_notes": len(all_notes),
+        "total_value": sum(n["value"] for n in all_notes),
     }
-    for lvl, title in [
-        (1, "Nível 1 - Aquecimento"),
-        (2, "Nível 2 - Desenvolvimento"),
-        (3, "Nível 3 - Desafio Morte Súbita"),
-    ]:
-        q_lvl = [c for c in q_cards if c["level"] == lvl]
-        a_lvl = [c for c in a_cards if c["level"] == lvl]
-        if q_lvl:
-            q_lvl_pages = paginate_cards(q_lvl, page_size=9)
-            a_lvl_pages = paginate_cards(a_lvl, page_size=9)
-            p_q, p_vq, p_r, p_vr = level_prefixes[lvl]
+    return money_pages, stats
 
-            (OUT_DIR / f"{p_q}_perguntas_nivel_{lvl}_{ver_tag}.html").write_text(
-                deck_template.render(
-                    deck_title=f"Perguntas - {title}", pages=q_lvl_pages, house_cut_pct=house_cut_pct
-                ),
-                encoding="utf-8",
-            )
-            (OUT_DIR / f"{p_vq}_verso_perguntas_nivel_{lvl}_{ver_tag}.html").write_text(
-                back_template.render(deck_title=f"Verso Perguntas - {title}", pages=q_lvl_pages),
-                encoding="utf-8",
-            )
-            (OUT_DIR / f"{p_r}_respostas_nivel_{lvl}_{ver_tag}.html").write_text(
-                deck_template.render(
-                    deck_title=f"Respostas - {title}", pages=a_lvl_pages, house_cut_pct=house_cut_pct
-                ),
-                encoding="utf-8",
-            )
-            (OUT_DIR / f"{p_vr}_verso_respostas_nivel_{lvl}_{ver_tag}.html").write_text(
-                back_template.render(deck_title=f"Verso Respostas - {title}", pages=a_lvl_pages),
-                encoding="utf-8",
-            )
 
-    print(f"Sucesso! Gerados todos os materiais versionados ({ver_tag}) em {OUT_DIR.resolve()}:")
-    print(" - 001 a 023 com prefixo e sufixo de 3 dígitos (001_..._v001.html)")
+def build_group_bet_cards() -> tuple[list[dict], list[dict]]:
+    """
+    Gera os exemplares de Ficha de Controle das Apostas dos Grupos no formato
+    de card 63mm x 88mm (grade 3x3 = 9 cards por folha A4):
+      - Folha 1: 9 Fichas Consolidadas de Controle de Apostas da Equipe (5 Rodadas + Desafio da Mesa)
+      - Folha 2: 9 Bilhetes Individuais de Aposta Secreta por Rodada
+    """
+    team_tracker_cards = [
+        {"badge": "EQUIPE 01", "team_num": 1},
+        {"badge": "EQUIPE 02", "team_num": 2},
+        {"badge": "EQUIPE 03", "team_num": 3},
+        {"badge": "EQUIPE 04", "team_num": 4},
+        {"badge": "EQUIPE 05", "team_num": 5},
+        {"badge": "EQUIPE 01 (2ª)", "team_num": 1},
+        {"badge": "EQUIPE 02 (2ª)", "team_num": 2},
+        {"badge": "EQUIPE 03 (2ª)", "team_num": 3},
+        {"badge": "EQUIPE ___", "team_num": 0},
+    ]
+    round_slip_cards = [{"slip_num": i} for i in range(1, 10)]
+    return team_tracker_cards, round_slip_cards
+
+
+def main():
+    OUT_DIR.mkdir(exist_ok=True)
+    ver_tag = "v001"
+
+    # Remove arquivos .html antigos para manter apenas os 2 arquivos solicitados
+    for old_html in OUT_DIR.glob("*.html"):
+        old_html.unlink()
+
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader(ROOT / "templates"))
+    bet_cards_template = env.get_template("group_bet_cards_template.html")
+    money_template = env.get_template("money_template.html")
+
+    # 1. Exemplares de Ficha de Controle das Apostas dos Grupos (Cards 63mm x 88mm)
+    team_tracker_cards, round_slip_cards = build_group_bet_cards()
+    bet_cards_html = bet_cards_template.render(
+        team_tracker_cards=team_tracker_cards,
+        round_slip_cards=round_slip_cards,
+    )
+    f_bet_cards = OUT_DIR / f"001_fichas_controle_apostas_grupos_{ver_tag}.html"
+    f_bet_cards.write_text(bet_cards_html, encoding="utf-8")
+
+    # 2. Arquivo de Cédulas de Dinheiro (10 Kits de R$ 1.000 = R$ 10.000)
+    money_pages, stats = build_10_kits_money_pages()
+    money_html = money_template.render(
+        money_pages=money_pages,
+        stats=stats,
+    )
+    f_money = OUT_DIR / f"002_cedulas_dinheiro_10_kits_{ver_tag}.html"
+    f_money.write_text(money_html, encoding="utf-8")
+
+    print(f"Sucesso! Materiais gerados em {OUT_DIR.resolve()}:")
+    print(f" - {f_bet_cards.name}: Exemplares de Ficha de Controle das Apostas dos Grupos (Cards 63x88mm)")
+    print(
+        f" - {f_money.name}: {stats['kits_count']} Kits de R$ 1.000 = R$ {stats['total_value']:,} "
+        f"({stats['count_100']}x R$ 100 + {stats['count_50']}x R$ 50 + {stats['count_10']}x R$ 10 = {stats['total_notes']} cédulas)"
+    )
 
 
 if __name__ == "__main__":
