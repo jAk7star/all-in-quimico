@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All-In Químico — Central de Impressão (Fichas de Apostas & 10 Kits de Cédulas R$ 10.000)</title>
+    <title>All-In Químico — Portal Central de Materiais & Impressão (Cédulas 63×45mm & Fichas)</title>
     <style>
         :root {
-            --bg-main: #f8f9fa;
+            --bg-main: #f8fafc;
             --bg-card: #ffffff;
             --text-primary: #0f172a;
-            --text-secondary: #475569;
+            --text-secondary: #334155;
             --text-muted: #64748b;
             --border-subtle: #e2e8f0;
             --brand-blue: #0284c7;
@@ -20,6 +20,8 @@
             --brand-green-bg: #dcfce7;
             --brand-purple: #7c3aed;
             --brand-purple-bg: #f3e8ff;
+            --brand-red: #dc2626;
+            --brand-red-bg: #fee2e2;
         }
 
         * {
@@ -29,15 +31,16 @@
         }
 
         body {
-            font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
             line-height: 1.5;
-            padding: 2rem 1rem 4rem;
+            padding: 2.5rem 1rem 5rem;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 980px;
+            max-width: 1040px;
             margin: 0 auto;
         }
 
@@ -45,156 +48,165 @@
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-top: 6px solid var(--brand-blue);
-            border-radius: 12px;
-            padding: 2rem 1.75rem;
+            border-radius: 14px;
+            padding: 2.25rem 2rem;
             text-align: center;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
         }
 
         .badge-header {
             display: inline-block;
             background: var(--brand-blue-bg);
             color: var(--brand-blue);
-            padding: 0.3rem 0.9rem;
+            padding: 0.35rem 1rem;
             border-radius: 9999px;
             font-size: 0.78rem;
             font-weight: 800;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         header h1 {
-            font-size: 2.1rem;
-            font-weight: 800;
+            font-size: 2.25rem;
+            font-weight: 900;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.6rem;
         }
 
         header p {
-            font-size: 1rem;
+            font-size: 1.02rem;
             color: var(--text-secondary);
-            max-width: 65ch;
-            margin: 0 auto 1.5rem;
+            max-width: 72ch;
+            margin: 0 auto 1.75rem;
+            line-height: 1.6;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.85rem;
+            gap: 1rem;
             border-top: 1px solid var(--border-subtle);
-            padding-top: 1.25rem;
+            padding-top: 1.5rem;
         }
 
         .stat-pill {
             background: var(--bg-main);
             border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 0.75rem;
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            text-align: center;
         }
 
         .stat-pill .val {
-            font-size: 1.2rem;
-            font-weight: 800;
+            font-size: 1.25rem;
+            font-weight: 900;
             display: block;
+            margin-bottom: 0.2rem;
         }
 
         .stat-pill .lbl {
             font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text-secondary);
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         .section-title {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 800;
             color: var(--text-primary);
-            margin: 2rem 0 1rem;
+            margin: 2.75rem 0 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-subtle);
+            padding-bottom: 0.6rem;
         }
 
         .section-tag {
             font-size: 0.75rem;
             background: var(--brand-blue-bg);
             color: var(--brand-blue);
-            padding: 0.2rem 0.65rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 9999px;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: 0.04em;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.25rem;
         }
 
         .card {
             background: var(--bg-card);
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid var(--border-subtle);
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
         }
 
         .card-num {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
-            padding: 0.2rem 0.55rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.75rem;
             width: fit-content;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .card h3 {
             font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
             color: var(--text-primary);
         }
 
         .card p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
             margin-bottom: 1rem;
             line-height: 1.5;
-            max-width: 65ch;
         }
 
         .card-list {
             list-style: none;
             margin-bottom: 1.25rem;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-primary);
             background: var(--bg-main);
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 0.75rem 1rem;
-        }
-
-        .card-list li {
-            margin-bottom: 0.3rem;
-        }
-
-        .card-list li:last-child {
-            margin-bottom: 0;
+            line-height: 1.6;
         }
 
         .card-meta {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
             color: var(--text-muted);
             margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .card-actions {
@@ -207,10 +219,10 @@
             text-align: center;
             padding: 0.65rem 0.85rem;
             border-radius: 6px;
-            font-size: 0.88rem;
+            font-size: 0.84rem;
             font-weight: 700;
             text-decoration: none;
-            transition: opacity 0.15s ease;
+            transition: all 0.15s ease;
         }
 
         .card-link-open {
@@ -228,13 +240,48 @@
             opacity: 0.9;
         }
 
-        footer {
-            margin-top: 3rem;
-            text-align: center;
+        .card-script {
+            background: #0f172a;
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.25rem;
+            border: 1px solid #334155;
+        }
+
+        .card-script h3 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .card-script p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .code-box {
+            background: #1e293b;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, monospace;
             font-size: 0.82rem;
+            color: #f8fafc;
+            overflow-x: auto;
+            border: 1px solid #334155;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.84rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-subtle);
-            padding-top: 1.5rem;
+            padding-top: 2rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -242,282 +289,374 @@
 
 <div class="container">
     <header>
-        <div class="badge-header">All-In Químico • Kit Físico de Impressão A4</div>
+        <div class="badge-header">All-In Químico • Central de Materiais Físicos (Padrão 63×45 mm)</div>
         <h1>ALL-IN QUÍMICO</h1>
-        <p>Central enxuta de impressão: contém exclusivamente os <strong>Exemplares de Ficha de Controle das Apostas dos Grupos (Formato Card 63×88 mm)</strong> e o <strong>Arquivo Oficial de Cédulas (10 Kits = R$ 10.000)</strong>.</p>
+        <p>Portal unificado de materiais para impressão: reúne as <strong>Cédulas de Dinheiro Redimensionadas (63×45 mm)</strong> em arquivos separados por valor, as <strong>Fichas de Apostas Oficiais dos 5 Grupos com Silhuetas e Texturas</strong>, e o catálogo completo das <strong>10 Apresentações Oficiais no Google Slides</strong>.</p>
 
         <div class="stats-grid">
             <div class="stat-pill">
-                <span class="val" style="color: var(--brand-blue);">R$ 10.000</span>
-                <span class="lbl">Economia Total (10 Kits de R$ 1.000)</span>
+                <span class="val" style="color: var(--brand-blue);">63×45 mm</span>
+                <span class="lbl">Dimensão Padrão (18/A4)</span>
             </div>
             <div class="stat-pill">
-                <span class="val" style="color: var(--brand-amber);">Máx. R$ 200</span>
-                <span class="lbl">Teto por Pergunta (Mín. R$ 10)</span>
+                <span class="val" style="color: var(--brand-green);">R$ 10.000</span>
+                <span class="lbl">Economia Total (10 Kits)</span>
             </div>
             <div class="stat-pill">
-                <span class="val" style="color: var(--brand-green);">Dobro (×2)</span>
-                <span class="lbl">1 a 4 Grupos Acertando</span>
+                <span class="val" style="color: var(--brand-purple);">5 Equipes</span>
+                <span class="lbl">Silhuetas Vetoriais SVG</span>
             </div>
             <div class="stat-pill">
-                <span class="val" style="color: var(--brand-purple);">+R$ 100 Fixo</span>
-                <span class="lbl">Todos os 5 Grupos Acertando</span>
-            </div>
-            <div class="stat-pill">
-                <span class="val" style="color: var(--brand-amber);">+R$ 200 (R5)</span>
-                <span class="lbl">Repescagem (Saldo ≤ R$ 200)</span>
+                <span class="val" style="color: var(--brand-amber);">Zero Falhas</span>
+                <span class="lbl">PDF & Guias Externas</span>
             </div>
         </div>
     </header>
 
+    <!-- SEÇÃO 1: CÉDULAS DE DINHEIRO -->
     <h2 class="section-title">
-        <span>1. Arquivos Físicos para Impressão (A4)</span>
-        <span class="section-tag">2 Arquivos Essenciais</span>
+        <span>1. Cédulas de Dinheiro (Padrão 63×45 mm — 18 por folha A4)</span>
+        <span class="section-tag" style="background: var(--brand-green-bg); color: var(--brand-green);">Tiragem Oficial R$ 10.000</span>
     </h2>
 
     <div class="grid">
-        <!-- ARQUIVO 001: FICHAS DE CONTROLE DAS APOSTAS DOS GRUPOS (63x88mm) -->
-        <div class="card">
+        <!-- AMOSRA AUDITORIA CÉDULAS -->
+        <div class="card" style="border-top: 4px solid #64748b;">
             <div>
-                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">ARQUIVO 001 • CARDS 63×88 MM</span>
-                <h3>Fichas de Controle das Apostas dos Grupos</h3>
-                <p>Exemplares diagramados exatamente no tamanho dos cards de perguntas do modelo anterior (<strong>63 mm × 88 mm</strong> em grade 3×3 = 9 cards por página A4) para registro das apostas por escrito (sem placas).</p>
-                <ul class="card-list">
-                    <li>• <strong>Folha 1 (9 Cards 63×88 mm):</strong> Ficha Consolidada da Equipe para as 5 Rodadas (R1 a R5) + Repescagem na 5ª Rodada (+R$ 200 do Banco para saldo ≤ R$ 200) + Desafio da Mesa (Empate Técnico ≤ R$ 100).</li>
-                    <li>• <strong>Folha 2 (9 Cards 63×88 mm):</strong> Bilhetes Individuais de Aposta Secreta por Rodada (Opção A ou B + Valor de R$ 10 a R$ 200 + Repescagem R5).</li>
-                </ul>
+                <span class="card-num" style="background: #f1f5f9; color: #475569;">AUDITORIA • 1 PÁGINA A4</span>
+                <h3>Folha de Amostra de Teste (Cédulas)</h3>
+                <p>Folha única para verificação rápida de corte e impressão. Contém 18 cédulas mistas (6× R$ 100, 6× R$ 50, 6× R$ 10 = R$ 960) para validação do PDF antes da tiragem completa.</p>
+                <div class="card-meta">🧪 1 Folha A4 • 18 Cédulas com Guias de Corte Externas</div>
             </div>
-            <div>
-                <div class="card-meta">✂️ 2 Folhas A4 (18 Cards de 63×88 mm com guias de corte)</div>
-                <div class="card-actions">
-                    <a href="specs/SPEC-04-impressao/001_fichas_controle_apostas_grupos_v001.html" target="_blank" class="card-link card-link-open">Visualizar Exemplares</a>
-                    <a href="specs/SPEC-04-impressao/001_fichas_controle_apostas_grupos_v001.html" target="_blank" class="card-link card-link-print">Abrir para Imprimir</a>
-                </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/amostra_cedulas_teste.html" target="_blank" class="card-link card-link-open">Visualizar Teste</a>
+                <a href="specs/SPEC-04-impressao/amostra_cedulas_teste.html" target="_blank" class="card-link card-link-print">Imprimir Amostra</a>
             </div>
         </div>
 
-        <!-- ARQUIVO 002: CÉDULAS DE DINHEIRO (10 KITS = R$ 10.000) -->
-        <div class="card">
-            <div>
-                <span class="card-num" style="background: var(--brand-green-bg); color: var(--brand-green);">ARQUIVO 002 • 10 KITS = R$ 10.000</span>
-                <h3>Cédulas de Dinheiro (10 Kits de R$ 1.000)</h3>
-                <p>Arquivo único contendo exatamente os <strong>10 Kits de R$ 1.000</strong> (5 Kits para as 5 Equipes [R$ 5.000] + 5 Kits para o Banco da Casa [R$ 5.000]), totalizando <strong>R$ 10.000</strong> em circulação.</p>
-                <ul class="card-list">
-                    <li>• <strong style="color: var(--brand-blue);">R$ 100 (Azul):</strong> 6 notas/kit × 10 kits = <strong>60 notas (R$ 6.000)</strong></li>
-                    <li>• <strong style="color: var(--brand-amber);">R$ 50 (Laranja):</strong> 6 notas/kit × 10 kits = <strong>60 notas (R$ 3.000)</strong></li>
-                    <li>• <strong style="color: var(--brand-green);">R$ 10 (Verde):</strong> 10 notas/kit × 10 kits = <strong>100 notas (R$ 1.000)</strong></li>
-                </ul>
-            </div>
-            <div>
-                <div class="card-meta">💵 19 Folhas A4 (220 Cédulas de 95×45 mm = R$ 10.000,00)</div>
-                <div class="card-actions">
-                    <a href="specs/SPEC-04-impressao/002_cedulas_dinheiro_10_kits_v001.html" target="_blank" class="card-link card-link-open">Visualizar Cédulas</a>
-                    <a href="specs/SPEC-04-impressao/002_cedulas_dinheiro_10_kits_v001.html" target="_blank" class="card-link card-link-print">Abrir para Imprimir</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="section-title">
-        <span>2. Apresentações Oficiais do All-In Químico (01 a 10 no Google Slides)</span>
-        <span class="section-tag" style="background: var(--brand-blue-bg); color: var(--brand-blue);">10 Apresentações Oficiais Padronizadas</span>
-    </h2>
-
-    <div class="grid">
-        <!-- 01. REGRAS DO JOGO -->
+        <!-- CÉDULAS R$ 100 -->
         <div class="card" style="border-top: 4px solid var(--brand-blue);">
             <div>
-                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">01 • REGRAS DO JOGO (6 SLIDES)</span>
-                <h3>01. Regras do Jogo</h3>
-                <p>Apresentação oficial de regras: Economia de R$ 10.000 (10 Kits de R$ 1.000), Multiplicador ×2, Bônus Unânime (+R$ 100), Repescagem na 5ª rodada (+R$ 200) e Desafio da Mesa (Winner Takes All).</p>
-                <div class="card-meta">📋 6 Slides • Guia de Aplicação e Governança da Partida</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1KpfettWa9KkvbmBmhNAkyWRlTPPzahCeTVCuNlA3VU0/edit" target="_blank" class="card-link card-link-print">Abrir 01. Regras do Jogo</a>
-            </div>
-        </div>
-
-        <!-- 02. AQUECIMENTO & TREINO -->
-        <div class="card" style="border-top: 4px solid #6366f1;">
-            <div>
-                <span class="card-num" style="background: #e0e7ff; color: #4338ca;">02 • AQUECIMENTO & TREINO (7 SLIDES)</span>
-                <h3>02. Aquecimento & Treino</h3>
-                <p>Deck exclusivo com 3 questões de Nível 1 (Q-ATO-001, Q-SOL-001, Q-STO-001) para ambientação das equipes com as regras do jogo. 100% isolado, sem queimar questões da partida principal.</p>
-                <div class="card-meta">🎯 7 Slides • 3 Questões Didáticas N1 de Calibração</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg/edit" target="_blank" class="card-link card-link-print">Abrir 02. Aquecimento & Treino</a>
-            </div>
-        </div>
-
-        <!-- 03. 10 RODADAS - ALPHA -->
-        <div class="card" style="border-top: 4px solid var(--brand-blue);">
-            <div>
-                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">03 • 10 RODADAS ALPHA (21 SLIDES)</span>
-                <h3>03. 10 Rodadas - Alpha</h3>
-                <p>Partida completa de 10 rodadas com paridade estrita: 6 questões de Aquecimento (N1) + 4 questões Finais Estratégicas (N2).</p>
+                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">R$ 100 • AZUL COBALTO</span>
+                <h3>Cédulas de R$ 100 (Cem Reais)</h3>
+                <p>Arquivo dedicado às notas de <strong>R$ 100</strong>. Diagrama de <em>Densidade Eletrônica e Orbitais Atômicos</em>, onda holográfica Kinegram, microtexto quântico e chancela Lavoisier.</p>
                 <ul class="card-list">
-                    <li>• <strong>Nível 1 (6 Qs):</strong> Q-ATO-002, Q-SOL-006, Q-STO-002, Q-STO-003, Q-ENV-001, Q-ENV-002</li>
-                    <li>• <strong>Nível 2 (4 Qs):</strong> Q-SOL-002, Q-SOL-003, Q-STO-006, Q-ENV-005</li>
+                    <li>• Quantidade: <strong>60 cédulas</strong> (6 por kit × 10 kits)</li>
+                    <li>• Total financeiro: <strong>R$ 6.000,00</strong></li>
                 </ul>
-                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas Q&A</div>
+                <div class="card-meta">💵 4 Folhas A4 • 60 Cédulas (63×45 mm)</div>
             </div>
             <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1xMds7KCmevA2BbnJl2-uS_QhYs8R4BMCyQNNy0I0wis/edit" target="_blank" class="card-link card-link-print">Abrir 03. 10 Rodadas - Alpha</a>
+                <a href="specs/SPEC-04-impressao/cedulas_100_reais.html" target="_blank" class="card-link card-link-open">Visualizar R$ 100</a>
+                <a href="specs/SPEC-04-impressao/cedulas_100_reais.html" target="_blank" class="card-link card-link-print">Imprimir R$ 100</a>
             </div>
         </div>
 
-        <!-- 04. 10 RODADAS - BETA -->
+        <!-- CÉDULAS R$ 50 -->
         <div class="card" style="border-top: 4px solid var(--brand-amber);">
             <div>
-                <span class="card-num" style="background: var(--brand-amber-bg); color: var(--brand-amber);">04 • 10 RODADAS BETA (21 SLIDES)</span>
-                <h3>04. 10 Rodadas - Beta</h3>
-                <p>Partida completa de 10 rodadas com paridade estrita: 6 questões de Aquecimento (N1) + 4 questões Finais Estratégicas (N2).</p>
+                <span class="card-num" style="background: var(--brand-amber-bg); color: var(--brand-amber);">R$ 50 • ÂMBAR DOURADO</span>
+                <h3>Cédulas de R$ 50 (Cinquenta Reais)</h3>
+                <p>Arquivo dedicado às notas de <strong>R$ 50</strong>. Diagrama de <em>Cinética Química & Termodinâmica (ΔG &lt; 0)</em>, energia de ativação catalisada e chancela Gibbs.</p>
                 <ul class="card-list">
-                    <li>• <strong>Nível 1 (6 Qs):</strong> Q-ATO-003, Q-SOL-010, Q-STO-004, Q-STO-005, Q-ENV-003, Q-ENV-004</li>
-                    <li>• <strong>Nível 2 (4 Qs):</strong> Q-SOL-004, Q-SOL-009, Q-STO-007, Q-ENV-009</li>
+                    <li>• Quantidade: <strong>60 cédulas</strong> (6 por kit × 10 kits)</li>
+                    <li>• Total financeiro: <strong>R$ 3.000,00</strong></li>
                 </ul>
-                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas Q&A</div>
+                <div class="card-meta">💵 4 Folhas A4 • 60 Cédulas (63×45 mm)</div>
             </div>
             <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1HW5X9OAeZ1zgZAEaACP_AM4dgVoz0_W3w0UF9zHmwgQ/edit" target="_blank" class="card-link card-link-print">Abrir 04. 10 Rodadas - Beta</a>
+                <a href="specs/SPEC-04-impressao/cedulas_50_reais.html" target="_blank" class="card-link card-link-open">Visualizar R$ 50</a>
+                <a href="specs/SPEC-04-impressao/cedulas_50_reais.html" target="_blank" class="card-link card-link-print">Imprimir R$ 50</a>
             </div>
         </div>
 
-        <!-- 05. 10 RODADAS - GAMMA -->
-        <div class="card" style="border-top: 4px solid var(--brand-purple);">
+        <!-- CÉDULAS R$ 10 -->
+        <div class="card" style="border-top: 4px solid var(--brand-green);">
             <div>
-                <span class="card-num" style="background: var(--brand-purple-bg); color: var(--brand-purple);">05 • 10 RODADAS GAMMA (21 SLIDES)</span>
-                <h3>05. 10 Rodadas - Gamma</h3>
-                <p>Partida completa de 10 rodadas com paridade estrita: 6 questões de Aquecimento (N1) + 4 questões Finais Estratégicas (N2).</p>
+                <span class="card-num" style="background: var(--brand-green-bg); color: var(--brand-green);">R$ 10 • VERDE ESMERALDA</span>
+                <h3>Cédulas de R$ 10 (Dez Reais)</h3>
+                <p>Arquivo dedicado às notas de <strong>R$ 10</strong>. Diagrama de <em>Ligações Químicas & Retículo Cristalino Covalente</em>, regra do octeto e chancela Pauling.</p>
                 <ul class="card-list">
-                    <li>• <strong>Nível 1 (6 Qs):</strong> Q-ATO-004, Q-SOL-011, Q-STO-009, Q-STO-010, Q-ENV-007, Q-ENV-008</li>
-                    <li>• <strong>Nível 2 (4 Qs):</strong> Q-SOL-012, Q-STO-011, Q-STO-012, Q-ENV-010</li>
+                    <li>• Quantidade: <strong>100 cédulas</strong> (10 por kit × 10 kits)</li>
+                    <li>• Total financeiro: <strong>R$ 1.000,00</strong></li>
                 </ul>
-                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas Q&A</div>
+                <div class="card-meta">💵 6 Folhas A4 • 100 Cédulas (63×45 mm)</div>
             </div>
             <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1POyXzyYhyf9pgr5YbT3HLAUitKJsH53bOVnMbm0I0U8/edit" target="_blank" class="card-link card-link-print">Abrir 05. 10 Rodadas - Gamma</a>
-            </div>
-        </div>
-
-        <!-- 06. DESAFIO - DILUIÇÃO -->
-        <div class="card" style="border-top: 4px solid #dc2626;">
-            <div>
-                <span class="card-num" style="background: #fee2e2; color: #dc2626;">06 • DESAFIO (3 SLIDES)</span>
-                <h3>06. Desafio - Diluição</h3>
-                <p>Morte Súbita N3 [Q-SOL-005] • Aposta no Escuro • Volume final e diluição com solução estoque • Winner Takes All.</p>
-                <div class="card-meta">🔥 3 Slides • Aposta no Tema • Texas Hold'em</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1wUKcIy3knGukQzh1xYboc8XZ0WunVxa5LtLi_UMqlYM/edit" target="_blank" class="card-link card-link-print">Abrir 06. Desafio - Diluição</a>
-            </div>
-        </div>
-
-        <!-- 07. DESAFIO - MOLARIDADE -->
-        <div class="card" style="border-top: 4px solid #dc2626;">
-            <div>
-                <span class="card-num" style="background: #fee2e2; color: #dc2626;">07 • DESAFIO (3 SLIDES)</span>
-                <h3>07. Desafio - Molaridade</h3>
-                <p>Morte Súbita N3 [Q-SOL-007] • Aposta no Escuro • Cálculo de concentração em massa e molaridade de NaCl • Winner Takes All.</p>
-                <div class="card-meta">🔥 3 Slides • Aposta no Tema • Texas Hold'em</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1nE5alcVwy5AKfgfBWZi27lnlIBH7VTdtCO7ZHxAMOMk/edit" target="_blank" class="card-link card-link-print">Abrir 07. Desafio - Molaridade</a>
-            </div>
-        </div>
-
-        <!-- 08. DESAFIO - SODA CÁUSTICA -->
-        <div class="card" style="border-top: 4px solid #dc2626;">
-            <div>
-                <span class="card-num" style="background: #fee2e2; color: #dc2626;">08 • DESAFIO (3 SLIDES)</span>
-                <h3>08. Desafio - Soda Cáustica</h3>
-                <p>Morte Súbita N3 [Q-SOL-008] • Aposta no Escuro • Concentração comum e molaridade de NaOH • Winner Takes All.</p>
-                <div class="card-meta">🔥 3 Slides • Aposta no Tema • Texas Hold'em</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1kb50y0R9C_tSUYsxmmxdtrNVnygDVfOYH4nw1WXogms/edit" target="_blank" class="card-link card-link-print">Abrir 08. Desafio - Soda Cáustica</a>
-            </div>
-        </div>
-
-        <!-- 09. DESAFIO - ESTEQUIOMETRIA -->
-        <div class="card" style="border-top: 4px solid #dc2626;">
-            <div>
-                <span class="card-num" style="background: #fee2e2; color: #dc2626;">09 • DESAFIO (3 SLIDES)</span>
-                <h3>09. Desafio - Estequiometria</h3>
-                <p>Morte Súbita N3 [Q-STO-008] • Aposta no Escuro • Reagente limitante e rendimento de síntese de H₂O • Winner Takes All.</p>
-                <div class="card-meta">🔥 3 Slides • Aposta no Tema • Texas Hold'em</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1fnETGpSU4DghG_CTutZTSbwdXHeBa1qNh3vxH4gvMoE/edit" target="_blank" class="card-link card-link-print">Abrir 09. Desafio - Estequiometria</a>
-            </div>
-        </div>
-
-        <!-- 10. DESAFIO - CHUVA ÁCIDA -->
-        <div class="card" style="border-top: 4px solid #dc2626;">
-            <div>
-                <span class="card-num" style="background: #fee2e2; color: #dc2626;">10 • DESAFIO (3 SLIDES)</span>
-                <h3>10. Desafio - Chuva Ácida</h3>
-                <p>Morte Súbita N3 [Q-ENV-006] • Aposta no Escuro • Neutralização e precipitação ácida com calcário • Winner Takes All.</p>
-                <div class="card-meta">🔥 3 Slides • Aposta no Tema • Texas Hold'em</div>
-            </div>
-            <div class="card-actions">
-                <a href="https://docs.google.com/presentation/d/1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI/edit" target="_blank" class="card-link card-link-print">Abrir 10. Desafio - Chuva Ácida</a>
+                <a href="specs/SPEC-04-impressao/cedulas_10_reais.html" target="_blank" class="card-link card-link-open">Visualizar R$ 10</a>
+                <a href="specs/SPEC-04-impressao/cedulas_10_reais.html" target="_blank" class="card-link card-link-print">Imprimir R$ 10</a>
             </div>
         </div>
     </div>
 
-    <!-- SEÇÃO ARQUIVADA (LEGADO DE 5 RODADAS) -->
-    <details style="margin-top: 2.5rem; background: var(--bg-card); border: 1px dashed var(--border-subtle); border-radius: 8px; padding: 1.25rem;">
-        <summary style="font-weight: 700; color: var(--text-muted); cursor: pointer; user-select: none;">
-            📦 Ver Decks Legados de 5 Rodadas (Arquivados para Histórico)
+    <!-- SEÇÃO 2: FICHAS DE APOSTAS -->
+    <h2 class="section-title">
+        <span>2. Fichas de Apostas das Equipes (63×45 mm com Silhuetas & Texturas)</span>
+        <span class="section-tag" style="background: var(--brand-purple-bg); color: var(--brand-purple);">5 Grupos • 18 Fichas/A4</span>
+    </h2>
+
+    <div class="grid">
+        <!-- TODAS AS EQUIPES UNIFICADAS -->
+        <div class="card" style="border-top: 4px solid var(--brand-purple); grid-column: 1 / -1;">
+            <div>
+                <span class="card-num" style="background: var(--brand-purple-bg); color: var(--brand-purple);">OFICIAL COMPLETO • 5 FOLHAS A4 (90 FICHAS)</span>
+                <h3>Fichas de Aposta — Todas as 5 Equipes Unificadas</h3>
+                <p>Documento completo contendo exatamente <strong>1 folha A4 dedicada (18 fichas) para cada grupo</strong>. Incorpora silhuetas vetoriais de alta precisão (Game-Icons.net), textura micro-hachurada de segurança, moldura interna e seleção de alternativa [ A ] ou [ B ].</p>
+                <div class="card-meta">🎯 5 Páginas A4 • 90 Fichas Totais (18 Coelho + 18 Elefante + 18 Ursinho + 18 Tigre + 18 Cão)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_todas_equipes.html" target="_blank" class="card-link card-link-open">Visualizar Todas as 5 Equipes</a>
+                <a href="specs/SPEC-04-impressao/fichas_todas_equipes.html" target="_blank" class="card-link card-link-print">Imprimir 5 Folhas Completas</a>
+            </div>
+        </div>
+
+        <!-- AMOSTRA DE TESTE FICHAS -->
+        <div class="card" style="border-top: 4px solid #64748b;">
+            <div>
+                <span class="card-num" style="background: #f1f5f9; color: #475569;">AUDITORIA • 1 PÁGINA A4</span>
+                <h3>Folha de Amostra de Teste (Fichas)</h3>
+                <p>Contém amostras de teste de todas as 5 equipes com seus respectivos animais e cores em uma única folha A4 para conferência de nitidez das silhuetas e texturas.</p>
+                <div class="card-meta">🧪 1 Folha A4 • 18 Fichas Mistas com Silhuetas</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/amostra_fichas_teste.html" target="_blank" class="card-link card-link-open">Visualizar Amostra</a>
+                <a href="specs/SPEC-04-impressao/amostra_fichas_teste.html" target="_blank" class="card-link card-link-print">Imprimir Amostra</a>
+            </div>
+        </div>
+
+        <!-- GRUPO 1: COELHO -->
+        <div class="card" style="border-top: 4px solid #1d4ed8;">
+            <div>
+                <span class="card-num" style="background: #eff6ff; color: #1d4ed8;">GRUPO 01 • AZUL REAL</span>
+                <h3>Grupo 01 — Coelho</h3>
+                <p>18 fichas exclusivas com silhueta clássica do Coelho em marca d'água, brasão circular e seleção [ A ] ou [ B ].</p>
+                <div class="card-meta">🐰 1 Folha A4 • 18 Fichas (63×45 mm)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_grupo1_coelho.html" target="_blank" class="card-link card-link-open">Abrir Grupo 01</a>
+            </div>
+        </div>
+
+        <!-- GRUPO 2: ELEFANTE -->
+        <div class="card" style="border-top: 4px solid #047857;">
+            <div>
+                <span class="card-num" style="background: #ecfdf5; color: #047857;">GRUPO 02 • ESMERALDA</span>
+                <h3>Grupo 02 — Elefante</h3>
+                <p>18 fichas exclusivas com silhueta imponente do Elefante em marca d'água, brasão circular e seleção [ A ] ou [ B ].</p>
+                <div class="card-meta">🐘 1 Folha A4 • 18 Fichas (63×45 mm)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_grupo2_elefante.html" target="_blank" class="card-link card-link-open">Abrir Grupo 02</a>
+            </div>
+        </div>
+
+        <!-- GRUPO 3: URSINHO -->
+        <div class="card" style="border-top: 4px solid #b45309;">
+            <div>
+                <span class="card-num" style="background: #fffbeb; color: #b45309;">GRUPO 03 • ÂMBAR</span>
+                <h3>Grupo 03 — Ursinho</h3>
+                <p>18 fichas exclusivas com silhueta do Ursinho em marca d'água, brasão circular e seleção [ A ] ou [ B ].</p>
+                <div class="card-meta">🐻 1 Folha A4 • 18 Fichas (63×45 mm)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_grupo3_ursinho.html" target="_blank" class="card-link card-link-open">Abrir Grupo 03</a>
+            </div>
+        </div>
+
+        <!-- GRUPO 4: TIGRE -->
+        <div class="card" style="border-top: 4px solid #6d28d9;">
+            <div>
+                <span class="card-num" style="background: #f5f3ff; color: #6d28d9;">GRUPO 04 • VIOLETA</span>
+                <h3>Grupo 04 — Tigre</h3>
+                <p>18 fichas exclusivas com silhueta frontal do Tigre em marca d'água, brasão circular e seleção [ A ] ou [ B ].</p>
+                <div class="card-meta">🐯 1 Folha A4 • 18 Fichas (63×45 mm)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_grupo4_tigre.html" target="_blank" class="card-link card-link-open">Abrir Grupo 04</a>
+            </div>
+        </div>
+
+        <!-- GRUPO 5: CÃO -->
+        <div class="card" style="border-top: 4px solid #b91c1c;">
+            <div>
+                <span class="card-num" style="background: #fef2f2; color: #b91c1c;">GRUPO 05 • CARMIM</span>
+                <h3>Grupo 05 — Cão</h3>
+                <p>18 fichas exclusivas com silhueta heráldica do Cão em marca d'água, brasão circular e seleção [ A ] ou [ B ].</p>
+                <div class="card-meta">🐕 1 Folha A4 • 18 Fichas (63×45 mm)</div>
+            </div>
+            <div class="card-actions">
+                <a href="specs/SPEC-04-impressao/fichas_grupo5_cao.html" target="_blank" class="card-link card-link-open">Abrir Grupo 05</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT GERADOR PYTHON -->
+    <div class="card-script">
+        <h3>⚡ Script Gerador Interativo Python: gerar_materiais_all_in.py</h3>
+        <p>Você pode rodar amostragens adicionais, recalcular as notas até bater R$ 10.000 ou gerar tiragens personalizadas diretamente no terminal:</p>
+        <div class="code-box">python gerar_materiais_all_in.py --tudo</div>
+    </div>
+
+    <!-- SEÇÃO 3: APRESENTAÇÕES GOOGLE SLIDES (01 a 10) -->
+    <h2 class="section-title">
+        <span>3. Apresentações Oficiais do All-In Químico (01 a 10 no Google Slides)</span>
+        <span class="section-tag" style="background: var(--brand-blue-bg); color: var(--brand-blue);">10 Decks Oficiais</span>
+    </h2>
+
+    <div class="grid">
+        <div class="card" style="border-top: 4px solid var(--brand-blue);">
+            <div>
+                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">01 • REGRAS DO JOGO</span>
+                <h3>01. Regras do Jogo</h3>
+                <p>Apresentação oficial de governança: Economia de R$ 10.000, Multiplicador ×2, Bônus Unânime (+R$ 100), Repescagem R5 e Desafio da Mesa.</p>
+                <div class="card-meta">📋 6 Slides • Guia de Aplicação</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1KpfettWa9KkvbmBmhNAkyWRlTPPzahCeTVCuNlA3VU0/edit" target="_blank" class="card-link card-link-print">Abrir 01. Regras</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid #6366f1;">
+            <div>
+                <span class="card-num" style="background: #e0e7ff; color: #4338ca;">02 • AQUECIMENTO & TREINO</span>
+                <h3>02. Aquecimento & Treino</h3>
+                <p>Deck exclusivo com 3 questões didáticas N1 de calibração para ambientação das equipes com as mecânicas de aposta.</p>
+                <div class="card-meta">🎯 7 Slides • 3 Questões N1</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg/edit" target="_blank" class="card-link card-link-print">Abrir 02. Treino</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-blue);">
+            <div>
+                <span class="card-num" style="background: var(--brand-blue-bg); color: var(--brand-blue);">03 • 10 RODADAS ALPHA</span>
+                <h3>03. 10 Rodadas - Alpha</h3>
+                <p>Partida completa de 10 rodadas com paridade estrita: 6 questões N1 (Aquecimento) + 4 questões N2 (Finais Estratégicas).</p>
+                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1xMds7KCmevA2BbnJl2-uS_QhYs8R4BMCyQNNy0I0wis/edit" target="_blank" class="card-link card-link-print">Abrir 03. Alpha</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-amber);">
+            <div>
+                <span class="card-num" style="background: var(--brand-amber-bg); color: var(--brand-amber);">04 • 10 RODADAS BETA</span>
+                <h3>04. 10 Rodadas - Beta</h3>
+                <p>Partida completa de 10 rodadas: 6 questões N1 de Aquecimento + 4 questões N2 Finais Estratégicas.</p>
+                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1HW5X9OAeZ1zgZAEaACP_AM4dgVoz0_W3w0UF9zHmwgQ/edit" target="_blank" class="card-link card-link-print">Abrir 04. Beta</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-purple);">
+            <div>
+                <span class="card-num" style="background: var(--brand-purple-bg); color: var(--brand-purple);">05 • 10 RODADAS GAMMA</span>
+                <h3>05. 10 Rodadas - Gamma</h3>
+                <p>Partida completa de 10 rodadas: 6 questões N1 de Aquecimento + 4 questões N2 Finais Estratégicas.</p>
+                <div class="card-meta">🎮 21 Slides • 10 Questões Intercaladas</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1POyXzyYhyf9pgr5YbT3HLAUitKJsH53bOVnMbm0I0U8/edit" target="_blank" class="card-link card-link-print">Abrir 05. Gamma</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-red);">
+            <div>
+                <span class="card-num" style="background: var(--brand-red-bg); color: var(--brand-red);">06 • DESAFIO MORTE SÚBITA</span>
+                <h3>06. Desafio - Diluição</h3>
+                <p>Morte Súbita N3 [Q-SOL-005] • Aposta no Escuro • Volume final e diluição com solução estoque • Winner Takes All.</p>
+                <div class="card-meta">🔥 3 Slides • Texas Hold'em</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1wUKcIy3knGukQzh1xYboc8XZ0WunVxa5LtLi_UMqlYM/edit" target="_blank" class="card-link card-link-print">Abrir 06. Diluição</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-red);">
+            <div>
+                <span class="card-num" style="background: var(--brand-red-bg); color: var(--brand-red);">07 • DESAFIO MORTE SÚBITA</span>
+                <h3>07. Desafio - Molaridade</h3>
+                <p>Morte Súbita N3 [Q-SOL-007] • Aposta no Escuro • Concentração em massa e molaridade de NaCl • Winner Takes All.</p>
+                <div class="card-meta">🔥 3 Slides • Texas Hold'em</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1nE5alcVwy5AKfgfBWZi27lnlIBH7VTdtCO7ZHxAMOMk/edit" target="_blank" class="card-link card-link-print">Abrir 07. Molaridade</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-red);">
+            <div>
+                <span class="card-num" style="background: var(--brand-red-bg); color: var(--brand-red);">08 • DESAFIO MORTE SÚBITA</span>
+                <h3>08. Desafio - Soda Cáustica</h3>
+                <p>Morte Súbita N3 [Q-SOL-008] • Aposta no Escuro • Concentração comum e molaridade de NaOH • Winner Takes All.</p>
+                <div class="card-meta">🔥 3 Slides • Texas Hold'em</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1kb50y0R9C_tSUYsxmmxdtrNVnygDVfOYH4nw1WXogms/edit" target="_blank" class="card-link card-link-print">Abrir 08. Soda Cáustica</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-red);">
+            <div>
+                <span class="card-num" style="background: var(--brand-red-bg); color: var(--brand-red);">09 • DESAFIO MORTE SÚBITA</span>
+                <h3>09. Desafio - Estequiometria</h3>
+                <p>Morte Súbita N3 [Q-STO-008] • Aposta no Escuro • Reagente limitante e rendimento de síntese de H₂O • Winner Takes All.</p>
+                <div class="card-meta">🔥 3 Slides • Texas Hold'em</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1fnETGpSU4DghG_CTutZTSbwdXHeBa1qNh3vxH4gvMoE/edit" target="_blank" class="card-link card-link-print">Abrir 09. Estequiometria</a>
+            </div>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--brand-red);">
+            <div>
+                <span class="card-num" style="background: var(--brand-red-bg); color: var(--brand-red);">10 • DESAFIO MORTE SÚBITA</span>
+                <h3>10. Desafio - Chuva Ácida</h3>
+                <p>Morte Súbita N3 [Q-ENV-006] • Aposta no Escuro • Neutralização e precipitação ácida com calcário • Winner Takes All.</p>
+                <div class="card-meta">🔥 3 Slides • Texas Hold'em</div>
+            </div>
+            <div class="card-actions">
+                <a href="https://docs.google.com/presentation/d/1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI/edit" target="_blank" class="card-link card-link-print">Abrir 10. Chuva Ácida</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO ARQUIVADA (LEGADO) -->
+    <details style="margin-top: 3rem; background: var(--bg-card); border: 1px dashed var(--border-subtle); border-radius: 10px; padding: 1.5rem;">
+        <summary style="font-weight: 800; color: var(--text-muted); cursor: pointer; user-select: none;">
+            📦 Ver Arquivos Legados do Modelo Anterior (Cédulas 95×45 mm & Cards 63×88 mm)
         </summary>
         <div class="grid" style="margin-top: 1.25rem;">
             <div class="card" style="opacity: 0.85;">
                 <div>
-                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • 5 RODADAS</span>
-                    <h3>Deck Regular 01 (Aquecimento Geral)</h3>
-                    <p>5 questões sequenciais (Q-ATO-002, Q-SOL-006, Q-STO-002, Q-STO-003, Q-STO-004).</p>
+                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • CARDS 63×88 MM</span>
+                    <h3>Fichas de Controle de Apostas (Legado v001)</h3>
+                    <p>Cards em formato 63×88 mm com tabela de 5 rodadas para escrita.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://docs.google.com/presentation/d/1_f1Cn6DMpMBOF_wNlpWWFGukc0Gl87shIonRmBdWbNg/edit" target="_blank" class="card-link card-link-open">Abrir Legado 01</a>
-                </div>
-            </div>
-            <div class="card-actions card" style="opacity: 0.85;">
-                <div>
-                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • 5 RODADAS</span>
-                    <h3>Deck Regular 02 (Aquecimento & Meio Ambiente)</h3>
-                    <p>5 questões sequenciais (Q-STO-005, Q-ENV-001, Q-ENV-002, Q-ENV-003, Q-ENV-004).</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/presentation/d/15136PklF9Vh4BqLD-vhgn1pBidfFktWQqyffAtNmUNo/edit" target="_blank" class="card-link card-link-open">Abrir Legado 02</a>
+                    <a href="specs/SPEC-04-impressao/001_fichas_controle_apostas_grupos_v001.html" target="_blank" class="card-link card-link-open">Abrir Legado 001</a>
                 </div>
             </div>
             <div class="card" style="opacity: 0.85;">
                 <div>
-                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • 5 RODADAS</span>
-                    <h3>Deck Regular 03 (Finais Alta Complexidade)</h3>
-                    <p>5 questões de Nível 2 (Q-SOL-002, Q-SOL-003, Q-SOL-004, Q-SOL-009, Q-STO-006).</p>
+                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • CÉDULAS 95×45 MM</span>
+                    <h3>Cédulas 10 Kits em Arquivo Único (Legado v001)</h3>
+                    <p>Arquivo único de 19 folhas A4 com as cédulas em comprimento de 95 mm.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://docs.google.com/presentation/d/1BOZyZih5pIoGHqMyzwCgD2mXmUJzgs3us2jAijoQdbY/edit" target="_blank" class="card-link card-link-open">Abrir Legado 03</a>
-                </div>
-            </div>
-            <div class="card" style="opacity: 0.85;">
-                <div>
-                    <span class="card-num" style="background: #f1f5f9; color: var(--text-muted);">ARQUIVADO • DESEMPATE</span>
-                    <h3>Deck Suplente / Desempate Técnico</h3>
-                    <p>2 questões extras de Nível 2 (Q-ENV-005, Q-STO-007).</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/presentation/d/1tQ3zzj06DZpS5AnwanIprVXEW98iQ3NRxV8pLY1Z1uY/edit" target="_blank" class="card-link card-link-open">Abrir Desempate</a>
+                    <a href="specs/SPEC-04-impressao/002_cedulas_dinheiro_10_kits_v001.html" target="_blank" class="card-link card-link-open">Abrir Legado 002</a>
                 </div>
             </div>
         </div>
     </details>
 
     <footer>
-        <p><strong>ALL-IN QUÍMICO</strong> • Economia Oficial de R$ 10.000 (10 Kits de R$ 1.000) • Design System Acessível</p>
+        <p><strong>ALL-IN QUÍMICO</strong> • Economia Oficial de R$ 10.000 (10 Kits de R$ 1.000) • Design System Acessível WCAG AAA</p>
+        <p style="margin-top: 0.35rem; font-size: 0.78rem;">Padrão Milimétrico de Corte: 63×45 mm • 18 Itens por Página A4 • Impressão Segura</p>
     </footer>
 </div>
 

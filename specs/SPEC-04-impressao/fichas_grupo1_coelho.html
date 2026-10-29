@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-In Químico — Fichas de Aposta: Grupo 01 (Coelho)</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Medidas Milimétricas Oficiais (Grid 3x6 = 18 itens por A4) */
+  --item-width: 63mm;
+  --item-height: 45mm;
+
+  /* Tipografia e Contraste */
+  --ink-primary: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --ink-faint: #94a3b8;
+  --line-hairline: #cbd5e1;
+  --line-strong: #0f172a;
+
+  /* Paleta Cédulas */
+  --c-100: #0284c7;
+  --bg-100: #f0f9ff;
+  --bdr-100: #bae6fd;
+
+  --c-50: #d97706;
+  --bg-50: #fffbeb;
+  --bdr-50: #fde68a;
+
+  --c-10: #16a34a;
+  --bg-10: #f0fdf4;
+  --bdr-10: #bbf7d0;
+
+  /* Paleta Fichas de Aposta (5 Grupos / Animais) */
+  --g1-color: #1d4ed8; /* Coelho - Azul */
+  --g1-bg: #eff6ff;
+  --g1-border: #bfdbfe;
+
+  --g2-color: #047857; /* Elefante - Esmeralda */
+  --g2-bg: #ecfdf5;
+  --g2-border: #a7f3d0;
+
+  --g3-color: #b45309; /* Ursinho - Âmbar */
+  --g3-bg: #fffbeb;
+  --g3-border: #fde68a;
+
+  --g4-color: #6d28d9; /* Tigre - Violeta */
+  --g4-bg: #f5f3ff;
+  --g4-border: #ddd6fe;
+
+  --g5-color: #b91c1c; /* Cão - Carmim */
+  --g5-bg: #fef2f2;
+  --g5-border: #fecaca;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f1f5f9;
+  color: var(--ink-primary);
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Painel de Controle na Tela */
+.no-print-bar {
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--line-hairline);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 760px;
+  width: 90%;
+}
+
+.no-print-bar h1 {
+  margin: 0 0 6px 0;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.no-print-bar p {
+  margin: 0 0 14px 0;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.print-btn {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  transition: all 0.15s ease;
+}
+
+.print-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+@media print {
+  body {
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+  .no-print-bar {
+    display: none !important;
+  }
+  .page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+/* Folha A4 Padrão (210mm x 297mm) */
+.page {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  background: #ffffff;
+  margin: 15px auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Guias de Corte Externas Milimétricas (0.4pt Hairline) */
+.crop-mark {
+  position: absolute;
+  pointer-events: none;
+  background-color: #334155;
+}
+.crop-v {
+  width: 0.4pt;
+  height: 8mm;
+}
+.crop-h {
+  height: 0.4pt;
+  width: 8mm;
+}
+
+/* Posições das guias verticais (Colunas: 10.5mm, 73.5mm, 136.5mm, 199.5mm) */
+.crop-v-top-0 { top: 2.5mm; left: 10.5mm; }
+.crop-v-top-1 { top: 2.5mm; left: 73.5mm; }
+.crop-v-top-2 { top: 2.5mm; left: 136.5mm; }
+.crop-v-top-3 { top: 2.5mm; left: 199.5mm; }
+
+.crop-v-bot-0 { bottom: 2.5mm; left: 10.5mm; }
+.crop-v-bot-1 { bottom: 2.5mm; left: 73.5mm; }
+.crop-v-bot-2 { bottom: 2.5mm; left: 136.5mm; }
+.crop-v-bot-3 { bottom: 2.5mm; left: 199.5mm; }
+
+/* Posições das guias horizontais (Linhas: 13.5, 58.5, 103.5, 148.5, 193.5, 238.5, 283.5mm) */
+.crop-h-l-0 { left: 1mm; top: 13.5mm; }
+.crop-h-l-1 { left: 1mm; top: 58.5mm; }
+.crop-h-l-2 { left: 1mm; top: 103.5mm; }
+.crop-h-l-3 { left: 1mm; top: 148.5mm; }
+.crop-h-l-4 { left: 1mm; top: 193.5mm; }
+.crop-h-l-5 { left: 1mm; top: 238.5mm; }
+.crop-h-l-6 { left: 1mm; top: 283.5mm; }
+
+.crop-h-r-0 { right: 1mm; top: 13.5mm; }
+.crop-h-r-1 { right: 1mm; top: 58.5mm; }
+.crop-h-r-2 { right: 1mm; top: 103.5mm; }
+.crop-h-r-3 { right: 1mm; top: 148.5mm; }
+.crop-h-r-4 { right: 1mm; top: 193.5mm; }
+.crop-h-r-5 { right: 1mm; top: 238.5mm; }
+.crop-h-r-6 { right: 1mm; top: 283.5mm; }
+
+/* Grid 3x6 Centralizado (189mm x 270mm) */
+.grid-sheet {
+  position: absolute;
+  top: 13.5mm;
+  left: 10.5mm;
+  width: 189mm;
+  height: 270mm;
+  display: grid;
+  grid-template-columns: repeat(3, 63mm);
+  grid-template-rows: repeat(6, 45mm);
+}
+
+.page-footer-label {
+  position: absolute;
+  bottom: 4mm;
+  left: 10.5mm;
+  right: 10.5mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 5.5pt;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+        
+/* ========================================================================== */
+/* ESTILOS ESPECÍFICOS DAS CÉDULAS (63mm x 45mm — 2 ZONAS)                    */
+/* ========================================================================== */
+
+.money-card {
+  width: 63mm;
+  height: 45mm;
+  position: relative;
+  display: grid;
+  grid-template-columns: 12mm 51mm;
+  border: 0.4pt solid #cbd5e1;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ZONA 1: FAIXA DE SEGURANÇA VERTICAL (12mm) */
+.money-sec {
+  width: 12mm;
+  height: 45mm;
+  background: #f8fafc;
+  border-right: 0.4pt solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5mm 0.5mm;
+  position: relative;
+  overflow: hidden;
+}
+
+.money-sec .sec-val-top,
+.money-sec .sec-val-bot {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 6.5pt;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.sec-wave {
+  width: 8mm;
+  height: 18mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+.sec-micro {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-mono);
+  font-size: 3.2pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ZONA 2: CORPO CIENTÍFICO E INSTITUCIONAL (51mm) */
+.money-body {
+  width: 51mm;
+  height: 45mm;
+  padding: 1.8mm 2.2mm 1.5mm 2.2mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Fundo guilloché sutil */
+.money-watermark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 0.5pt solid var(--ink-primary);
+  padding-bottom: 0.8mm;
+  position: relative;
+  z-index: 2;
+}
+
+.money-header .inst-title {
+  font-family: var(--font-heading);
+  font-size: 4.8pt;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--ink-primary);
+  text-transform: uppercase;
+}
+
+.money-header .kit-badge {
+  font-family: var(--font-mono);
+  font-size: 4.2pt;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+/* Miolo: Diagrama Científico + Valor Monumental */
+.money-mid {
+  display: grid;
+  grid-template-columns: 24mm 22mm;
+  gap: 1mm;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin: 0.5mm 0;
+}
+
+.sci-diagram-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sci-diagram-box svg {
+  width: 22mm;
+  height: 16mm;
+}
+
+.sci-tag {
+  font-family: var(--font-mono);
+  font-size: 3.2pt;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-top: 0.5mm;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.money-val-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+}
+
+.val-currency {
+  font-family: var(--font-heading);
+  font-size: 5.5pt;
+  font-weight: 800;
+  color: var(--ink-muted);
+  margin-right: 1mm;
+}
+
+.val-big {
+  font-family: var(--font-heading);
+  font-size: 18pt;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.val-extenso {
+  font-family: var(--font-mono);
+  font-size: 3.8pt;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 1mm;
+}
+
+/* Rodapé: Serial e Assinatura */
+.money-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 0.4pt solid var(--line-hairline);
+  padding-top: 0.8mm;
+  position: relative;
+  z-index: 2;
+}
+
+.serial-code {
+  font-family: var(--font-mono);
+  font-size: 4pt;
+  font-weight: 700;
+  color: var(--ink-secondary);
+}
+
+.signer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.signer-sig {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 6.5pt;
+  line-height: 0.9;
+  color: var(--ink-primary);
+  opacity: 0.85;
+}
+
+.signer-title {
+  font-family: var(--font-main);
+  font-size: 3pt;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Temas por valor */
+.card-100 {
+  border-color: #93c5fd;
+}
+.card-100 .money-sec {
+  background: var(--bg-100);
+  border-right-color: var(--bdr-100);
+}
+.card-100 .sec-val-top,
+.card-100 .sec-val-bot,
+.card-100 .val-big,
+.card-100 .sec-wave svg {
+  color: var(--c-100);
+}
+.card-100 .val-extenso {
+  color: var(--c-100);
+}
+
+.card-50 {
+  border-color: #fcd34d;
+}
+.card-50 .money-sec {
+  background: var(--bg-50);
+  border-right-color: var(--bdr-50);
+}
+.card-50 .sec-val-top,
+.card-50 .sec-val-bot,
+.card-50 .val-big,
+.card-50 .sec-wave svg {
+  color: var(--c-50);
+}
+.card-50 .val-extenso {
+  color: var(--c-50);
+}
+
+.card-10 {
+  border-color: #86efac;
+}
+.card-10 .money-sec {
+  background: var(--bg-10);
+  border-right-color: var(--bdr-10);
+}
+.card-10 .sec-val-top,
+.card-10 .sec-val-bot,
+.card-10 .val-big,
+.card-10 .sec-wave svg {
+  color: var(--c-10);
+}
+.card-10 .val-extenso {
+  color: var(--c-10);
+}
+
+        
+/* ========================================================================== */
+/* ESTILOS CONVENCIONAIS DE FICHAS DE APOSTA / GAMING TOKENS (63mm x 45mm)    */
+/* ========================================================================== */
+
+.ficha-card {
+  width: 63mm;
+  height: 45mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.2mm 2.5mm 1.8mm 2.5mm;
+  border: 0.6pt solid var(--ficha-border);
+  background-color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Moldura Interna Pontilhada de Segurança (Token Bezel / Rim) */
+.ficha-card::after {
+  content: '';
+  position: absolute;
+  top: 1mm;
+  left: 1mm;
+  right: 1mm;
+  bottom: 1mm;
+  border: 0.4pt dashed var(--ficha-border);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Textura Geométrica de Segurança de Fundo (Guilloché / Micro-Hachura) */
+.ficha-texture-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Medalhão Central com a Silhueta do Animal (12% a 14% opacidade) */
+.ficha-silhouette-bg {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32mm;
+  height: 32mm;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha-silhouette-bg svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--ficha-color);
+}
+
+/* 1. TOPO DA FICHA: IDENTIFICAÇÃO INSTITUCIONAL & RODADA */
+.ficha-header {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.6pt solid var(--ficha-color);
+  padding-bottom: 1mm;
+}
+
+.ficha-group-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+
+.ficha-group-icon {
+  width: 5.2mm;
+  height: 5.2mm;
+  background: var(--ficha-bg);
+  border: 0.4pt solid var(--ficha-border);
+  border-radius: 50%;
+  padding: 0.5mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha-group-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--ficha-color);
+}
+
+.ficha-group-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ficha-group-name {
+  font-family: var(--font-heading);
+  font-size: 5.6pt;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--ficha-color);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.ficha-group-animal {
+  font-family: var(--font-mono);
+  font-size: 3.8pt;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin-top: 0.2mm;
+}
+
+.ficha-round-box {
+  display: flex;
+  align-items: center;
+  background: var(--ficha-bg);
+  border: 0.5pt solid var(--ficha-border);
+  border-radius: 3px;
+  padding: 0.6mm 1.8mm;
+}
+
+.round-label {
+  font-family: var(--font-mono);
+  font-size: 3.8pt;
+  font-weight: 800;
+  color: var(--ficha-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 1.2mm;
+}
+
+.round-line {
+  display: inline-block;
+  width: 7mm;
+  border-bottom: 0.8pt solid var(--ink-primary);
+  height: 3mm;
+}
+
+/* 2. ÁREA DE ALTERNATIVAS CONVENCIONAIS [ A ] ou [ B ] */
+.ficha-choices-section {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.8mm 0;
+}
+
+.choices-prompt {
+  font-family: var(--font-mono);
+  font-size: 3.5pt;
+  font-weight: 800;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1mm;
+}
+
+.choices-container {
+  display: flex;
+  justify-content: center;
+  gap: 5.5mm;
+  width: 100%;
+}
+
+.choice-box {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  padding: 1.2mm 4mm;
+  border: 0.9pt solid var(--ink-primary);
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.choice-circle {
+  width: 4.2mm;
+  height: 4.2mm;
+  border-radius: 50%;
+  border: 1.1pt solid var(--ink-primary);
+  background: #ffffff;
+}
+
+.choice-letter {
+  font-family: var(--font-heading);
+  font-size: 10pt;
+  font-weight: 900;
+  color: var(--ink-primary);
+  line-height: 1;
+}
+
+/* 3. BASE DA FICHA: VALOR APOSTADO (ESTILO TÍQUETE OFICIAL) */
+.ficha-bet-footer {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ficha-bg);
+  border: 0.6pt solid var(--ficha-border);
+  border-radius: 3px;
+  padding: 1mm 2mm;
+}
+
+.bet-label-group {
+  display: flex;
+  align-items: baseline;
+  gap: 1mm;
+}
+
+.bet-title {
+  font-family: var(--font-heading);
+  font-size: 5pt;
+  font-weight: 900;
+  color: var(--ficha-color);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bet-rs {
+  font-family: var(--font-mono);
+  font-size: 5.5pt;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.bet-field-line {
+  flex-grow: 1;
+  border-bottom: 0.9pt solid var(--ink-primary);
+  height: 3.5mm;
+  margin-left: 1.8mm;
+  min-width: 18mm;
+}
+
+/* Variáveis Temáticas por Grupo */
+.grupo-1 {
+  --ficha-color: var(--g1-color);
+  --ficha-bg: var(--g1-bg);
+  --ficha-border: var(--g1-border);
+}
+
+.grupo-2 {
+  --ficha-color: var(--g2-color);
+  --ficha-bg: var(--g2-bg);
+  --ficha-border: var(--g2-border);
+}
+
+.grupo-3 {
+  --ficha-color: var(--g3-color);
+  --ficha-bg: var(--g3-bg);
+  --ficha-border: var(--g3-border);
+}
+
+.grupo-4 {
+  --ficha-color: var(--g4-color);
+  --ficha-bg: var(--g4-bg);
+  --ficha-border: var(--g4-border);
+}
+
+.grupo-5 {
+  --ficha-color: var(--g5-color);
+  --ficha-bg: var(--g5-bg);
+  --ficha-border: var(--g5-border);
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="no-print-bar">
+        <h1>All-In Químico — Fichas de Aposta: Grupo 01 (Coelho)</h1>
+        <p>Folha com <strong>18 fichas de aposta</strong> exclusivas para o <strong>Grupo 01 (Coelho)</strong>. Marcação [ A ] ou [ B ] e valor apostado.</p>
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Salvar como PDF (A4)</button>
+    </div>
+
+    
+    <div class="page">
+        
+        <!-- Guias Verticais de Corte (Topo e Base) -->
+        <div class="crop-mark crop-v crop-v-top-0"></div>
+        <div class="crop-mark crop-v crop-v-top-1"></div>
+        <div class="crop-mark crop-v crop-v-top-2"></div>
+        <div class="crop-mark crop-v crop-v-top-3"></div>
+
+        <div class="crop-mark crop-v crop-v-bot-0"></div>
+        <div class="crop-mark crop-v crop-v-bot-1"></div>
+        <div class="crop-mark crop-v crop-v-bot-2"></div>
+        <div class="crop-mark crop-v crop-v-bot-3"></div>
+
+        <!-- Guias Horizontais de Corte (Esquerda e Direita) -->
+        <div class="crop-mark crop-h crop-h-l-0"></div>
+        <div class="crop-mark crop-h crop-h-l-1"></div>
+        <div class="crop-mark crop-h crop-h-l-2"></div>
+        <div class="crop-mark crop-h crop-h-l-3"></div>
+        <div class="crop-mark crop-h crop-h-l-4"></div>
+        <div class="crop-mark crop-h crop-h-l-5"></div>
+        <div class="crop-mark crop-h crop-h-l-6"></div>
+
+        <div class="crop-mark crop-h crop-h-r-0"></div>
+        <div class="crop-mark crop-h crop-h-r-1"></div>
+        <div class="crop-mark crop-h crop-h-r-2"></div>
+        <div class="crop-mark crop-h crop-h-r-3"></div>
+        <div class="crop-mark crop-h crop-h-r-4"></div>
+        <div class="crop-mark crop-h crop-h-r-5"></div>
+        <div class="crop-mark crop-h crop-h-r-6"></div>
+    
+        <div class="grid-sheet">
+            
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">01</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">02</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">03</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">04</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">05</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">06</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">07</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">08</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">09</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">10</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">11</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">12</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">13</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">14</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">15</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">16</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">17</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+    <div class="ficha-card grupo-1">
+        <!-- TEXTURA GEOMÉTRICA DE SEGURANÇA -->
+        <div class="ficha-texture-bg">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="token-mesh" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="6" cy="6" r="2.2" fill="none" stroke="currentColor" stroke-width="0.35"/>
+      <path d="M0,6 L12,6 M6,0 L6,12" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#token-mesh)"/>
+</svg>
+        </div>
+
+        <!-- MEDALHÃO / SILHUETA OFICIAL DO ANIMAL -->
+        <div class="ficha-silhouette-bg">
+            <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+        </div>
+
+        <!-- 1. CABEÇALHO DA FICHA -->
+        <div class="ficha-header">
+            <div class="ficha-group-badge">
+                <div class="ficha-group-icon">
+                    <svg viewBox="0 0 512 512"><path d="M242.29 27.29c-4.165 0-4.79.695-5.593 3.058-.803 2.362-.714 8.368 4.065 17.097 8.758 16 32.356 39.726 78.675 64.582 7.15-7.48 15.604-12.92 24.57-16.713-25.48-14.076-44.05-29.58-58.892-42.158-18.93-16.04-31.326-25.867-42.826-25.867zm-66.274 54.66c-3.815.007-4.68.864-5.07 1.355-.39.49-1 1.882-.485 5.125 1.03 6.484 7.16 18.015 18 28.943 21.683 21.855 60.793 42.287 109.542 34.72 2.13-.33 4.725-.616 7.846 1.194 3.12 1.81 4.73 5.96 4.77 8.36.076 4.807-1.495 6.874-2.722 9.546-2.452 5.345-4.35 11.657-4.375 11.47v.003c1.98 15 14.374 26.28 32.396 34.63 18.023 8.353 40.75 13.004 58.875 14.737 12.552 1.2 27.23.995 40.9-1.388-1.555-2.715-2.676-5.576-3.31-8.516-1.763-8.156.105-16.39 4.093-23.327 6.392-11.12 18.112-19.685 32.36-22.83-4.64-7.837-10.434-16.323-17.024-24.592-19.92-24.992-47.433-46.955-67.978-47.384-20.465-.427-44.107 6.055-57.367 24.242-2.24 3.07-5.56 4.144-8.018 4.46-2.457.318-4.623.1-6.92-.284-4.592-.766-9.7-2.373-15.613-4.527-11.825-4.308-26.625-10.89-42.127-17.774-15.502-6.883-31.668-14.06-45.744-19.44-14.076-5.38-26.546-8.735-32.027-8.724zm224.422 61.915a16 16 0 0 1 15.533 15.994 16 16 0 0 1-32 0 16 16 0 0 1 16.467-15.995zM39.79 190.777c-.804.006-2.017.25-4.017 1.24a9 9 0 0 0-.002 0c-4.252 2.103-7.437 7.213-8.883 16.325-1.447 9.11-.696 21.27 1.888 33.53 2.585 12.263 6.954 24.683 12.116 34.634 3.023 5.827 6.386 10.568 9.53 14.133 4.966-17.297 13.943-33.833 27.697-48.44a42.802 42.802 0 0 1-8.365-7.046c-7.05-7.717-11.604-16.873-15.648-24.877-4.045-8.003-7.82-14.854-10.64-17.605-1.408-1.376-2.22-1.714-2.99-1.84a3.888 3.888 0 0 0-.683-.055zm437.63 2.06c-11.655 1.13-21.29 7.89-25.342 14.936-2.183 3.797-2.794 7.368-2.105 10.555.51 2.36 1.71 4.797 4.408 7.29 11.853-4.564 21.157-11.42 26.145-20.938-.286.42.182-1.32-.504-4.184-.494-2.07-1.397-4.71-2.6-7.66zm-198.496 7.724a567.98 567.98 0 0 0-7.3.034c-71.537.806-120.588 13.47-152.624 32.187-36.613 21.393-51.716 50.092-54.844 81.44-3.128 31.346 6.6 65.513 22 94.56 14.84 27.988 35.094 51.027 51.97 62.22H312.19c-.134-1.91-.67-3.555-1.502-5.188-1.637-3.21-4.918-6.56-10.032-9.687-10.228-6.256-27.12-11.045-44.812-14.438-17.693-3.392-36.175-5.596-50.625-8-7.227-1.2-13.393-2.377-18.532-4.125-2.57-.873-4.92-1.813-7.313-3.593-2.392-1.782-5.313-5.385-5.313-9.97 0-2.61 1.27-4.982 2.375-6.22 1.107-1.236 2.03-1.74 2.75-2.124 1.442-.765 2.283-.952 3.125-1.156 1.686-.408 3.238-.605 5.125-.813 3.776-.414 8.714-.75 14.72-1.187 12.01-.875 28.107-2.106 44.968-4.688 33.722-5.162 69.382-16.778 81.156-36.437 6.403-10.69 5.69-20.67-.56-31.156-6.253-10.487-18.818-20.728-35.72-27.376-33.803-13.297-84.07-12.464-132.72 22.47l-10.5-14.627c33.327-23.93 67.99-33.66 99-33.78 18.608-.072 35.892 3.33 50.782 9.187 19.854 7.81 35.666 19.93 44.594 34.906 8.93 14.976 10.196 33.537.563 49.625-17.64 29.45-58.476 39.55-93.876 44.97-5.897.902-11.315 1.47-16.844 2.092 8.423 1.25 17.318 2.606 26.22 4.313 18.544 3.556 36.893 8.25 50.842 16.78 6.975 4.267 12.99 9.656 16.657 16.845 2.058 4.04 3.204 8.593 3.37 13.375h130.66c2.072-1.76 3.435-3.254 3.844-4.063.538-1.064.46-1.178.25-2.062-.423-1.77-3.667-6.165-7.78-11.125-2.527-3.044-11.017-7.917-21.658-10.594-10.64-2.677-23.344-3.65-34.25-2.22l-2.344.283-2.218-.876c-6.667-2.715-11.864-9.652-12.25-16.313-.386-6.66 1.89-12.352 4.72-18.467 5.655-12.23 14.802-26.366 22.186-42.72 7.384-16.352 12.907-34.52 11.72-53.843-1.153-18.73-8.467-38.93-27.84-60.88-.622-.052-1.248-.1-1.86-.16h-.002c-19.505-1.864-43.524-6.62-64.08-16.146-15.233-7.06-29.065-17.167-36.415-31.074-4.692-.1-9.332-.172-13.85-.18z"/></svg>
+                </div>
+                <div class="ficha-group-text">
+                    <span class="ficha-group-name">Grupo 01</span>
+                    <span class="ficha-group-animal">Coelho</span>
+                </div>
+            </div>
+            <div class="ficha-round-box">
+                <span class="round-label">RODADA:</span>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 5.5pt; color: var(--ink-primary); padding-left: 1mm;">18</span>
+            </div>
+        </div>
+
+        <!-- 2. SELEÇÃO DE ALTERNATIVA CONVENCIONAL [ A ] OU [ B ] -->
+        <div class="ficha-choices-section">
+            <span class="choices-prompt">ALTERNATIVA ESCOLHIDA</span>
+            <div class="choices-container">
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">A</span>
+                </div>
+                <div class="choice-box">
+                    <span class="choice-circle"></span>
+                    <span class="choice-letter">B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BASE DA FICHA: VALOR APOSTADO -->
+        <div class="ficha-bet-footer">
+            <div class="bet-label-group">
+                <span class="bet-title">APOSTA:</span>
+                <span class="bet-rs">R$</span>
+            </div>
+            <div class="bet-field-line"></div>
+        </div>
+    </div>
+    
+        </div>
+        <div class="page-footer-label">
+            <span>FICHAS DE APOSTA OFICIAIS • GRUPO 01 — COELHO</span>
+            <span>PADRÃO CORTE 63×45mm • 18 FICHAS • FOLHA 01/01</span>
+        </div>
+    </div>
+    
+</body>
+</html>
