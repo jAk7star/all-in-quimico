@@ -25,7 +25,7 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "DINÂMICA COMPETITIVA DE QUÍMICA • 5 EQUIPES",
+    "text": "ALL-IN QUÍMICO • GUIA OFICIAL DE APLICAÇÃO & GOVERNANÇA",
     "x": 60,
     "y": 55,
     "width": 600,
@@ -40,12 +40,12 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "ALL-IN QUÍMICO",
+    "text": "01. REGRAS DO JOGO",
     "x": 40,
     "y": 85,
     "width": 640,
     "height": 72,
-    "font_size": 48,
+    "font_size": 44,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",

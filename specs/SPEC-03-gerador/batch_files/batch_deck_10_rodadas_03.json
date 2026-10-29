@@ -40,7 +40,7 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "CARDS DE PERGUNTAS & RESPOSTAS",
+    "text": "05. 10 RODADAS - GAMMA",
     "x": 35,
     "y": 44,
     "width": 650,
@@ -281,7 +281,7 @@
   {
     "op": "set-notes",
     "slide": "p",
-    "text": "SLIDE DE ABERTURA — All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Gamma)\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-004, Q-SOL-011, Q-STO-009, Q-STO-010, Q-ENV-007, Q-ENV-008, Q-SOL-012, Q-STO-011, Q-STO-012, Q-ENV-010.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
+    "text": "SLIDE DE ABERTURA — 05. 10 Rodadas - Gamma\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-004, Q-SOL-011, Q-STO-009, Q-STO-010, Q-ENV-007, Q-ENV-008, Q-SOL-012, Q-STO-011, Q-STO-012, Q-ENV-010.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
   },
   {
     "op": "add-slide",

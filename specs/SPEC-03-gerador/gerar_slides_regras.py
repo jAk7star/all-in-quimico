@@ -76,7 +76,7 @@ def build_rules_batch() -> list[dict]:
     # Badge de categoria
     ops.append({
         "op": "add-textbox", "slide": "p",
-        "text": "DINÂMICA COMPETITIVA DE QUÍMICA • 5 EQUIPES",
+        "text": "ALL-IN QUÍMICO • GUIA OFICIAL DE APLICAÇÃO & GOVERNANÇA",
         "x": 60, "y": 55, "width": 600, "height": 28,
         "font_size": 11.5, "bold": True, "color": COLOR_BRAND,
         "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
@@ -85,9 +85,9 @@ def build_rules_batch() -> list[dict]:
     # Título principal
     ops.append({
         "op": "add-textbox", "slide": "p",
-        "text": "ALL-IN QUÍMICO",
+        "text": "01. REGRAS DO JOGO",
         "x": 40, "y": 85, "width": 640, "height": 72,
-        "font_size": 48, "bold": True, "color": TEXT_PRIMARY,
+        "font_size": 44, "bold": True, "color": TEXT_PRIMARY,
         "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
     })
 

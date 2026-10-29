@@ -40,7 +40,7 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "CARDS DE PERGUNTAS & RESPOSTAS",
+    "text": "04. 10 RODADAS - BETA",
     "x": 35,
     "y": 44,
     "width": 650,
@@ -281,7 +281,7 @@
   {
     "op": "set-notes",
     "slide": "p",
-    "text": "SLIDE DE ABERTURA — All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Beta)\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-003, Q-SOL-010, Q-STO-004, Q-STO-005, Q-ENV-003, Q-ENV-004, Q-SOL-004, Q-SOL-009, Q-STO-007, Q-ENV-009.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
+    "text": "SLIDE DE ABERTURA — 04. 10 Rodadas - Beta\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-003, Q-SOL-010, Q-STO-004, Q-STO-005, Q-ENV-003, Q-ENV-004, Q-SOL-004, Q-SOL-009, Q-STO-007, Q-ENV-009.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
   },
   {
     "op": "add-slide",

@@ -1,6 +1,6 @@
 {
   "manifest_version": "2.0",
-  "generated_at": "2026-10-29T02:51:39.827868+00:00",
+  "generated_at": "2026-10-29T03:22:45.153879+00:00",
   "design_system": {
     "background_color": "#F8F9FA",
     "card_background": "#FFFFFF",
@@ -11,7 +11,7 @@
       "deck_id": "deck_teste_nivel_1",
       "type": "test",
       "presentation_id": "15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg",
-      "title": "All-In Químico — Rodada de Aquecimento e Teste (Nível 1)",
+      "title": "02. Aquecimento & Treino",
       "total_slides": 7,
       "question_ids": [
         "Q-ATO-001",
@@ -25,7 +25,7 @@
         "deck_id": "desafio_01_morte_subita_diluicao",
         "type": "challenge",
         "presentation_id": "1wUKcIy3knGukQzh1xYboc8XZ0WunVxa5LtLi_UMqlYM",
-        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-005]",
+        "title": "06. Desafio - Diluição",
         "total_slides": 3,
         "question_ids": [
           "Q-SOL-005"
@@ -36,7 +36,7 @@
         "deck_id": "desafio_02_morte_subita_molaridade_sal",
         "type": "challenge",
         "presentation_id": "1nE5alcVwy5AKfgfBWZi27lnlIBH7VTdtCO7ZHxAMOMk",
-        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-007]",
+        "title": "07. Desafio - Molaridade",
         "total_slides": 3,
         "question_ids": [
           "Q-SOL-007"
@@ -47,7 +47,7 @@
         "deck_id": "desafio_03_morte_subita_soda_caustica",
         "type": "challenge",
         "presentation_id": "1kb50y0R9C_tSUYsxmmxdtrNVnygDVfOYH4nw1WXogms",
-        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-008]",
+        "title": "08. Desafio - Soda Cáustica",
         "total_slides": 3,
         "question_ids": [
           "Q-SOL-008"
@@ -58,7 +58,7 @@
         "deck_id": "desafio_04_morte_subita_estequiometria_agua",
         "type": "challenge",
         "presentation_id": "1fnETGpSU4DghG_CTutZTSbwdXHeBa1qNh3vxH4gvMoE",
-        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-STO-008]",
+        "title": "09. Desafio - Estequiometria",
         "total_slides": 3,
         "question_ids": [
           "Q-STO-008"
@@ -69,7 +69,7 @@
         "deck_id": "desafio_05_morte_subita_chuva_acida",
         "type": "challenge",
         "presentation_id": "1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI",
-        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-ENV-006]",
+        "title": "10. Desafio - Chuva Ácida",
         "total_slides": 3,
         "question_ids": [
           "Q-ENV-006"
@@ -82,7 +82,7 @@
         "deck_id": "deck_10_rodadas_01",
         "type": "regular",
         "presentation_id": "1xMds7KCmevA2BbnJl2-uS_QhYs8R4BMCyQNNy0I0wis",
-        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Alpha)",
+        "title": "03. 10 Rodadas - Alpha",
         "total_slides": 21,
         "question_ids": [
           "Q-ATO-002",
@@ -102,7 +102,7 @@
         "deck_id": "deck_10_rodadas_02",
         "type": "regular",
         "presentation_id": "1HW5X9OAeZ1zgZAEaACP_AM4dgVoz0_W3w0UF9zHmwgQ",
-        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Beta)",
+        "title": "04. 10 Rodadas - Beta",
         "total_slides": 21,
         "question_ids": [
           "Q-ATO-003",
@@ -122,7 +122,7 @@
         "deck_id": "deck_10_rodadas_03",
         "type": "regular",
         "presentation_id": "1POyXzyYhyf9pgr5YbT3HLAUitKJsH53bOVnMbm0I0U8",
-        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Gamma)",
+        "title": "05. 10 Rodadas - Gamma",
         "total_slides": 21,
         "question_ids": [
           "Q-ATO-004",

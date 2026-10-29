@@ -220,10 +220,10 @@ def test_challenge_deck_flame_tag_extraction_and_cleaning():
     with batch_file.open("r", encoding="utf-8") as f:
         ops = json.load(f)
 
-    # Verifica Slide 1 (Capa): título contém DILUIÇÃO
+    # Verifica Slide 1 (Capa): título contém 06. DESAFIO - DILUIÇÃO
     cover_titles = [
         op for op in ops
-        if op.get("op") == "add-textbox" and op.get("slide") == "p" and "DESAFIO FINAL: DILUIÇÃO" in op.get("text", "")
+        if op.get("op") == "add-textbox" and op.get("slide") == "p" and "06. DESAFIO - DILUIÇÃO" in op.get("text", "")
     ]
     assert len(cover_titles) == 1
 

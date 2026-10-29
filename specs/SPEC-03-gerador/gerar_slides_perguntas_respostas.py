@@ -398,7 +398,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="deck_teste_nivel_1",
         deck_type="test",
-        title="All-In Químico — Rodada de Aquecimento e Teste (Nível 1)",
+        title="02. Aquecimento & Treino",
         subtitle="Calibração Pedagógica Sem Risco Financeiro • 3 Questões Didáticas Iniciais",
         question_ids=["Q-ATO-001", "Q-SOL-001", "Q-STO-001"],
         batch_filename="batch_deck_teste_nivel_1.json",
@@ -408,7 +408,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="desafio_01_morte_subita_diluicao",
         deck_type="challenge",
-        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-005]",
+        title="06. Desafio - Diluição",
         subtitle="Tema: DILUIÇÃO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-005"],
         batch_filename="batch_desafio_01_morte_subita_diluicao.json",
@@ -417,7 +417,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="desafio_02_morte_subita_molaridade_sal",
         deck_type="challenge",
-        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-007]",
+        title="07. Desafio - Molaridade",
         subtitle="Tema: MOLARIDADE A PARTIR DA MASSA • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-007"],
         batch_filename="batch_desafio_02_morte_subita_molaridade_sal.json",
@@ -426,7 +426,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="desafio_03_morte_subita_soda_caustica",
         deck_type="challenge",
-        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-008]",
+        title="08. Desafio - Soda Cáustica",
         subtitle="Tema: SODA CÁUSTICA EM SOLUÇÃO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-008"],
         batch_filename="batch_desafio_03_morte_subita_soda_caustica.json",
@@ -435,7 +435,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="desafio_04_morte_subita_estequiometria_agua",
         deck_type="challenge",
-        title="All-In Químico — Desafio Final: Morte Súbita [Q-STO-008]",
+        title="09. Desafio - Estequiometria",
         subtitle="Tema: LIMITANTE + RENDIMENTO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-STO-008"],
         batch_filename="batch_desafio_04_morte_subita_estequiometria_agua.json",
@@ -444,7 +444,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="desafio_05_morte_subita_chuva_acida",
         deck_type="challenge",
-        title="All-In Químico — Desafio Final: Morte Súbita [Q-ENV-006]",
+        title="10. Desafio - Chuva Ácida",
         subtitle="Tema: GEOQUÍMICA DA CHUVA ÁCIDA • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-ENV-006"],
         batch_filename="batch_desafio_05_morte_subita_chuva_acida.json",
@@ -454,7 +454,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="deck_10_rodadas_01",
         deck_type="regular",
-        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Alpha)",
+        title="03. 10 Rodadas - Alpha",
         subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
         question_ids=[
             "Q-ATO-002", "Q-SOL-006", "Q-STO-002", "Q-STO-003", "Q-ENV-001", "Q-ENV-002",
@@ -466,7 +466,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="deck_10_rodadas_02",
         deck_type="regular",
-        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Beta)",
+        title="04. 10 Rodadas - Beta",
         subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
         question_ids=[
             "Q-ATO-003", "Q-SOL-010", "Q-STO-004", "Q-STO-005", "Q-ENV-003", "Q-ENV-004",
@@ -478,7 +478,7 @@ DECK_CONFIGS: list[DeckConfig] = [
     DeckConfig(
         deck_id="deck_10_rodadas_03",
         deck_type="regular",
-        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Gamma)",
+        title="05. 10 Rodadas - Gamma",
         subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
         question_ids=[
             "Q-ATO-004", "Q-SOL-011", "Q-STO-009", "Q-STO-010", "Q-ENV-007", "Q-ENV-008",
@@ -788,7 +788,7 @@ def _build_test_cover_operations(cfg: DeckConfig) -> list[dict[str, Any]]:
         },
         {
             "op": "add-textbox", "slide": "p",
-            "text": "RODADA DE AQUECIMENTO E TESTE",
+            "text": cfg.title.upper(),
             "x": 35, "y": 44, "width": 650, "height": 48,
             "font_size": 28, "bold": True, "color": TEXT_PRIMARY,
             "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
@@ -911,9 +911,9 @@ def _build_challenge_cover_operations(q: dict[str, Any], cfg: DeckConfig) -> lis
         },
         {
             "op": "add-textbox", "slide": "p",
-            "text": f"DESAFIO FINAL: {theme.upper()}",
+            "text": cfg.title.upper(),
             "x": 35, "y": 44, "width": 650, "height": 48,
-            "font_size": 25, "bold": True, "color": TEXT_PRIMARY,
+            "font_size": 26, "bold": True, "color": TEXT_PRIMARY,
             "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",
         },
         {
@@ -1031,7 +1031,7 @@ def _build_regular_cover_operations(cfg: DeckConfig) -> list[dict[str, Any]]:
         },
         {
             "op": "add-textbox", "slide": "p",
-            "text": "CARDS DE PERGUNTAS & RESPOSTAS",
+            "text": cfg.title.upper(),
             "x": 35, "y": 44, "width": 650, "height": 48,
             "font_size": 28, "bold": True, "color": TEXT_PRIMARY,
             "font_family": FONT_FAMILY, "alignment": "center", "content_alignment": "MIDDLE",

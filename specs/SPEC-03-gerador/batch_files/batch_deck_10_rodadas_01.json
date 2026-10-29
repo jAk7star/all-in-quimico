@@ -40,7 +40,7 @@
   {
     "op": "add-textbox",
     "slide": "p",
-    "text": "CARDS DE PERGUNTAS & RESPOSTAS",
+    "text": "03. 10 RODADAS - ALPHA",
     "x": 35,
     "y": 44,
     "width": 650,
@@ -281,7 +281,7 @@
   {
     "op": "set-notes",
     "slide": "p",
-    "text": "SLIDE DE ABERTURA — All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Alpha)\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-002, Q-SOL-006, Q-STO-002, Q-STO-003, Q-ENV-001, Q-ENV-002, Q-SOL-002, Q-SOL-003, Q-STO-006, Q-ENV-005.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
+    "text": "SLIDE DE ABERTURA — 03. 10 Rodadas - Alpha\n\nApresentação regular independente contendo exatamente 10 questões fechadas.\nQuestões alocadas: Q-ATO-002, Q-SOL-006, Q-STO-002, Q-STO-003, Q-ENV-001, Q-ENV-002, Q-SOL-002, Q-SOL-003, Q-STO-006, Q-ENV-005.\nParidade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
   },
   {
     "op": "add-slide",
