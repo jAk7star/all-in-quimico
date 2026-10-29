@@ -308,6 +308,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Calibração Pedagógica Sem Risco Financeiro • 3 Questões Didáticas Iniciais",
         question_ids=["Q-ATO-001", "Q-SOL-001", "Q-STO-001"],
         batch_filename="batch_deck_teste_nivel_1.json",
+        presentation_id="15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg",
     ),
     # 2. Apresentações Individuais de Desafio N3 (R3) — 3 slides cada
     DeckConfig(
@@ -317,6 +318,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Tema: DILUIÇÃO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-005"],
         batch_filename="batch_desafio_01_morte_subita_diluicao.json",
+        presentation_id="1wUKcIy3knGukQzh1xYboc8XZ0WunVxa5LtLi_UMqlYM",
     ),
     DeckConfig(
         deck_id="desafio_02_morte_subita_molaridade_sal",
@@ -325,6 +327,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Tema: MOLARIDADE A PARTIR DA MASSA • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-007"],
         batch_filename="batch_desafio_02_morte_subita_molaridade_sal.json",
+        presentation_id="1nE5alcVwy5AKfgfBWZi27lnlIBH7VTdtCO7ZHxAMOMk",
     ),
     DeckConfig(
         deck_id="desafio_03_morte_subita_soda_caustica",
@@ -333,6 +336,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Tema: SODA CÁUSTICA EM SOLUÇÃO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-SOL-008"],
         batch_filename="batch_desafio_03_morte_subita_soda_caustica.json",
+        presentation_id="1kb50y0R9C_tSUYsxmmxdtrNVnygDVfOYH4nw1WXogms",
     ),
     DeckConfig(
         deck_id="desafio_04_morte_subita_estequiometria_agua",
@@ -341,6 +345,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Tema: LIMITANTE + RENDIMENTO • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-STO-008"],
         batch_filename="batch_desafio_04_morte_subita_estequiometria_agua.json",
+        presentation_id="1fnETGpSU4DghG_CTutZTSbwdXHeBa1qNh3vxH4gvMoE",
     ),
     DeckConfig(
         deck_id="desafio_05_morte_subita_chuva_acida",
@@ -349,6 +354,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Tema: GEOQUÍMICA DA CHUVA ÁCIDA • Aposta no Escuro • Winner Takes All",
         question_ids=["Q-ENV-006"],
         batch_filename="batch_desafio_05_morte_subita_chuva_acida.json",
+        presentation_id="1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI",
     ),
     # 3. Apresentações Regulares de 5 Questões (R4) — 11 slides cada
     DeckConfig(
@@ -358,6 +364,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Fase 1: Aquecimento Geral • Lotes 001 a 005 (10 Slides Didáticos)",
         question_ids=["Q-ATO-002", "Q-SOL-006", "Q-STO-002", "Q-STO-003", "Q-STO-004"],
         batch_filename="batch_deck_regular_01.json",
+        presentation_id="1_f1Cn6DMpMBOF_wNlpWWFGukc0Gl87shIonRmBdWbNg",
     ),
     DeckConfig(
         deck_id="deck_regular_02",
@@ -366,6 +373,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Fase 1: Aquecimento & Meio Ambiente • Lotes 006 a 010 (10 Slides Didáticos)",
         question_ids=["Q-STO-005", "Q-ENV-001", "Q-ENV-002", "Q-ENV-003", "Q-ENV-004"],
         batch_filename="batch_deck_regular_02.json",
+        presentation_id="15136PklF9Vh4BqLD-vhgn1pBidfFktWQqyffAtNmUNo",
     ),
     DeckConfig(
         deck_id="deck_regular_03",
@@ -374,6 +382,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Fase 2: Finais de Alta Complexidade • Lotes 011 a 015 (10 Slides Didáticos)",
         question_ids=["Q-SOL-002", "Q-SOL-003", "Q-SOL-004", "Q-SOL-009", "Q-STO-006"],
         batch_filename="batch_deck_regular_03.json",
+        presentation_id="1BOZyZih5pIoGHqMyzwCgD2mXmUJzgs3us2jAijoQdbY",
     ),
     # 4. Deck Suplente / Desempate Técnico (SPEC-02 §4.4) — 5 slides
     DeckConfig(
@@ -383,6 +392,7 @@ DECK_CONFIGS: list[DeckConfig] = [
         subtitle="Rodada Extra de Desempate Técnico • 2 Lotes Suplentes (SPEC-02 §4.4)",
         question_ids=["Q-ENV-005", "Q-STO-007"],
         batch_filename="batch_deck_suplente_desempate.json",
+        presentation_id="1tQ3zzj06DZpS5AnwanIprVXEW98iQ3NRxV8pLY1Z1uY",
     ),
 ]
 
