@@ -1,0 +1,140 @@
+{
+  "manifest_version": "2.0",
+  "generated_at": "2026-10-29T01:41:21.444500+00:00",
+  "design_system": {
+    "background_color": "#F8F9FA",
+    "card_background": "#FFFFFF",
+    "font_family": "Open Sans"
+  },
+  "decks": {
+    "test_deck": {
+      "deck_id": "deck_teste_nivel_1",
+      "type": "test",
+      "presentation_id": "",
+      "title": "All-In Químico — Rodada de Aquecimento e Teste (Nível 1)",
+      "total_slides": 7,
+      "question_ids": [
+        "Q-ATO-001",
+        "Q-SOL-001",
+        "Q-STO-001"
+      ],
+      "batch_file": "batch_files/batch_deck_teste_nivel_1.json"
+    },
+    "challenges": [
+      {
+        "deck_id": "desafio_01_morte_subita_diluicao",
+        "type": "challenge",
+        "presentation_id": "",
+        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-005]",
+        "total_slides": 3,
+        "question_ids": [
+          "Q-SOL-005"
+        ],
+        "batch_file": "batch_files/batch_desafio_01_morte_subita_diluicao.json"
+      },
+      {
+        "deck_id": "desafio_02_morte_subita_molaridade_sal",
+        "type": "challenge",
+        "presentation_id": "",
+        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-007]",
+        "total_slides": 3,
+        "question_ids": [
+          "Q-SOL-007"
+        ],
+        "batch_file": "batch_files/batch_desafio_02_morte_subita_molaridade_sal.json"
+      },
+      {
+        "deck_id": "desafio_03_morte_subita_soda_caustica",
+        "type": "challenge",
+        "presentation_id": "",
+        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-SOL-008]",
+        "total_slides": 3,
+        "question_ids": [
+          "Q-SOL-008"
+        ],
+        "batch_file": "batch_files/batch_desafio_03_morte_subita_soda_caustica.json"
+      },
+      {
+        "deck_id": "desafio_04_morte_subita_estequiometria_agua",
+        "type": "challenge",
+        "presentation_id": "",
+        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-STO-008]",
+        "total_slides": 3,
+        "question_ids": [
+          "Q-STO-008"
+        ],
+        "batch_file": "batch_files/batch_desafio_04_morte_subita_estequiometria_agua.json"
+      },
+      {
+        "deck_id": "desafio_05_morte_subita_chuva_acida",
+        "type": "challenge",
+        "presentation_id": "",
+        "title": "All-In Químico — Desafio Final: Morte Súbita [Q-ENV-006]",
+        "total_slides": 3,
+        "question_ids": [
+          "Q-ENV-006"
+        ],
+        "batch_file": "batch_files/batch_desafio_05_morte_subita_chuva_acida.json"
+      }
+    ],
+    "regular_decks": [
+      {
+        "deck_id": "deck_regular_01",
+        "type": "regular",
+        "presentation_id": "",
+        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 01",
+        "total_slides": 11,
+        "question_ids": [
+          "Q-ATO-002",
+          "Q-SOL-006",
+          "Q-STO-002",
+          "Q-STO-003",
+          "Q-STO-004"
+        ],
+        "batch_file": "batch_files/batch_deck_regular_01.json"
+      },
+      {
+        "deck_id": "deck_regular_02",
+        "type": "regular",
+        "presentation_id": "",
+        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 02",
+        "total_slides": 11,
+        "question_ids": [
+          "Q-STO-005",
+          "Q-ENV-001",
+          "Q-ENV-002",
+          "Q-ENV-003",
+          "Q-ENV-004"
+        ],
+        "batch_file": "batch_files/batch_deck_regular_02.json"
+      },
+      {
+        "deck_id": "deck_regular_03",
+        "type": "regular",
+        "presentation_id": "",
+        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 03",
+        "total_slides": 11,
+        "question_ids": [
+          "Q-SOL-002",
+          "Q-SOL-003",
+          "Q-SOL-004",
+          "Q-SOL-009",
+          "Q-STO-006"
+        ],
+        "batch_file": "batch_files/batch_deck_regular_03.json"
+      }
+    ],
+    "tiebreaker_deck": {
+      "deck_id": "deck_suplente_desempate",
+      "type": "tiebreaker",
+      "presentation_id": "",
+      "title": "All-In Químico — Deck Suplente / Desempate (Nível 2)",
+      "total_slides": 5,
+      "question_ids": [
+        "Q-ENV-005",
+        "Q-STO-007"
+      ],
+      "batch_file": "batch_files/batch_deck_suplente_desempate.json"
+    }
+  }
+}

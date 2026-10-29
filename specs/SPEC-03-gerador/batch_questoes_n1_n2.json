@@ -386,7 +386,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -525,7 +525,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_001",
-    "text": "CARD DE PERGUNTA — LOTE 001 (Q-ATO-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estrutura Atômica & Tabela Periódica (CHEM-ATO)\n• Habilidade Pedagógica: Identificar o critério de organização da Tabela Periódica moderna.\n• Nível Cognitivo: Reconhecimento\n• Conceitos da Base: CHEM-ATO-TABLE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 001  •  NÍVEL 1 (AQUECIMENTO) (Q-ATO-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estrutura Atômica & Tabela Periódica (CHEM-ATO)\n• Habilidade Pedagógica: Identificar o critério de organização da Tabela Periódica moderna.\n• Nível Cognitivo: Reconhecimento\n• Conceitos da Base: CHEM-ATO-TABLE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -723,7 +723,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_001",
-    "text": "GABARITO COMENTADO — LOTE 001 (Q-ATO-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A Tabela Periódica moderna é disposta em ordem crescente de número atômico (Z).\n• Justificativa Físico-Química: Lei da periodicidade de Moseley.\n• Raciocínio do Distrator (A): Critério antigo de Mendeleev.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 001 (Q-ATO-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A Tabela Periódica moderna é disposta em ordem crescente de número atômico (Z).\n• Justificativa Físico-Química: Lei da periodicidade de Moseley.\n• Raciocínio do Distrator (A): Critério antigo de Mendeleev.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -828,7 +828,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -967,7 +967,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_002",
-    "text": "CARD DE PERGUNTA — LOTE 002 (Q-ATO-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estrutura Atômica & Tabela Periódica (CHEM-ATO)\n• Habilidade Pedagógica: Diferenciar períodos e famílias na Tabela Periódica.\n• Nível Cognitivo: Reconhecimento\n• Conceitos da Base: CHEM-ATO-TABLE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 002  •  NÍVEL 1 (AQUECIMENTO) (Q-ATO-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estrutura Atômica & Tabela Periódica (CHEM-ATO)\n• Habilidade Pedagógica: Diferenciar períodos e famílias na Tabela Periódica.\n• Nível Cognitivo: Reconhecimento\n• Conceitos da Base: CHEM-ATO-TABLE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -1165,7 +1165,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_002",
-    "text": "GABARITO COMENTADO — LOTE 002 (Q-ATO-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: As colunas verticais correspondem às Famílias ou Grupos.\n• Justificativa Físico-Química: Elementos da mesma família possuem configuração semelhante na camada de valência.\n• Raciocínio do Distrator (A): Linhas horizontais são os períodos.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 002 (Q-ATO-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: As colunas verticais correspondem às Famílias ou Grupos.\n• Justificativa Físico-Química: Elementos da mesma família possuem configuração semelhante na camada de valência.\n• Raciocínio do Distrator (A): Linhas horizontais são os períodos.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -1270,7 +1270,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -1313,11 +1313,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 10.5,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -1357,11 +1357,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 10.5,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -1409,7 +1409,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_003",
-    "text": "CARD DE PERGUNTA — LOTE 003 (Q-ENV-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Identificar os gases poluentes responsáveis pela acidificação acentuada da chuva.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-ACIDRAIN\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 003  •  NÍVEL 1 (AQUECIMENTO) (Q-ENV-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Identificar os gases poluentes responsáveis pela acidificação acentuada da chuva.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-ACIDRAIN\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -1556,10 +1556,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 10.0,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -1607,7 +1607,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_003",
-    "text": "GABARITO COMENTADO — LOTE 003 (Q-ENV-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Enquanto o CO₂ forma um ácido fraco (H₂CO₃, pH ≈ 5,6), o SO₂ gera H₂SO₃ e H₂SO₄, ácidos muito mais fortes.\n• Justificativa Físico-Química: SO₂ + ½ O₂ + H₂O → H₂SO₄ (chuva ácida antrópica).\n• Raciocínio do Distrator (A): Confunde um gás do efeito estufa (CH4, apolar e pouco solúvel) com os óxidos ácidos formadores de chuva ácida.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 003 (Q-ENV-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Enquanto o CO₂ forma um ácido fraco (H₂CO₃, pH ≈ 5,6), o SO₂ gera H₂SO₃ e H₂SO₄, ácidos muito mais fortes.\n• Justificativa Físico-Química: SO₂ + ½ O₂ + H₂O → H₂SO₄ (chuva ácida antrópica).\n• Raciocínio do Distrator (A): Confunde um gás do efeito estufa (CH4, apolar e pouco solúvel) com os óxidos ácidos formadores de chuva ácida.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -1712,7 +1712,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -1755,11 +1755,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -1799,11 +1799,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -1851,7 +1851,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_004",
-    "text": "CARD DE PERGUNTA — LOTE 004 (Q-ENV-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Distinguir o mecanismo físico-químico do efeito estufa da destruição da camada de ozônio.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-GREENHOUSE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 004  •  NÍVEL 1 (AQUECIMENTO) (Q-ENV-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Distinguir o mecanismo físico-químico do efeito estufa da destruição da camada de ozônio.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-GREENHOUSE\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -1998,10 +1998,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2049,7 +2049,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_004",
-    "text": "GABARITO COMENTADO — LOTE 004 (Q-ENV-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A luz solar atravessa a atmosfera e aquece a superfície, que emite radiação infravermelha (calor) retida por CO₂, CH₄ e H₂O.\n• Justificativa Físico-Química: Absorção seletiva de radiação térmica infravermelha por modos vibracionais moleculares.\n• Raciocínio do Distrator (A): Confunde a filtragem de radiação UV pela camada de ozônio com a retenção de infravermelho do efeito estufa.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 004 (Q-ENV-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A luz solar atravessa a atmosfera e aquece a superfície, que emite radiação infravermelha (calor) retida por CO₂, CH₄ e H₂O.\n• Justificativa Físico-Química: Absorção seletiva de radiação térmica infravermelha por modos vibracionais moleculares.\n• Raciocínio do Distrator (A): Confunde a filtragem de radiação UV pela camada de ozônio com a retenção de infravermelho do efeito estufa.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -2154,7 +2154,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -2197,11 +2197,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2241,11 +2241,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2293,7 +2293,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_005",
-    "text": "CARD DE PERGUNTA — LOTE 005 (Q-ENV-003)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Reconhecer a natureza dinâmica do equilíbrio biogeoquímico em ecossistemas maduros.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-EQUILIBRIUM\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 005  •  NÍVEL 1 (AQUECIMENTO) (Q-ENV-003)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Reconhecer a natureza dinâmica do equilíbrio biogeoquímico em ecossistemas maduros.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-EQUILIBRIUM\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -2440,10 +2440,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2491,7 +2491,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_005",
-    "text": "GABARITO COMENTADO — LOTE 005 (Q-ENV-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Em um ecossistema em clímax, quase todo o O₂ gerado na fotossíntese é consumido pela respiração da própria biota e dos decompositores.\n• Justificativa Físico-Química: Equilíbrio dinâmico nos ciclos biogeoquímicos do carbono e do oxigênio.\n• Raciocínio do Distrator (B): Considera equivocadamente que equilíbrio ambiental significa interrupção de processos de respiração e decomposição.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 005 (Q-ENV-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Em um ecossistema em clímax, quase todo o O₂ gerado na fotossíntese é consumido pela respiração da própria biota e dos decompositores.\n• Justificativa Físico-Química: Equilíbrio dinâmico nos ciclos biogeoquímicos do carbono e do oxigênio.\n• Raciocínio do Distrator (B): Considera equivocadamente que equilíbrio ambiental significa interrupção de processos de respiração e decomposição.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -2596,10 +2596,10 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 11.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 130,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2639,11 +2639,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2683,11 +2683,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2735,7 +2735,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_006",
-    "text": "CARD DE PERGUNTA — LOTE 006 (Q-ENV-004)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Explicar por que a reciclagem do alumínio economiza 95% de energia elétrica frente à bauxita.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-SOCIOECON\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 006  •  NÍVEL 1 (AQUECIMENTO) (Q-ENV-004)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Explicar por que a reciclagem do alumínio economiza 95% de energia elétrica frente à bauxita.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-ENV-SOCIOECON\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -2882,10 +2882,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -2933,7 +2933,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_006",
-    "text": "GABARITO COMENTADO — LOTE 006 (Q-ENV-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Fundir o alumínio metálico (660 °C) gasta apenas ~5% da energia exigida pela eletrólise ígnea do óxido de alumínio (processo Hall-Héroult).\n• Justificativa Físico-Química: Custo energético da redução eletrolítica vs. entalpia de fusão física do metal.\n• Raciocínio do Distrator (B): Ignora que a reciclagem funde o alumínio a ~660 °C e subestima o custo eletroquímico real da metalurgia primária.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 006 (Q-ENV-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Fundir o alumínio metálico (660 °C) gasta apenas ~5% da energia exigida pela eletrólise ígnea do óxido de alumínio (processo Hall-Héroult).\n• Justificativa Físico-Química: Custo energético da redução eletrolítica vs. entalpia de fusão física do metal.\n• Raciocínio do Distrator (B): Ignora que a reciclagem funde o alumínio a ~660 °C e subestima o custo eletroquímico real da metalurgia primária.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -3038,7 +3038,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -3177,7 +3177,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_007",
-    "text": "CARD DE PERGUNTA — LOTE 007 (Q-SOL-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração comum a partir da massa do soluto e do volume final da solução.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-001\n• Fórmulas de Referência: CHEM-FRM-001\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 007  •  NÍVEL 1 (AQUECIMENTO) (Q-SOL-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração comum a partir da massa do soluto e do volume final da solução.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-001\n• Fórmulas de Referência: CHEM-FRM-001\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -3324,10 +3324,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 10.0,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -3375,7 +3375,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_007",
-    "text": "GABARITO COMENTADO — LOTE 007 (Q-SOL-001)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: C = m / V = 10 g / 2 L = 5 g/L.\n• Justificativa Físico-Química: A concentração comum relaciona a massa do soluto ao volume final da solução.\n• Raciocínio do Distrator (B): Multiplicou a massa pelo volume (10 × 2) em vez de dividir.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 007 (Q-SOL-001)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: C = m / V = 10 g / 2 L = 5 g/L.\n• Justificativa Físico-Química: A concentração comum relaciona a massa do soluto ao volume final da solução.\n• Raciocínio do Distrator (B): Multiplicou a massa pelo volume (10 × 2) em vez de dividir.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -3480,7 +3480,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -3619,7 +3619,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_008",
-    "text": "CARD DE PERGUNTA — LOTE 008 (Q-SOL-006)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Identificar o volume correto na concentração comum.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-SOL-001\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 008  •  NÍVEL 1 (AQUECIMENTO) (Q-SOL-006)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Identificar o volume correto na concentração comum.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-SOL-001\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -3817,7 +3817,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_008",
-    "text": "GABARITO COMENTADO — LOTE 008 (Q-SOL-006)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A concentração comum é a massa do soluto dividida pelo volume final da solução.\n• Justificativa Físico-Química: Definição de concentração comum, C = m_soluto / V_solucao.\n• Raciocínio do Distrator (A): Ignora o volume ocupado pelo soluto.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 008 (Q-SOL-006)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: A concentração comum é a massa do soluto dividida pelo volume final da solução.\n• Justificativa Físico-Química: Definição de concentração comum, C = m_soluto / V_solucao.\n• Raciocínio do Distrator (A): Ignora o volume ocupado pelo soluto.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -3922,7 +3922,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -4061,7 +4061,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_009",
-    "text": "CARD DE PERGUNTA — LOTE 009 (Q-STO-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular quantidade de matéria a partir da massa e da massa molar fornecida.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 009  •  NÍVEL 1 (AQUECIMENTO) (Q-STO-001)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular quantidade de matéria a partir da massa e da massa molar fornecida.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -4259,7 +4259,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_009",
-    "text": "GABARITO COMENTADO — LOTE 009 (Q-STO-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: n = m / M = 117 g / 58,5 g/mol = 2,0 mol.\n• Justificativa Físico-Química: Para substância pura, n = m / M.\n• Raciocínio do Distrator (A): Inverteu a razão dividindo a massa molar pela massa (58,5 / 117).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 009 (Q-STO-001)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: n = m / M = 117 g / 58,5 g/mol = 2,0 mol.\n• Justificativa Físico-Química: Para substância pura, n = m / M.\n• Raciocínio do Distrator (A): Inverteu a razão dividindo a massa molar pela massa (58,5 / 117).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -4364,7 +4364,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -4503,7 +4503,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_010",
-    "text": "CARD DE PERGUNTA — LOTE 010 (Q-STO-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular quantidade de matéria usando a massa atômica fornecida.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 010  •  NÍVEL 1 (AQUECIMENTO) (Q-STO-002)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular quantidade de matéria usando a massa atômica fornecida.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -4701,7 +4701,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_010",
-    "text": "GABARITO COMENTADO — LOTE 010 (Q-STO-002)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: n = 9,2 g / 23,0 g/mol = 0,40 mol.\n• Justificativa Físico-Química: Amostra de elemento puro; n = m / M com a massa molar adotada.\n• Raciocínio do Distrator (B): Dividiu a massa molar pela massa da amostra (23,0 / 9,2).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 010 (Q-STO-002)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: n = 9,2 g / 23,0 g/mol = 0,40 mol.\n• Justificativa Físico-Química: Amostra de elemento puro; n = m / M com a massa molar adotada.\n• Raciocínio do Distrator (B): Dividiu a massa molar pela massa da amostra (23,0 / 9,2).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -4806,7 +4806,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -4945,7 +4945,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_011",
-    "text": "CARD DE PERGUNTA — LOTE 011 (Q-STO-003)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Distinguir coeficientes estequiométricos de índices.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-STO-001\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 011  •  NÍVEL 1 (AQUECIMENTO) (Q-STO-003)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Distinguir coeficientes estequiométricos de índices.\n• Nível Cognitivo: Compreensão\n• Conceitos da Base: CHEM-STO-001\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -5143,7 +5143,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_011",
-    "text": "GABARITO COMENTADO — LOTE 011 (Q-STO-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Os coeficientes de uma equação balanceada dão a proporção em quantidade de matéria (2 mol H₂ : 1 mol O₂ : 2 mol H₂O).\n• Justificativa Físico-Química: Definição de proporção estequiométrica.\n• Raciocínio do Distrator (B): Índices indicam átomos na fórmula, não proporção da reação.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 011 (Q-STO-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: Os coeficientes de uma equação balanceada dão a proporção em quantidade de matéria (2 mol H₂ : 1 mol O₂ : 2 mol H₂O).\n• Justificativa Físico-Química: Definição de proporção estequiométrica.\n• Raciocínio do Distrator (B): Índices indicam átomos na fórmula, não proporção da reação.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -5243,12 +5243,12 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_Q_012",
-    "text": "Calcule a massa molar da água (H₂O), em g/mol. Dados: MH = 1,0 g/mol, MO = 16,0 g/mol.",
+    "text": "Calcule a massa molar da água (H₂O), em g/mol. Dados: M(H) = 1,0 g/mol, M(O) = 16,0 g/mol.",
     "x": 48,
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -5387,7 +5387,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_012",
-    "text": "CARD DE PERGUNTA — LOTE 012 (Q-STO-004)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular a massa molar da água (H2O).\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-MOLARMASS\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 012  •  NÍVEL 1 (AQUECIMENTO) (Q-STO-004)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular a massa molar da água (H2O).\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-MOLARMASS\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -5529,7 +5529,7 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_A_012",
-    "text": "✦ FUNDAMENTO FÍSICO-QUÍMICO:\nSoma ponderada das massas atômicas dos átomos de H e O.\n\n✦ POR QUE A ALTERNATIVA B É UM ERRO TÍPICO?\nSomou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H2O.",
+    "text": "✦ FUNDAMENTO FÍSICO-QUÍMICO:\nSoma ponderada das massas atômicas dos átomos de H e O.\n\n✦ POR QUE A ALTERNATIVA B É UM ERRO TÍPICO?\nSomou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H₂O.",
     "x": 384,
     "y": 92,
     "width": 288,
@@ -5585,7 +5585,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_012",
-    "text": "GABARITO COMENTADO — LOTE 012 (Q-STO-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: M(H₂O) = 2 × 1,0 + 16,0 = 18,0 g/mol.\n• Justificativa Físico-Química: Soma ponderada das massas atômicas dos átomos de H e O.\n• Raciocínio do Distrator (B): Somou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H2O.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 012 (Q-STO-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: M(H₂O) = 2 × 1,0 + 16,0 = 18,0 g/mol.\n• Justificativa Físico-Química: Soma ponderada das massas atômicas dos átomos de H e O.\n• Raciocínio do Distrator (B): Somou apenas 1 átomo de hidrogênio, ignorando o índice 2 em H₂O.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -5685,12 +5685,12 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_Q_013",
-    "text": "Qual a massa em gramas de uma amostra de 3,0 mol de água (H₂O)? Dado: MH₂O = 18,0 g/mol.",
+    "text": "Qual a massa em gramas de uma amostra de 3,0 mol de água (H₂O)? Dado: M(H₂O) = 18,0 g/mol.",
     "x": 48,
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -5829,7 +5829,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_013",
-    "text": "CARD DE PERGUNTA — LOTE 013 (Q-STO-005)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular a massa de uma amostra a partir do número de mols.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 013  •  NÍVEL 1 (AQUECIMENTO) (Q-STO-005)\n\n• Nível: NÍVEL 1 (AQUECIMENTO) (Dificuldade 1)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular a massa de uma amostra a partir do número de mols.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-AMOUNT\n• Fórmulas de Referência: CHEM-FRM-003\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -6027,7 +6027,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_013",
-    "text": "GABARITO COMENTADO — LOTE 013 (Q-STO-005)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g.\n• Justificativa Físico-Química: Fórmula da quantidade de matéria m = n × M.\n• Raciocínio do Distrator (A): Dividiu a massa molar pelo número de mols (18,0 / 3,0) em vez de multiplicar.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 013 (Q-STO-005)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: m = n × M = 3,0 mol × 18,0 g/mol = 54,0 g.\n• Justificativa Físico-Química: Fórmula da quantidade de matéria m = n × M.\n• Raciocínio do Distrator (A): Dividiu a massa molar pelo número de mols (18,0 / 3,0) em vez de multiplicar.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -6132,10 +6132,10 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 11.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 130,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6175,11 +6175,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6219,11 +6219,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6271,7 +6271,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_014",
-    "text": "CARD DE PERGUNTA — LOTE 014 (Q-ENV-005)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Explicar o mecanismo químico e a função ambiental dos conversores catalíticos automotivos.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-ENV-CATALYTIC\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 014  •  NÍVEL 2 (FINAIS) (Q-ENV-005)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Química Ambiental & Sustentabilidade (CHEM-ENV)\n• Habilidade Pedagógica: Explicar o mecanismo químico e a função ambiental dos conversores catalíticos automotivos.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-ENV-CATALYTIC\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -6418,10 +6418,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6469,7 +6469,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_014",
-    "text": "GABARITO COMENTADO — LOTE 014 (Q-ENV-005)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: 2 CO + O₂ → 2 CO₂. O catalisador heterogêneo (Pt/Pd/Rh) fornece um caminho de menor energia de ativação e regenera-se ao final de cada ciclo.\n• Justificativa Físico-Química: Catálise heterogênea na conversão de gases altamente tóxicos (CO e NOx) em gases menos nocivos à saúde aguda.\n• Raciocínio do Distrator (B): Acredita equivocadamente que catalisadores são filtros mecânicos consumidos durante a reação.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 014 (Q-ENV-005)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: 2 CO + O₂ → 2 CO₂. O catalisador heterogêneo (Pt/Pd/Rh) fornece um caminho de menor energia de ativação e regenera-se ao final de cada ciclo.\n• Justificativa Físico-Química: Catálise heterogênea na conversão de gases altamente tóxicos (CO e NOx) em gases menos nocivos à saúde aguda.\n• Raciocínio do Distrator (B): Acredita equivocadamente que catalisadores são filtros mecânicos consumidos durante a reação.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -6574,10 +6574,10 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 11.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 130,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6713,7 +6713,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_015",
-    "text": "CARD DE PERGUNTA — LOTE 015 (Q-SOL-002)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração comum convertendo o volume de mL para L e comparando soluções.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-001, CHEM-UNT-CONVERSION\n• Fórmulas de Referência: CHEM-FRM-001\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 015  •  NÍVEL 2 (FINAIS) (Q-SOL-002)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração comum convertendo o volume de mL para L e comparando soluções.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-001, CHEM-UNT-CONVERSION\n• Fórmulas de Referência: CHEM-FRM-001\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -6860,10 +6860,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 10.0,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -6911,7 +6911,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_015",
-    "text": "GABARITO COMENTADO — LOTE 015 (Q-SOL-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Frasco I: 500 mL = 0,500 L → C = 4,0 g / 0,500 L = 8,0 g/L. Frasco II: C = 12,0 g / 2,0 L = 6,0 g/L. O Frasco I é mais concentrado.\n• Justificativa Físico-Química: A concentração depende da razão m/V em litros, não apenas da massa total de soluto.\n• Raciocínio do Distrator (A): Esqueceu de converter 500 mL para 0,500 L ou julgou apenas pela maior massa absoluta (12 g).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 015 (Q-SOL-002)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Frasco I: 500 mL = 0,500 L → C = 4,0 g / 0,500 L = 8,0 g/L. Frasco II: C = 12,0 g / 2,0 L = 6,0 g/L. O Frasco I é mais concentrado.\n• Justificativa Físico-Química: A concentração depende da razão m/V em litros, não apenas da massa total de soluto.\n• Raciocínio do Distrator (A): Esqueceu de converter 500 mL para 0,500 L ou julgou apenas pela maior massa absoluta (12 g).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -7016,10 +7016,10 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 11.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 130,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -7059,11 +7059,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -7103,11 +7103,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -7155,7 +7155,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_016",
-    "text": "CARD DE PERGUNTA — LOTE 016 (Q-SOL-003)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração em quantidade de matéria e avaliar sua propriedade intensiva.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-002\n• Fórmulas de Referência: CHEM-FRM-002\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 016  •  NÍVEL 2 (FINAIS) (Q-SOL-003)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração em quantidade de matéria e avaliar sua propriedade intensiva.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-002\n• Fórmulas de Referência: CHEM-FRM-002\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -7302,10 +7302,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -7353,7 +7353,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_016",
-    "text": "GABARITO COMENTADO — LOTE 016 (Q-SOL-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: 250 mL = 0,250 L; c = 0,50 mol / 0,250 L = 2,0 mol/L. Qualquer porção retirada mantém a mesma concentração de 2,0 mol/L.\n• Justificativa Físico-Química: A concentração em quantidade de matéria é uma grandeza intensiva (razão n/V constante em toda a solução homogênea).\n• Raciocínio do Distrator (B): Confunde quantidade de matéria (extensiva) com concentração molar (intensiva).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 016 (Q-SOL-003)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: 250 mL = 0,250 L; c = 0,50 mol / 0,250 L = 2,0 mol/L. Qualquer porção retirada mantém a mesma concentração de 2,0 mol/L.\n• Justificativa Físico-Química: A concentração em quantidade de matéria é uma grandeza intensiva (razão n/V constante em toda a solução homogênea).\n• Raciocínio do Distrator (B): Confunde quantidade de matéria (extensiva) com concentração molar (intensiva).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -7458,7 +7458,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -7597,7 +7597,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_017",
-    "text": "CARD DE PERGUNTA — LOTE 017 (Q-SOL-004)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração final de uma diluição distinguindo água adicionada de volume final.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-003\n• Fórmulas de Referência: CHEM-FRM-004\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 017  •  NÍVEL 2 (FINAIS) (Q-SOL-004)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Calcular a concentração final de uma diluição distinguindo água adicionada de volume final.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-003\n• Fórmulas de Referência: CHEM-FRM-004\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -7697,7 +7697,7 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_A_017",
-    "text": "V_final = 100 mL + 300 mL = 400 mL. Pela conservação do soluto: c2 = (2,0 × 100) / 400 = 0,50 mol/L.",
+    "text": "V_final = 100 mL + 300 mL = 400 mL. Pela conservação do soluto: c₂ = (2,0 × 100) / 400 = 0,50 mol/L.",
     "x": 48,
     "y": 92,
     "width": 296,
@@ -7739,15 +7739,15 @@
   {
     "op": "add-textbox",
     "slide": "SLIDE_A_017",
-    "text": "✦ FUNDAMENTO FÍSICO-QUÍMICO:\nNa equação da diluição c1·V1 = c2·V2, V2 é sempre o volume final total da solução.\n\n✦ POR QUE A ALTERNATIVA B É UM ERRO TÍPICO?\nUsou o volume de água adicionado (300 mL) como V2 em vez do volume final total (400 mL).",
+    "text": "✦ FUNDAMENTO FÍSICO-QUÍMICO:\nNa equação da diluição c₁·V₁ = c₂·V₂, V₂ é sempre o volume final total da solução.\n\n✦ POR QUE A ALTERNATIVA B É UM ERRO TÍPICO?\nUsou o volume de água adicionado (300 mL) como V₂ em vez do volume final total (400 mL).",
     "x": 384,
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 10.0,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -7795,7 +7795,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_017",
-    "text": "GABARITO COMENTADO — LOTE 017 (Q-SOL-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: V_final = 100 mL + 300 mL = 400 mL. Pela conservação do soluto: c2 = (2,0 × 100) / 400 = 0,50 mol/L.\n• Justificativa Físico-Química: Na equação da diluição c1·V1 = c2·V2, V2 é sempre o volume final total da solução.\n• Raciocínio do Distrator (B): Usou o volume de água adicionado (300 mL) como V2 em vez do volume final total (400 mL).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram B: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 017 (Q-SOL-004)\n\n• Alternativa Correta: A\n• Resolução Passo a Passo: V_final = 100 mL + 300 mL = 400 mL. Pela conservação do soluto: c₂ = (2,0 × 100) / 400 = 0,50 mol/L.\n• Justificativa Físico-Química: Na equação da diluição c₁·V₁ = c₂·V₂, V₂ é sempre o volume final total da solução.\n• Raciocínio do Distrator (B): Usou o volume de água adicionado (300 mL) como V₂ em vez do volume final total (400 mL).\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (A) e discuta o erro comum contido na alternativa B.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram B: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -7900,7 +7900,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -8039,7 +8039,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_018",
-    "text": "CARD DE PERGUNTA — LOTE 018 (Q-SOL-009)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Determinar a concentração resultante ao misturar volumes diferentes de soluções de mesmo soluto.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-MIX\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 018  •  NÍVEL 2 (FINAIS) (Q-SOL-009)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Soluções & Concentrações Químicas (CHEM-SOL)\n• Habilidade Pedagógica: Determinar a concentração resultante ao misturar volumes diferentes de soluções de mesmo soluto.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-SOL-MIX\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -8186,10 +8186,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8237,7 +8237,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_018",
-    "text": "GABARITO COMENTADO — LOTE 018 (Q-SOL-009)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: n1 = 1,0 × 0,1 = 0,1 mol; n2 = 3,0 × 0,3 = 0,9 mol; n_total = 1,0 mol em V_total = 0,4 L → c_final = 1,0 / 0,4 = 2,5 mol/L.\n• Justificativa Físico-Química: Com volumes diferentes, a concentração final é a média ponderada pelos volumes (soma dos mols dividida pelo volume total).\n• Raciocínio do Distrator (A): Fez a média simples sem ponderar que o volume da solução de 3,0 mol/L é o triplo da primeira.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 018 (Q-SOL-009)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: n1 = 1,0 × 0,1 = 0,1 mol; n2 = 3,0 × 0,3 = 0,9 mol; n_total = 1,0 mol em V_total = 0,4 L → c_final = 1,0 / 0,4 = 2,5 mol/L.\n• Justificativa Físico-Química: Com volumes diferentes, a concentração final é a média ponderada pelos volumes (soma dos mols dividida pelo volume total).\n• Raciocínio do Distrator (A): Fez a média simples sem ponderar que o volume da solução de 3,0 mol/L é o triplo da primeira.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -8342,7 +8342,7 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 12.0,
     "color": "#0F172A",
     "font_family": "Open Sans",
     "line_spacing": 135,
@@ -8385,11 +8385,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 10.5,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8429,11 +8429,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 10.5,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8481,7 +8481,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_019",
-    "text": "CARD DE PERGUNTA — LOTE 019 (Q-STO-006)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Identificar o reagente limitante em uma reação de proporção 1:2 mol.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-LIMITING\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 019  •  NÍVEL 2 (FINAIS) (Q-STO-006)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Identificar o reagente limitante em uma reação de proporção 1:2 mol.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-LIMITING\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -8628,10 +8628,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 9.5,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8679,7 +8679,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_019",
-    "text": "GABARITO COMENTADO — LOTE 019 (Q-STO-006)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Proporção 1 H₂SO₄ : 2 NaOH. Os 3,0 mol de NaOH reagem com apenas 1,5 mol de H₂SO₄. Logo, o NaOH acaba primeiro (limitante) e sobram 0,5 mol de H₂SO₄.\n• Justificativa Físico-Química: O reagente limitante é determinado pela menor razão (quantidade disponível / coeficiente estequiométrico).\n• Raciocínio do Distrator (A): Olhou apenas para o menor número absoluto de mols sem considerar a proporção estequiométrica 1:2.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 019 (Q-STO-006)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: Proporção 1 H₂SO₄ : 2 NaOH. Os 3,0 mol de NaOH reagem com apenas 1,5 mol de H₂SO₄. Logo, o NaOH acaba primeiro (limitante) e sobram 0,5 mol de H₂SO₄.\n• Justificativa Físico-Química: O reagente limitante é determinado pela menor razão (quantidade disponível / coeficiente estequiométrico).\n• Raciocínio do Distrator (A): Olhou apenas para o menor número absoluto de mols sem considerar a proporção estequiométrica 1:2.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   },
   {
     "op": "add-slide",
@@ -8784,10 +8784,10 @@
     "y": 92,
     "width": 296,
     "height": 196,
-    "font_size": 12,
+    "font_size": 10.5,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 135,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8827,11 +8827,11 @@
     "y": 96,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8871,11 +8871,11 @@
     "y": 226,
     "width": 288,
     "height": 68,
-    "font_size": 11.5,
+    "font_size": 9.8,
     "bold": true,
     "color": "#0F172A",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 120,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -8923,7 +8923,7 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_Q_020",
-    "text": "CARD DE PERGUNTA — LOTE 020 (Q-STO-007)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular o rendimento real e planejar a quantidade teórica necessária em processos químicos.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-YIELD\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma do teto de aposta de R$ 200 e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
+    "text": "CARD DE PERGUNTA — LOTE 020  •  NÍVEL 2 (FINAIS) (Q-STO-007)\n\n• Nível: NÍVEL 2 (FINAIS) (Dificuldade 2)\n• Domínio: Estequiometria & Quantidade de Matéria (CHEM-STO)\n• Habilidade Pedagógica: Calcular o rendimento real e planejar a quantidade teórica necessária em processos químicos.\n• Nível Cognitivo: Aplicação\n• Conceitos da Base: CHEM-STO-YIELD\n• Fórmulas de Referência: Sem fórmula específica\n\nINSTRUÇÕES DE APLICAÇÃO PARA O PROFESSOR:\n1. Projete este slide e faça a leitura clara do enunciado e das duas opções.\n2. Conceda de 60 a 90 segundos para debate interno em cada equipe de estudantes.\n3. Lembre a turma das regras de aposta e da obrigatoriedade do registro por escrito.\n4. Recolha ou confira visualmente todas as folhas de resposta antes de avançar para o gabarito."
   },
   {
     "op": "add-slide",
@@ -9070,10 +9070,10 @@
     "y": 92,
     "width": 288,
     "height": 196,
-    "font_size": 10.5,
+    "font_size": 10.0,
     "color": "#475569",
     "font_family": "Open Sans",
-    "line_spacing": 130,
+    "line_spacing": 125,
     "alignment": "left",
     "content_alignment": "TOP"
   },
@@ -9121,6 +9121,6 @@
   {
     "op": "set-notes",
     "slide": "SLIDE_A_020",
-    "text": "GABARITO COMENTADO — LOTE 020 (Q-STO-007)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: O rendimento percentual incide sempre sobre a produção teórica máxima dada pelo reagente limitante: 80% de 10,0 mol = 8,0 mol.\n• Justificativa Físico-Química: Rendimento real = Rendimento (%) × Quantidade Teórica (baseada no limitante).\n• Raciocínio do Distrator (A): Calculou o rendimento sobre a quantidade do reagente em excesso em vez do limitante.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Se 1 a 4 grupos acertaram: Entregue o valor apostado em dobro (lucro de +100%).\n3. Se todas as 5 equipes acertaram: Anuncie o Bônus Unânime (+R$ 100 fixo para cada grupo).\n4. Grupos que escolheram A: Recolha 100% da quantia apostada para a Banca da Casa."
+    "text": "GABARITO COMENTADO — GABARITO OFICIAL  •  LOTE 020 (Q-STO-007)\n\n• Alternativa Correta: B\n• Resolução Passo a Passo: O rendimento percentual incide sempre sobre a produção teórica máxima dada pelo reagente limitante: 80% de 10,0 mol = 8,0 mol.\n• Justificativa Físico-Química: Rendimento real = Rendimento (%) × Quantidade Teórica (baseada no limitante).\n• Raciocínio do Distrator (A): Calculou o rendimento sobre a quantidade do reagente em excesso em vez do limitante.\n\nDIRETRIZES DE MEDIAÇÃO E PAGAMENTO:\n1. Revele a alternativa correta (B) e discuta o erro comum contido na alternativa A.\n2. Proceda com a liquidação conforme o regulamento oficial (Dobro, Bônus Unânime ou Winner Takes All).\n3. Equipes que escolheram A: Recolha 100% da aposta para a Banca da Casa."
   }
 ]
