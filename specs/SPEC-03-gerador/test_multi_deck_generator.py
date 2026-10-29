@@ -107,13 +107,12 @@ def test_compute_typography_params_scaling():
 def test_partition_matrix_and_zero_reuse():
     """Valida Teoria dos Conjuntos: completude e disjunção mútua (Zero-Reuse)."""
     all_qs = load_all_questions()
-    assert len(all_qs) == 25
+    assert len(all_qs) == 38
     validate_partition_matrix(DECK_CONFIGS, all_qs)
 
     test_deck = next(d for d in DECK_CONFIGS if d.deck_type == "test")
     challenges = [d for d in DECK_CONFIGS if d.deck_type == "challenge"]
     regulars = [d for d in DECK_CONFIGS if d.deck_type == "regular"]
-    tiebreaker = next(d for d in DECK_CONFIGS if d.deck_type == "tiebreaker")
 
     # Exatamente 3 questões de Nível 1 no teste
     assert len(test_deck.question_ids) == 3
@@ -125,7 +124,6 @@ def test_partition_matrix_and_zero_reuse():
         other_ids.update(c.question_ids)
     for r in regulars:
         other_ids.update(r.question_ids)
-    other_ids.update(tiebreaker.question_ids)
 
     assert set(test_deck.question_ids).isdisjoint(other_ids)
 
@@ -134,17 +132,17 @@ def test_partition_matrix_and_zero_reuse():
     challenge_ids = {c.question_ids[0] for c in challenges}
     assert challenge_ids == {"Q-SOL-005", "Q-SOL-007", "Q-SOL-008", "Q-STO-008", "Q-ENV-006"}
 
-    # 3 regulares de 5 questões cada
+    # 3 regulares de 10 questões cada (6 N1 + 4 N2 = 10)
     assert len(regulars) == 3
     reg_ids = set()
     for r in regulars:
-        assert len(r.question_ids) == 5
+        assert len(r.question_ids) == 10
         reg_ids.update(r.question_ids)
-    assert len(reg_ids) == 15
+    assert len(reg_ids) == 30
 
-    # 1 deck suplente com 2 questões N2
-    assert len(tiebreaker.question_ids) == 2
-    assert set(tiebreaker.question_ids) == {"Q-ENV-005", "Q-STO-007"}
+    # Total somado = 3 + 5 + 30 = 38 questões disjuntas
+    total_assigned = len(test_deck.question_ids) + len(challenge_ids) + len(reg_ids)
+    assert total_assigned == 38
 
 
 def test_multi_deck_manifest_and_batch_files_generation():
@@ -163,19 +161,17 @@ def test_multi_deck_manifest_and_batch_files_generation():
         assert c["total_slides"] == 3
     assert len(decks["regular_decks"]) == 3
     for r in decks["regular_decks"]:
-        assert r["total_slides"] == 11
-    assert decks["tiebreaker_deck"]["total_slides"] == 5
+        assert r["total_slides"] == 21
 
-    # Total de slides acumulado = 7 + 15 + 33 + 5 = 60
+    # Total de slides acumulado = 7 + 15 + 63 = 85
     total_slides = (
         decks["test_deck"]["total_slides"]
         + sum(c["total_slides"] for c in decks["challenges"])
         + sum(r["total_slides"] for r in decks["regular_decks"])
-        + decks["tiebreaker_deck"]["total_slides"]
     )
-    assert total_slides == 60
+    assert total_slides == 85
 
-    # Confirma existência física de todos os 10 arquivos de batch
+    # Confirma existência física dos arquivos de batch
     assert MANIFEST_PATH.exists()
     assert (BATCH_FILES_DIR / "batch_deck_teste_nivel_1.json").exists()
     assert (BATCH_FILES_DIR / "batch_desafio_01_morte_subita_diluicao.json").exists()
@@ -183,10 +179,9 @@ def test_multi_deck_manifest_and_batch_files_generation():
     assert (BATCH_FILES_DIR / "batch_desafio_03_morte_subita_soda_caustica.json").exists()
     assert (BATCH_FILES_DIR / "batch_desafio_04_morte_subita_estequiometria_agua.json").exists()
     assert (BATCH_FILES_DIR / "batch_desafio_05_morte_subita_chuva_acida.json").exists()
-    assert (BATCH_FILES_DIR / "batch_deck_regular_01.json").exists()
-    assert (BATCH_FILES_DIR / "batch_deck_regular_02.json").exists()
-    assert (BATCH_FILES_DIR / "batch_deck_regular_03.json").exists()
-    assert (BATCH_FILES_DIR / "batch_deck_suplente_desempate.json").exists()
+    assert (BATCH_FILES_DIR / "batch_deck_10_rodadas_01.json").exists()
+    assert (BATCH_FILES_DIR / "batch_deck_10_rodadas_02.json").exists()
+    assert (BATCH_FILES_DIR / "batch_deck_10_rodadas_03.json").exists()
 
 
 def test_fintech_clean_design_system_compliance_in_batches():

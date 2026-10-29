@@ -69,6 +69,46 @@ DEFAULT_QA_DECK_ID = "10HrhJkrYDnxwhCP6HEo75DWvU9NS2RHXmp2wcx8XZUk"
 EXPECTED_NIVEL_1_IDS = [
     "Q-ATO-001",
     "Q-ATO-002",
+    "Q-ATO-003",
+    "Q-ATO-004",
+    "Q-ENV-001",
+    "Q-ENV-002",
+    "Q-ENV-003",
+    "Q-ENV-004",
+    "Q-ENV-007",
+    "Q-ENV-008",
+    "Q-SOL-001",
+    "Q-SOL-006",
+    "Q-SOL-010",
+    "Q-SOL-011",
+    "Q-STO-001",
+    "Q-STO-002",
+    "Q-STO-003",
+    "Q-STO-004",
+    "Q-STO-005",
+    "Q-STO-009",
+    "Q-STO-010",
+]
+
+EXPECTED_NIVEL_2_IDS = [
+    "Q-ENV-005",
+    "Q-ENV-009",
+    "Q-ENV-010",
+    "Q-SOL-002",
+    "Q-SOL-003",
+    "Q-SOL-004",
+    "Q-SOL-009",
+    "Q-SOL-012",
+    "Q-STO-006",
+    "Q-STO-007",
+    "Q-STO-011",
+    "Q-STO-012",
+]
+
+# IDs canônicos originais da apresentação monolítica legada de 41 slides (20 questões)
+LEGACY_NIVEL_1_IDS = [
+    "Q-ATO-001",
+    "Q-ATO-002",
     "Q-ENV-001",
     "Q-ENV-002",
     "Q-ENV-003",
@@ -82,7 +122,7 @@ EXPECTED_NIVEL_1_IDS = [
     "Q-STO-005",
 ]
 
-EXPECTED_NIVEL_2_IDS = [
+LEGACY_NIVEL_2_IDS = [
     "Q-ENV-005",
     "Q-SOL-002",
     "Q-SOL-003",
@@ -1345,26 +1385,33 @@ def verify_regular_deck(
     presentation: PresentationInfo, expected_question_ids: list[str] | None = None
 ) -> list[CheckResult]:
     """
-    Audita uma Apresentação Regular de 5 Perguntas e Respostas (R4):
-      - Exatamente 11 slides (1 capa + 5 pares Q&A intercalados).
-      - Exatamente 5 questões (Nível 1 ou Nível 2).
+    Audita uma Apresentação Regular de Perguntas e Respostas (R4 — 5 ou 10 rodadas):
+      - Total de slides: 11 slides (5 Qs) ou 21 slides (10 Qs).
+      - Questões de Nível 1 ou Nível 2.
       - Exclusão categórica de Nível 3.
-      - Paridade estrita para i in [1..5].
+      - Paridade estrita intercalada Pergunta -> Resposta.
       - Conformidade com Design System Fintech Clean.
     """
     results: list[CheckResult] = []
     slides = presentation.slides
     num_slides = len(slides)
 
-    # 1. Total exato de 11 slides
-    passed_count = num_slides == 11
+    expected_q_count = (
+        len(expected_question_ids)
+        if expected_question_ids
+        else (10 if num_slides == 21 else 5)
+    )
+    expected_slides_count = 1 + 2 * expected_q_count
+
+    # 1. Total exato de slides (11 para 5 Qs, 21 para 10 Qs)
+    passed_count = num_slides == expected_slides_count
     results.append(
         CheckResult(
             check_id="REGULAR_SLIDES_COUNT",
             category="Deck Regular (R4)",
-            title="Contagem total exata de 11 slides (1 capa + 5 pares Q&A)",
+            title=f"Contagem total exata de {expected_slides_count} slides (1 capa + {expected_q_count} pares Q&A)",
             passed=passed_count,
-            details=f"Detectados {num_slides} slides no deck regular (esperado: exatamente 11).",
+            details=f"Detectados {num_slides} slides no deck regular (esperado: exatamente {expected_slides_count}).",
             evidence=f"Slide count = {num_slides}",
         )
     )
@@ -1376,6 +1423,7 @@ def verify_regular_deck(
         or "perguntas" in cover_text
         or "deck" in cover_text
         or "regular" in cover_text
+        or "rodadas" in cover_text
     )
     results.append(
         CheckResult(
@@ -1388,9 +1436,9 @@ def verify_regular_deck(
         )
     )
 
-    # 3. Paridade estrita intercalada nos 5 pares
+    # 3. Paridade estrita intercalada nos pares
     parity_errors: list[str] = []
-    for i in range(1, 6):
+    for i in range(1, expected_q_count + 1):
         q_idx = 2 * i - 1
         a_idx = 2 * i
         if q_idx >= num_slides or a_idx >= num_slides:
@@ -1423,36 +1471,36 @@ def verify_regular_deck(
         if not is_a:
             parity_errors.append(f"Par {i} (Slide {2*i+1}): não é resposta")
 
-    passed_parity = len(parity_errors) == 0 and num_slides >= 11
+    passed_parity = len(parity_errors) == 0 and num_slides >= expected_slides_count
     results.append(
         CheckResult(
             check_id="REGULAR_INTERLEAVED_PARITY",
             category="Deck Regular (R4)",
-            title="Paridade intercalada estrita: Slide 2i = Pergunta i, Slide 2i+1 = Resposta i (i=1..5)",
+            title=f"Paridade intercalada estrita: Slide 2i = Pergunta i, Slide 2i+1 = Resposta i (i=1..{expected_q_count})",
             passed=passed_parity,
-            details="5 pares de pergunta e resposta intercalados com sucesso."
+            details=f"{expected_q_count} pares de pergunta e resposta intercalados com sucesso."
             if passed_parity
             else f"Erros de paridade: {'; '.join(parity_errors)}",
-            evidence="5 pares Q&A intercalados",
+            evidence=f"{expected_q_count} pares Q&A intercalados",
         )
     )
 
-    # 4. Exatamente 5 questões
+    # 4. Exatamente expected_q_count questões
     detected_ids = extract_question_ids(presentation)
     match_expected = True
     if expected_question_ids:
         match_expected = set(detected_ids) == set(expected_question_ids)
 
-    passed_count_q = len(detected_ids) == 5 and match_expected
+    passed_count_q = len(detected_ids) == expected_q_count and match_expected
     results.append(
         CheckResult(
             check_id="REGULAR_EXACT_5_QUESTIONS",
             category="Deck Regular (R4)",
-            title="Presença de exatamente 5 questões didáticas no deck regular",
+            title=f"Presença de exatamente {expected_q_count} questões didáticas no deck regular",
             passed=passed_count_q,
-            details=f"Detectadas 5 questões no deck regular: {detected_ids}."
+            details=f"Detectadas {expected_q_count} questões no deck regular: {detected_ids}."
             if passed_count_q
-            else f"Divergência de questões detectadas: {len(detected_ids)} ({detected_ids}). Esperado: exatamente 5 questões ({expected_question_ids or '5 questões'}).",
+            else f"Divergência de questões detectadas: {len(detected_ids)} ({detected_ids}). Esperado: exatamente {expected_q_count} questões ({expected_question_ids or f'{expected_q_count} questões'}).",
             evidence=f"IDs detectados: {detected_ids}",
         )
     )
@@ -2287,7 +2335,7 @@ def verify_qa_deck(presentation: PresentationInfo) -> list[CheckResult]:
     )
 
     missing_n1: list[str] = []
-    for qid in EXPECTED_NIVEL_1_IDS:
+    for qid in LEGACY_NIVEL_1_IDS:
         if qid not in all_content_and_notes:
             missing_n1.append(qid)
 
@@ -2307,7 +2355,7 @@ def verify_qa_deck(presentation: PresentationInfo) -> list[CheckResult]:
 
     # 5. Escopo fechado: Todas as 7 questões de Nível 2 presentes
     missing_n2: list[str] = []
-    for qid in EXPECTED_NIVEL_2_IDS:
+    for qid in LEGACY_NIVEL_2_IDS:
         if qid not in all_content_and_notes:
             missing_n2.append(qid)
 

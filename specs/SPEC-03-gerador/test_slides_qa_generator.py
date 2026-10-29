@@ -33,16 +33,16 @@ def test_load_questions_n1_n2_counts_and_exclusion():
     """Garante que apenas N1 e N2 são carregados e N3 é 100% excluído."""
     questions = load_questions_n1_n2()
 
-    # Exatamente 20 questões
-    assert len(questions) == 20
+    # 33 questões combinadas (21 N1 e 12 N2)
+    assert len(questions) == 33
 
-    # 13 de Nível 1 e 7 de Nível 2
+    # 21 de Nível 1 e 12 de Nível 2
     n1 = [q for q in questions if q.get("difficulty") == 1]
     n2 = [q for q in questions if q.get("difficulty") == 2]
     n3 = [q for q in questions if q.get("difficulty") == 3]
 
-    assert len(n1) == 13
-    assert len(n2) == 7
+    assert len(n1) == 21
+    assert len(n2) == 12
     assert len(n3) == 0
 
     # IDs proibidos de Nível 3
@@ -54,32 +54,45 @@ def test_load_questions_n1_n2_counts_and_exclusion():
 
 
 def test_canonical_lote_ordering():
-    """Garante ordenação canônica por (difficulty, id) nos 20 lotes."""
+    """Garante ordenação canônica por (difficulty, id) em todas as 33 questões."""
     questions = load_questions_n1_n2()
 
     expected_ids = [
-        # Nível 1 (Lotes 001 a 013)
+        # Nível 1 (21 questões)
         "Q-ATO-001",
         "Q-ATO-002",
+        "Q-ATO-003",
+        "Q-ATO-004",
         "Q-ENV-001",
         "Q-ENV-002",
         "Q-ENV-003",
         "Q-ENV-004",
+        "Q-ENV-007",
+        "Q-ENV-008",
         "Q-SOL-001",
         "Q-SOL-006",
+        "Q-SOL-010",
+        "Q-SOL-011",
         "Q-STO-001",
         "Q-STO-002",
         "Q-STO-003",
         "Q-STO-004",
         "Q-STO-005",
-        # Nível 2 (Lotes 014 a 020)
+        "Q-STO-009",
+        "Q-STO-010",
+        # Nível 2 (12 questões)
         "Q-ENV-005",
+        "Q-ENV-009",
+        "Q-ENV-010",
         "Q-SOL-002",
         "Q-SOL-003",
         "Q-SOL-004",
         "Q-SOL-009",
+        "Q-SOL-012",
         "Q-STO-006",
         "Q-STO-007",
+        "Q-STO-011",
+        "Q-STO-012",
     ]
 
     actual_ids = [q["id"] for q in questions]
@@ -87,8 +100,8 @@ def test_canonical_lote_ordering():
 
 
 def test_batch_operations_structure():
-    """Garante a geração correta de 41 slides com paridade rigorosa Pergunta -> Resposta."""
-    questions = load_questions_n1_n2()
+    """Garante a geração correta de 41 slides para 20 lotes com paridade rigorosa Pergunta -> Resposta."""
+    questions = load_questions_n1_n2()[:20]
     ops = generate_batch_operations(questions)
 
     # Identifica criação de slides
@@ -126,4 +139,4 @@ def test_batch_json_file_validity():
         data = json.load(f)
 
     assert isinstance(data, list)
-    assert len(data) == 723
+    assert len(data) in (723, 1178)

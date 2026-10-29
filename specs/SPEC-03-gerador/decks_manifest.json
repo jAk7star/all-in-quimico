@@ -1,6 +1,6 @@
 {
   "manifest_version": "2.0",
-  "generated_at": "2026-10-29T02:13:03.953081+00:00",
+  "generated_at": "2026-10-29T02:51:39.827868+00:00",
   "design_system": {
     "background_color": "#F8F9FA",
     "card_background": "#FFFFFF",
@@ -79,62 +79,66 @@
     ],
     "regular_decks": [
       {
-        "deck_id": "deck_regular_01",
+        "deck_id": "deck_10_rodadas_01",
         "type": "regular",
-        "presentation_id": "1_f1Cn6DMpMBOF_wNlpWWFGukc0Gl87shIonRmBdWbNg",
-        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 01",
-        "total_slides": 11,
+        "presentation_id": "1xMds7KCmevA2BbnJl2-uS_QhYs8R4BMCyQNNy0I0wis",
+        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Alpha)",
+        "total_slides": 21,
         "question_ids": [
           "Q-ATO-002",
           "Q-SOL-006",
           "Q-STO-002",
           "Q-STO-003",
-          "Q-STO-004"
-        ],
-        "batch_file": "batch_files/batch_deck_regular_01.json"
-      },
-      {
-        "deck_id": "deck_regular_02",
-        "type": "regular",
-        "presentation_id": "15136PklF9Vh4BqLD-vhgn1pBidfFktWQqyffAtNmUNo",
-        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 02",
-        "total_slides": 11,
-        "question_ids": [
-          "Q-STO-005",
           "Q-ENV-001",
           "Q-ENV-002",
-          "Q-ENV-003",
-          "Q-ENV-004"
-        ],
-        "batch_file": "batch_files/batch_deck_regular_02.json"
-      },
-      {
-        "deck_id": "deck_regular_03",
-        "type": "regular",
-        "presentation_id": "1BOZyZih5pIoGHqMyzwCgD2mXmUJzgs3us2jAijoQdbY",
-        "title": "All-In Químico — Perguntas e Respostas — Deck Regular 03",
-        "total_slides": 11,
-        "question_ids": [
           "Q-SOL-002",
           "Q-SOL-003",
+          "Q-STO-006",
+          "Q-ENV-005"
+        ],
+        "batch_file": "batch_files/batch_deck_10_rodadas_01.json"
+      },
+      {
+        "deck_id": "deck_10_rodadas_02",
+        "type": "regular",
+        "presentation_id": "1HW5X9OAeZ1zgZAEaACP_AM4dgVoz0_W3w0UF9zHmwgQ",
+        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Beta)",
+        "total_slides": 21,
+        "question_ids": [
+          "Q-ATO-003",
+          "Q-SOL-010",
+          "Q-STO-004",
+          "Q-STO-005",
+          "Q-ENV-003",
+          "Q-ENV-004",
           "Q-SOL-004",
           "Q-SOL-009",
-          "Q-STO-006"
+          "Q-STO-007",
+          "Q-ENV-009"
         ],
-        "batch_file": "batch_files/batch_deck_regular_03.json"
+        "batch_file": "batch_files/batch_deck_10_rodadas_02.json"
+      },
+      {
+        "deck_id": "deck_10_rodadas_03",
+        "type": "regular",
+        "presentation_id": "1POyXzyYhyf9pgr5YbT3HLAUitKJsH53bOVnMbm0I0U8",
+        "title": "All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Gamma)",
+        "total_slides": 21,
+        "question_ids": [
+          "Q-ATO-004",
+          "Q-SOL-011",
+          "Q-STO-009",
+          "Q-STO-010",
+          "Q-ENV-007",
+          "Q-ENV-008",
+          "Q-SOL-012",
+          "Q-STO-011",
+          "Q-STO-012",
+          "Q-ENV-010"
+        ],
+        "batch_file": "batch_files/batch_deck_10_rodadas_03.json"
       }
     ],
-    "tiebreaker_deck": {
-      "deck_id": "deck_suplente_desempate",
-      "type": "tiebreaker",
-      "presentation_id": "1tQ3zzj06DZpS5AnwanIprVXEW98iQ3NRxV8pLY1Z1uY",
-      "title": "All-In Químico — Deck Suplente / Desempate (Nível 2)",
-      "total_slides": 5,
-      "question_ids": [
-        "Q-ENV-005",
-        "Q-STO-007"
-      ],
-      "batch_file": "batch_files/batch_deck_suplente_desempate.json"
-    }
+    "tiebreaker_deck": null
   }
 }

@@ -61,19 +61,26 @@ def main():
     batch_dir = g.BATCH_FILES_DIR
     results = []
 
+    total_decks = len(g.DECK_CONFIGS)
     for idx, cfg in enumerate(g.DECK_CONFIGS, start=1):
         batch_file = batch_dir / cfg.batch_filename
         if not batch_file.exists():
             raise FileNotFoundError(f"Arquivo de lote não encontrado: {batch_file}")
 
-        print(f"[{idx}/10] Criando apresentação: '{cfg.title}'...")
-        pres_id = create_presentation(cfg.title)
-        edit_url = f"https://docs.google.com/presentation/d/{pres_id}/edit"
-        print(f"       ID gerado: {pres_id}")
+        if cfg.presentation_id:
+            pres_id = cfg.presentation_id
+            edit_url = f"https://docs.google.com/presentation/d/{pres_id}/edit"
+            print(f"[{idx}/{total_decks}] Usando apresentação já configurada: '{cfg.title}' ({pres_id})")
+        else:
+            print(f"[{idx}/{total_decks}] Criando apresentação no Google Slides: '{cfg.title}'...")
+            pres_id = create_presentation(cfg.title)
+            edit_url = f"https://docs.google.com/presentation/d/{pres_id}/edit"
+            print(f"       ID gerado: {pres_id}")
 
-        print(f"       Aplicando batch '{batch_file.name}' in-place...")
-        g.apply_batch_to_deck(pres_id, batch_file)
-        print(f"       [OK] Apresentação pronta: {edit_url}\n")
+            print(f"       Aplicando batch '{batch_file.name}' in-place...")
+            g.apply_batch_to_deck(pres_id, batch_file)
+            print(f"       [OK] Apresentação pronta: {edit_url}\n")
+            time.sleep(1)
 
         results.append({
             "deck_id": cfg.deck_id,
@@ -84,7 +91,6 @@ def main():
             "batch_file": cfg.batch_filename,
             "question_ids": cfg.question_ids,
         })
-        time.sleep(1)
 
     # Atualiza o decks_manifest.json
     id_map = {r["deck_id"]: r["presentation_id"] for r in results}

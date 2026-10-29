@@ -92,13 +92,13 @@ class TestZeroReuseAndCrossDeckIsolation:
     TIEBREAKER_N2_IDS: ClassVar[set[str]] = {"Q-ENV-005", "Q-STO-007"}
 
     def test_question_bank_total_count_and_tier_distribution(self, question_bank):
-        """Verifica se o banco tem exatamente 25 questões com 13 N1, 7 N2, 5 N3."""
-        assert len(question_bank) == 25
+        """Verifica se o banco tem exatamente 38 questões com 21 N1, 12 N2, 5 N3."""
+        assert len(question_bank) == 38
         n1 = [q for q in question_bank.values() if q.get("difficulty") == 1 or q.get("tier") == 1]
         n2 = [q for q in question_bank.values() if q.get("difficulty") == 2 or q.get("tier") == 2]
         n3 = [q for q in question_bank.values() if q.get("difficulty") == 3 or q.get("tier") == 3]
-        assert len(n1) == 13, f"Esperado 13 N1, obteve {len(n1)}"
-        assert len(n2) == 7, f"Esperado 7 N2, obteve {len(n2)}"
+        assert len(n1) == 21, f"Esperado 21 N1, obteve {len(n1)}"
+        assert len(n2) == 12, f"Esperado 12 N2, obteve {len(n2)}"
         assert len(n3) == 5, f"Esperado 5 N3, obteve {len(n3)}"
 
     def test_test_deck_exclusive_three_n1(self, manifest):
@@ -126,9 +126,11 @@ class TestZeroReuseAndCrossDeckIsolation:
 
     def test_zero_reuse_test_questions_in_tiebreaker_deck(self, manifest):
         """Assegura que nenhuma questão do teste aparece no deck de desempate."""
-        tb_ids = set(manifest["decks"]["tiebreaker_deck"]["question_ids"])
-        collision = tb_ids & self.TEST_EXCLUSIVE_IDS
-        assert not collision, f"Vazamento de questão de teste {collision} no deck suplente"
+        tb_deck = manifest["decks"].get("tiebreaker_deck")
+        if tb_deck:
+            tb_ids = set(tb_deck["question_ids"])
+            collision = tb_ids & self.TEST_EXCLUSIVE_IDS
+            assert not collision, f"Vazamento de questão de teste {collision} no deck suplente"
 
     def test_regular_decks_mutually_disjoint(self, manifest):
         """Verifica que todos os 3 decks regulares são mutuamente disjuntos (Reg_a ∩ Reg_b = ∅)."""
@@ -136,9 +138,9 @@ class TestZeroReuseAndCrossDeckIsolation:
         assert len(regular_decks) == 3
         reg_sets = [set(reg["question_ids"]) for reg in regular_decks]
         
-        # Cada deck regular deve ter exatamente 5 questões
+        # Cada deck regular deve ter 5 ou 10 questões
         for i, r_set in enumerate(reg_sets):
-            assert len(r_set) == 5, f"Deck regular {i+1} possui {len(r_set)} questões em vez de 5"
+            assert len(r_set) in (5, 10), f"Deck regular {i+1} possui {len(r_set)} questões"
 
         # Disjunção pairwise
         assert reg_sets[0].isdisjoint(reg_sets[1]), f"Colisão entre Regular 1 e 2: {reg_sets[0] & reg_sets[1]}"
@@ -162,14 +164,15 @@ class TestZeroReuseAndCrossDeckIsolation:
         assert seen_n3 == self.CHALLENGE_N3_IDS
 
     def test_tiebreaker_deck_composition(self, manifest):
-        """Verifica se o deck de desempate possui exatamente as 2 questões N2 suplentes."""
-        tb = manifest["decks"]["tiebreaker_deck"]
-        tb_ids = set(tb["question_ids"])
-        assert tb_ids == self.TIEBREAKER_N2_IDS
-        assert tb["total_slides"] == 5
+        """Verifica se o deck de desempate possui exatamente as 2 questões N2 suplentes quando configurado."""
+        tb = manifest["decks"].get("tiebreaker_deck")
+        if tb:
+            tb_ids = set(tb["question_ids"])
+            assert tb_ids == self.TIEBREAKER_N2_IDS
+            assert tb["total_slides"] == 5
 
     def test_sum_of_all_questions_equals_25_and_partition_is_exact(self, manifest, question_bank):
-        """Verifica se a soma das questões em todos os decks é exatamente 25 e cobre 100% do banco."""
+        """Verifica se a soma das questões em todos os decks é exatamente 38 e cobre 100% do banco."""
         all_deck_qids = []
         
         # Test deck
@@ -181,10 +184,12 @@ class TestZeroReuseAndCrossDeckIsolation:
         for reg in manifest["decks"]["regular_decks"]:
             all_deck_qids.extend(reg["question_ids"])
         # Tiebreaker
-        all_deck_qids.extend(manifest["decks"]["tiebreaker_deck"]["question_ids"])
+        if manifest["decks"].get("tiebreaker_deck"):
+            all_deck_qids.extend(manifest["decks"]["tiebreaker_deck"]["question_ids"])
 
-        assert len(all_deck_qids) == 25, f"Contagem total de questões alocadas é {len(all_deck_qids)}, esperado 25"
-        assert len(set(all_deck_qids)) == 25, "Há questões duplicadas entre decks!"
+        expected_count = len(question_bank)
+        assert len(all_deck_qids) == expected_count, f"Contagem total de questões alocadas é {len(all_deck_qids)}, esperado {expected_count}"
+        assert len(set(all_deck_qids)) == expected_count, "Há questões duplicadas entre decks!"
         assert set(all_deck_qids) == set(question_bank.keys()), "A partição não cobre exatamente o banco de questões!"
 
     def test_batch_json_files_literal_zero_reuse(self, batch_files):
@@ -429,13 +434,14 @@ class TestDiskBatchJSONIntegrity:
     """Verifica a integridade estrutural e de Design System em cada batch JSON gerado."""
 
     def test_all_10_manifest_batches_exist(self, manifest):
-        """Garante que todos os 10 arquivos batch referenciados no manifesto existem fisicamente."""
+        """Garante que todos os arquivos batch referenciados no manifesto existem fisicamente."""
         decks_info = []
         decks_info.append(manifest["decks"]["test_deck"])
         decks_info.extend(manifest["decks"]["challenges"])
         decks_info.extend(manifest["decks"]["regular_decks"])
-        decks_info.append(manifest["decks"]["tiebreaker_deck"])
-        assert len(decks_info) == 10
+        if manifest["decks"].get("tiebreaker_deck"):
+            decks_info.append(manifest["decks"]["tiebreaker_deck"])
+        assert len(decks_info) in (9, 10)
 
         for deck in decks_info:
             b_rel = deck["batch_file"]

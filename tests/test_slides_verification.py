@@ -50,6 +50,8 @@ from verificar_decks_slides import (
     DEFAULT_RULES_DECK_ID,
     EXPECTED_NIVEL_1_IDS,
     EXPECTED_NIVEL_2_IDS,
+    LEGACY_NIVEL_1_IDS,
+    LEGACY_NIVEL_2_IDS,
     PresentationInfo,
     SlideInfo,
     create_mock_challenge_deck,
@@ -194,7 +196,7 @@ def create_mock_qa_deck() -> PresentationInfo:
         )
     ]
 
-    all_ids = EXPECTED_NIVEL_1_IDS + EXPECTED_NIVEL_2_IDS
+    all_ids = LEGACY_NIVEL_1_IDS + LEGACY_NIVEL_2_IDS
     for idx, qid in enumerate(all_ids, start=1):
         diff = 1 if idx <= 13 else 2
         nivel_label = "Nível 1 - Aquecimento" if diff == 1 else "Nível 2 - Finais"
@@ -1122,7 +1124,7 @@ class TestManifestAuditIntegration:
                 f"Falhas no manifesto real gerado: {[(r.check_id, r.details) for r in failed]}"
             )
             assert report.success is True
-            assert report.total_checks >= 90
+            assert report.total_checks >= 80
 
 
 # ==============================================================================

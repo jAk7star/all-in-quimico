@@ -282,3 +282,161 @@ questions:
     correct: A
     worked_solution: "Fundir o alumínio metálico (660 °C) gasta apenas ~5% da energia exigida pela eletrólise ígnea do óxido de alumínio (processo Hall-Héroult)."
     scientific_justification: "Custo energético da redução eletrolítica vs. entalpia de fusão física do metal."
+
+  - id: Q-ATO-003
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ATO
+    skill: Diferenciar número de massa e número atômico na determinação de nêutrons.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ATO-TABLE]
+    statement: "Em um átomo neutro de sódio (Na), o número atômico é Z = 11 e o número de massa é A = 23. Quantos nêutrons existem no núcleo desse átomo?"
+    options:
+      - {key: A, text: "12 nêutrons.", rationale: "Correta; N = A - Z = 23 - 11 = 12 nêutrons."}
+      - {key: B, text: "34 nêutrons.", rationale: "Somou o número de massa ao número atômico em vez de subtrair."}
+    correct: A
+    worked_solution: "N = A - Z = 23 - 11 = 12 nêutrons."
+    scientific_justification: "O número de massa (A) é a soma de prótons e nêutrons, logo N = A - Z."
+
+  - id: Q-ATO-004
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ATO
+    skill: Identificar elementos químicos pertencentes à mesma família na Tabela Periódica.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ATO-TABLE]
+    statement: "Na Tabela Periódica, os elementos pertencentes a um mesmo grupo (família) apresentam propriedades químicas semelhantes porque possuem:"
+    options:
+      - {key: A, text: "O mesmo número de elétrons na camada de valência.", rationale: "Correta; elétrons de valência governam o comportamento químico."}
+      - {key: B, text: "A mesma massa atômica e o mesmo número de nêutrons.", rationale: "Elementos do mesmo grupo possuem massas atômicas distintas."}
+    correct: A
+    worked_solution: "Elementos da mesma família possuem configuração semelhante na camada de valência."
+    scientific_justification: "A periodicidade das propriedades químicas decorre da repetição de elétrons na camada de valência."
+
+  - id: Q-SOL-010
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração comum a partir da massa do soluto e do volume final da solução.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-SOL-001]
+    formula_refs: [CHEM-FRM-001]
+    statement: "Em um laboratório, um estudante dissolveu 40 g de soluto em água destilada até completar exatamente 0,5 L de solução. Qual é a concentração comum, em g/L?"
+    given_data:
+      massa_soluto: {value: 40, unit: g}
+      volume_solucao: {value: 0.5, unit: L, description: volume final da solução}
+    calc:
+      id: concentracao
+      kind: formula
+      formula_ref: CHEM-FRM-001
+      target: C
+      inputs: {m_soluto: massa_soluto, V_solucao: volume_solucao}
+      expected: {value: 80, unit: g/L, tolerance: 0.01}
+    options:
+      - {key: A, text: "80 g/L", rationale: "Correta; C = m / V = 40 g / 0,5 L = 80 g/L."}
+      - {key: B, text: "20 g/L", rationale: "Multiplicou a massa pelo volume (40 × 0,5) em vez de dividir."}
+    correct: A
+    worked_solution: "C = m / V = 40 g / 0,5 L = 80 g/L."
+    scientific_justification: "A concentração comum relaciona a massa do soluto disperso ao volume total final da solução."
+
+  - id: Q-SOL-011
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Identificar soluto e solvente em uma solução aquosa.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-SOL-001]
+    statement: "Em uma solução salina preparada pela dissolução completa de 5 g de sal em 100 mL de água líquida, a água desempenha a função de:"
+    options:
+      - {key: A, text: "Solvente, pois atua como meio dispersante que dissolve o soluto.", rationale: "Correta; o solvente dissolve o soluto na solução."}
+      - {key: B, text: "Soluto, pois se encontra em estado líquido homogêneo.", rationale: "Confundiu solvente com soluto."}
+    correct: A
+    worked_solution: "A água é o dispersante líquido, caracterizando o solvente da mistura homogênea."
+    scientific_justification: "Em soluções aquosas, a água atua tipicamente como solvente e o sal como soluto."
+
+  - id: Q-STO-009
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Calcular quantidade de matéria a partir da massa e da massa molar fornecida.
+    cognitive_level: application
+    difficulty: 1
+    concept_refs: [CHEM-STO-AMOUNT]
+    formula_refs: [CHEM-FRM-003]
+    statement: "Uma amostra pura de água (H2O) possui massa de 90 g. Sabendo que a massa molar da água é M(H2O) = 18 g/mol, calcule a quantidade de matéria, em mol."
+    given_data:
+      massa_amostra: {value: 90, unit: g}
+      massa_molar: {value: 18, unit: g/mol, description: massa molar da água}
+    calc:
+      id: quantidade
+      kind: formula
+      formula_ref: CHEM-FRM-003
+      target: n
+      inputs: {m: massa_amostra, M: massa_molar}
+      expected: {value: 5.0, unit: mol, tolerance: 0.01}
+    options:
+      - {key: A, text: "5,0 mol", rationale: "Correta; n = m / M = 90 g / 18 g/mol = 5,0 mol."}
+      - {key: B, text: "0,20 mol", rationale: "Inverteu a razão dividindo a massa molar pela massa da amostra."}
+    correct: A
+    worked_solution: "n = m / M = 90 g / 18 g/mol = 5,0 mol."
+    scientific_justification: "A quantidade de matéria em mol expressa a razão entre a massa da amostra e a massa molar."
+
+  - id: Q-STO-010
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Aplicar o princípio de conservação das massas em reações fechadas.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-STO-BALANCING]
+    statement: "Em um recipiente fechado, 12 g de carbono reagem completamente com 32 g de gás oxigênio produzindo gás carbônico. De acordo com a Lei de Lavoisier, qual é a massa total de CO2 obtida?"
+    options:
+      - {key: A, text: "44 g de gás carbônico.", rationale: "Correta; 12 g + 32 g = 44 g (conservação total de massa)."}
+      - {key: B, text: "20 g de gás carbônico.", rationale: "Subtraiu as massas dos reagentes em vez de somá-las."}
+    correct: A
+    worked_solution: "Massa dos produtos = massa dos reagentes = 12 g + 32 g = 44 g."
+    scientific_justification: "Em sistema fechado, a soma das massas dos reagentes é rigorosamente igual à soma das massas dos produtos."
+
+  - id: Q-ENV-007
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Identificar o principal gás de efeito estufa associado à queima de combustíveis fósseis.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ENV-GREENHOUSE]
+    statement: "A queima em larga escala de combustíveis fósseis derivados do petróleo e carvão libera à atmosfera prioritariamente qual gás causador do efeito estufa antropogênico?"
+    options:
+      - {key: A, text: "Dióxido de carbono (CO₂).", rationale: "Correta; o CO₂ é o principal gás liberado na combustão de compostos carbônicos."}
+      - {key: B, text: "Gás nitrogênio (N₂).", rationale: "O N₂ compõe a maior parte do ar, mas não é produto direto de combustão de carbono."}
+    correct: A
+    worked_solution: "A combustão completa de hidrocarbonetos gera dióxido de carbono (CO₂) e vapor de água."
+    scientific_justification: "O dióxido de carbono é o gás estufa de maior emissão antropogênica pelo setor energético."
+
+  - id: Q-ENV-008
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Explicar o papel bioprotetor da camada de ozônio estratosférico.
+    cognitive_level: understanding
+    difficulty: 1
+    concept_refs: [CHEM-ENV-EQUILIBRIUM]
+    statement: "A camada de ozônio (O₃), situada na estratosfera terrestre, é essencial para a sobrevivência biológica no planeta porque desempenha o papel de:"
+    options:
+      - {key: A, text: "Absorver e filtrar a radiação solar ultravioleta nociva (UV-B e UV-C).", rationale: "Correta; o O₃ atenua a radiação UV de alta energia prejudicial ao DNA."}
+      - {key: B, text: "Reter o oxigênio respirável atmosférico impedindo sua fuga para o vácuo espacial.", rationale: "A retenção dos gases atmosféricos decorre da gravidade planetária, não da camada de ozônio."}
+    correct: A
+    worked_solution: "O ciclo fotolítico do ozônio dissipa radiação ultravioleta de alta frequência na estratosfera."
+    scientific_justification: "A camada de ozônio atua como escudo radiativo vital, absorvendo raios UV solares nocivos."

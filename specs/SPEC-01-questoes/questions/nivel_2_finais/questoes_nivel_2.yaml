@@ -162,3 +162,100 @@ questions:
     correct: B
     worked_solution: "O rendimento percentual incide sempre sobre a produção teórica máxima dada pelo reagente limitante: 80% de 10,0 mol = 8,0 mol."
     scientific_justification: "Rendimento real = Rendimento (%) × Quantidade Teórica (baseada no limitante)."
+
+  - id: Q-SOL-012
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-SOL
+    skill: Calcular a concentração molar final após processo de diluição com água destilada.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-SOL-003]
+    formula_refs: [CHEM-FRM-004]
+    statement: "Dispõe-se de 100 mL de uma solução aquosa de NaCl 1,0 mol/L. Adicionam-se 300 mL de água destilada, totalizando 400 mL de solução final. Qual é a concentração molar final, em mol/L?"
+    given_data:
+      c_inicial: {value: 1.0, unit: mol/L}
+      v_inicial: {value: 0.1, unit: L}
+      v_final: {value: 0.4, unit: L}
+    calc:
+      id: diluicao
+      kind: formula
+      formula_ref: CHEM-FRM-004
+      target: c2
+      inputs: {c1: c_inicial, V1: v_inicial, V2: v_final}
+      expected: {value: 0.25, unit: mol/L, tolerance: 0.01}
+    options:
+      - {key: A, text: "0,25 mol/L", rationale: "Correta; c2 = c1 × V1 / V2 = 1,0 mol/L × 0,1 L / 0,4 L = 0,25 mol/L."}
+      - {key: B, text: "0,33 mol/L", rationale: "Dividiu pelo volume de água adicionada (300 mL) em vez do volume total da solução final (400 mL)."}
+    correct: A
+    worked_solution: "c2 = (c1 × V1) / V2 = (1,0 mol/L × 0,1 L) / 0,4 L = 0,25 mol/L."
+    scientific_justification: "Em diluições, a quantidade de matéria do soluto permanece constante (c1·V1 = c2·V2)."
+
+  - id: Q-STO-011
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Determinar a massa de dióxido de carbono produzida na queima completa de carbono.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-STO-MOLARMASS]
+    statement: "Na combustão completa de 24 g de carbono puro (C + O2 → CO2), considerando M(C) = 12 g/mol e M(CO2) = 44 g/mol com rendimento de 100%, qual é a massa total de CO2 formada?"
+    options:
+      - {key: A, text: "88 g de CO2.", rationale: "Correta; 24 g de C = 2 mol de C, que produzem 2 mol de CO2 = 2 × 44 g/mol = 88 g."}
+      - {key: B, text: "44 g de CO2.", rationale: "Considerou apenas 1 mol de produto em vez de calcular a proporção estequiométrica a partir dos 24 g de reagente."}
+    correct: A
+    worked_solution: "n(C) = 24 g / 12 g/mol = 2 mol. Pela estequiometria 1:1, formam-se 2 mol de CO2: m = 2 mol × 44 g/mol = 88 g."
+    scientific_justification: "Proporção molar estequiométrica direta entre carbono consumido e dióxido de carbono produzido."
+
+  - id: Q-STO-012
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-STO
+    skill: Identificar o reagente limitante e calcular a quantidade em excesso.
+    cognitive_level: application
+    difficulty: 2
+    concept_refs: [CHEM-STO-LIMITING]
+    statement: "Misturam-se 2,0 mol de gás hidrogênio (H2) com 2,0 mol de gás oxigênio (O2) para reagirem segundo a equação 2 H2 + O2 → 2 H2O. Qual reagente é o limitante e quanto resta em excesso?"
+    options:
+      - {key: A, text: "O reagente limitante é o H2, e resta 1,0 mol de O2 em excesso.", rationale: "Correta; 2 mol de H2 consomem exatamente 1 mol de O2, restando 2 - 1 = 1 mol de O2 em excesso."}
+      - {key: B, text: "O reagente limitante é o O2, e restam 2,0 mol de H2 em excesso.", rationale: "Inverteu os papéis dos reagentes na proporção estequiométrica 2:1."}
+    correct: A
+    worked_solution: "A proporção requer 2 mol de H2 para 1 mol de O2. Havendo 2 mol de cada, o H2 se esgota primeiro e sobra 1 mol de O2."
+    scientific_justification: "O reagente que se esgota antes limita a extensão máxima da reação química."
+
+  - id: Q-ENV-009
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Explicar a gênese química da chuva ácida a partir da oxidação de óxidos de enxofre.
+    cognitive_level: understanding
+    difficulty: 2
+    concept_refs: [CHEM-ENV-ACIDRAIN]
+    statement: "O dióxido de enxofre (SO2) expelido em processos industriais é oxidado na atmosfera a trióxido de enxofre (SO3). Ao reagir com gotículas de água nas nuvens, esse gás forma principalmente:"
+    options:
+      - {key: A, text: "Ácido sulfúrico (H2SO4), promovendo acidificação intensa da precipitação pluvial.", rationale: "Correta; SO3 + H2O → H2SO4, um ácido diprótico forte."}
+      - {key: B, text: "Gás sulfídrico (H2S), provocando odor fétido sem alterar o pH da água pluvial.", rationale: "O H2S é um gás de decomposição anaeróbia e não o produto de hidratação do trióxido de enxofre."}
+    correct: A
+    worked_solution: "SO3 (g) + H2O (l) → H2SO4 (aq). A hidratação do trióxido de enxofre gera ácido sulfúrico forte."
+    scientific_justification: "A chuva ácida clássica tem no ácido sulfúrico um de seus principais componentes acidificantes."
+
+  - id: Q-ENV-010
+    type: multiple_choice
+    version: 1
+    status: review
+    domain: CHEM-ENV
+    skill: Analisar o papel de catalisadores automotivos na mitigação de poluentes tóxicos.
+    cognitive_level: understanding
+    difficulty: 2
+    concept_refs: [CHEM-ENV-CATALYTIC]
+    statement: "Nos escapamentos automotivos, conversores catalíticos à base de platina e ródio atuam convertendo os gases nocivos monóxido de carbono (CO) e óxidos de nitrogênio (NOx) em:"
+    options:
+      - {key: A, text: "Dióxido de carbono (CO2) e gás nitrogênio (N2), compostos de toxicidade reduzida.", rationale: "Correta; oxidação de CO a CO2 e redução de NOx a N2 inerte."}
+      - {key: B, text: "Metano (CH4) e ácido nítrico (HNO3), gerando combustíveis limpos de escape.", rationale: "Conversores catalíticos automotivos não realizam metanação nem produzem ácido nítrico."}
+    correct: A
+    worked_solution: "2 CO + O2 → 2 CO2 (oxidação) e 2 NO → N2 + O2 (redução catalítica)."
+    scientific_justification: "Catálise heterogênea metálica reduzindo a emissão de poluentes primários letais para espécies comuns da atmosfera."

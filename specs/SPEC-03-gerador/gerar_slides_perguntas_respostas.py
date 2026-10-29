@@ -298,9 +298,8 @@ class DeckConfig:
     presentation_id: str | None = None
 
 
-# Matriz canônica de partição de todos os 10 decks (25 questões, 60 slides)
-DECK_CONFIGS: list[DeckConfig] = [
-    # 1. Apresentação de Teste Exclusiva (R2) — 7 slides
+# Configurações legadas de 5 rodadas (25 questões, mantidas para referência e compatibilidade)
+DECK_CONFIGS_5_RODADAS: list[DeckConfig] = [
     DeckConfig(
         deck_id="deck_teste_nivel_1",
         deck_type="test",
@@ -310,7 +309,6 @@ DECK_CONFIGS: list[DeckConfig] = [
         batch_filename="batch_deck_teste_nivel_1.json",
         presentation_id="15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg",
     ),
-    # 2. Apresentações Individuais de Desafio N3 (R3) — 3 slides cada
     DeckConfig(
         deck_id="desafio_01_morte_subita_diluicao",
         deck_type="challenge",
@@ -356,7 +354,6 @@ DECK_CONFIGS: list[DeckConfig] = [
         batch_filename="batch_desafio_05_morte_subita_chuva_acida.json",
         presentation_id="1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI",
     ),
-    # 3. Apresentações Regulares de 5 Questões (R4) — 11 slides cada
     DeckConfig(
         deck_id="deck_regular_01",
         deck_type="regular",
@@ -384,7 +381,6 @@ DECK_CONFIGS: list[DeckConfig] = [
         batch_filename="batch_deck_regular_03.json",
         presentation_id="1BOZyZih5pIoGHqMyzwCgD2mXmUJzgs3us2jAijoQdbY",
     ),
-    # 4. Deck Suplente / Desempate Técnico (SPEC-02 §4.4) — 5 slides
     DeckConfig(
         deck_id="deck_suplente_desempate",
         deck_type="tiebreaker",
@@ -396,11 +392,110 @@ DECK_CONFIGS: list[DeckConfig] = [
     ),
 ]
 
+# Matriz canônica de partição de 10 rodadas (38 questões oficiais, 85 slides)
+DECK_CONFIGS: list[DeckConfig] = [
+    # 1. Apresentação de Teste Exclusiva (R2) — 7 slides (3 N1)
+    DeckConfig(
+        deck_id="deck_teste_nivel_1",
+        deck_type="test",
+        title="All-In Químico — Rodada de Aquecimento e Teste (Nível 1)",
+        subtitle="Calibração Pedagógica Sem Risco Financeiro • 3 Questões Didáticas Iniciais",
+        question_ids=["Q-ATO-001", "Q-SOL-001", "Q-STO-001"],
+        batch_filename="batch_deck_teste_nivel_1.json",
+        presentation_id="15Ydyk8N1awGpVvBESo-e0ZwBj3BLt81vlIL6wRJm-Eg",
+    ),
+    # 2. Apresentações Individuais de Desafio N3 (R3) — 3 slides cada (5 N3)
+    DeckConfig(
+        deck_id="desafio_01_morte_subita_diluicao",
+        deck_type="challenge",
+        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-005]",
+        subtitle="Tema: DILUIÇÃO • Aposta no Escuro • Winner Takes All",
+        question_ids=["Q-SOL-005"],
+        batch_filename="batch_desafio_01_morte_subita_diluicao.json",
+        presentation_id="1wUKcIy3knGukQzh1xYboc8XZ0WunVxa5LtLi_UMqlYM",
+    ),
+    DeckConfig(
+        deck_id="desafio_02_morte_subita_molaridade_sal",
+        deck_type="challenge",
+        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-007]",
+        subtitle="Tema: MOLARIDADE A PARTIR DA MASSA • Aposta no Escuro • Winner Takes All",
+        question_ids=["Q-SOL-007"],
+        batch_filename="batch_desafio_02_morte_subita_molaridade_sal.json",
+        presentation_id="1nE5alcVwy5AKfgfBWZi27lnlIBH7VTdtCO7ZHxAMOMk",
+    ),
+    DeckConfig(
+        deck_id="desafio_03_morte_subita_soda_caustica",
+        deck_type="challenge",
+        title="All-In Químico — Desafio Final: Morte Súbita [Q-SOL-008]",
+        subtitle="Tema: SODA CÁUSTICA EM SOLUÇÃO • Aposta no Escuro • Winner Takes All",
+        question_ids=["Q-SOL-008"],
+        batch_filename="batch_desafio_03_morte_subita_soda_caustica.json",
+        presentation_id="1kb50y0R9C_tSUYsxmmxdtrNVnygDVfOYH4nw1WXogms",
+    ),
+    DeckConfig(
+        deck_id="desafio_04_morte_subita_estequiometria_agua",
+        deck_type="challenge",
+        title="All-In Químico — Desafio Final: Morte Súbita [Q-STO-008]",
+        subtitle="Tema: LIMITANTE + RENDIMENTO • Aposta no Escuro • Winner Takes All",
+        question_ids=["Q-STO-008"],
+        batch_filename="batch_desafio_04_morte_subita_estequiometria_agua.json",
+        presentation_id="1fnETGpSU4DghG_CTutZTSbwdXHeBa1qNh3vxH4gvMoE",
+    ),
+    DeckConfig(
+        deck_id="desafio_05_morte_subita_chuva_acida",
+        deck_type="challenge",
+        title="All-In Químico — Desafio Final: Morte Súbita [Q-ENV-006]",
+        subtitle="Tema: GEOQUÍMICA DA CHUVA ÁCIDA • Aposta no Escuro • Winner Takes All",
+        question_ids=["Q-ENV-006"],
+        batch_filename="batch_desafio_05_morte_subita_chuva_acida.json",
+        presentation_id="1WALnYCMcEeWFyFXV1UMSCwHGt4NWBynNp3h9YPTU4uI",
+    ),
+    # 3. Apresentações de 10 Rodadas Completas (R4) — 21 slides cada (6 N1 + 4 N2 = 10 questões)
+    DeckConfig(
+        deck_id="deck_10_rodadas_01",
+        deck_type="regular",
+        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Alpha)",
+        subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
+        question_ids=[
+            "Q-ATO-002", "Q-SOL-006", "Q-STO-002", "Q-STO-003", "Q-ENV-001", "Q-ENV-002",
+            "Q-SOL-002", "Q-SOL-003", "Q-STO-006", "Q-ENV-005",
+        ],
+        batch_filename="batch_deck_10_rodadas_01.json",
+        presentation_id="1xMds7KCmevA2BbnJl2-uS_QhYs8R4BMCyQNNy0I0wis",
+    ),
+    DeckConfig(
+        deck_id="deck_10_rodadas_02",
+        deck_type="regular",
+        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Beta)",
+        subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
+        question_ids=[
+            "Q-ATO-003", "Q-SOL-010", "Q-STO-004", "Q-STO-005", "Q-ENV-003", "Q-ENV-004",
+            "Q-SOL-004", "Q-SOL-009", "Q-STO-007", "Q-ENV-009",
+        ],
+        batch_filename="batch_deck_10_rodadas_02.json",
+        presentation_id="1HW5X9OAeZ1zgZAEaACP_AM4dgVoz0_W3w0UF9zHmwgQ",
+    ),
+    DeckConfig(
+        deck_id="deck_10_rodadas_03",
+        deck_type="regular",
+        title="All-In Químico — Perguntas e Respostas — 10 Rodadas (Edição Gamma)",
+        subtitle="Partida Completa de 10 Rodadas • 6 Aquecimento (N1) + 4 Finais Estratégicas (N2)",
+        question_ids=[
+            "Q-ATO-004", "Q-SOL-011", "Q-STO-009", "Q-STO-010", "Q-ENV-007", "Q-ENV-008",
+            "Q-SOL-012", "Q-STO-011", "Q-STO-012", "Q-ENV-010",
+        ],
+        batch_filename="batch_deck_10_rodadas_03.json",
+        presentation_id="1POyXzyYhyf9pgr5YbT3HLAUitKJsH53bOVnMbm0I0U8",
+    ),
+]
+
 
 def load_all_questions() -> dict[str, dict[str, Any]]:
     """
-    Carrega todas as 25 questões oficiais dos 3 arquivos YAML canônicos
+    Carrega todas as questões oficiais dos 3 arquivos YAML canônicos
     e retorna um dicionário mapeado por question_id.
+    Suporta o banco expandido de 38 questões (21 N1, 12 N2, 5 N3)
+    e o banco base de 25 questões (13 N1, 7 N2, 5 N3).
     """
     f_n1 = QUESTIONS_DIR / "nivel_1_aquecimento" / "questoes_nivel_1.yaml"
     f_n2 = QUESTIONS_DIR / "nivel_2_finais" / "questoes_nivel_2.yaml"
@@ -417,10 +512,10 @@ def load_all_questions() -> dict[str, dict[str, Any]]:
     with f_n3.open(encoding="utf-8") as f:
         data_n3 = yaml.safe_load(f).get("questions", [])
 
-    if len(data_n1) != 13:
-        raise ValueError(f"Esperava-se 13 questões em Nível 1, obteve {len(data_n1)}")
-    if len(data_n2) != 7:
-        raise ValueError(f"Esperava-se 7 questões em Nível 2, obteve {len(data_n2)}")
+    if len(data_n1) not in (13, 21):
+        raise ValueError(f"Esperava-se 13 ou 21 questões em Nível 1, obteve {len(data_n1)}")
+    if len(data_n2) not in (7, 12):
+        raise ValueError(f"Esperava-se 7 ou 12 questões em Nível 2, obteve {len(data_n2)}")
     if len(data_n3) != 5:
         raise ValueError(f"Esperava-se 5 questões em Nível 3, obteve {len(data_n3)}")
 
@@ -435,8 +530,8 @@ def load_all_questions() -> dict[str, dict[str, Any]]:
         q["_source_level"] = 3
         questions_by_id[q["id"]] = q
 
-    if len(questions_by_id) != 25:
-        raise ValueError(f"Total de questões deve ser 25, obteve {len(questions_by_id)}")
+    if len(questions_by_id) not in (25, 38):
+        raise ValueError(f"Total de questões deve ser 25 ou 38, obteve {len(questions_by_id)}")
 
     return questions_by_id
 
@@ -444,7 +539,7 @@ def load_all_questions() -> dict[str, dict[str, Any]]:
 def load_questions_n1_n2() -> list[dict[str, Any]]:
     """
     Função mantida para compatibilidade retroativa: carrega exclusivamente
-    as 20 questões de Nível 1 e 2 ordenadas canonicamente por (difficulty, id).
+    as questões de Nível 1 e 2 ordenadas canonicamente por (difficulty, id).
     """
     all_qs = load_all_questions()
     combined = [
@@ -452,8 +547,8 @@ def load_questions_n1_n2() -> list[dict[str, Any]]:
         if q.get("difficulty") in (1, 2)
     ]
     combined.sort(key=lambda q: (q.get("difficulty", 1), q.get("id", "")))
-    if len(combined) != 20:
-        raise ValueError(f"Esperava-se 20 questões combinadas N1+N2, obteve {len(combined)}")
+    if len(combined) not in (20, 33):
+        raise ValueError(f"Esperava-se 20 ou 33 questões combinadas N1+N2, obteve {len(combined)}")
     return combined
 
 
@@ -464,11 +559,12 @@ def validate_partition_matrix(
     """
     Valida rigorosamente a Teoria dos Conjuntos da partição:
     1. Zero-Reuse: decks mutuamente disjuntos.
-    2. Completude: união cobre 100% das 25 questões.
-    3. Requisitos de negócio: R2 (3 N1), R3 (5 N3 individuais), R4 (3x5), Tiebreaker (2 N2).
+    2. Completude: união cobre 100% das questões (25 ou 38).
+    3. Requisitos de negócio: R2 (3 N1), R3 (5 N3 individuais), R4 (decks regulares N1/N2).
     """
     seen_ids: set[str] = set()
     total_q_count = 0
+    total_bank_qs = len(all_questions)
 
     test_deck = next((d for d in deck_configs if d.deck_type == "test"), None)
     if not test_deck:
@@ -495,18 +591,21 @@ def validate_partition_matrix(
     if len(regulars) != 3:
         raise ValueError(f"Esperava-se exatamente 3 decks regulares, obteve {len(regulars)}")
     for r in regulars:
-        if len(r.question_ids) != 5:
-            raise ValueError(f"Deck regular {r.deck_id} deve ter exatamente 5 questões.")
+        if len(r.question_ids) not in (5, 10):
+            raise ValueError(f"Deck regular {r.deck_id} deve ter 5 ou 10 questões, obteve {len(r.question_ids)}.")
+        for qid in r.question_ids:
+            q = all_questions.get(qid)
+            if not q or q.get("difficulty") not in (1, 2):
+                raise ValueError(f"Questão {qid} do deck regular deve ser de Nível 1 ou 2.")
 
     tiebreaker = next((d for d in deck_configs if d.deck_type == "tiebreaker"), None)
-    if not tiebreaker:
-        raise ValueError("Deck de desempate/suplente não encontrado na configuração.")
-    if len(tiebreaker.question_ids) != 2:
-        raise ValueError(f"Deck de desempate deve ter exatamente 2 questões, obteve {len(tiebreaker.question_ids)}")
-    for qid in tiebreaker.question_ids:
-        q = all_questions.get(qid)
-        if not q or q.get("difficulty") != 2:
-            raise ValueError(f"Questão {qid} do desempate deve ser de Nível 2.")
+    if tiebreaker:
+        if len(tiebreaker.question_ids) != 2:
+            raise ValueError(f"Deck de desempate deve ter exatamente 2 questões, obteve {len(tiebreaker.question_ids)}")
+        for qid in tiebreaker.question_ids:
+            q = all_questions.get(qid)
+            if not q or q.get("difficulty") != 2:
+                raise ValueError(f"Questão {qid} do desempate deve ser de Nível 2.")
 
     for d in deck_configs:
         for qid in d.question_ids:
@@ -515,8 +614,8 @@ def validate_partition_matrix(
             seen_ids.add(qid)
             total_q_count += 1
 
-    if total_q_count != 25 or len(seen_ids) != 25:
-        raise ValueError(f"A partição não cobre exatamente as 25 questões do banco (encontradas {len(seen_ids)}).")
+    if total_q_count != total_bank_qs or len(seen_ids) != total_bank_qs:
+        raise ValueError(f"A partição não cobre exatamente as {total_bank_qs} questões do banco (encontradas {len(seen_ids)}).")
 
     all_bank_ids = set(all_questions.keys())
     if seen_ids != all_bank_ids:
@@ -950,23 +1049,26 @@ def _build_regular_cover_operations(cfg: DeckConfig) -> list[dict[str, Any]]:
         },
     ]
 
+    q_count = len(cfg.question_ids)
+    total_slides = 1 + q_count * 2
+
     cards = [
         {
             "header": "PARTIDA REGULAR",
-            "stat": "5 Questões Oficiais",
-            "desc": "Lotes Intercalados do Deck\n• Domínios Químicos Oficiais\n• 1 a 4 acertos: Dobro (×2)\n• 5 acertos: Bônus Unânime (+R$ 100)",
+            "stat": f"{q_count} Questões Oficiais",
+            "desc": f"Lotes Intercalados do Deck\n• Domínios Químicos Oficiais\n• 1 a {q_count - 1} acertos: Dobro (×2)\n• {q_count} acertos: Bônus Unânime (+R$ 100)",
             "header_color": COLOR_N1, "header_bg": COLOR_N1_BG, "stat_color": COLOR_N1, "x": 35,
         },
         {
             "header": "LIMITES DE APOSTA",
             "stat": "R$ 10 a R$ 200",
-            "desc": "• Aposta mín. R$ 10 por rodada\n• Teto máx. R$ 200 por questão\n• Repescagem 5ª Rodada: +R$ 200\n• Apostas em folha (sem placas)",
+            "desc": f"• Aposta mín. R$ 10 por rodada\n• Teto máx. R$ 200 por questão\n• Repescagem ({q_count}ª/última rodada): +R$ 200\n• Apostas em folha (sem placas)",
             "header_color": COLOR_N2, "header_bg": COLOR_N2_BG, "stat_color": COLOR_N2, "x": 258,
         },
         {
             "header": "ESTRUTURA DIDÁTICA",
-            "stat": "11 Slides Total",
-            "desc": "Sequência Q&A Fechada\n• 1 Slide de Abertura\n• 5 Slides de Pergunta e Opções\n• 5 Slides de Gabarito & Resolução\n• Paridade estrita intercalada",
+            "stat": f"{total_slides} Slides Total",
+            "desc": f"Sequência Q&A Fechada\n• 1 Slide de Abertura\n• {q_count} Slides de Pergunta e Opções\n• {q_count} Slides de Gabarito & Resolução\n• Paridade estrita intercalada",
             "header_color": COLOR_GREEN_TEXT, "header_bg": COLOR_GREEN_BG, "stat_color": COLOR_GREEN, "x": 481,
         },
     ]
@@ -1003,8 +1105,8 @@ def _build_regular_cover_operations(cfg: DeckConfig) -> list[dict[str, Any]]:
     footer_text = (
         "REGRAS OFICIAIS DE APOSTA: Aposta mín. R$ 10 e máx. R$ 200 por rodada (sem placas, no papel)  |  "
         "1 a 4 acertos: Dobro (×2 / +100% lucro)  |  "
-        "5 acertos: Bônus Unânime (+R$ 100 fixo)  |  "
-        "Repescagem (5ª Rodada): Equipe com saldo ≤ R$ 200 recebe +R$ 200 do Banco."
+        "Bônus Unânime (+R$ 100 fixo)  |  "
+        f"Repescagem ({q_count}ª/última rodada): Equipe com saldo ≤ R$ 200 recebe +R$ 200 do Banco."
     )
     ops.extend([
         {
@@ -1022,7 +1124,7 @@ def _build_regular_cover_operations(cfg: DeckConfig) -> list[dict[str, Any]]:
             "op": "set-notes", "slide": "p",
             "text": (
                 f"SLIDE DE ABERTURA — {cfg.title}\n\n"
-                f"Apresentação regular independente contendo exatamente 5 questões fechadas.\n"
+                f"Apresentação regular independente contendo exatamente {q_count} questões fechadas.\n"
                 f"Questões alocadas: {', '.join(cfg.question_ids)}.\n"
                 "Paridade estrita: 1 slide de pergunta seguido imediatamente pelo gabarito correspondente."
             ),
